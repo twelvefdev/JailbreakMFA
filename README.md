@@ -1,4 +1,4 @@
 # JailbreakMFA
-Open source for 'Jailbreak' with all content files and source code.
+Source code for 'Jailbreak' with all content files. Do NOT share with anyone.
 
 [Check current version.](https://pastebin.com/raw/rZhXXiMz)
