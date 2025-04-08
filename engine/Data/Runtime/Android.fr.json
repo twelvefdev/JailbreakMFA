@@ -1,0 +1,497 @@
+{   "About":
+	{
+		"Name": "Objet Android",
+		"Author": "Clickteam",
+		"Copyright": "Copyright (C) 2012-2013 Clickteam",
+		"Website": "http://www.clickteam.com",
+		"Comment": "Composant du module d'exportation Android. Fournit des fonctionnalités spéciales sur appareils Android.",
+		"URL": "http://www.clickteam.com",
+		"Help": "Android.chm",
+		"Identifier": "AndR",
+	},
+
+	"ActionMenu":
+	[
+		["Log",
+        
+			[0, "Log debug"],
+			[1, "Log erreur"],
+			[2, "Log info"],
+			[3, "Log verbose"],
+			[4, "Log warning"],
+
+			"Separator",
+        
+			[5, "Fixer tag log (défaut = titre application)"],
+		],
+    
+		"Separator",
+    
+		["Interdiction mise en veille",   
+			[6, "Démarrer"],
+			[7, "Arrêter"],
+		],
+    
+		[10, "Ouvrir URL"],
+
+        ["Intention (sortante)",
+
+            [15, "Ajouter catégorie"],
+
+            ["Ajouter donnée supplémentaire",
+                [16, "Chaîne"],
+                [17, "Booléen"],
+                [18, "Entier long"]
+            ],
+
+            "Separator",
+
+			[11, "Démarrer intention"],
+            [21, "Démarrer intention avec sélecteur"]
+        ],
+
+        ["Intention (entrante)",
+
+            [19, "Recevoir notifications pour action"],
+            [20, "Ne plus recevoir notifications pour action"],
+        ],
+
+        "Separator",
+
+        [13, "Montrer clavier"],
+        [14, "Cacher clavier"],
+
+        "Separator",
+
+        [12, "Vibrer"],
+
+        "Separator",
+
+        [22, "Activer entrée du menu Options"],
+        [23, "Désactiver entrée du menu Options"],
+        [29, "Ouvrir menu avec une action"],
+			
+        "Separator",
+
+        [24, "Montrer barre Action/Titre"],
+        [25, "Cacher barre Action/Titre"],
+        
+		"Separator",
+
+        [33, "Montrer barre Navigation"],
+        [34, "Réduire barre Navigation"],
+        [35, "Cacher barre Navigation"],
+
+        "Separator",
+
+        [30, "Désactiver touches matérielles"],
+        [31, "Activer touches matérielles"],
+
+        "Separator",
+
+        [32, "Passer application en arrière-plan"],
+
+        "Separator",
+
+        [26, "Forcer mode paysage"],
+        [27, "Forcer mode portrait"],
+		
+       "Separator",
+
+        [28, "Enregistrer capture écran"]
+			
+    ],
+
+	"ConditionMenu":
+	[
+	   [0, "L'appareil a un GPU?"],
+   
+	   "Separator",
+   
+       [1, "Utilisateur en itinérance?"],
+       [3, "Connecté au réseau?"],
+       [14, "Bluetooth activé?"],
+
+       "Separator",
+            
+       [13, "L'appareil est rooté?"],
+
+       ["L'appareil est branché?",
+           [4, "A toute source de courant"],
+            
+           "Separator",
+            
+           [5, "A un adaptateur"],
+           [6, "A un port USB"],
+       ],
+        
+       [7, "La batterie est en train de se recharger"],
+       [8, "La batterie est en train de se décharger"],
+       [9, "La batterie est entièrement chargée"],
+
+       "Separator",
+
+       [18, "Intention entrante"],
+       [19, "Toute intention entrante"],
+
+       "Separator",
+
+       [10, "Le bouton Retour a été pressé"],
+       [12, "Le bouton Menu a été pressé"],
+
+       "Separator",
+
+       [15, "Le bouton Retour est appuyé?"],
+       [16, "Le bouton Menu est appuyé?"],
+
+       "Separator",
+
+       [17, "Lire état bouton"],
+
+       "Separator",
+
+       [20, "Une entrée du menu options a été sélectionnée"],
+       [21, "N'importe quelle entrée du menu options a été sélectionnée"],
+	   
+       "Separator",
+
+       [22, "Le clavier indiquées"],
+       [23, "Le clavier caché"],
+       [24, "Est-clavier Visible"]
+	   
+	   
+	],
+
+	"ExpressionMenu":
+	[
+	   [0, "Nom du GPU"],
+	   [1, "Marque du GPU"],
+   
+	   "Separator",
+   
+	   [2, "ID unique du téléphone"],
+	   [3, "Nom de l'opérateur réseau"],
+	   [11, "ID unique de l'appareil"],
+
+       "Separator",
+
+	   [6, "Pourcentage de charge de la batterie"],
+        
+	   "Separator",
+        
+	   [7, "Largeur écran"],
+	   [8, "Hauteur écran"],
+	   [17, "Type de rendu"],
+	   [16, "Hauteur publicité"],
+
+	   "Separator",
+        
+	   [9, "Répertoire de stockage de données"],
+	   [10, "Répertoire temporaire"],
+	   [13, "Répertoire de stockage externe"],
+
+	   "Separator",
+
+	   ["Runtime",
+            [15, "Version du runtime"],
+
+            "Separator",
+
+			[5, "Titre de l'application"],
+			[12, "Nom de package de l'application"],
+            [14, "Version de l'application"]
+	   ],
+
+       ["Intention (entrante)",
+            [18, "Action"],
+            [19, "Donnée"],
+            "Separator",
+            ["Donnée supplémentaire (par clef)",
+                [20, "Chaîne"],
+                [21, "Booléen"],
+                [22, "Entier long"]
+            ]
+       ],
+
+       "Separator",
+
+       [23, "Entrée sélectionnée du menu options"],
+
+       ["Infos appareil",
+            [24, "Numéro API Android"],
+
+            "Separator",
+
+            [25, "Fabricant"],
+            [26, "Modèle"],
+            [27, "Produit"]
+       ]	   
+  	],
+
+	"Actions":
+	[
+		{ "Title": "Log debug : %0",
+		  "Parameters": [["Text", "Texte log"]] },
+		{ "Title": "Log error : %0",
+		  "Parameters": [["Text", "Texte log"]] },
+		{ "Title": "Log info : %0",
+		  "Parameters": [["Text", "Texte log"]] },
+		{ "Title": "Log verbose : %0",
+		  "Parameters": [["Text", "Texte log"]] },
+		{ "Title": "Log warning : %0",
+		  "Parameters": [["Text", "Texte log"]] },
+
+		{ "Title": "Fixer tag log à %0",
+		  "Parameters": [["Text", "Tag log (défault = titre application)"]] },
+      
+		{ "Title": "Démarrer interdiction mise en veille" },
+		{ "Title": "Stopper interdiction mise en veille" },
+    
+		{ "Title": "Cacher barre d'état" },
+		{ "Title": "Montrer barre d'état" },
+    
+		{ "Title": "Ouvrir URL %0",
+		  "Parameters": [["Text", "URL à ouvrir"]] },
+      
+		{ "Title": "Démarrer intention %0 avec URI %1",
+		  "Parameters": [["Text", "Intention à démarrer (ex. \"android.intent.action.DIAL\")"],
+						["Text", "URI (ex. \"tel:123\")"]] },
+
+        {"Title": "Vibrer pendant %0 millisecondes",
+            "Parameters": [["Integer", "Durée (millisecondes)"]]
+        },
+
+        { "Title": "Montrer clavier" },
+        { "Title": "Cacher clavier" },
+
+        { "Title": "Intention (sortante): Ajouter catégorie %0",
+          "Parameters": [["Text", "Nom catégorie"]]
+        },
+
+        { "Title": "Intention (sortante): Ajouter chaîne supplémentaire %0 = %1",
+          "Parameters": [["Text", "Nom"], ["Text", "Valeur"]]
+        },
+
+        { "Title": "Intention (sortante): Ajouter booléen supplémentaire %0 = %1",
+          "Parameters": [["Text", "Nom"], ["Integer", "Valeur (1 = vrai, 0 = faux)"]]
+        },
+
+        { "Title": "Intention (sortante): Add extra long %0 = %1",
+          "Parameters": [["Text", "Nom"], ["Integer", "Valeur"]]
+        },
+
+        { "Title": "Intention (entrante): Recevoir notifications pour action %0",
+          "Parameters": [["Text", "Action"]]
+        },
+
+        { "Title": "Intention (entrante): Ne plus recevoir notifications pour action %0",
+          "Parameters": [["Text", "Action"]]
+        },
+
+        { "Title": "Intention (sortante): Démarrer intention %0 avec URI %1 (sélecteur, titre: %2)",
+          "Parameters": [["Text", "Intention à démarrer (ex. \"android.intent.action.DIAL\")"],
+                        ["Text", "URI (ex. \"tel:123\")"],
+                        ["Text", "Titre sélecteur"]] },
+
+        { "Title": "Activer entrée %0 du menu Options",
+          "Parameters": [["Text", "ID entrée menu"]]
+        },
+
+        { "Title": "Désactiver entrée %0 du menu Options",
+          "Parameters": [["Text", "ID entrée menu"]]
+        },
+
+        { "Title": "Montrer barre action/titre" },
+        { "Title": "Cacher barre action/titre" },
+		
+        { "Title": "Forcer mode paysage" },
+        { "Title": "Forcer mode portrait" },
+		
+        { "Title": "Enregistrer capture écran dans fichier %0",
+          "Parameters": [["Text", "Nom du fichier"]] },
+		  
+        { "Title": "Ouvrir menu avec une action" },
+		
+        { "Title": "Désactiver touches matérielles" },
+        { "Title": "Activer touches matérielles" },
+
+        { "Title": "Passer application en arrière-plan" },
+		
+        { "Title": "Montrer barre Navigation" },
+        { "Title": "Réduire barre Navigation" },
+        { "Title": "Cacher barre Navigation" }
+
+	],
+
+	"Conditions":
+	[
+		{   "Title": "%o : L'appareil a un GPU",
+			"Triggered": false,
+		},
+		{   "Title": "%o : Utilisateur en itinérance",
+			"Triggered": false,
+		},
+		{   "Title": "%o : Exception déclenchée",
+			"Triggered": true,
+		},
+		{   "Title": "%o : Connecté au réseau?",
+			"Triggered": false,
+		},
+		{   "Title": "%o : Connecté à une source de courant",
+			"Triggered": false,
+		},
+		{   "Title": "%o : Connecté à un adaptateur",
+			"Triggered": false,
+		},
+		{   "Title": "%o : Connecté à un port USB",
+			"Triggered": false,
+		},
+		{   "Title": "%o : La batterie est en charge",
+			"Triggered": false,
+		},
+		{   "Title": "%o : La batterie se décharge",
+			"Triggered": false,
+		},
+		{   "Title": "%o : La batterie est pleine",
+			"Triggered": false,
+		},
+		{   "Title": "%o : Le bouton Retour est appuyé",
+			"Triggered": true,
+		},
+		{   "Title": "%o : Le bouton Accueil est appuyé",
+			"Triggered": true,
+		},
+		{   "Title": "%o : Le bouton Menu est appuyé",
+			"Triggered": true,
+		},
+        {   "Title": "%o : L'appareil est rooté?",
+            "Triggered": false,
+        },
+        {   "Title": "%o : Bluetooth activé?",
+            "Triggered": false,
+        },
+		{   "Title": "%o : Le bouton Retour est appuyé?",
+            "Triggered": false,
+        },
+		{   "Title": "%o : Le bouton Menu est appuyé?",
+            "Triggered": false,
+        },
+        {   "Title": "%o : Le bouton %0 est appuyé?",
+            "Triggered": false,
+            "Parameters": [["Integer", "Code touche"]]
+        },
+        {   "Title": "%o : intention entrante pour action %0",
+            "Triggered": true,
+            "Parameters": [["Text", "Action"]]
+        },
+        {   "Title": "%o : toute intention entrante",
+            "Triggered": true
+        },
+        {   "Title": "%o : l'entrée %0 du menu options a été sélectionnée",
+            "Triggered": true,
+            "Parameters": [["Text", "ID entrée menu"]]
+        },
+        {   "Title": "%o : n'importe quelle entrée du menu options a été sélectionnée",
+            "Triggered": true
+        },
+        {   "Title": "%o : Le clavier indiquées",
+            "Triggered": true
+        },
+        {   "Title": "%o : Le clavier caché",
+            "Triggered": true
+        },
+        {   "Title": "%o : Est-clavier Visible",
+            "Triggered": false
+        }
+	],
+
+	"Expressions":
+	[
+		{   "Title": "GPU_Name$(",
+			"Returns": "Text"
+		},
+		{   "Title": "GPU_Vendor$(",
+			"Returns": "Text"
+		},
+		{   "Title": "PhoneID$(",
+			"Returns": "Text"
+		},
+		{   "Title": "Operator$(",
+			"Returns": "Text"
+		},
+		{   "Title": "StackTrace$(",
+			"Returns": "Text"
+		},
+		{   "Title": "AppTitle$(",
+			"Returns": "Text"
+		},
+		{   "Title": "BatteryPercentage(",
+			"Returns": "Integer"
+		},
+		{   "Title": "ScreenWidth(",
+			"Returns": "Integer"
+		},
+		{   "Title": "ScreenHeight(",
+			"Returns": "Integer"
+		},
+		{   "Title": "DataStorageDirectory$(",
+			"Returns": "Text"
+		},
+		{   "Title": "TempPath$(",
+			"Returns": "Text"
+		},
+		{   "Title": "DeviceID$(",
+			"Returns": "Text"
+		},
+		{   "Title": "PackageName$(",
+			"Returns": "Text"
+		},
+		{   "Title": "ExternalStorageDirectory$(",
+			"Returns": "Text"
+		},
+        {   "Title": "AppVersion$(",
+            "Returns": "Text"
+        },
+        {   "Title": "RuntimeVersion$(",
+            "Returns": "Text"
+        },
+        {   "Title": "AdHeight(",
+            "Returns": "Integer"
+        },
+        {   "Title": "Renderer$(",
+            "Returns": "Text"
+        },
+        {   "Title": "IntentAction$(",
+            "Returns": "Text"
+        },
+        {   "Title": "IntentData$(",
+            "Returns": "Text"
+        },
+        {   "Title": "IntentExtra_String$(",
+            "Returns": "Text"
+        },
+        {   "Title": "IntentExtra_Boolean(",
+            "Returns": "Integer"
+        },
+        {   "Title": "IntentExtra_Long(",
+            "Returns": "Integer"
+        },
+        {   "Title": "MenuItem$(",
+            "Returns": "Text"
+        },
+        {   "Title": "DeviceApiVersion(",
+            "Returns": "Integer"
+        },
+        {   "Title": "Manufacturer$(",
+            "Returns": "Text"
+        },
+        {   "Title": "Model$(",
+            "Returns": "Text"
+        },
+        {   "Title": "Product$(",
+            "Returns": "Text"
+        }
+	]
+}
+
+

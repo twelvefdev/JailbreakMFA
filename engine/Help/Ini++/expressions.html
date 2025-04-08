@@ -1,0 +1,325 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ini++ Documentation</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta name="copyright" content="Copyright 2007-2008 Jack Webster - All rights reserved" />
+		<meta name="author" content="Olivier Behr - www.oliverpearl.com" />
+	</head>
+<body>
+
+<h1>Expressions</h1>
+
+Main Menu</br>
+<div style="margin-left: 40px">
+<a href="#getitemvalue">Get Item Value</a></br>
+<a href="#getitemstring">Get Item String</a></br>
+<a href="#getxposition">Get X Position</a></br>
+<a href="#getyposition">Get Y Position</a></br>
+<a href="#getiniasstring">Get Ini as String</a></br>
+<a href="#getiniascsvstring">Get Ini as CSV String</a>
+</div>
+</br>Current Group
+</br>
+</br>List Groups and Items
+<div style="margin-left: 40px">
+<a href="#getnthgroupname">Get N-th Group Name</a></br>
+<a href="#getnthitemname">Get N-th Item Name</a></br>
+<a href="#getnthitemstring">Get N-th Item String</a></br>
+<a href="#getnthitemvalue">Get N-th Item Value</a></br>
+<a href="#getnthsorteditemname">Get N-th Sorted Item Name</a></br>
+<a href="#getnthsorteditemvalue">Get N-th Sorted Item Value</a></br>
+<a href="#getnthitemused">Get N-th Item used in any group</a>
+</div>
+</br>Counting and Calculations
+<div style="margin-left: 40px">
+<a href="#getgroupcount">Get Group Count</a></br>
+<a href="#getitemcount">Get Item Count</a></br>
+<a href="#gettotalitemcount">Get Total Item Count</a></br>
+<a href="#getuniqueitemnames">Get number of unique item names</a></br>
+<a href="#performcalculations">Perform Calculations</a></br>
+<a href="#findmaxmingroup">Find Max or Min Group</a>
+</div>
+</br>Search Results
+<div style="margin-left: 40px">
+<a href="#numberofsearchresults">Number of Search Results</a></br>
+<a href="#getnthsearchresultgroup">Get N-th Search Result Group</a></br>
+<a href="#getnthsearchresultitemname">Get N-th Search Result Item Name</a></br>
+<a href="#getnthsearchresultitemvalue">Get N-th Search Result Item Value</a></br>
+<a href="#getnthsearchresultitemstring">Get N-th Search Result Item String</a></br>
+<a href="#getnthsearchresultpath">Get N-th Search Result Path</a>
+</div>
+</br>Extra Functions
+<div style="margin-left: 40px">
+<a href="#hashstring">Hash String</a></br>
+<a href="#escapestring">Escape String</a></br>
+<a href="#unescapestring">Unescape String</a>
+</div>
+<p></p>
+
+
+</br>
+<h2>Main Menu</h2>
+<a id="getitemvalue"></a><h4>Get Item Value</h4>
+<p>Gets the value corresponding to a particular item as a number. This number 
+will be an integer if it can be, but otherwise a floating point number. The 
+first parameter is the group name, the second parameter is the item name 
+and the final parameter is the default value.</br>
+</br>
+In the event that the item does not exist, the default value is used. The 
+default value is always returned as a float.</p>
+<a id="getitemstring"></a><h4>Get Item String</h4>
+<p>Gets the value corresponding to a particular item as a string. The first 
+parameter is the group name, the second is the item name and the final 
+parameter is the default value. In the case that the item does not exist, the 
+default value is used.</br>
+</br>
+The string might not be returned in exactly the same manor that it is scored 
+in the file. For instance, escape characters will be replaced with the characters 
+they represent and quotes may be removed.</p>
+<a id="getxposition"></a><h4>Get X Position</h4>
+<p>The first and second parameters determine the group and item to read respectively. 
+This expression applies to items formatted in the manor “number1, 
+number2”. This expression returns, as an integer, ‘number1’. If it does 
+not exist, a default value of 0 is used.</p>
+<a id="getyposition"></a><h4>Get Y Position</h4>
+<p>The first and second parameters determine the group and item to read respectively. 
+This expression applies to items formatted in the manor “number1, 
+number2”. This expression returns, as an integer, ‘number2’. If it does 
+not exist, a default value of 0 is used.</p>
+<a id="getiniasstring"></a><h4>Get Ini as String</h4>
+<p>TThis action receives as a string the text which would be saved to file by the 
+‘Save’ command. Encryption and compression is not applied, however.</p>
+<a id="getiniascsvstring"></a><h4>Get Ini as CSV String</h4>
+<p>This action receives as a string the text which would be saved to file by the 
+‘Import/Export as CSV’ command.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Current Group</h2>
+<p>The expressions in this section are similar to those listed above, 
+but apply only to the current group.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>List Groups and Items</h2>
+<a id="getnthgroupname"></a><h4>Get N-th Group Name</h4>
+<p>This expression lists all the group names in the object in alphabetical order. 
+The parameter is which number group is to be returned. The first group is either 
+0 or 1 depending on the settings in the property pane.</br>
+</br>
+Use the ‘Get Group Count’ expression to find out how many groups there
+are. Any value of range will just return a blank string.</p>
+<a id="getnthitemname"></a><h4>Get N-th Item Name</h4>
+<p>This expression lists all the item names in the object in alphabetical order. 
+The first parameter specifies the group to look in and the second parameter is 
+which number item is to be returned. The first item is either 0 or 1 depending 
+on the settings in the property pane.</br>
+</br>
+Use the ‘Get Item Count’ expression to find out how many items there are 
+in a particular group. Any value of range will just return a blank string.</p>
+<a id="getnthitemstring"></a><h4>Get N-th Item String</h4>
+<p>This expression gives the value associated with the n-th item in a list, by the 
+ordering of th ‘Get N-th Item name’ expression (which orders by key name alphabetically).</br>
+</br>
+The first parameter specifies the group to look in and the second parameter is 
+which number item is to be returned. The first item is either 0 or 1 depending 
+on the settings in the property pane.</p>
+<a id="getnthitemvalue"></a><h4>Get N-th Item Value</h4>
+<p>This expression gives the value associated with the n-th item in a list, by the 
+ordering of th ‘Get N-th Item name’ expression (which orders by key name 
+alphabetically). The value is converting to a number (integer if possible, 
+otherwise floating point).</br>
+</br>
+The first parameter specifies the group to look in and the second parameter is 
+which number item is to be returned. The first item is either 0 or 1 depending 
+on the settings in the property pane.</p>
+<a id="getnthsorteditemname"></a><h4>Get N-th Sorted Item Name</h4>
+<p>This action is as ‘Get N-th Item name’, but the ordering is alphabetical on 
+the values, not on the item names.</br>
+</br>
+The first parameter specifies the group to look in and the second parameter is 
+which number item is to be returned. The first item is either 0 or 1 depending 
+on the settings in the property pane.</br>
+</br>
+Use the ‘Get Item Count’ expression to find out how many items there are 
+in a particular group. Any value of range will just return a blank string.</p>
+<a id="getnthsorteditemvalue"></a><h4>Get N-th Sorted Item Value</h4>
+<p>This action is as ‘Get N-th Item value’, but the ordering is alphabetical on 
+the values, not on the item names. The value is returned as an integer if 
+possible but a floating point otherwise.</br>
+</br>
+The first parameter specifies the group to look in and the second parameter is 
+which number item is to be returned. The first item is either 0 or 1 depending 
+on the settings in the property pane.</br>
+</br>
+Use the ‘Get Item Count’ expression to find out how many items there are 
+in a particular group. Any value of range will just return a blank string.</p>
+<a id="getnthitemused"></a><h4>Get N-th Item used in any group</h4>
+<p>This expression allows all items to be iterated through, regardless of group. 
+It returns the item names. Items are not repeated.</br>
+</br>
+For instance, the Ini file:</p>
+<div class="code">Example Ini 23</br>
+</br>
+[group]</br>
+Bob = 1</br>
+Ted = 2</br>
+[group 2]</br>
+Bob = 12</br>
+John = 22
+</div>
+<p>Then the list would be: ‘Bob’, ‘Ted’, ‘John’.</br>
+</br>
+The ‘Get number of unique item names’ expression can be used to find out 
+how many item names there are. This expression respects the ‘1 based index’  
+option. A blank string is returned out of range.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Counting and Calculations</h2>
+<a id="getgroupcount"></a><h4>Get Group Count</h4>
+<p>Returns the number of groups in the object. This includes empty groups if 
+‘Allow empty groups’ is enabled.</p>
+<a id="getitemcount"></a><h4>Get Item Count</h4>
+<p>Returns the number of items in the specified group.</p>
+<a id="gettotalitemcount"></a><h4>Get Total Item Count</h4>
+<p>Returns the total number of items in any group (including items with the 
+same name but in different groups).</p>
+<a id="getuniqueitemnames"></a><h4>Get number of unique item names</h4>
+<p>Returns the number of unique item names in the object. Useful with the 
+‘Get N-th Item used in any group’ expression.</p>
+<a id="performcalculations"></a><h4>Perform Calculations</h4>
+<p>This expression is a bit more complicated than the others.</br>
+</br>
+The idea of the expression is to get data from the object by performing a 
+calculation on each group, and then performing a calculation to combine all 
+these numbers. For instance, we might find the average of every group and 
+then take the product of all those averages. (Why you might want to do that 
+is not obvious, but you can if you wish!)</br>
+</br>
+It is best shown by examples.</br>
+</br>
+For instance, suppose you had the following file (of Arsenal’s record against 
+various teams since the war):
+</p>
+<div class="code">Example Ini 24</br>
+</br>
+[Bradford City]</br>
+Win=10</br>
+Draw=5</br>
+Lose=9</br>
+</br>
+[Ajax]</br>
+Win=1</br>
+Draw=0</br>
+Lose=3</br>
+</br>
+[Barcelona]</br>
+Win=0</br>
+Draw=1</br>
+Lose=4</br>
+</br>
+[Wimbledon]</br>
+Win=13</br>
+Draw=8</br>
+Lost=7</br>
+</div>
+<p>Suppose we wish to know how many matches there have been in total against 
+these sides. This is easy with this expression. Setting the second parameter 
+to ‘+’ will cause each group to be added up. Then we have the following 
+values associated with each group: Bradford City, 24; Ajax: 4; Barcelona: 5; 
+Wimbledon: 28. We obviously wish these values to be added up, so for the 
+first parameter we choose ‘+’ and then the expression returns 24+4+5+28 = 61.</br>
+</br>
+Now instead, suppose we wish to know the total number of games draw 
+against each of these teams. To do that we just want to pick out the draws, 
+so for the second parameter we just write ‘Draw’. We then have the following 
+values associated with each group: Bradford City, 5; Ajax: 0; Barcelona: 
+1; Wimbledon: 8. For the first parameter we write ‘+’ again, and so the 
+expression returns 14.</br>
+</br>
+If you just wanted to sum the number of games against Ajax, you can write 
+‘Ajax’ for the first parameter and ‘+’ for the second parameter. It will then 
+return 4.</br>
+</br>
+The full table of operators are:</p>
+<div style="width:660px; height:130px;">
+<div style="float:left; text-align:right; width:80px">
++</br>
+*</br>
+avg <em>or</em> &#126;</br>
+Min <em>or</em> \</br>
+Max <em>or</em> /</br>
+n</br>
+iavg</br>
+<em>Group name</em></br>
+<em>Item name</em>
+</div>
+<div style="text-align:left; margin-left:90px; width:560px">
+Sum</br>
+Product</br>
+Average</br>
+Minimum</br>
+Maximum</br>
+Number of items in the group <span class="small">(for second parameter only)</span></br>
+&nbsp;<span class="small">Sums and then divides by the total number of items (for first parameter only)</span></br>
+&nbsp;<span class="small">Receives the value associated with the group of this name (for first parameter only)</span></br>
+&nbsp;<span class="small">Associates with the group the value of the item with this name (for second parameter only)</span>
+</div>
+</div>
+<p>The following are some general examples:</p>
+<ul>
+<li>‘Avg’ as the first parameter and ‘Max’ for the second parameter will
+return the average highest value in a group.</li>
+<li>‘Max’ as the first parameter and ‘n’ for the second parameter will return
+the size of the largest group (in terms of number of items the group
+contains).</li>
+<li>‘iAvg’ as the first parameter and ‘+’ for the second parameter will return
+the average value of an item in the Ini++ object. (This is because
+it sums up everything and then divides by the number of items.)</li>
+</ul>
+<a id="findmaxmingroup"></a><h4>Find Max or Min Group</h4>
+<p>This expression works very similarly to “Perform Calculations”. The items 
+in each group are combined according to the second parameter, which may 
+be any of the operators which were valid for the “Perform Calculations” 
+expression. However, instead of combining these group values together, this 
+expression returns the name of the group associated with either the maximum 
+or minimum value. Therefore the first parameter may be only ‘Max’ or ‘Min’.</br>
+</br>
+In the example from the “Perform Calculations” section, we could use this 
+expression with first parameter ‘Max’ and second parameter ‘Win’ to find 
+out the name of the team Arsenal had beaten the most (Wimbledon).</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Search Results</h2>
+<a id="numberofsearchresults"></a><h4>Number of Search Results</h4>
+<p>This expression returns the number of search results.</p>
+<a id="getnthsearchresultgroup"></a><h4>Get N-th Search Result Group</h4>
+<p>This expression returns the group name of the nth search result.</p>
+<a id="getnthsearchresultitemname"></a><h4>Get N-th Search Result Item Name</h4>
+<p>This expression returns the item name of the nth search result.</p>
+<a id="getnthsearchresultitemvalue"></a><h4>Get N-th Search Result Item Value</h4>
+<p>This expression returns the value of the nth search result, converted to a number.</p>
+<a id="getnthsearchresultitemstring"></a><h4>IGet N-th Search Result Item String</h4>
+<p>This expression returns the value of the nth search result.</p>
+<a id="getnthsearchresultpath"></a><h4>Get N-th Search Result Path</h4>
+<p>This expression returns a string which is the group name, followed by the 
+separator character, followed by the item name.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Extra Functions</h2>
+<a id="hashstring"></a><h4>Hash String</h4>
+<p>Returns the hash of the specified string.</p>
+<a id="escapestring"></a><h4>Escape String</h4>
+<p>This expression replaces ‘\’ with ‘\\’, quotes with ‘\q’, tabs with ‘\t’ and 
+newlines with ‘\n’. Newlines are whatever the new line character is in the object settings.</p>
+<a id="unescapestring"></a><h4>Unescape String</h4>
+<p>This expression replaces ‘\\’ with ‘\’, ‘\q’ with quotes, ‘\t’ with tabs, ‘\n’ 
+with newlines and ‘\ ’ with spaces.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</body>
+</html>

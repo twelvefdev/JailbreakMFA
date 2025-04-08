@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>ByteArray</TITLE>
+</HEAD>
+<BODY BGColor="#909090">
+<TABLE BGColor="#B0B0B0">
+<TR>
+	<TD><TABLE>
+<TR>
+	<TD BGColor="#D0D0D0"><FONT SIZE="6" COLOR="#303030" face="Arial">What does it do? How does it work?</FONT><BR><BR>
+<FONT SIZE="3" COLOR="#303030" face="Arial">ByteArray is a 1D array, that can be easily used as 2D or 3D too, that stores values from 0-255 (unsigned byte). The extension saves the loads files in a simple format, the values comes byte after byte, without extra unneeded values.</FONT></TD>
+</TR>
+<TR>
+	<TD BGColor="#D0D0D0"><FONT SIZE="6" COLOR="#303030" face="Arial">Actions</FONT><BR><BR>
+<FONT SIZE="3" COLOR="#303030" face="Arial">Set Byte (Location,Value) Sets the byte at Location to Value.<BR>
+Save to (File) Saves the array to File in the format state above.<BR>
+Load from (File) Loads an array from ANY File. The array will be resized.<BR>
+Resize to (Size) Resizes the array to Size. If resized to smalled some data will be lost.<BR>
+Values used in calculations-> Set X size (Size) Used in F2Dto1D and F3Dto1D, which is used in 2D and 3D arrays.<BR>
+Values used in calculations-> Set Y size (Size) Used in F3Dto1D, which is used in 3D arrays.<BR>
+</FONT></TD></TR><TR>
+<TD BGColor="#D0D0D0"><FONT SIZE="6" COLOR="#303030" face="Arial">Expression</FONT><BR><BR>
+<FONT SIZE="3" COLOR="#303030" face="Arial">Get Byte at(Location) Get the byte at Location.<BR>
+Useful Calculations-> Convert a 2D position to 1D position (X,Y) Convert X and Y to singal value for usage in 2D arrays. X Size need to be defined.<BR>
+Useful Calculations-> Convert a 2D position to 1D position (X,Y,Z) Convert X, Y and Z to singal value for usage in 3D arrays. X and Y Size need to be defined.<BR>
+</FONT></TD>
+</TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

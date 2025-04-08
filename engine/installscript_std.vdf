@@ -1,0 +1,46 @@
+"InstallScript"
+{
+	"Registry"
+	{
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Clickteam\\Fusion 2.5\\Settings"
+		{
+			"string"
+			{
+				"InstallPath"		"%INSTALLDIR%"
+			}
+		}
+		"HKEY_CLASSES_ROOT\\.mfa"
+		{
+			"string"
+			{
+				"(Default)"		"MMF2.Document"
+			}
+		}
+		"HKEY_CLASSES_ROOT\\MMF2.Document\\Defaulticon"
+		{
+			"string"
+			{
+				"(Default)"		"\"%INSTALLDIR%\\mmf2u.exe\",1"
+			}
+		}
+		"HKEY_CLASSES_ROOT\\MMF2.Document\\shell\\open\\command"
+		{
+			"string"
+			{
+				"(Default)"		"\"%INSTALLDIR%\\mmf2u.exe\" \"%1\""
+			}
+		}
+	}
+	"Run Process On Uninstall"
+	{
+		"Untool"
+		{
+			"process 1"		"%INSTALLDIR%\\Data\\Untool.exe"
+			"command 1"		"/MMF"
+		}
+	}
+}
+"kvsignatures"
+{
+	"InstallScript"		"8caf9b1decb47c1811b27c4b1d5ae9ed4faae1de2daa84f1a967f5299aee17897f66d93db39f76d0616a9adf1e6a06d5ee2c1dd22a976ef48a5d6d6c0b5762cb240ecc213cd9148c2e7528afa3b8d2e21bac40629b64bfe4fb08b42c956982ace1ba8be1af9af7453134ac46ab654262fe557c5165e4893791f86c38e7d7ea7c"
+}

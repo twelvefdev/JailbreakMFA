@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="../general.css" type="text/css" />
+
+
+
+<h2>Mark brick as used</h2>
+<hr>
+This action is only useful if you use more search for connected features of AGBO just after each other.
+If you for example search for both horizontal and vertical connected lines and your game would come across something like this:
+
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+</table>
+
+If you then put a brick in the middle of the cross so it looks like this:
+
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+</table>
+
+
+
+
+Try imagine what would happen if you first search for horizontal and then vertical connected bricks. If you delete the bricks as they are found, you would end up with this board because you search for horizontal lines first.
+
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+</table>
+
+This is where the idea of "Mark brick as used" comes in handy. That way you can tell AGBO that you allready used that brick in an older search. You don't have to delete the bricks as you can use the "Delete marked bricks" later. Marking bricks is also usefull because it makes AGBO ignore them when you loop though them. Else you would get the same brick twice in the example above, as the middle brick is part of both connected systems.<br /><br />
+
+This is the manual way of marking bricks. Here you give an X and Y coordinate and it marks the bricks.
+In the "On found connected/brick" submenu, there are two actions to mark bricks as well. <a href="markallconnected.html">Mark all connected as used</a> and <a href="markcurrentbrick.html">Mark current brick as used.</a>
+
+
+</body>
+</html>

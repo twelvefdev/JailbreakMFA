@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>MoveIt</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="general.css" type="text/css" />
+
+
+
+<h1>MoveIt</h1>
+<hr />
+
+<p>
+MoveIt object is a really simple object which only purpose is.... to move objects!
+</p>
+
+<p>
+Add all the objects you like to MoveIt's queue and then you can make all those objects in the queue move to a position you tell the object. You can chose to either move to the location with a given speed or over a given time.
+</p>
+
+<p>
+There is a bug in MMF's engine when you select an object. This means that if you add multiple objects to the MoveIt queue and uses a "Move objects in queue" action (in the same event) it will only move the first created object. To avoid this bug you should never have an "Add objects to queue" action in the same event as "Move objects in queue" actions. You need to put those in seperate events.
+</p>
+
+
+</body>
+</html>

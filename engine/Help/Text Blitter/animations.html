@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<title>Text Blitter Documentation</title>
+<style type="text/css">
+@import url(default.css);
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<a name="top"></a>
+<h2>Animations</h2>
+
+<h4><b>Table</b></h4>
+<p>
+<a href="#intro">Animation introduction</a><br>
+<a href="#none">None</a><br>
+<a href="#marquee">Marquee</a><br>
+<a href="#sinwave">Sin Wave</a><br>
+<a href="#sinscroll">Sin/Cos/Tan Scroller</a><br>
+</p>
+
+
+<a name="intro"></a><h4><b>Animation introduction</b></h4>
+<p>The Text Blitter includes special animation sets that allow you to quickly and easily bring your text to life.</p>
+
+<p>The Extension contains 16 internal parameters which are used for both animation options and saving temporary animation information. Because the extension gives you the ability to alter the parameter information you can alter how the animation plays or take full control over the different parameters.</p>
+
+<p>Because each animation is displayed differently, each uses the parameters in different ways. Below explains what each animation does and the parameters used.</p>
+
+<p>The parameter 0, is used for options throughout the animation settings. Currently it is only used for the fade effect on the marquee, but will be used for future animations</p>
+
+<a name="none"></a><h4><b>None</b></h4>
+<p>When no animation is selected, the extension will display the text using the alignment information. No parameters are taken into account</p>
+
+<a name="marquee"></a><h4><b>Marquee</b></h4>
+<p>The marquee animation is one of the most powerful animations within the extension. It gives you the ability to manually or automatically scroll the text (can be multilined) around the object.</p>
+
+<p>In the animation setup dialog, when Marquee is selected you will find an option labeled <i>Vertical Edge Fade</i> which fades the text in and out as it leaves and enters the object when scrolled. The object will fade text as it is scrolled up or down. The speed of the fade is determined by the gap between the margin and the edge of the object.<br>Note, this option only affects text on the vertical axis. </p><p>
+When the option is enabled, the area outside the margin is used to fade the text. All text that appears inside the margin will appear as normal (unless a transparency value is set in the ink effects dialog). When <i>Vertical Edge Fade</i> is enabled all other ink effects are disabled</p>
+
+<img src="./img/vefade.gif">
+
+<blockquote>
+<p>
+0: Fade effect option - 0x000001 (1 - on, 0 - off)<br>
+1: X Speed<br>
+2: Y Speed<br>
+<br>
+3: X Offset - Override this value to change the x position in the scroll<br>
+4: Y Offset - Override this value to change the y position in the scroll<br>
+</p>
+</blockquote>
+
+<a name="sinwave"></a><h4><b>Sin Wave</b></h4>
+<p>The Sin Wave animation waves up and down as parameter 5 is changed. The position of the text is not changed</p>
+
+<blockquote>
+<p>
+1: Sin wave frequency<br>
+2: Sin wave amplitude (height)<br>
+3: <i>Reserved, do not change</i><br>
+4: <i>Reserved, do not change</i><br>
+5: X Offset - Override this value to change the value of the wave<br>
+</p>
+</blockquote>
+
+
+<a name="sinscroll"></a><h4><b>Sin/Cos/Tan Scroller</b></h4>
+<p>These animations scroll the text along the specific graph of either sin, cos or tan. All 3 animations use the same parameters and work in exactly the same way</p>
+
+<blockquote>
+<p>
+1: X Scroll Speed<br>
+2: Sin wave frequency<br>
+3: Sin wave amplitude (height)<br>
+4: <i>Reserved, do not change</i><br>
+5: X Offset - Override this value to change the x position in the scroll<br>
+</p>
+</blockquote>
+
+
+<p>When setting up the animations it is best to play around with the different parameters until you feel comfortable with the result. Included in the examples is a special animation demo which includes all the features to play with the parameters in real-time and see the result.</p>
+
+<p>The extension has been developed to allow near infinite amount of different animation types so you can expect new animations to appear in later versions of Text Blitter</p>
+
+<p>
+<br>
+<br>
+Content and Design are Copyright (c) 2001-2002 Christopher Lightfoot. All rights reserved.
+</p>
+
+</body>
+
+</html>

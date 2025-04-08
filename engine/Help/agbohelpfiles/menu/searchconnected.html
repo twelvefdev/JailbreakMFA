@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="../general.css" type="text/css" />
+
+
+
+<h2>Connected</h2>
+<hr>
+
+This action searches is slight more complex than the other search modes. This action searches for complex shapes of connected bricks as you might know them from Brix games or 'Break through' games where you click on a brick, and if its connected with 3 or more bricks, they dissapear.
+To search the board for this, you need to give AGBO a starting location from where it will be searching. There is no need to give it a bricktype to search for as the type AGBO will search for, is the brick at the location you give it.
+<br />
+<br />
+<b>Parameters:</b><br />
+X
+<br />
+Y
+<br />
+<br />
+
+When you start a search, its like starting a fastloop. AGBO will trigger a condition similar to an "on loop" condition when it finds a system of connected bricks. Here AGBO triggers this condition:
+<div class="event">On found connected</div>
+
+You can then through expressions get how many bricks was found in the current system. "On found connected" will keep trigger untill it has been through all systems it has found. <br />
+<br />
+Tip: use the action "Loop through found bricks" when "On found connected" is triggered and use the condition "On found brick" to get each bricks in the systems it finds.
+
+
+</body>
+</html>

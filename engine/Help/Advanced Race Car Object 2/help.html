@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>ARCO 2</title>
+ </head>
+ <body>
+<h1>Uh? What's ARCO 2?
+</h1>
+<p>ARCO stands for Advanced Race Car Object. It makes a 360 degrees car movement with accelartion, decelartion and other cool features. ARCO 2 is "safe" and flexible and can have unlimted movement types like a normal race car or a space ship.
+</p>
+<h1>Actions
+</h1><h2>Settings</h2>
+<h3 id="t1">Set speed
+</h3>
+<p>ARCO 2's speed is pixels per frame. The first parameter for this action smiply changes ARCO's maximum speed.
+</p><h3 id="t2">Set rotation speed</h3>
+
+<p>ARCO 2's rotation speed is in angles. for example, when the rotation speed is 3 the car will rotate in 3 deg' while doing the rotate action. (Actions->Rotation -> Rotate Right/Left) The first parameter for this action smiply changes ARCO's rotation speed.
+</p><h3 id="t3">Set acceleration</h3>
+
+<p>While Stepping forward or backward (Actions-> Step -> Step forward/backward) this value will be add to the current speed. The first parameter changes the accelartion amount, it can be a float. To have no accelartion use the max speed as the acceleration.
+</p><h3 id="t4">Set deceleration</h3>
+
+<p>While not Stepping forward or backward (Actions-> Step -> Step forward/backward) this value will be decreased from the current speed. The first parameter changes the deceleration amount, it can be a float. To have no deceleration use the max speed as the deceleration.
+</p><h3 id="t5">Select car object</h3>
+
+<p>ARCO 2 can move the X and Y postion of a selected object and its direction too instead of doing it by actions. However, this is not a must-to-do. The first parameter is the car object. To have no deceleration use the max speed as the dec.
+</p><h2>Step</h2>
+<h3 id="t6">Step forward
+</h3>
+<p>Step forward action raise the current speed to the max speed using the acceleration value. while not- it will be decreased by the deceleration value.
+</p><h3 id="t7">Step backward</h3>
+<p>Step backward action raise the current speed to the max speed. while not- it will be decreased by the deceleration value.
+</p><h2>Rotation</h2>
+<h3 id="t8">Rotate Right
+</h3>
+<p>Rotate the car right by the rotation speed value.
+</p><h3 id="t9">Rotate Left</h3>
+
+<p>Rotate the car left by the rotation speed value.
+</p><h2>Custom</h2>
+<h3 id="t10">Step in amount</h3>
+
+<p>Steps in the car angle but with a custom speed.
+</p><h3 id="t11">Rotate in amount</h3>
+
+<p>Rotates the car but with a custom rotation speed.
+</p><h3 id="t12">Set postion</h3>
+
+<p>Simply changes the car X and Y postion
+</p><h3 id="t13">Set angle</h3>
+
+<p>Simply changes the car angle
+</p><h3 id="t14">Set current speed</h3>
+<p>Sets the car current speed
+</p><h3 id="t15">Step in angle</h3>
+
+<p>Step in the car speed but with an other angle
+</p><h3 id="t16">Step in angle and amount</h3>
+
+<p>Step in an angle and a custom speed.
+</p><h2 id="t17">Stop</h2>
+
+<p>Set the current speed to 0.
+</p><h2 id="t18">Bounce</h2>
+
+<p>Bounce the car object to the other angle. The bouncing power can be a float.
+</p><h1>Expressions</h1>
+<h2 id="t19">Get car X
+</h2>
+<p>Returns the car X postion.
+</p><h2 id="t20">Get car Y</h2>
+
+<p>Returns the car Y postion.
+</p><h2 id="t21">Get car dir</h2>
+
+<p>Returns the car angle as an MMF dir.
+</p><h2 id="t22">Get car angle</h2>
+
+<p>Returns the car angle.
+</p><h2 id="t23">Get current speed</h2>
+
+<p>Returns the car current speed, may return a float.
+</p><h2>Settings</h2>
+<h3 id="t24">Get speed
+</h3>
+<p>Return the max speed that you set before.
+</p><h3 id="t25">Get rotation speed</h3>
+
+<p>Return the rotation speed that you set before.
+</p><h3 id="t26">Get acceleration</h3>
+
+<p>Return the acceleration that you set before.
+</p><h3 id="t27">Get deceleration</h3>
+
+<p>Return the deceleration speed that you set before.
+</p><h1>Conditions</h1>
+<h2 id="t28">Before move</h2>
+
+<p>Called every loop before the car moves.
+</p><h2 id="t29">After move</h2>
+
+<p>Called every loop after the car moves. 
+</p> </body>
+</html>

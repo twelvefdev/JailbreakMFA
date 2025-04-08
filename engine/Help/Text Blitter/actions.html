@@ -1,0 +1,530 @@
+<html>
+
+<head>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<title>Text Blitter Documentation</title>
+<style type="text/css">
+@import url(default.css);
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<a name="top"></a>
+<h2>Actions</h2>
+
+<p>Below is a quick and accessible reference of the Text Blitter actions. First select the menu under which your action appears, then select the appropriate item.</p>
+
+<h4><b>Table</b></h4>
+<p>
+<a href="#callback">Callback</a><br>
+<a href="#balloon">Balloon</a><br>
+-<br>
+<a href="#trans">Set Transparency</a><br>
+<a href="#textfunc">Set Text Functions</a><br>
+<a href="#wordwrap">Word Wrapping</a><br>
+<a href="#multiline">Multiline</a><br>
+-<br>
+<a href="#setobjpos">Set Object Position</a><br>
+<a href="#image">Image</a><br>
+<a href="#character">Characters</a><br>
+-<br>
+<a href="#text">Text</a><br>
+<a href="#alignment">Alignment</a><br>
+<a href="#margins">Margins</a><br>
+<a href="#scrolling">Scrolling</a><br>
+<a href="#animation">Animation</a><br>
+<a href="#color">Colour</a><br>
+-<br>
+<a href="#changetext">Change Alterable Text</a><br>
+<a href="#appendtext">Append Text</a><br>
+-<br>
+<a href="#balloon_send">Send Message</a><br>
+</p>
+
+<br>
+<br>
+
+<a name="callback"></a><h4><b>Callback</b></h4>
+
+<a href="#callback_beginline">Begin Line</a><br>
+<a href="#callback_character">Character</a><br>
+
+<blockquote>
+
+<a name="callback_beginline"></a><h4><b>Begin Line</b></h4>
+
+
+<p>Just before the 'begin line' callback is called, the blitter engine automaticaly resets itself. Any modifications made to the line are reset when the next callback is called.</p>
+
+<a href="#callback_beginline_x">X</a><br>
+<a href="#callback_beginline_y">Y</a><br>
+<a href="#callback_beginline_trans">Transparency</a><br>
+-<br>
+<a href="#callback_beginline_ox">Image X Offset</a><br>
+<a href="#callback_beginline_oy">Image Y Offset</a><br>
+
+
+<blockquote>
+<a name="callback_beginline_x"></a><h4><b>X</b></h4>
+<p>Changes the X coordinate of the line about to be drawn.</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_beginline_y"></a><h4><b>Y</b></h4>
+<p>Changes the Y coordinate of the line about to be drawn.</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_beginline_trans"></a><h4><b>Transparency</b></h4>
+<p>Changes the transparency of the line about to be drawn.</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_beginline_ox"></a><h4><b>Image X Offset</b></h4>
+<p>Change the X Offset of the line about to be drawn</p>
+<p>The X image offset is the x-coordinate on the character map image where the extension looks for the actual images to use for drawing.</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_beginline_oy"></a><h4><b>Image Y Offset</b></h4>
+<p>Change the Y Offset of the line about to be drawn</p>
+<p>The Y image offset is the y-coordinate on the character map image where the extension looks for the actual images to use for drawing.</p>
+</blockquote>
+
+</blockquote>
+
+<blockquote>
+<a name="callback_character"></a><h4><b>Character</b></h4>
+
+<p>Just before the 'character' callback is called, the blitter engine automaticaly resets all of the internal variables (that can be altered below) to the default values, that display the text correctly</p>
+
+
+<a href="#callback_character_x">Destination X</a><br>
+<a href="#callback_character_y">Destination Y</a><br>
+<a href="#callback_character_sx">Source X</a><br>
+<a href="#callback_character_sy">Source Y</a><br>
+<a href="#callback_character_cw">Character Width</a><br>
+<a href="#callback_character_ch">Character Height</a><br>
+<a href="#callback_character_trans">Transparency</a><br>
+<a href="#callback_character_c">Character</a><br>
+-<br>
+<a href="#callback_character_ox">Image X Offset</a><br>
+<a href="#callback_character_oy">Image Y Offset</a><br>
+
+<blockquote>
+<a name="callback_character_x"></a><h4><b>Destination X</b></h4>
+<p>The x-destination of the character is the x-coordinate at which the character will be drawn to the screen</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_y"></a><h4><b>Destination Y</b></h4>
+<p>The y-destination of the character is the y-coordinate at which the character will be drawn to the screen</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_sx"></a><h4><b>Source X</b></h4>
+<p>Similar to the 'Image Offset' actions, this action allows you to specificy the exact X coordinate on the character map, which the engine will use to draw the image.</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_sy"></a><h4><b>Source Y</b></h4>
+<p>Similar to the 'Image Offset' actions, this action allows you to specificy the exact Y coordinate on the character map, which the engine will use to draw the image.</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_cw"></a><h4><b>Character Width</b></h4>
+<p>Allowing to you create varied-width styled-fonts, this action allows you to change the width of the character about to be drawn, the engine will update to accomidate for this change</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_ch"></a><h4><b>Character Height</b></h4>
+<p>This action will not alter the line positioning of the extension as the line values are reset before each line callback, However, you can alter the size of the character to be drawn to the screen.</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_trans"></a><h4><b>Transparency</b></h4>
+<p>Changes the transparency of the character about to be drawn</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_c"></a><h4><b>Character</b></h4>
+<p>This action has a similar effect to the 'Source X' and 'Source Y' actions (above). This action changes the actual character that will be drawn to the screen. This action will override any other modiciations to the source values</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_ox"></a><h4><b>Image X Offset</b></h4>
+<p>Change the X Offset of the line about to be drawn</p>
+<p>The X image offset is the x-coordinate on the character map image where the extension looks for the actual images to use for drawing.</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_oy"></a><h4><b>Image Y Offset</b></h4>
+<p>Change the Y Offset of the line about to be drawn</p>
+<p>The Y image offset is the y-coordinate on the character map image where the extension looks for the actual images to use for drawing.</p>
+</blockquote>
+
+</blockquote>
+
+<a name="balloon"></a><h4><b>Balloon</b></h4>
+
+<a href="#balloon_off">Off</a><br>
+<a href="#balloon_on">Balloon</a><br>
+-<br>
+<a href="#balloon_src">Source</a><br>
+<a href="#balloon_size">Size</a><br>
+
+<blockquote>
+<a name="balloon_off"></a><h4><b>Off</b></h4>
+<p>Turns off the balloon</p>
+</blockquote>
+
+<blockquote>
+<a name="balloon_on"></a><h4><b>Balloon</b></h4>
+<p>Turns off the balloon</p>
+<p>1: X Position relative to frame<br>
+2: Y Position relative to frame<br>
+3: The handle to use, check out the Balloon Section for more info on the handle types<br>
+4: Flags, Also advanced, check out the Baloon section for more info.</p>
+</blockquote>
+
+<blockquote>
+<a name="balloon_src"></a><h4><b>Source</b></h4>
+<p>Sets the position within the character map to find the balloon images</p>
+<p>1: X Coordinate on Character map<br>
+2: Y Coordinate on Character map</p>
+</blockquote>
+
+<blockquote>
+<a name="balloon_size"></a><h4><b>Size</b></h4>
+<p>Change the minimum and maximum sizes of the balloon shape</p>
+<p>1: Minimum X size<br>
+2: Minimum Y size<br>
+3: Maximum X size<br>
+4: Maximum Y size</p>
+</blockquote>
+
+<a name="trans"></a><h4><b>Set Transparency</b></h4>
+<p>The transparency of the object alters how Multimedia Fusion draws the object in the frame. When transparency is turned on, the transparent colours selected on the image show as transparent and can be seen through. However, when transparency is turned off, the transparent areas appear as black on the screen.</p>
+
+<a name="textfunc"></a><h4><b>Set Text Functions</b></h4>
+<p>It is sometimes hard to include new lines and tab characters in your text especially when it is stored in a compact format. Text functions allow the text to contain special characters which when drawn are converted to the correct counterparts.</p>
+<p>Below, the table outlines what special characters represent which symbols</p>
+
+<p>
+\n - A new line<br>
+\t - A tab character<br>
+</p>
+
+<a name="wordwrap"></a><h4><b>Word Wrapping</b></h4>
+<p>This excellent new feature standard to the extension is known as Word Wrapping and takes the strain away from making sure long pieces of text appear on the screen correctly. As standard, when Word Wrapping is enabled any words that may be cut-off by the edge of the extension's boundary will be wrapped to the next line</p>
+<p>The word wrapping engine also compensates for the spaces that should appear the beginning of the new line. This however can cause problems if you want your line to start with a space, the simple work around is to use another space character or turn word wrapping off</p>
+
+<a name="multiline"></a><h4><b>Multiline</b></h4>
+<p>Sometimes you may wish to prevent the object from moving onto multiple lines, you can do it from these set of actions. When multiline is enabled the extension freely creates multiple lines for both the correct characters and when word wrapping (word wrapping does not work when multiline is disabled)</p>
+
+<a name="setobjpos"></a><h4><b>Set Object Position</b></h4>
+
+<a href="#setobjpos_xy">Set Position</a><br>
+-<br>
+<a href="#setobjpos_x">Set X Position</a><br>
+<a href="#setobjpos_y">Set Y Position</a><br>
+
+<blockquote>
+<a name="setobjpos_xy"></a><h4><b>Set Position</b></h4>
+<p>Moves the object to another location in the frame</p>
+<p>1: New X position of the extension<br>
+2: New Y position of the extension</p>
+</blockquote>
+
+<blockquote>
+<a name="setobjpos_x"></a><h4><b>Set X Position</b></h4>
+<p>Changes the X position of the object within the frame</p>
+<p>1: New X position of the extension<br></p>
+</blockquote>
+
+<blockquote>
+<a name="setobjpos_y"></a><h4><b>Set Y Position</b></h4>
+<p>Changes the Y position of the object within the frame</p>
+<p>1: New Y position of the extension</p>
+</blockquote>
+
+<a name="image"></a><h4><b>Image</b></h4>
+
+<a href="#image_load">Load Image</a><br>
+<a href="#image_save">Save Image</a><br>
+-<br>
+<a href="#image_width">Set Image Width</a><br>
+<a href="#image_height">Set Image Height</a><br>
+<a href="#image_xoff">Set Image X Offset</a><br>
+<a href="#image_yoff">Set Image Y Offset</a><br>
+
+<blockquote>
+<a name="image_load"></a><h4><b>Load Image</b></h4>
+<p>Loads a new image from the hard drive. The action also alters the image width and image height values as it is loaded</p>
+<p>1: Filename of the new image</p>
+</blockquote>
+
+<blockquote>
+<a name="image_save"></a><h4><b>Save Image</b></h4>
+<p>Saves whatever image is loaded into the extension into a file.</p>
+<p>1: Filename of the image</p>
+</blockquote>
+
+<blockquote>
+<a name="image_width"></a><h4><b>Set Image Width</b></h4>
+<p>This action does not alter the actual image in any way. It alters how the engine blits the characters from the image to the screen by setting a horizontal boundary. When the engine reaches this theoretical width, it wraps around to the next line to try and get the desired character form there</p>
+<p>1: New Width value</p>
+</blockquote>
+
+<blockquote>
+<a name="image_height"></a><h4><b>Set Image Height</b></h4>
+<p>Similar to the action above but has very little impact on the drawing of the text, in most cases the engine will ignore this option.</p>
+<p>1: New Height value</p>
+</blockquote>
+
+<blockquote>
+<a name="image_xoff"></a><h4><b>Set Image X Offset</b></h4>
+<p>When the engine searches the image for the desired character, this value moves the result in the specified amount horizontally (in pixels). So if the character is positioned at 0 (zero), and the argument is 20, the result character will be positioned at 20 on the image.</p>
+<p>1: New X location of the offset</p>
+</blockquote>
+
+<blockquote>
+<a name="image_yoff"></a><h4><b>Set Image Y Offset</b></h4>
+<p>Similar to the action above, except that it works on the y axis. See above for how it works</p>
+<p>1: New Y location of the offset</p>
+</blockquote>
+
+
+<a name="character"></a><h4><b>Character</b></h4>
+
+<a href="#character_width">Set Character Width</a><br>
+<a href="#character_height">Set Character Height</a><br>
+-<br>
+<a href="#character_offset">Set Character Offset</a><br>
+<a href="#character_map">Set Character Map</a><br>
+-<br>
+<a href="#character_hs">Set Horizontal Spacing</a><br>
+<a href="#character_vs">Set Vertical Spacing</a><br>
+
+
+<blockquote>
+<a name="character_width"></a><h4><b>Set Character Width</b></h4>
+<p>The Width of the character alters both how the text is drawn to the screen and how the engine searched the image for the desired character. Obviously if the character width is greater, it will take up more space on the screen. However, as the character size increases, the engine uses more space on the image and wraps more characters around to the next line. Please check the section on how the extension works for more information</p>
+<p>1: New Width of character</p>
+</blockquote>
+
+<blockquote>
+<a name="character_height"></a><h4><b>Set Character Height</b></h4>
+<p>Similar to the action above, except that it works with the height of the character. Please check the section on how the extension works for more information</p>
+<p>1: New Width of character</p>
+</blockquote>
+
+<blockquote>
+<a name="character_offset"></a><h4><b>Set Character Offset</b></h4>
+<p>The Character Offset is a value that alters the result character printed to the screen. If for example, the letter 'A' is contained within the extension's text buffer and the offset value is set to the value 2, (if all settings are correct), then the character that will be printed will be 'C'.</p>
+<p>1: New Offset</p>
+</blockquote>
+
+<blockquote>
+<a name="character_offset"></a><h4><b>Set Character Map</b></h4>
+<p>The character map is simply a string specifying the order of the characters in the image. This action allows you to change this string at runtime. Please check out the section of how the extension works for more information</p>
+<p>1: A String containing the new character map</p>
+</blockquote>
+
+<blockquote>
+<a name="character_hs"></a><h4><b>Set Horizonal Spacing</b></h4>
+<p>The horizontal spacing is the number of pixels between each character printed to the screen.</p>
+<p>1: New Horizontal Space</p>
+</blockquote>
+
+<blockquote>
+<a name="character_vs"></a><h4><b>Set Vertical Spacing</b></h4>
+<p>The vertical spacing is the number of pixels between each character printed to the screen.</p>
+<p>1: New Vertical Space</p>
+</blockquote>
+
+
+<a name="text"></a><h4><b>Text</b></h4>
+
+<a href="#text_ltff">Load Text from file</a><br>
+<a href="#text_ltus">Load Text Using Selector</a><br>
+<a href="#text_sttf">Save Text to file</a><br>
+<a href="#text_stus">Save Text Using Selector</a><br>
+-<br>
+<a href="#text_stw">Set Tab Width</a><br>
+
+<blockquote>
+<a name="text_ltff"></a><h4><b>Load Text from file</b></h4>
+<p>Loads text into the extension's buffer from a file</p>
+<p>1: Filename to load</p>
+</blockquote>
+
+<blockquote>
+<a name="text_ltus"></a><h4><b>Load Text Using Selector</b></h4>
+<p>Loads text into the extension's buffer from a file, however, unlike the option above this action presents the user with a file selection box.</p>
+<p>1: Title of Selector<br>
+2: Filter (pipe '|' separated)<br>
+3: Style of selector<br>
+4: Default filter<br>
+5: Default path</p>
+</blockquote>
+
+<blockquote>
+<a name="text_ltff"></a><h4><b>Save Text to file</b></h4>
+<p>Save text from the extension's buffer to a file</p>
+<p>1: Filename to save</p>
+</blockquote>
+
+<blockquote>
+<a name="text_ltus"></a><h4><b>Save Text Using Selector</b></h4>
+<p>Save text from the extension's buffer from a file, however, unlike the option above this action presents the user with a file selection box.</p>
+<p>1: Title of Selector<br>
+2: Filter (pipe '|' separated)<br>
+3: Style of selector<br>
+4: Default filter<br>
+5: Default path</p>
+</blockquote>
+
+<blockquote>
+<a name="text_ltff"></a><h4><b>Set Tab Width</b></h4>
+<p>The tab character aligns the text onto a grid specified by the tab value, this action allows you to change this value. It Must be above 0 , however if it is lower, the engine will default back to 0.</p>
+<p>1: New Value</p>
+</blockquote>
+
+<a name="alignment"></a><h4><b>Alignment</b></h4>
+
+<a href="#alignment_h">Set Horizontal Alignment</a><br>
+<a href="#alignment_v">Set Vertical Alignment</a><br>
+
+<blockquote>
+<a name="alignment_h"></a><h4><b>Set Horizontal Alignment</b></h4>
+<p>The horizontal alignment changes how the text is drawn to the screen. The value specified for this option must be either 0, 1 or 2. 0 specifies that the text should be aligned to the left, 1 to the centre and 2 to the right. Any other value will act the same as using 0</p>
+<p>1: Option</p>
+</blockquote>
+
+<blockquote>
+<a name="alignment_v"></a><h4><b>Set Vertical Alignment</b></h4>
+<p>The vertical alignment changes how the text is drawn to the screen. The value specified for this option must be either 0, 1 or 2. 0 specifies that the text should be aligned to the top, 1 to the centre and 2 to the bottom. Any other value will act the same as using 0</p>
+<p>1: Option</p>
+</blockquote>
+
+<a name="margins"></a><h4><b>Margins</b></h4>
+
+<a href="#margins_t">Set Top Margin</a><br>
+<a href="#margins_l">Set Left Margin</a><br>
+<a href="#margins_r">Set Right Margin</a><br>
+<a href="#margins_b">Set Bottom Margin</a><br>
+
+<blockquote>
+<a name="margins_t"></a><h4><b>Set Top Margin</b></h4>
+<p>Sets a new border for the top margin</p>
+<p>1: New Top margin value</p>
+</blockquote>
+
+<blockquote>
+<a name="margins_l"></a><h4><b>Set Left Margin</b></h4>
+<p>Sets a new border for the left margin</p>
+<p>1: New left margin value</p>
+</blockquote>
+
+<blockquote>
+<a name="margins_r"></a><h4><b>Set Right Margin</b></h4>
+<p>Sets a new border for the right margin</p>
+<p>1: New right margin value</p>
+</blockquote>
+
+<blockquote>
+<a name="margins_b"></a><h4><b>Set Bottom Margin</b></h4>
+<p>Sets a new border for the bottom margin</p>
+<p>1: New bottom margin value</p>
+</blockquote>
+
+<a name="scrolling"></a><h4><b>Scrolling</b></h4>
+
+<a href="#scrolling_h">Set Horizontal Scrolling</a><br>
+<a href="#scrolling_v">Set Vertical Scrolling</a><br>
+
+<blockquote>
+<a name="margins_r"></a><h4><b>Set Horizontal Scrolling</b></h4>
+<p>The Scrolling options allow you to move the text around inside the object without affecting how it is laid out. Due to the way the engine works any text that goes out of the visible area will not be 'drawn' or spent time thinking about, it is simply skipped and scrolling will not slow down the extension is any way (its as fast as it being static)</p>
+<p>1: New Horizontal Scroll Value</p>
+</blockquote>
+
+<blockquote>
+<a name="margins_r"></a><h4><b>Set Vertical Scrolling</b></h4>
+<p>Read the action above for more information</p>
+<p>1: New Vertical Scroll Value</p>
+</blockquote>
+
+<a name="animation"></a><h4><b>Animation</b></h4>
+
+<a href="#animation_cs">Change Speed</a><br>
+-<br>
+<a href="#animation_sa">Set Animation Type</a><br>
+<a href="#animation_sp">Set Animation Param</a><br>
+
+<blockquote>
+<a name="animation_cs"></a><h4><b>Change Speed</b></h4>
+<p>Changes the speed at which the animation runs, 1 is the fastest at 1:1 speed, the higher the value the higher the delay of the update (per frame), so a speed of 4 will update every 4 mmf frames</p>
+<p>1: New Speed</p>
+</blockquote>
+
+<blockquote>
+<a name="animation_sa"></a><h4><b>Set Animation Type</b></h4>
+<p>Sets the current animation</p>
+<p>1: New Animation</p>
+</blockquote>
+
+<blockquote>
+<a name="animation_sp"></a><h4><b>Set Animation Param</b></h4>
+<p>Sets a parameter for the animation. Please check out the page on animations for more information about parameters</p>
+<p>1: Parameter to change<br>
+2: New Value</p>
+</blockquote>
+
+
+<a name="color"></a><h4><b>Colour</b></h4>
+
+<a href="#color_stc">Set Transparent Colour</a><br>
+<a href="#color_rc">Replace Colour</a><br>
+
+<blockquote>
+<a name="color_stc"></a><h4><b>Set Transparent Colour</b></h4>
+<p>Basically sets the desired colour to black or transparent (0,0,0) which when the transparent option is set will appear invisible</p>
+<p>1: New Transparent Colour</p>
+</blockquote>
+
+<blockquote>
+<a name="color_rc"></a><h4><b>Replace Colour</b></h4>
+<p>Replaces a colour on the image map with another</p>
+<p>1: Old Colour<br>
+2: New Colour</p>
+</blockquote>
+
+<a name="changetext"></a><h4><b>Change Alterable Text</b></h4>
+
+<p>Changes the text within the extension. Using Multimedia Fusion 1.2 and below you will be limited to 1024 characters internally, however, if you are using MMF 1.5 or above you can increase the buffer size of the extension (it's in the setup dialog box) and use whatever size you want (WARNING: The larger the buffer, the more memory will be used, the number of characters is the same as the number of bytes occupied. So 1024 characters is basically 1k of memory)</p>
+<p>1: String of text</p>
+
+<a name="appendtext"></a><h4><b>Append Text</b></h4>
+
+<p>A little quicker if you are just adding text to the end of the buffer. This functions will append text rather than you having to keep setting it</p>
+<p>1: String of text</p>
+
+
+<a name="balloon_send"></a><h4><b>Send Message</b></h4>
+<p>Due to the limitation in actions, this action was created to allow you to alter specific attributes of the extension. Check <a href="./sendmsg.html">here</a> for more information on this action</p>
+<p>1: Message Number<br>
+2: Parameter 1<br>
+3: Parameter 2</p>
+
+
+<p>
+<br>
+<br>
+Content and Design are Copyright (c) 2001-2002 Christopher Lightfoot. All rights reserved.
+</p>
+
+</body>
+
+</html>

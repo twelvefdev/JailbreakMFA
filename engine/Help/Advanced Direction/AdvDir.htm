@@ -1,0 +1,302 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="AdvDir-filer/filelist.xml">
+<title>Advanced Direction Object</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>fredriksson</o:Author>
+  <o:LastAuthor>fredriksson</o:LastAuthor>
+  <o:Revision>4</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2003-04-14T15:52:00Z</o:Created>
+  <o:LastSaved>2003-04-14T15:53:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1039</o:Words>
+  <o:Characters>5511</o:Characters>
+  <o:Company> </o:Company>
+  <o:Lines>45</o:Lines>
+  <o:Paragraphs>13</o:Paragraphs>
+  <o:CharactersWithSpaces>6537</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-name:"Normal\,webb";
+	mso-style-parent:"";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Normal tabell";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=SV style='tab-interval:65.2pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>Advanced Direction Object
+Documentation</span></b></p>
+
+  <p class=MsoNormal><span style='font-family:Arial'>The Advanced Direction Object 
+    is an extension written for Multimedia Fusion 1.5 by Olle Fredriksson (also 
+    known as Fodo) in 2003.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>Function List</span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>Conditions</span></b></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Compare Distance between
+two Points - </span></i><span style='font-family:Arial'>If the distance between
+the two points is lower or equal to the third parameter input by the user, it
+returns true. You can negate this condition (right click the condition and
+select Negate) to &quot;reverse it's logics&quot;. That means if the distance
+is greater than the third parameter, it returns true, when negated.</span></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Compare Direction between
+two Points</span></i><span style='font-family:Arial'> - If the direction
+between the two points is equal to the direction input by the user, it returns
+true. The third (last) parameter also lets you give the extension offset
+values. If the direction between the two points is closer than that to the
+direction input by the user, then it returns true. You can negate this
+condition (right click the condition and select Negate) to &quot;reverse it's
+logics&quot;. </span></p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>Actions</span></b></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Set Number of Directions
+- </span></i><span style='font-family:Arial'>This sets the number of directions
+for the extension to use with all functions. It is also possible to set this
+value in the setup dialog box of the object. You can use whatever number you
+want. If you're using Active Objects, it might be good to use 32 directions, or
+with Active Picture, it might be good with 360. Please note that almost all
+functions will be affected by a direction change.</span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB style='font-family:Arial;mso-ansi-language:
+EN-GB'>Get Object Distances and Fixed Values - </span></i><span lang=EN-GB
+style='font-family:Arial;mso-ansi-language:EN-GB'>This function first lets you
+pick an object, and then a position. The extension will loop through all
+objects that meet the current condition's demands, and get their Fixed Values
+and their distances to the point. Then you must use the expressions Get Fixed
+and Get Distance to get objects. </span><span style='font-family:Arial'>Scroll
+down a bit to get to those functions. <o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span lang=EN-GB style='font-family:Arial;mso-ansi-language:
+EN-GB'>Expressions</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB style='font-family:Arial;mso-ansi-language:
+EN-GB'>Get Number of Directions - </span></i><span lang=EN-GB style='font-family:
+Arial;mso-ansi-language:EN-GB'>This gets the current number of directions that
+the extension uses. Use Set Number of Directions or the dialog box to change
+this value.</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><i><span lang=EN-GB style='font-family:Arial;mso-ansi-language:
+EN-GB'>(Stored Objects)</span></i></b><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB style='font-family:Arial;mso-ansi-language:
+EN-GB'>Get Fixed - </span></i><span lang=EN-GB style='font-family:Arial;
+mso-ansi-language:EN-GB'>Gets the Fixed Value of an object gotten from the Get
+Object Distances and Fixed Values action. </span><span style='font-family:Arial'>The
+parameter is a value which tells the extension to get a certain object. Using 0
+gets the closest object to the point (also from the Get Object... function), 1
+the second closest object, 2 the third object, etc.</span></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Get Distance - </span></i><span
+style='font-family:Arial'>Gets the distance of an object from Get Object... to
+the point, also from Get Object... just like the Get Fixed function, this gives
+you the closest object if you use 0, and second closest if you use 1, etc.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><i><span style='font-family:Arial'>(Distance and
+Direction between two Points)</span></i></b></p>
+
+<p class=MsoNormal><b><i><span style='font-family:Arial'>(Float Values
+(decimals))</span></i></b></p>
+
+<p class=MsoNormal><i><span lang=EN-GB style='font-family:Arial;mso-ansi-language:
+EN-GB'>Direction between two Points - </span></i><span lang=EN-GB
+style='font-family:Arial;mso-ansi-language:EN-GB'>This expression is affected
+by the current number of directions. The first parameter is the first x
+coordinate, the second is the first y coordinate, third the second x, and
+fourth the second y ( x1, y1, x2, y2 ). This expression returns decimal
+numbers. Not for use with other functions in the extension because most of them
+don't support decimals.</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Distance between two
+Points - </span></i><span style='font-family:Arial'>The first parameter is the
+first x coordinate, the second is the first y coordinate, third the second x,
+and fourth the second y ( x1, y1, x2, y2 ). This expression returns decimal
+numbers. Not for use with other functions in the extension because most of them
+don't support decimals.</span></p>
+
+<p class=MsoNormal><b><i><span style='font-family:Arial'>(Long Values (no
+decimals))</span></i></b></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Direction between two
+Points - </span></i><span style='font-family:Arial'>This expression is affected
+by the current number of directions. The first parameter is the first x
+coordinate, the second is the first y coordinate, third the second x, and
+fourth the second y ( x1, y1, x2, y2 ). This expression doesn't give decimal
+numbers. For use with other functions in the extension.</span></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Distance between two
+Points - </span></i><span style='font-family:Arial'>The first parameter is the
+first x coordinate, the second is the first y coordinate, third the second x,
+and fourth the second y ( x1, y1, x2, y2 ). This expression doesn't give
+decimal numbers. For use with other functions in the extension.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><i><span style='font-family:Arial'>(Difference between
+two Directions)</span></i></b></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Absolute - </span></i><span
+style='font-family:Arial'>Gets the difference between two directions (affected
+by the number of directions). This expression will give positive numbers only. </span></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Not Absolute - </span></i><span
+style='font-family:Arial'>Gets the difference between two directions (affected
+by the number of directions). This expression will sometimes return negative
+numbers.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><i><span style='font-family:Arial'>(Get Movement)</span></i></b></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Get X Movement from a
+Speed and a Direction - </span></i><span style='font-family:Arial'>Affected by
+the number of directions. Useful for making movements with irregular number of
+directions. The first parameter is the direction, and the second is the speed.
+It gives you the value of how much something would move on the x axis with the
+given direction and speed. This function will return decimal values.</span></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Get Y Movement from a
+Speed and a Direction - </span></i><span style='font-family:Arial'>Same as Get
+X Movement... but on the y axis.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Rotate - </span></i><span
+style='font-family:Arial'>Gives you a direction calculated from the three parameters.
+The first parameter is the current direction. The second parameter is the
+direction to smootly rotate to. The third parameter is the rotating speed. The
+function will return the current direction after it has been rotated towards
+the direction to rotate to with the rotating speed.</span></p>
+
+<p class=MsoNormal><i><span style='font-family:Arial'>Convert Direction to a
+different Base - </span></i><span style='font-family:Arial'>Converts a
+direction to a direction with a different base. First parameter is the
+direction (using the current number of directions), and the second parameter is
+the number of directions you want the direction to have. For an example, this
+is useful if you're using 360 directions for the movement of an Active Object.
+Then you can convert the movement directions to the base-32 directions of the
+Active Object!</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>Usage</span></b></p>
+
+  <p class=MsoNormal><span style='font-family:Arial'>The object provides a set of 
+    functions that are very useful when creating custom movements, and doing other 
+    movement related things. </span></p>
+  <p class=MsoNormal><font face="Arial, Helvetica, sans-serif">If you try to get 
+    an object's fixed value or distance with a value that is out of the object 
+    range (a negative value, or a value that is greater than the number of objects 
+    stored in the extension) the extension will give you the farthest away object 
+    from the point.</font></p>
+
+<p class=MsoNormal><span style='font-family:Arial'>Imagine you're making a Real
+Time Strategy type game. What will you use the extension for? First of all you
+want smooth, non looping movement and rotating of your Active Object units. So
+you use a 360 direction movement, using the Get Movement functions, and use
+Convert to a different Base to set the direction of them. When you've got the
+movement down, you probably want to detect enemies, to see if they are in range
+of your units. Then loop through the units (or unit turrets if you're using
+them), and on loop, you get the enemy unit objects with Get Object... and use
+the position of the friendly unit. Now you can get the first object's (0)
+distance to see if it's in range - if it is in range, you want your unit
+shooting at it...!</span></p>
+
+  <p class=MsoNormal><span style='font-family:Arial'>There's one pretty detailed 
+    example of what this extension is useful for.</span></p>
+  <p class=MsoNormal>&nbsp;</p>
+  <p class=MsoNormal>&nbsp;</p>
+  <p class=MsoNormal><font face="Arial, Helvetica, sans-serif"><b>Disclaimer</b></font><font face="Arial, Helvetica, sans-serif"><br>
+    The extension written by myself, the author, is provided on an &quot;as is&quot; 
+    basis. I do not guarantee fitness for any purpose. In no event will I be liable 
+    for any direct, indirect, incidental, punitive or consequential damages of 
+    any kind whatsoever with respect to this extension and its usage. This includes 
+    corruption and/or loss of data.</font></p>
+  <p><font face="Arial, Helvetica, sans-serif">(In short: you use this at your 
+    own risk. I am not responsible for anything that happens when using Advanced 
+    Direction Object.)</font><br>
+  </p>
+  <p>&nbsp; </p>
+  <p class=MsoNormal><span style='font-family:Arial'>Good luck!</span></p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>Fodo</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

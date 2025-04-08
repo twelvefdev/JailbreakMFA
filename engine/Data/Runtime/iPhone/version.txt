@@ -1,0 +1,72 @@
+﻿Fusion 2.5 iOS Runtime Build 281.8 - June 30th 2014
+Copyright (c) Clickteam 2014
+
+Changes in this version:
+------------------------
+
+
+- Fixed crash in iOS store object
+
+- Fixed “Destroy if too far from frame area” option kill-zone
+
+- Fixed fast loops being triggered twice if the frame had a fade-in transition
+
+- Fixed multiple touch crash if touching the screen many times during a transition
+- Fixed backdrops on the bottom layer not showing up in a transition if a scroll event was used at the start of the frame
+
+- Fixed compiler issues on pre-iOS7 SDK’s (GameController)
+
+- Fixed crash in physics system
+
+- Added missing numeric version of Easing object ‘Move object’ action
+
+
+Changes in previous versions:
+------------------------
+
+-----
+- Experimental: GamePad support! (Uses the basic Gamepad profile)
+- Experimental: iOS object listens to 'fusion://' URL (read more below)
+- Properly resetting frame layer scrolling on frame restart
+- Fixed several issues regarding layers with scrolling coefficients different than 1:
+  --> Fixed mouse click and mouse-over events on objects
+  --> Correcting many expressions (like coordinates of action points)
+- Fixed drawing semitransparent quick backdrops
+- Fixed memory corruption with unicode and String Parser extension
+- Fixed memory corruption when loading the renderer (rare crash)
+- Fixed XCode project file referencing an absolute path
+- Fixed crash when reading outside bounds in a 1-based string array object
+- Fixed MOD operater on floating point values
+- Fixed Active Picture rendering and scaling problems
+- Made several linked frameworks optional so they only load on demand - possibly speeding up the loading of your games/apps
+
+Until we are sure the features works as expected I will add experimental iOS features through the iOS Object's 
+"Open URL" action where it will listen to 'fusion://' prefixed URLs.
+Two features are currently implemented:
+'fusion://dismissKeyboard' - Dismisses the keyboard globally from any control currently having the keyboard open.
+'fusion://startWirelessControllerDiscovery' - Instructs iOS to manually start looking for nearby wirelss Game Controllers.
+
+Note: While your game is connected to a GamePad the screen's idle timer is disabled.
+This means that the screen will not dim and turn off after a given timeout since the player usually rarely touches the screen during gameplay when a gamepad is used.
+When the GamePad is disconnected from the device the idle-timer is reverted back to the default value you set in the properties.
+
+
+Changes in version 140404:
+--------------------------
+- Various physics and movement crashes fixed
+- Fixed some compile-errors after updating XCode: ScreenZoom and ArrayList compile errors.
+- Several layer scroll fix when using scroll coefficients
+- 'Follow frame' property didn't work on layers with 0 as scroll coefficient
+- Edit box + iOS Single line edit box: Went out of the screen when tapping them if the screen was scrolled
+- iAD: Fixed iAD placement on the screen
+- Effects: Fixed setting monochrome effect at runtime using the non-compatibility effect selector
+- Transitions: Some objects would render incorrectly during another object's fade-in/out transition.
+- Button object: Fixed button images getting a blue overlay
+- Button object: Setting font color didn't work correctly
+- Button object: Bug that caused the button not to respond
+- Button object: Enable/disable didn't work properly and didn't respec the initial enabled state
+- Sub-Applications didn't scroll properly in the host frame
+- Quick Backdrop: tiled backdrops sometimes didn't work when using certain image sizes
+- Array Object: Didn't load unicode files properly
+- Added backdrops didn't always have the correct position and/or disappeared at the wrong time when scrolling
+- Timer: Interlaced timer events did not work

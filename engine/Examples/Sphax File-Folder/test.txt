@@ -1,0 +1,3 @@
+This is a sample text file for testing with Sphax File-Folder object examples created by Complex-softwares.
+
+For more informations about Complex-softwares, go to the website : http://complex.ovh.org

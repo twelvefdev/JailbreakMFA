@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<title>Text Blitter Documentation</title>
+<style type="text/css">
+@import url(default.css);
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<a name="top"></a>
+<h2>Send Message</h2>
+
+<p>This special action allows you to send messages to the extension, and edit specific attributes that are otherwise not available in the rest of the extension.</p>
+
+<p>This action is designed for advanced users and those with programming experience, so dont be put-off if you dont undertand any areas of this page, the rest of the extension is designed to be as easy to use as possible</p>
+
+<p>If you are a newbie to Text Blitter or even to mmf, Steer-clear of this section! :P</p>
+
+<h4>Messages</h4>
+<p>
+
+The messages below are given in decimal values, and can be directly entered into the "message" argument of this action.
+
+When you send a message to the extension, you can also sent it two 'long' arguments.
+
+</p>
+
+<p>
+
+<br>
+<b>Object Properties</b><br>
+
+16 - <a href="#msg_16">Set Object Transparency ( transparency, 0 )</a><br>
+17 - <a href="#msg_17">Set Object Flags ( flags, 0 )</a><br>
+<br>
+<b>Callback</b><br>
+
+32 - <a href="#msg_32">Set Callback flags ( flags, 0 )</a><br>
+<br>
+<b>Balloons</b><br>
+
+48 - <a href="#msg_48">Set Balloon Flags ( flags, 0 )</a><br>
+49 - Set Balloon Position ( x, y )<br>
+50 - Set Balloon X Position ( x, 0 )<br>
+51 - Set Balloon Y Position ( y, 0 )<br>
+52 - Set Balloon Handle ( handle, 0 )<br>
+53 - Set Balloon Source ( x, y )<br>
+54 - Set Balloon X Source ( x, 0 )<br>
+55 - Set Balloon Y Source ( y, 0 )<br>
+<br>
+56 - Set Balloon Left Padding ( value, 0 )<br>
+57 - Set Balloon Top Padding ( value, 0 )<br>
+58 - Set Balloon Right Padding ( value, 0 )<br>
+59 - Set Balloon Bottom Padding ( value, 0 )<br>
+
+<h4><a name="msg_16"></a>16 - Set Object Transparency</h4>
+
+<p>This action allows you to set directly the transparency of the extension</p>
+<p>
+1: Transparency value (0-128)<br>
+2: Unused (zero)<br>
+</p>
+
+
+<h4><a name="msg_17"></a>17 - Set Object Flags</h4>
+
+<p>This action allows you to DIRECTLY alter the internal flags of the extension. You must use the binary arithmetic functions in MMF if you wish to manipulate these values correctly</p>
+
+0x00000001 - Extension uses transparent color<br>
+0x00000002 - Extension uses text functions<br>
+0x00000020 - Extension uses word wrapping<br>
+0x00000040 - Extension allows multiple lines<br>
+0x00000400 - Edge fading is used on the maquee animation<br>
+
+<p>Some of the options are cached throughout the update process and the effect may not become apprant until the next MMF-cycle.<p>
+
+<p>
+1: New Flag value<br>
+2: Unused (zero)<br>
+</p>
+
+<h4><a name="msg_32"></a>32 - Set Callback flags</h4>
+
+<p>
+Here you can turn which callbacks are to be called. This action will ONLY change he callback flags within the extension, unlike the 'Set Object Flags' function, which alters everything.
+</p>
+
+<p>
+0x00000800 - Callback system enabled<br>
+0x00001000 - OnBegin callback enabled<br>
+0x00002000 - OnEnd callback enabled<br>
+0x00004000 - OnBeginLine callback enabled<br>
+0x00008000 - OnEndLine callback enabled<br>
+0x00010000 - OnCharacter callback enabled<br>
+</p>
+
+<p>The extension uses a small cache through the drawing process to help speed things up, so your changed wont take effect until the next mmf cycle.<p>
+
+<p>
+1: New Flag value<br>
+2: Unused (zero)<br>
+</p>
+
+
+<h4><a name="msg_48"></a>48 - Set Balloon Flags</h4>
+
+<p>
+Here you can alter the internal-flags for the balloon properties. The action allows you to only change this flags below.
+</p>
+
+<p>
+0x00020000 - Enables the baloon<br>
+0x00040000 - Inverts the handles<br>
+0x00080000 - Keep on scren<br>
+</p>
+
+<p>The extension uses a small cache through the drawing process to help speed things up, so your changed wont take effect until the next mmf cycle.</p>
+
+<p>
+1: New Flag value<br>
+2: Unused (zero)<br>
+</p>
+
+<br>
+<br>
+Content and Design are Copyright (c) 2001-2002 Christopher Lightfoot. All rights reserved.
+</p>
+
+</body>
+
+</html>

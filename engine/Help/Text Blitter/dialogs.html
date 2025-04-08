@@ -1,0 +1,171 @@
+<html>
+
+<head>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<title>Text Blitter Documentation</title>
+<style type="text/css">
+@import url(default.css);
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h2>Dialog Reference</h2>
+
+
+<a name="setup"></a>
+
+
+<p>Here you can find detailed information on each of the dialogs within the text blitter</p>
+
+<p>
+<a href="#setup">The Setup Dialog</a><br>
+<a href="#animation">Animation</a><br>
+<a href="#charmap">Chracter Map</a><br>
+<a href="#callback">Callback</a><br>
+</p>
+
+<p>
+
+
+<a name="setup"></a><h4>The Setup Dialog</h4>
+
+<table width="128" border="0" cellspacing="0" cellpadding="0" align="right">
+<tr>
+<td>
+
+<img src="./img/setup.gif"><br>
+<img src="./img/setup_02.gif"><br>
+<img src="./img/setup_03.gif"><br>
+<img src="./img/setup_04.gif"><br>
+
+</td>
+</tr>
+</table>
+
+The setup dialog gives you a broad range of options that allow you to alter the majority of the Text Blitter options. The dialog has been separated into four different areas: Text, Image, Align, and Options...</p>
+
+
+
+<p><b>Text</b></p>
+
+<ul>
+<li><b>Tab Width</b> - Not everyone likes the standard 4 or 8 character tab size, this option gives you total control on the number of characters the extension uses when aligning text on tab characters.</li>
+
+<li><b>Buffer</b> - The edit time buffer is limited to 1024 characters, to you use more than this at runtime, you must load the text in through an external file or construct it manually from other resources.</li>
+</ul>
+
+<p><b>Image</b></p>
+
+<p>The image options give you general control over properties of the internal image</p>
+
+<ul>
+<li><b>Size</b> - The size of the image not only affects how the extension crops the original size, but how the characters are wrapped around to the next line.</li>
+<li><b>Offset</b> - The image offset lets you reposition the origin of the image allowing you achieve special effects of which are covered in the examples section</li>
+<li><b>Use Transparency</b> - When the transparency option is enabled any transparent (MMF's transparent colour) areas will appear invisible, these areas will otherwise appear black</li>
+<li><b>Colour</b> - Upon startup of the extension, the colour selected here will be replaced with transparent (MMF's transparent colour) which, when the transparency option is enabled, will appear transparent.</li>
+</ul>
+
+<p><b>Align - Margins</b></p>
+
+<p>The margin's primary use is to change the position of where the text is drawn. This option does not affect the collision options when used in the form of an active object.</p>
+
+<p>The second use of the margins is for the Marquee animation which uses the gap between the edge of the margin and the edge of the object to fade the text in or out depending on the direction of the marquee animation. Check out the animation section for more info.</p>
+
+<p><b>Align - Alignment</b></p>
+
+<p>These options allow you to change the alignment of the text within the extension. The horizontal central option centralises each line of text according to its length. Alignment is applied after word wrapping so all text will remain visible within the extension</p>
+
+<p><b>Options - Preferences</b></p>
+
+<ul>
+<li><b>Use Text Functions</b> - Text functions allow you to use the C-like escape character '\n' that is replaced by the new line character when the text is drawn to the screen. This allows you to store your text on a single line - especially useful for RPGs and other games that store their text outside of the game.</li>
+<li><b>Multiline</b> - When this option is turned on all newline characters will be interpreted to move the text to the another line. This option, when turned off, also prevents word wrapping.</li>
+<li><b>Word wrapping</b> - A big feature of the extension is the ability to control word wrapping at the click of a button. The word wrapping feature will make sure that the text is kept within the horizontal boundaries of the extension.</li>
+</ul>
+
+
+<p><b>Options - Advanced</b></p>
+
+<ul>
+<li><b>Callback</b> - Opens up the callback options dialog box</li>
+<li><b>Animation</b> - Opens the animation dialog box to alter the animation settings within the extension</li>
+<li><b>Edit Charmap</b> - Go to the Character map settings</li>
+<li><b>Image</b> - Edit the internal image map</li>
+<li><b>Generate</b> - Runs the bitmap generation utility for converting fonts to bitmaps files.</li>
+<li><b>Documentation</b> - Assuming the documentation is located in the correct place (somewhere around MMFusion\Programs\Docs\Text Blitter), this button will open the documentation in the default web browser</li>
+</ul>
+
+<p><b>Options - Balloon</b></p>
+
+<ul>
+<li><b>More...</b> - Opens up the Balloon options dialog box</li>
+</ul>
+
+<p>All of the options from within the setup dialog are available at runtime through the extension's actions.
+<br><br></p>
+
+
+
+<a name="animation"></a>
+<h4>The Animation Effects Dialog</h4>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+
+<td valign="top">
+<p>
+The Text Blitter includes 2 basic animations, the major one is a fully functional marquee effect which now supports multiple lines<br>
+<br>
+
+
+</p>
+
+<p><b>General</b></p>
+
+<ul>
+<li><b>Speed</b> - Controls the speed of the animation. The value specifies how many cycles of the MMF engine are to occur before an update to the animation is processed, therefore '1' is the fastest speed, and the speed will decrease as you increase this value</li>
+</ul>
+
+<p><b>Properties</b></p>
+
+<p>
+The properties of the animations change for different modes, check out the animations section for more information on what each property does and how it affects the animation.
+</p>
+</td>
+
+<td>
+<img src="./img/anim.gif"><br>
+</td>
+
+</tr>
+</table>
+
+<a name="charmap"></a>
+<h4>The Character Map Dialog</h4>
+<p>The Text Blitter uses what is known as a 'character map' to define the order of the characters on the image. This dialog gives you the ability to alter the order of the characters</p>
+
+<p>The dialog also includes character sizing options and offset value. All of these options are available through the actions of the extension<br><br><img src="./img/charmap.gif"></p>
+
+<a name="callback"></a>
+<h4>The Callback Dialog</h4>
+<p>
+The callback dialog to the right allows to you select which callbacks are used within the extension. You must note that the use of a callback slows down the extension, only select the ones you will be using.</p>
+
+<p>
+If you switch off the callback feature, none of the callbacks will be called
+</p>
+
+<img src="./img/cbdlg.gif">
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>
+Content and Design are Copyright (c) 2001-2002 Christopher Lightfoot. All rights reserved.
+</p>
+
+</body>
+
+</html>

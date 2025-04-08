@@ -1,0 +1,156 @@
+<HTML>
+<BODY><font face="Arial">
+<H1>Actions</H1><BR>
+<a name="mode">
+<H2>Change Mode To...</H2><BR>
+<H3>Colorize</H3><BR>
+Colorize mode is the most advance more yet the mode that colorizer do the fastest.<BR>
+The Colorize mode takes 9 Parameters:<BR>
+New red out of Old red (RR)<BR>
+New red out of Old green (RG)<BR>
+New red out of Old blue (RB)<BR>
+New green out of Old red (GR)<BR>
+New green out of Old green (GG)<BR>
+New green out of Old blue (GB)<BR>
+New blue out of Old red (BR)<BR>
+New blue out of Old green (BG)<BR>
+New blue out of Old blue (BB)<BR>
+(The 2 letters between the brackets are the name used in the code explaination)<BR>
+The color is calculated by this code: <BR><BR>
+<TABLE bgcolor=#505050 width=100%>
+<TR>
+	<TD><TABLE bgcolor=#E0E0E0 width=100%>
+<TR>
+	<TD><font color=#505050>
+<PRE>NewRed=Red*RR+Green*RG+Blue*RB;
+NewGreen=Red*GR+Green*GG+Blue*GB;
+NewBlue=Red*BR+Green*BG+Blue*BB;</PRE></TD>
+
+</TR></TD>
+</TR>
+</TABLE>
+</TABLE>
+<H3>Hue</H3><BR>
+This is a less advanced mode, yet slower to calculate because of the complex RGB to HSL and HSL to RGB functions.<BR>
+The calculation is based on HSL.<BR>
+The Hue mode takes 1 Parameter:<BR>
+Hue (H)<BR>
+(The letter between the brackets are the name used in the code explaination)<BR>
+The color is calculated by this code: <BR><BR>
+<TABLE bgcolor=#505050 width=100%>
+<TR>
+	<TD><TABLE bgcolor=#E0E0E0 width=100%>
+<TR>
+	<TD><font color=#505050>
+<PRE>//Hue, Sat and Lum was converted from a RGB color.
+NewHue=(Hue+H)%360;
+NewSat=Sat; //No Change
+NewLum=Lum; //No Change
+//NewHue, NewSat and NewLum are now converted back to RGB.</PRE></TD>
+
+</TR></TD>
+</TR>
+</TABLE>
+</TABLE>
+<H3>HSL</H3><BR>
+HSL Mode is more advanced than Hue mode, which changes only Hue, yet slower to calculate than Colorize mode because of the complex RGB to HSL and HSL to RGB functions.<BR>
+The calculation is based on HSL.<BR>
+The Hue mode takes 3 Parameter:<BR>
+Hue (H)<BR>
+Sat (S)<BR>
+Lum (L)<BR>
+(The letter between the brackets are the name used in the code explaination)<BR>
+The color is calculated by this code: <BR><BR>
+<TABLE bgcolor=#505050 width=100%>
+<TR>
+	<TD><TABLE bgcolor=#E0E0E0 width=100%>
+<TR>
+	<TD><font color=#505050>
+<PRE>//Hue, Sat and Lum was converted from a RGB color.
+NewHue=(Hue+H)%360;
+NewSat=Sat+S;
+NewLum=Lum+L;
+//NewHue, NewSat and NewLum are now converted back to RGB.</PRE></TD>
+
+</TR></TD>
+</TR>
+</TABLE>
+</TABLE>
+<a name="options">
+<H2>Options</H2><BR>
+<H3>Colorize mode</H3><BR>
+This Submenu include 9 actions:<BR>
+<BR>
+Set New red out of Old red<BR>
+Set New red out of Old green<BR>
+Set New red out of Old blue<BR>
+Set New green out of Old red<BR>
+Set New green out of Old green<BR>
+Set New green out of Old blue<BR>
+Set New blue out of Old red<BR>
+Set New blue out of Old green<BR>
+Set New blue out of Old blue<BR>
+They all set the 9 parameters for the Colorize Mode.<BR>
+<BR>
+<H3>Set value for Hue mode</H3><BR>
+This action sets the H parameter used by Hue mode and HSL mode.<BR>
+<BR>
+<H3>Set values for HSL mode</H3><BR>
+This action sets the H, S and L parameters used by HSL mode. (The Hue parameter effects both Hue and HSL mode.)<BR>
+<a name="fading">
+<H2>Fading</H2><BR>
+This Submenu includes actions to fade all parameters used in all 3 modes from one to another in a selected length in frames. (If the FPS is set to 50 (MMF2's Default), then 1 second=50 frames.)<BR>
+<a name="resize">
+<H2>Resize colorizer</H2><BR>
+Changes the size of colorizer.<BR>
+If masking is used the mask will be temporary resized, no data will be lost.<BR>
+<a name="preset">
+<H2>Load and Save a preset file</H2><BR>
+Those 2 actions save/load the selected mode and parameters for all 3 modes to/from a 52 bytes sized file.<BR>
+<a name="ovrmask">
+<H2>Load mask from Overlay</H2><BR>
+If you're using a mask (Checked the Mask option in the properties toobar) then you are able to load images from Overlay to make dynamic masks.<BR>
+You only have to enter the Overlay's fixed value whenever it updates<BR>
+You can change the first image by clicking the "..." button next to the mask option in the properties toobal.<BR>
+<a name="update">
+<H2>Update Colorizer in Manual Update mode</H2><BR>
+If yo don't want to use MMF2's and Colorizer's automated updating, you can check the "Use Manual Update" option in the properties toolbar.<BR>
+Colorizer will update only when the action is called.<BR>
+If you do not understand how MMF2's graphics engine work, It is Not recommended you will use this option.<BR>
+<a name="threshold">
+<H2>Change Threshold value for Masking</H2><BR>
+If you're using a mask (Checked the Mask option in the properties toobar) then you are able to change the threshold value to make dynamic masking using 1 image.
+The Masking engine uses threshold value like this:<BR><BR>
+<TABLE bgcolor=#505050 width=100%>
+<TR>
+	<TD><TABLE bgcolor=#E0E0E0 width=100%>
+<TR>
+	<TD><font color=#505050>
+<PRE>if(MaskRedPixel>Threshold) //Note - Only the red channel is in use! Not a greyscale of all 3 channels.
+{
+	NewRed=...;
+	NewGreen=...;
+	NewGreen=...;
+	// The ...s are the calculations explained in "Change Mode To...".
+{
+else
+{
+	NewRed=Red;
+	NewGreen=Green;
+	NewBlue=Blue;
+}</PRE></TD>
+
+</TR></TD>
+</TR>
+</TABLE>
+</TABLE>
+
+<H1>Expressions</H1><BR>
+<a name="getwh">
+<H2>Get Width/Height</H2><BR>
+Returns the Width/Height of Colorizer.
+<a name="getparam">
+<H2>Get Red of Red, Blue of Blue, H, S and L etc.</H2><BR>
+Those return the parameters used with Colorizer, Explain in "Change Mode To...".
+</BODY>
+</HTML>

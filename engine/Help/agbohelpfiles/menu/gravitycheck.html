@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="../general.css" type="text/css" />
+
+
+
+<h2>Gravity check - up/down/left/right</h2>
+<hr>
+
+This condition will check if a brick at a given x,y coordinate has a potential to fall.
+<br />
+It is not as simple as to check if the brick below the given brick is empty. No this condition checks if ANY brick below the current brick is empty. It saves you for alot of looping and is usefull to for example to prevent the player of your game to click a block that is currently falling in any direction.
+
+
+<br /><br />
+Examples:
+<div class="event">Brick at 5, 7 can fall up</div>
+<br />
+<div class="event">Brick at 3, 4 can fall down</div>
+<br />
+<div class="event">Brick at 9, 6 can fall left</div>
+<br />
+<div class="event">Brick at 2, 8 can fall right</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+#04#
+*0000*
+Welkom 
+
+*0001*
+
+
+*0002*
+<b><fontsize=12>Welkom in het #title Installatie programma</font></b>. 
+
+*0003*
+Dit programma staat u toe #title te installeren op uw hardeschijf. 
+
+*0004*
+Het is ten strengste aanbevolen om alle actieve Windows programma's te sluiten voor u doorgaat. 
+
+*0005*
+Als u #title niet wenst te installeren, druk dan nu op 'Afsluiten'. Om door te gaan drukt u op 'Volgende'. 
+
+*0100*
+Informatie 
+
+*0101*
+Lees a.u.b. de onderstaande informatie. 
+
+*0102*
+
+
+*0103*
+
+
+*0200*
+Licentie 
+
+*0201*
+Lees a.u.b. de onderstaande licentie overeenkomst. 
+
+*0202*
+Lees a.u.b. de onderstaande licentie overeenkomst en selecteer 'Ik ga akkoord' als u instemt met de bepalingen en condities. 
+
+*0203*
+
+
+*0204*
+Ik ga akkoord met de bovenstaande bepalingen en condities. 
+
+*0205*
+Ik ga niet akkoord. 
+
+*0300*
+Directory 
+
+*0301*
+Kies een installatiemap en klik op 'Volgende' voor doorgaan. 
+
+*0302*
+#Title's bestanden worden geïnstalleerd in de volgende map: 
+
+*0303*
+
+
+*0304*
+
+
+*0305*
+Klik op 'Volgende' voor doorgaan. 
+
+*0306*
+Schijfruimte nodig: 
+
+*0307*
+Beschikbare schijfruimte: 
+
+*0308*
+%d Mb 
+
+*0400*
+Bevestiging 
+
+*0401*
+U bent nu gereed om #title te installeren. 
+
+*0402*
+
+
+*0403*
+Dit programma installeert #title in %s. 
+
+*0404*
+
+
+*0405*
+Klik op 'Start' om #title te installeren. 
+
+*0500*
+Installatie 
+
+*0501*
+Wacht a.u.b., de installatie is bezig. 
+
+*0502*
+Bestand: 
+
+*0503*
+
+
+*0600*
+Einde 
+
+*0601*
+De installatie is gereed. 
+
+*0602*
+#Title is met succes geïnstalleerd. 
+
+*0603*
+Klik op de volgende knop als u de laatste informatie wilt zien betreffende #title: 
+
+*0604*
+Selecteer de volgende optie als u met #title wilt beginnen na afsluiting van dit installatieprogramma: 
+
+*0605*
+#Title is niet volledig geïnstalleerd om de volgende reden: 
+%s 
+U moet deze toepassing opnieuw starten om #title in zijn geheel te installeren. 
+
+*0606*
+Toon %s 
+
+*0607*
+Opstarten van #title 
+
+*0608*
+U moet Windows opnieuw opstarten om de geïnstalleerde opties te activeren. Klik op 'Herstart' als u Windows onmiddellijk wilt herstarten. 
+
+*0609*
+
+
+*0700*
+#Title Installatie Programma 
+
+*0701*
+Selecteer a.u.b. een map 
+
+*0702*
+Mapnaam: 
+
+*0703*
+Stations 
+
+*0704*
+Controleren... 
+
+*0705*
+Ongeldige map. 
+
+*0706*
+De bestemming map bestaat niet. Wilt u deze aanmaken? 
+
+*0707*
+Een of meerdere bestanden zijn tegen overschrijven beveiligd. Wilt u deze toch overschrijven? 
+
+*0708*
+Dit programma kan #title niet installeren om de volgende reden: 
+
+*0709*
+De toegang tot dit bestand is geweigerd: 
+%s 
+
+*0710*
+Het volgende bestand is in gebruik: 
+%s 
+Sluit het a.u.b. en probeer het opnieuw. 
+
+*0711*
+Er is niet genoeg schijfruimte in de doelmap. Wilt u het toch proberen? 
+
+*0712*
+Geheugenruimte is op! 
+
+*0713*
+U bent op het ogenblik componenten aan het installeren. 
+Als u nu afsluit, worden deze componenten niet juist geïnstalleerd. 
+Weet u zeker dat u wilt annuleren? 
+
+*0714*
+De Installatie is nog niet gereed. Weet u zeker dat u wilt afsluiten? 
+
+*0715*
+De installatietoepassing heeft de installatie zonder succes beëindigd. 
+
+*0716*
+Dit bestand kan niet worden geopend: 
+%s 
+
+*0717*
+Dit bestand kan niet worden aangemaakt: 
+%s 
+
+*0718*
+Dit bestand is beschadigd of onleesbaar: 
+%s 
+
+*0719*
+Naar dit bestand kan niet geschreven worden: 
+%s 
+
+*0720*
+Schijf is vol! 
+
+*0721*
+CRC fout - Dit bestand kan niet worden geïnstalleerd: 
+%s 
+
+*0722*
+De toegang tot dit bestand is geweigerd: 
+%s 
+
+*0723*
+Met succes aangepast 
+
+*0724*
+Met succes verwijderd 
+
+*0725*
+Met succes geïnstalleerd 
+
+*0726*
+Fout - Kan niet verwijderen, toegang is geweigerd 
+
+*0727*
+Fout - Kan niet vervangen, toegang is geweigerd 
+
+*0728*
+Plaats a.u.b. diskette met nummer %d. 
+
+*0729*
+%s 
+Dit bestand bestaat al en is een recentere versie dan het te installeren bestand. 
+Wilt u toch het bestaande bestand overschrijven? 
+
+*0730*
+%s 
+Dit bestand bestaat al en is in een andere taal dan het te installeren bestand. 
+Wilt u toch het bestaande bestand overschrijven? 
+
+*0731*
+Dit bestand bevat ongeldige gegevens. 
+
+*0732*
+Gegevensfout in dit bestand: 
+%s 
+Wilt u toch doorgaan? 
+
+*0800*
+< V&orige 
+
+*0801*
+&Volgende > 
+
+*0802*
+Af&sluiten 
+
+*0803*
+&Start 
+
+*0804*
+OK 
+
+*0805*
+&Annuleer 
+
+*0806*
+&Herstart 
+
+*0900*
+Uninstall 
+
+*0901*
+Dit programma deïnstalleert #title van uw hardeschijf. Klik op OK voor doorgaan. 
+
+*0902*
+#Title is met succes verwijderd van uw hardeschijf. 
+
+*0903*
+&Ja 
+
+*0904*
+Ja voor &alles 
+
+*0905*
+&Nee 
+
+*0906*
+Nee v&oor alles 
+
+*0907*
+Geheugenruimte op! 
+
+*0908*
+Ongeldige uninstall informatie. Dit programma kan #title niet deïnstalleren. 
+
+*0909*
+Het volgende bestand is beveiligd tegen overschrijven: 
+%s 
+Wilt u het toch verwijderen? 
+
+*0910*
+Het volgende systeembestand blijkt niet meer in gebruik: 
+%s 
+Wilt u het verwijderen? 
+
+*0911*
+Verwijderen van bestanden... 
+
+*0912*
+Verwijderen van pictogrammen... 
+
+*0913*
+Verwijderen van mappen... 
+
+*0914*
+Verwijderen van registersleutels... 
+

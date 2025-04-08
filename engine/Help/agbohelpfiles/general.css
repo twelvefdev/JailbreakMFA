@@ -1,0 +1,49 @@
+body{
+	font-family: "Trebuchet MS", "Verdana", "Arial";
+}
+
+.board{
+	background-color: black;
+}
+
+.empty{
+	background-color: white;
+	width: 28px;
+	height: 28px;
+}
+
+.brick{
+	background-image: url('brickbg.png');
+	width: 28px;
+	height: 28px;
+}
+
+.event{
+	border: 1px solid black;
+	width: 200px;
+	_width: 300px;
+	height: 26px;
+	_height: 36px;
+	padding-left: 86px;
+	background-image: url('eventpadding.png');
+	background-color: #D4D0C8;
+	background-repeat: no-repeat;
+	padding-top: 8px;
+	font-family: Tahoma;
+	font-size: 13px;
+}
+
+.about{
+	background-color: transparent;
+	display: block;
+	margin-top: 16px;
+	padding: 4px;
+}
+
+.highlighted{
+	background-color: whitesmoke;
+	border: 1px solid LightSteelBlue;
+	display: block;
+	margin-top: 16px;
+	padding: 4px;
+}

@@ -1,0 +1,37 @@
+<HTML>
+<HEAD><TITLE>Spellcheck Object :: Dialog Box</TITLE>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<div class="set">
+
+
+<div class="title">Suggestion Settings</div>
+
+Using both the dialog box and the "Set Suggestion Settings" action of the Spellcheck object, you may modify the suggestions that the "List  Suggestions" action gives. There are two aspects you may change.<br><br>
+
+The "Maximum Suggestions" setting decide the maximum number of suggestions that can be given. If you set this at 15, for example, then up  to 15 corrections will be given. Less than 15 suggestions may be given if there are less than 15 words that are beyond the "Minimum  Relevance" threshold.<br><Br>
+
+You may set this value to -1 (Or select the checkbox on the dialog box) to make the object suggest all words above the threshold.<br><br>
+
+The "Minimum Relevance" threshold is entered as a percentage. The Spellcheck object calculates as a percentage how similar two words are, to work out how relevant it is as a suggestion. If the words relevance is lower than this percentage, then it will not be suggested. If it higher than this threshold, it could be suggested (Providing the maximum suggestions limit has not be reached).<br><br>
+
+Note that if there are more words over the "Minimum Relevance" threshold than the "Maximum Suggestion" setting allows to be suggested, then the most relevant will be suggested first.
+
+
+
+<div class="seealso">
+See also: <a href="dialog.htm">Dialog Box</a> | <a href="orderingsettings.htm">Ordering Settings</a>
+</div>
+</div>
+
+
+
+
+
+</BODY>
+</HTML>

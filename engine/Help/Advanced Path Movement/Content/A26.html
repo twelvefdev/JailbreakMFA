@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Overview</title>
+</head>
+
+<body>
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tr>
+    <td width="100%" bgcolor="#66FF66">Find Journey to Node</td>
+  </tr>
+</table>
+<p>This is the most common action to use when handling journey control. This 
+will find the best possible path to take if the player, from their LAST point in 
+the journey, want to venture off to another node. If your creating a 'point and 
+click' game, then you should use 'Clear Journey' with parameter 1 before calling 
+this command, because if the user clicks while the player is walking, then the 
+player will continue to complete their old path until they reach the end and 
+will then continue on to their new path. </p>
+<p>REALLY IMPORTANT! You must set a start position for your object. Use the 'Add 
+node to journey' to set the players first co-ordinate if you haven't done 
+anything else already. The find path action wont work if it doesn't know where 
+the player has to start. </p>
+
+</body>
+
+</html>

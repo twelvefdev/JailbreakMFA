@@ -1,0 +1,31 @@
+Combo Box
+
+The Combo Box is a versatile tool that allows you to select text from a list of options and add new items as needed.  
+
+List items can be loaded and saved from ordinary text files, (each line should have a return at the end).  Items can be added or removed via actions or by the user via the visible edit line at the top of the control.
+
+ADD A LINE
+Click on the "Add a line" button to add a new line to the list.  Click on the Combo Box to see the results.
+
+LOAD A LIST FILE
+Click on the "Load a list file" button to load a list file from the disk using a file selector.
+
+One of the combo's great features is that this object will display a list of all the files within a specific directory, automatically, when told to do so.
+
+By using a  wildcard to restrict this action, you can display a list of all of one file type in a certain directory.
+
+For example, you might want to display all the .txt files in a directory. You could use an Edit object to specify the directory, and then the Combo Box will automatically load in a list of all the .txt files within that directory. 
+
+
+SAVE A LIST FILE
+This action saves the current contents of the Combo Box to a text file, called "Mycombo.txt". If you use a file manager program, then you will be able to see it next to this application. If you open it with a text editor you can see the contents of the Combo Box within.
+
+Note: if you try to use this action on a write protected directory, such as on the CD, then an error will be returned, because no data can be written.
+
+The contents of the Combo Box can be saved as a Text file (.txt) and loaded into the object at application run-time.  The common file extension is .lst, but you can use .txt, or others, as long as your actions use the same extension with the filname.
+
+Individual lines can be retrieved from the combo box into objects like an Edit object, and then re-written to the Combo Box. In this way the contents of the object can be edited, added to and displayed in a variety of ways.  
+
+To restrict the files to view only one type, you would add the text "\*.txt" to the end of the expression, for example.
+
+NOTE: See the comments in the source file for more information about this object.

@@ -1,0 +1,140 @@
+<HTML>
+<HEAD><TITLE>Spellcheck Object :: Dialog Box</TITLE>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<div class="set">
+
+
+<div class="title">Ordering Settings</div>
+
+The Spellcheck Object at certain times has to calculate how similar two words are. The method that it does this is unimportant, however it  takes two variables. These are called the "Start Gap Cost" and "Next Gap Cost" values. What exactly they do is not helpful to know, however changing them can effect the ordering of suggestions.<br><br>
+
+For example, take the word misspelt word "blahk", and look at how the suggestions change depending on the settings.<br><br>
+
+<i>All costs are written as (Start Cost, Next Cost) and have a limit of 15 suggestions</i><br>
+
+<center>
+<table border=1 bordercolor="gray" style="align:center;border:thin solid black;width:400px;">
+
+<tr style="background:#eaeaea;align:center;border:1px black solid;"><td>(1,1)</td><td>(0,0)</td><td>(3,1)</td><td>(1,3)</td><td>(3,3)</td></tr>
+
+
+<tr><td>
+black<br>
+blacks<br>
+block<br>
+blocky<br>
+blocks<br>
+bullock<br>
+blahs<br>
+bullocky<br>
+bullocks<br>
+bollocks<br>
+bleak<br>
+bleach<br>
+bullace<br>
+blocs<br>
+bleaks<br>
+</td>
+
+
+
+<td>
+blacks<br>
+black<br>
+bullocky<br>
+bullocks<br>
+bullock<br>
+bollocks<br>
+blocky<br>
+blocks<br>
+block<br>
+bleaks<br>
+bleak<br>
+bleach<br>
+blahs<br>
+billhooks<br>
+billhook<br>
+</td>
+
+<td>
+black<br>
+block<br>
+blacks<br>
+blahs<br>
+blocky<br>
+blocks<br>
+bullock<br>
+blocs<br>
+bleak<br>
+bleach<br>
+bullocky<br>
+bullocks<br>
+bullace<br>
+bollocks<br>
+blaze<br>
+</td>
+
+
+
+<td>
+black<br>
+blacks<br>
+block<br>
+blocky<br>
+blocks<br>
+bullock<br>
+blahs<br>
+bullocky<br>
+bullocks<br>
+bollocks<br>
+bleak<br>
+bleach<br>
+bullace<br>
+blocs<br>
+bleaks<br>
+</td>
+
+<td>
+black<br>
+block<br>
+blacks<br>
+blahs<br>
+blocky<br>
+blocks<br>
+blocs<br>
+bullock<br>
+bleak<br>
+bleach<br>
+blaze<br>
+blaws<br>
+blase<br>
+bloc<br>
+bullocky<br>
+</td>
+
+
+</table>
+</center><br><br>
+
+
+
+Note this also effects the "Find how similar two strings are" expression.
+
+
+<div class="seealso">
+See also: <a href="dialog.htm">Dialog Box</a>
+</div>
+</div>
+
+
+
+
+
+</BODY>
+</HTML>

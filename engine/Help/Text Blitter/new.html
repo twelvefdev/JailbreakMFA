@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<title>Text Blitter Documentation</title>
+<style type="text/css">
+@import url(default.css);
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h2>What's new!</h2>
+
+<p>This page contains the recent updates and changes to the Text Blitter Extension. It also covers many of the new features that are part of this new build.</p>
+
+<h4><b>Compatibility Issues [Version 0.9 -> 1.0]</b></h4>
+
+<p>This new version of the Text Blitter object has been completely re-written. It therefore makes it (in theory) another extension object and is no longer compatible with older versions of the extension. However, the benefits of the new system far outweigh these minor glitches</p>
+
+<p>This new version of the extension contains many stepping stones that will allow us to further upgrade the extension without the loss of compatibility, so don't be worried when a new version appears with some cool new features.</p>
+
+<h4><b>Callbacks</b></h4>
+
+<p>Check out the new section on callbacks for more info on this fantastic new feature!</p>
+
+<h4><b>New Interface Features</b></h4>
+
+<p>Through comments posted while the extension was in Beta stages, many of the dialogs have been rearranged to suit the requirements. Some options have also been moved to other sub-dialogs within the extension. If you have trouble finding something, check out the dialog information pages accessible from the navigation bar on the left.</p>
+
+<p>In many of the beta versions, the advanced dialog boxes were accessed through a popup menu. Now, everything is presented in a panel to the right of the main setup dialog, this allows for much quicker access to them</p>
+
+<p>You will also notice that the character options have been moved to their own separate dialog. Again, you can access this from the panel on the right hand side of the setup dialog</p>
+
+<p>There is also a new 'Documentation' button in the main setup dialog that takes you obviously to the documentation (if it is installed in the correct place).</p>
+
+<p>There have been a few changes to the font generator. There is now an 'Export' button that allows you to save the current preview image to file without affecting the extension. When selecting the button, you will be asked whether you wish to update the image, by doing so you effectively are selecting the 'Update' button before exporting.</p>
+
+<p>There is also a new feature that allows you to apply an outline around your font. This uses a very basic outlining method and widths of 2 or more can look strange on small fonts.</p>
+
+<h4><b>New Runtime Features</b></h4>
+
+<p>The entire runtime and edit time versions of the extension have been re-written for more stability and faster execution speeds. You will notice that the extension runs much faster than previous versions. The runtime generates a small database of information about the text that needs to be re-built every time something in the extension changes (such as the character width). In previous versions of the extension, the database was built every time the extension needed to be drawn, as you can imagine, this wastes an incredible amount of time rendering the text.</p>
+
+<p>The new database method also allows text to be of any length with no limit to the number of lines (which was present in older versions). It also means that the MMF-movement options allow the extension to freely move about the screen with no speed loss, the offset actions also do not rebuild the database, therefore the emulated active-object properties have no loss of speed</p>
+
+<p>Something extra special which would be very hard to achieve with any other extension object at such incredible speeds is the new 'Vertical Fade Effect' option, available through the Marquee Animation. This effect as it suggests fades the text in or out as it is vertically scrolled through the extension. This nice effect allows you to create fast and professional credit screens through the simple checking of a text box. You edit the space the text fades through altering the size of the top and bottom margins. For no fade at the bottom simply make the bottom margin zero. When this effect is enabled semitransparent is the only ink effect available, all other effects will be disabled at runtime.</p>
+
+<h4><b>Changes and Bug Fixes</b></h4>
+
+<p>Many of the memory-leaks that were once present in the old versions have now been fixed and through the new design there is very little to go wrong.</p>
+
+<p>The extension runs a highly optimised version of the drawing routines when no animation is applied, great optimisation is also present when animations are enabled however, there is much more work to be done each loop and so requires a slightly different approach to drawing the text.</p>
+
+
+<h4><b>Links</b></h4>
+<p>
+<a href="./install.html">Installation</a><br>
+<a href="./using.html">Using the Extension</a><br>
+<a href="./how.html">How the Extension works</a><br>
+<br>
+<a href="./actions.html">Actions</a><br>
+<a href="./conditions.html">Conditions</a><br>
+<a href="./expressions.html">Expressions</a><br>
+<a href="./animations.html">Animations</a><br>
+<br>
+<a href="./examples.html">Examples</a><br>
+</p>
+
+<p>
+<br>
+<br>
+Content and Design are Copyright (c) 2001-2002 Christopher Lightfoot. All rights reserved.
+</p>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>3D Actives</TITLE>
+</HEAD>
+<BODY>
+<H1>What does it do?</H1>
+3D Actives create a 3D world out of <B>MMF2's normal Active objects</B> and Active-like objects by <B>moving</B> and <B>scaling</B> them.<BR>
+To see its possibilities, check the Overkill 3D example and Condition Red 3D example.<BR>
+<H1>Settings</H1>
+<H2>Scale objects at runtime</H2>
+To make your 3D more realasitic, it's recommanded to scale your actives.<BR>
+If you don't not think resizing is not needed for your project (For example - making a wireframe engine with 3D Actives and Overlay) or you want to use your own resizing technique, uncheck this option.<BR>
+<B><I>This option can be changed at runtime.</I></B>
+<H2>Limit for resizing</H2>
+This option is very important when objects are resized at runtime.<BR>
+This option limits 3D Active's scaling option so objects won't be resized to too large.<BR>
+Resizing an object to too large take a lot of memory and will slow down, and even <B>crash</B>, the game and <B>the computer</B>. Therefore, <B>this option can't be disabled</B>.
+Inputing 4.5 (or 4.500000 as displayed in MMF2) will limit the resizing to <B>4.5 times the original size </B> and <B>NOT 4.5% of the original size</B>.<BR>
+Inputing 50 will let 3D Active scale the active up to 50 times the original size, and will probably cause a crash! So be aware of entering too large numbers.<BR>
+Entering a number larger than 100 will pop a warning message.<BR>
+<H2>Prespective Value</H2>
+The Prespective Value is used in runtime in the 3D calculation, in the <B>depth</B> part.<BR>
+Recommanded values are from <B>100 to 300</B>.<BR>
+<B><I>This option can be changed at runtime.</I></B>
+<H2>Center Position</H2>
+The position when the 3D centers at.<BR>
+If the window size is 640*480, then you should use 320*240.<BR>
+If it's 800*600, then you should use 400*300.<BR>
+The extension already have suggested values for MMF2's defualt window sizes.<BR>
+<H1>Actions</H1>
+<H2>Move Object</H2>
+Moves the object, and rotate (if enabled), by a 3D position.<BR>
+After rotating the camara <B>the object will NOT change his position</B>! You will have to call Move Object again.<BR>
+<H2>Rotate the camara</H2>
+Change the X, Y, and Z angles of the camara.<BR>
+For a normal front view (not rotate) <B>use 90,90,90</B>.<BR>
+<H2>Settings</H2>
+The 3 actions in the menu settings change the Prespective value and Scale objects at runtime options, explained in the first setting section.<BR>
+<H1>Expressions</H1>
+<H2>Get X/Y/Z position of last moved object</H2>
+Returns the X/Y/Z position of the last move object, that can be used for advanced objects handling.<BR>
+See Condition red 3D for example.<BR>
+<H2>Get X/Y/Z angle of the camara</H2>
+Simply returns the X/Y/Z angle of the camara.
+
+</BODY>
+</HTML>

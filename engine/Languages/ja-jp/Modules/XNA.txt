@@ -1,0 +1,45 @@
+﻿{
+	"version" : 1,
+	"lang" : 1041,
+	"general" : {
+		"%o: Application has been deactivated" : "%o: アプリケーションが無効化されている",
+		"%o: Application has been reactivated" : "%o: アプリケーションが再有効化されている",
+		"%o: Back key is pressed" : "%o: Back キーが押された",
+		"%o: Music is playing in the background " : "%o: 音楽がバックグラウンドで再生中です ",
+		"Assign gamepad(s) %1 to player %0" : "ゲームパッド %1 をプレイヤー %0 に割り当てる",
+		"Check this box to simulate trial mode during the developpement of your game" : "ゲーム開発中に試用モードをシミュレートします",
+		"Enter gamepad(s) (1 for gp1, 2 for gp 2, 4 for gp 3, 8 for gp 4, or any combination)" : "ゲームパッドを入力します (1 = gp1、 2 = gp 2、 4 = gp 3、 8 = gp 4 またはこれらの組み合わせ)",
+		"Enter player number (1-4)" : "プレイヤー番号 (1-4) を入力",
+		"Enter the duration of the vibration, in seconds" : "バイブレーションする時間を秒単位で入力します",
+		"Enter the player index, 1, 2, 3 or 4" : "プレイヤーインデックス (1、2、3 または 4) を入力します",
+		"Extra function for XNA applications." : "XNA アプリに追加機能を提供します。",
+		"Game is in trial mode" : "ゲームが試用モードである",
+		"Open URL %0" : "URL %0 を開く",
+		"Open storage device selector" : "ストレージデバイスセレクタを開く",
+		"Please enter the URL to open" : "URL を入力してください",
+		"Set system player index to %0" : "システムプレイヤーインデックスを %0 に変更",
+		"Simulate trial mode" : "試用モードをシミュレート",
+		"Storage device selector shown on screen." : "ストレージデバイスセレクタが画面に表示されます。",
+		"Vibrate phone for %0 seconds" : "電話を %0 秒間バイブレーション",
+		"XNA" : "XNA",
+		"XNA Object" : "XNA オブジェクト"
+	},
+	"menu_20000" : {
+		"Actions" : "アクション",
+		"Assign gamepad to player" : "プレイヤーにゲームパッドを割り当てる ",
+		"Open URL" : "URL を開く",
+		"Open storage device selector" : "ストレージデバイスセレクタを開く",
+		"Set system player" : "システムプレイヤーを変更",
+		"Vibrate phone" : "電話をバイブレーションする",
+		"XBox" : "XBox"
+	},
+	"menu_20001" : {
+		"Application has been deactivated" : "アプリケーションが無効化されている",
+		"Application has been reactivated" : "アプリケーションが再有効化されている",
+		"Back key is pressed" : "Back キーが押された",
+		"Conditions" : "条件",
+		"Game is in trial mode" : "ゲームが試用モードである",
+		"Music is playing in the background" : "音楽がバックグラウンドで再生中です",
+		"Windows Phone" : "Windows Phone"
+	}
+}

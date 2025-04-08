@@ -1,0 +1,763 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>The Associative Array Object's Help File</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p align="center"><font color="#FF0000" size="6">The Associative
+Array Object<br>
+</font><font color="#000000" size="4">By Matt Galanto</font></p>
+
+<p><font color="#0000FF" size="4"><strong>Index</strong></font></p>
+
+<ul>
+    <li><a href="#legal">Disclaimer</a></li>
+    <li><a href="#basics">The Basics</a></li>
+    <li><a href="#ver114">Upgrading from Version 1.13 or Earlier</a></li>
+    <li><a href="#global">Global Data</a></li>
+    <li><a href="#gdsa">Global Data and Sub-Applications</a></li>
+    <li><a href="#conditions">Conditions</a><br>
+        - <em>Key Exists?</em><br>
+        -&gt; Does a Certain Key Exist?<br>
+        -&gt; Do So Many Keys Starting With a Substring Exist?<br>
+        -&gt; Do So Many Keys Ending With a Substring Exist?<br>
+        -&gt; Do So Many Keys Containing a Substring Exist?<br>
+        -&gt;Result of Last 'Key Exists' Condition<br>
+        - <em>File Progress</em><br>
+        -&gt; File is Loading<br>
+        -&gt; File is Saving<br>
+        -&gt; File is Done Loading<br>
+        -&gt; File is Done Saving<br>
+        - Has the Array Been Modified?<br>
+        - Is the Array Empty?<br>
+        - Has an Error Occured?</li>
+    <li><a href="#actions">Actions</a><br>
+        - Modify/Add a Value<br>
+        - <em>Modify a Value</em><br>
+        -&gt; Add to a Value<br>
+        -&gt; Subtract from a Value<br>
+        -&gt; Multiply a Value<br>
+        -&gt; Divide a Value<br>
+        -&gt; Modulus a Value<br>
+        -&gt; Operate on a Value<br>
+        - Modify/Add a String<br>
+        - <em>Addresses</em><br>
+        -&gt; Modify/Add a Value at an Address<br>
+        -&gt; Modify/Add a String at an Address<br>
+        - Delete a Key<br>
+        - Clear the Array<br>
+        - <em>Crop the Array</em><br>
+        -&gt; Crop with Respect to the Start of Keys<br>
+        -&gt; Crop with Respect to the End of Keys<br>
+        -&gt; Crop with Respect to the Contents of Keys<br>
+        - <em>Copy an Array</em><br>
+        -&gt; Copy All Keys<br>
+        -&gt; Copy with Respect to the Start of Keys<br>
+        -&gt; Copy with Respect to the End of Keys<br>
+        -&gt; Copy with Respect to the Contents of Keys<br>
+        - <em>File Progress</em><br>
+        -&gt; Set File Loading Interval<br>
+        -&gt; Set to Load Entire File All at Once<br>
+        -&gt; Set File Saving Interval<br>
+        -&gt; Set to Save Entire File All at Once<br>
+        - <em>Associative Array Files<br>
+        </em>-&gt; <em>Encrypted Files</em><br>
+        -&gt; -&gt; Set Encryption Key<br>
+        -&gt; -&gt; Load an Encrypted Associative Array File<br>
+        -&gt; -&gt; Save an Encrypted Associative Array File<br>
+        -&gt; Load an Associative Array File<br>
+        -&gt; Save an Associative Array File<br>
+        - <em>INI Files</em><br>
+        -&gt; <em>Load INI</em><br>
+        -&gt; -&gt; Load an INI into Strings<br>
+        -&gt; -&gt; Load an INI into Strings and Keep Group Info<br>
+        -&gt; -&gt; Load an INI into Values<br>
+        -&gt; -&gt; Load an INI into Values and Keep Group Info<br>
+        -&gt; -&gt; Load an INI into Strings and into Values<br>
+        -&gt; -&gt; Load an INI into Strings and into Values and
+        Keep Group Info<br>
+        -&gt; <em>Save INI</em><br>
+        -&gt; -&gt; Save an INI from Strings<br>
+        -&gt; -&gt; Save an INI from Strings and Keep Group Info<br>
+        -&gt; -&gt; Save an INI from Values<br>
+        -&gt; -&gt; Save an INI from Values and Keep Group Info<br>
+        -&gt; -&gt; Save an INI from Strings with Exclusion<br>
+        -&gt; -&gt; Save an INI from Strings with Exclusion and
+        Keep Group Info<br>
+        -&gt; -&gt; Save an INI from Values with Exclusion<br>
+        -&gt; -&gt; Save an INI from Values with Exclusion and
+        Keep Group Info<br>
+        - <em>List Files</em><br>
+        -&gt; Load a List File<br>
+        -&gt; Save a List File<br>
+        - <em>Errors</em><br>
+        -&gt; Clear Expression Error Code</li>
+    <li><a href="#expressions">Expressions</a><br>
+        - Get a Value from a Key<br>
+        - Get a String from a Key<br>
+        - Get the Value from the Key Found in the Last 'Key
+        Exists' Condition<br>
+        - Get the String from the Key Found in the Last 'Key
+        Exists' Condition<br>
+        - <em>Addresses</em><br>
+        -&gt; Get Address of First Element in Array<br>
+        -&gt; Get Address of Last Element in Array<br>
+        -&gt; Get Address of a Key<br>
+        -&gt; Get the Address of the Key Found in the Last 'Key
+        Exists' Condition<br>
+        -&gt; Get the Address of the nth Key Starting With a
+        Substring<br>
+        -&gt; Get the Address of the nth Key Ending With a
+        Substring<br>
+        -&gt; Get the Address of the nth Key Containing a
+        Substring<br>
+        -&gt; Get a Value from an Address<br>
+        -&gt; Get a String from an Address<br>
+        -&gt; Get a Key from an Address<br>
+        -&gt; Get Address of Previous Element in Array<br>
+        -&gt; Get Address of Next Element in Array<br>
+        - <em>File Progress</em><br>
+        -&gt; Get File Progress (percentage)<br>
+        -&gt; Get File Loading Interval<br>
+        -&gt; Get File Saving Interval<br>
+        - Get the Number of Keys Starting with a Substring<br>
+        - Get the Number of Keys Ending with a Substring<br>
+        - Get the Number of Keys Containing a Substring<br>
+        - Get the Number of Elements in the Array<br>
+        - Get the Current Error Number<br>
+        - Get the Array's Address</li>
+</ul>
+
+<p><a name="legal"></a><font color="#0000FF" size="4">Disclaimer</font></p>
+
+<p>This object uses the Blowfish encryption algorithm. Please
+check with your local laws concerning encryption and exportation
+before offering, or selling, any encryption tools for public or
+for private use. The laws concerning the strength and type of
+encryption used vary, and you may be subject to restrictions and
+even criminal penatlies for failure to comply. </p>
+
+<p>The author of this extension makes no claims concerning the
+fitness of this extension for any purpose whatsoever, and makes
+no gurantees, written or implied, of its level of security and
+safety to authors or to end users in any respect. You agree to
+use this extension at your own risk and to hold the author
+harmless in any event. </p>
+
+<p><a name="basics"></a><font color="#0000FF" size="4">The Basics</font></p>
+
+<p>The Associative Array Object works very much like a normal
+array. The main difference is that an associative array uses
+string indices (called keys) wheras a normal array uses numeric
+indices. In a normal array, you might say, &quot;Get the value at
+index 5.&quot; In an associative array, you might say, &quot;Get
+the value at key 'Matt'.&quot; Another difference between normal
+arrays and this Associative Array Object is that the Associative
+Array Object stores both a value (that is, a number) and a string
+at eack key. It does not create separate keys for strings and
+values.<br>
+<u>Addresses</u>: The Associative Array Object allows you to have
+indirect access to locations in memory (that is, addresses of
+data). You can use these addresses to access the elements in the
+associative array without having to know the keys for the
+elements. It also allows you to access and modify strings and
+values without constantly having to search for keys. For big
+associative arrays, using addresses is much more efficient. <strong>WARNING</strong>:
+If you enter a bad address (some number you made up, the address
+of key that you deleted, etc.), you run the risk of crashing your
+application or otherwise mess things up, so <strong>be careful</strong>.
+The only bad address that is safe to use is 0, which is returned
+by the Associative Array Object in many situations.</p>
+
+<p><a name="ver114"></a><font color="#0000FF" size="4">Upgrading
+from Version 1.13 or Earlier</font></p>
+
+<p>In earlier versions of this object, global objects and sub-applications
+did not work together. You may have taken alternative measures.
+The problems have been fixed in this version. The changes are
+such that you may need to rework any applications that use global
+Associative Arrays in sub-applications. For information, check
+out the <em>Global Data and Sub-Applications</em> section.</p>
+
+<p><a name="global"></a><font color="#0000FF" size="4">Global
+Data</font></p>
+
+<p>The Associative Array object's set-up dialog allows you to set
+the object's data to be global. If you select this option, that
+object will keep its data over frames. Exactly what data it will
+keep:<br>
+- All keys and their strings and values<br>
+- Key found in the last 'Key Exists' condition<br>
+- Last error code<br>
+- File loading and saving intervals<br>
+If you're loading or saving a file, have data set to be global,
+and change frames, the object will immediately stop loading or
+saving. The loading and saving will not be continued on the next
+frame.</p>
+
+<p>In order for an Associative Array object to keep data over
+frames, the objects in both frames must:<br>
+- Have the same name<br>
+- Both be set as global<br>
+There is a &quot;bug&quot; in MMF where names get truncated at
+run-time if they're longer than 24 characters, so if you have say
+&quot;Associative Array Object&quot; and &quot;Associative Array
+Object 2&quot;, at run-time, both names will be the same because
+the second one gets truncated to &quot;Associative Array Object&quot;.
+This will cause problems with the global data.</p>
+
+<p><a name="gdsa"></a><font color="#0000FF" size="4">Global Data
+and Sub-Applications</font></p>
+
+<p>An interesting question arises when one thinks about using
+global data and sub-applications. What you tend to have are two
+global objects (with the same name) existing simultaneously. How
+should these two global objects interact? Well, in the
+Associative Array object, two global objects existing
+simultaneously share the same exact data. Changing a key in one,
+modifies a key in the other. Loading a file in one, loads it in
+the other. There are some quirks to be aware of when using two
+simultaneous global Associative Array objects:<br>
+- If an error occurs in an action or in a condition, the error is
+only generated in the object in which the error occured. It <strong>is
+not</strong> generated in the other global objects.</p>
+
+<p><a name="conditions"></a><font color="#0000FF" size="4">Conditions</font></p>
+
+<p><strong>Does a Certain Key Exist?</strong><br>
+This condition returns true if the specified key is found in the
+array.</p>
+
+<p><strong>Do So Many Keys Starting With a Substring Exist?</strong><br>
+This condition returns true if the specified number of keys exist
+that start with the specified substring. The last key found is
+the <em>n</em>th key starting wth the specified substring, where <em>n</em>
+is the specified number of keys. For example, if you check for 3
+keys, the third key found would be the last key found regardless
+of how many keys there are that start with the substring.</p>
+
+<p><strong>Do So Many Keys Ending With a Substring Exist?</strong><br>
+This condition returns true if the specified number of keys exist
+that end with the specified substring. The last key found is the <em>n</em>th
+key ending wth the specified substring, where <em>n</em> is the
+specified number of keys. For example, if you check for 3 keys,
+the third key found would be the last key found regardless of how
+many keys there are that end with the substring.</p>
+
+<p><strong>Do So Many Keys Containing a Substring Exist?<br>
+</strong>This condition returns true if the specified number of
+keys exist that contain the specified substring. The last key
+found is the <em>n</em>th key containing the specified substring,
+where <em>n</em> is the specified number of keys. For example, if
+you check for 3 keys, the third key found would be the last key
+found regardless of how many keys there are that contain the
+substring.</p>
+
+<p><strong>Result of Last 'Key Exists' Condition</strong><br>
+This condition will return the result of the last 'Key Exists'
+condition. In other words, if the last search found a key, this
+will return true. If not, it will return false.</p>
+
+<p><strong>File is Loading</strong><br>
+This condition returns true if a file is currently being loaded.</p>
+
+<p><strong>File is Saving</strong><br>
+This condition returns true if a file is currently being saved.</p>
+
+<p><strong>File is Done Loading</strong><br>
+This condition is a true event condition. That means that events
+having this condition will be executed as soon as a file is
+finished successfully being loaded.</p>
+
+<p><strong>File is Done Saving?<br>
+</strong>This condition is a true event condition. That means
+that events having this condition will be executed as soon as a
+file is finished successfully being saved.</p>
+
+<p><strong>Has the Array Been Modified?</strong><br>
+This condition returns true if the array has been modified since
+the last time the a file was saved or loaded or since the last
+time the array was cleared.</p>
+
+<p><strong>Is the Array Empty?</strong><br>
+This returns true if the array is empty.</p>
+
+<p><strong>Has an Error Occured?</strong><br>
+This condition is a true event condition. That means that events
+having this condition will be executed as soon as an error is
+encountered in an ACTION or CONDITION by the Associative Array
+Object (and only when an error is encountered). It will return
+true when the Error Number is greater than 0, which will always
+be the case when an error is encountered. To check for errors in
+expressions, use the Get the Current Expression Error Number
+expression.</p>
+
+<p><a name="actions"></a><font color="#0000FF" size="4">Actions</font></p>
+
+<p><strong>Modify/Add a Value</strong><br>
+This action will change the value at the specified key to the
+specified value. If the key does not exist, it will be created.
+If the key is created, its string will be set to &quot;&quot;.</p>
+
+<p><strong>Add to a Value</strong><br>
+This action adds a number to the value at the specified key. If
+the key does not exist, an error (code 6) is generated.</p>
+
+<p><strong>Subtract from a Value</strong><br>
+This action subtracts a number from the value at the specified
+key. If the key does not exist, an error (code 6) is generated.</p>
+
+<p><strong>Multiply a Value</strong><br>
+This action multiplies the value at the specified key by a number.
+If the key does not exist, an error (code 6) is generated.</p>
+
+<p><strong>Divide a Value</strong><br>
+This action divides the value at the specified key by a number.
+If the key does not exist, an error (code 6) is generated.</p>
+
+<p><strong>Modulus a Value</strong><br>
+This action modulus the value at the specified key by a number.
+If the key does not exist, an error (code 6) is generated.</p>
+
+<p><strong>Operate on a Value<br>
+</strong>This action performs the specified operation on value at
+the specified key using the specified number as the second
+operand. If the key does not exist, an error (code 6) is
+generated. Acceptable operations are + (addition), - (subtraction),
+* (multiplication), / (division), and % (modulus). Any other
+operation will reuslt in an error (code 12) being generated. Note:
+Only the first character of the operation string is looked at.</p>
+
+<p><strong>Modify/Add a String</strong><br>
+This action will change the string at the specified key to the
+specified string. If the key does not exist, it will be created.
+If the key is created, its value will be set to 0.</p>
+
+<p><strong>Modify/Add a Value at an Address</strong><br>
+This action will change the value at the specified address to the
+specified value. If the address is bad (that is, 0), it will
+generate an error (code 5).</p>
+
+<p><strong>Modify/Add a String</strong> <strong>at an Address</strong><br>
+This action will change the string at the specified address to
+the specified string. If the address is bad (that is, 0), it will
+generate an error (code 5).</p>
+
+<p><strong>Delete a Key</strong><br>
+This action deletes the specified key. If the key is not found,
+this action returns an error (code 6).</p>
+
+<p><strong>Clear the Array</strong><br>
+This actions deletes all of the keys from the array.</p>
+
+<p><strong>Crop with Respect to the Start of Keys</strong><br>
+This action removes keys from the array. If Include is 0, keys
+starting with the given substring are removed from the array. If
+Include is 1, keys starting with the given substring are included
+(or left) in the array while every other key is removed.</p>
+
+<p><strong>Crop with Respect to the End of Keys</strong><br>
+This action removes keys from the array. If Include is 0, keys
+ending with the given substring are removed from the array. If
+Include is 1, keys ending with the given substring are included (or
+left) in the array while every other key is removed.</p>
+
+<p><strong>Crop with Respect to the Contents of Keys</strong><br>
+This action removes keys from the array. If Include is 0, keys
+containing the given substring are removed from the array. If
+Include is 1, keys containing the given substring are included (or
+left) in the array while every other key is removed.</p>
+
+<p><strong>Copy All Keys</strong><br>
+This action copies all of the keys of the array with the
+specified array address to the array.</p>
+
+<p><strong>Copy with Respect to the Start of Keys</strong><br>
+This action copies keys of the array with the specified array
+address to the array. If Include is 1, keys starting with the
+given substring are copied from the array. If Include is 0, keys
+starting with the given substring are not copied from the array.</p>
+
+<p><strong>Copy with Respect to the End of Keys</strong><br>
+This action copies keys of the array with the specified array
+address to the array. If Include is 1, keys ending with the given
+substring are copied from the array. If Include is 0, keys ending
+with the given substring are not copied from the array.</p>
+
+<p><strong>Copy with Respect to the Contents of Keys<br>
+</strong>This action copies keys of the array with the specified
+array address to the array. If Include is 1, keys containing the
+given substring are copied from the array. If Include is 0, keys
+containing the given substring are not copied from the array.</p>
+
+<p><strong>Set File Loading Interval</strong><br>
+This action sets the interval (in millisecond) at which the
+object will temporarily stop loading a file and allow MMF to
+execute one program loop. If the interval is 0, the entire file
+will be loaded all at once. If the interval is not 0, the file
+will not start being loaded until the end of the current MMF loop.</p>
+
+<p><strong>Set to Load Entire File All at Once</strong><br>
+This action sets the loading interval to 0 so that the entire
+file will be loaded all at once.</p>
+
+<p><strong>Set File Saving Progress Update Interval</strong><br>
+This action sets the interval (in millisecond) at which the
+object will temporarily stop saving a file and allow MMF to
+execute one program loop. If the interval is 0, the entire file
+will be saved all at once. If the interval is not 0, the file
+will not start being saved until the end of the current MMF loop.</p>
+
+<p><strong>Set to Save Entire File All at Once<br>
+</strong>This action sets the saving interval to 0 so that the
+entire file will be saved all at once.</p>
+
+<p><strong>Set Encryption Key</strong><br>
+This action sets the encryption key to be used with the Load/Save
+Encrypted Array File actions. You must set the key before using
+those functions. The key may be a maximum of 56 characters.
+Anything longer will be truncated to 56 characters.</p>
+
+<p><strong>Load an Encrypted Associative Array File</strong><br>
+This actions loads an Encrypted Array File using the current
+encryption key and using the specified Method number. If you
+attempt to load an array using the wrong key, an error will be
+generated. Using a wrong method will simply load gibberish.</p>
+
+<p><strong>Save an Encrypted Associative Array File<br>
+</strong>This actions saves an Encrypted Array File using the
+current encryption key and using the specified Method number. If
+you attempt to save an array before setting the key, an error
+will be generated. The Method number provides slightly more
+encryption just as it does for normal array files.</p>
+
+<p><strong>Load an Associative Array File</strong><br>
+This actions loads in a file saved with the 'Save an Associatve
+Array File' action. In order to successfully load an Associatve
+Array File, you must use the Method number used when saving the
+file. Otherwise, you will just load in useless gibberish.</p>
+
+<p><strong>Save an Associative Array File</strong><br>
+This action saves an encrypted file containing all of the data (both
+strings and values) stored in the array. The Method number
+determines how the file will be encrypted (using 0 will leave the
+file unencrypted). You will need to use the same Method number
+you use here in order to load the Associatve Array File later, so
+don't forget it!</p>
+
+<p><strong>Load an INI into Strings</strong><br>
+This action clears the array and loads the data from the
+specified INI file. Each item in loaded as a key, and the item's
+string is stored as a string at the key. Groups are ignored in
+this action.</p>
+
+<p><strong>Load an INI into Strings and Keep Group Info</strong><br>
+This action clears the array and loads the data from the
+specified INI file. Each item is loaded as key in this format: <font
+color="#FF0000">groupname</font><font color="#000000">delimiter</font><font
+color="#0000FF">itemname</font><font color="#000000">. The item's
+string is stored as a string at the key.</font></p>
+
+<p><strong>Load an INI into Values</strong><br>
+This action clears the array and loads the data from the
+specified INI file. Each item in loaded as a key, and the item's
+string is converted stored as a value at the key. Groups are
+ignored in this action.</p>
+
+<p><strong>Load an INI into Values and Keep Group Info</strong><br>
+This action clears the array and loads the data from the
+specified INI file. Each item is loaded as key in this format: <font
+color="#FF0000">groupname</font><font color="#000000">delimiter</font><font
+color="#0000FF">itemname</font><font color="#000000">. The item's
+string is converted and stored as a value at the key.</font></p>
+
+<p><strong>Load an INI into Strings and into Values</strong><br>
+This action clears the array and loads the data from the
+specified INI file. Each item in loaded as a key, and the item's
+string is stored as a string and as a value at the key. Groups
+are ignored in this action.</p>
+
+<p><strong>Load an INI into Strings and into Values and Keep
+Group Info</strong><br>
+This action clears the array and loads the data from the
+specified INI file. Each item is loaded as key in this format: <font
+color="#FF0000">groupname</font><font color="#000000">delimiter</font><font
+color="#0000FF">itemname</font><font color="#000000">. The item's
+string is stored as a string and as a value at the key.</font></p>
+
+<p><strong>Save an INI from Strings</strong><br>
+This action saves the data in the array to the specified file. It
+stores data in this format: <font color="#FF0000">key</font><font
+color="#000000">=</font><font color="#0000FF">string</font><font
+color="#000000">. This action will not save the values stored at
+keys.</font></p>
+
+<p><strong>Save an INI from Strings and Keep Group Info<br>
+</strong>This action saves the data in the array to the specified
+file. It uses the delimiter to separate group names and item
+names for the INI. For example, if the delimiter is set to &quot;|++|&quot;
+and if the current key is &quot;gargle|++|cramped&quot;, this
+action will put <font color="#FF0000">cramped</font><font
+color="#000000">=</font><font color="#0000FF">string </font>under
+group <font color="#FF0000">gargle </font>in the INI file. <font
+color="#000000">This action will not save the values stored at
+keys.</font></p>
+
+<p><strong>Save an INI from Values</strong><br>
+This action saves the data in the array to the specified file. It
+stores data in this format: <font color="#FF0000">key</font><font
+color="#000000">=</font><font color="#0000FF">value</font><font
+color="#000000">. This action will not save the strings stored at
+keys.</font></p>
+
+<p><strong>Save an INI from Values and Keep Group Info<br>
+</strong>This action saves the data in the array to the specified
+file. It uses the delimiter to separate group names and item
+names for the INI. For example, if the delimiter is set to &quot;|++|&quot;
+and if the current key is &quot;gargle|++|cramped&quot;, this
+action will put <font color="#FF0000">cramped</font><font
+color="#000000">=</font><font color="#0000FF">value </font>under
+group <font color="#FF0000">gargle </font>in the INI file. <font
+color="#000000">This action will not save the strings stored at
+keys.</font></p>
+
+<p><strong>Save an INI from Strings with Exclusion</strong><br>
+This action saves the data in the array to the specified file. It
+stores data in this format: <font color="#FF0000">key</font><font
+color="#000000">=</font><font color="#0000FF">string or value</font><font
+color="#000000">. This action will save the string stored at a
+key so long as the string is <em>not</em> equal to the exclusion
+string. If it is equal to the exclusion string, the action will
+save the value stored at the key instead.</font></p>
+
+<p><strong>Save an INI from Strings with Exclusion and Keep Group
+Info<br>
+</strong>This action saves the data in the array to the specified
+file. It uses the delimiter to separate group names and item
+names for the INI. For example, if the delimiter is set to &quot;|++|&quot;
+and if the current key is &quot;gargle|++|cramped&quot;, this
+action will put <font color="#FF0000">cramped</font><font
+color="#000000">=</font><font color="#0000FF">string or value </font>under
+group <font color="#FF0000">gargle </font>in the INI file. <font
+color="#000000">This action will save the string stored at a key
+so long as the string is <em>not</em> equal to the exclusion
+string. If it is equal to the exclusion string, the action will
+save the value stored at the key instead.</font></p>
+
+<p><strong>Save an INI from Values with Exclusion</strong><br>
+This action saves the data in the array to the specified file. It
+stores data in this format: <font color="#FF0000">key</font><font
+color="#000000">=</font><font color="#0000FF">string or value</font><font
+color="#000000">. This action will save the value stored at a key
+so long as the value is <em>not</em> equal to the exclusion value.
+If it is equal to the exclusion value, the action will save the
+string stored at the key instead.</font></p>
+
+<p><strong>Save an INI from Values with Exclusion and Keep Group
+Info<br>
+</strong>This action saves the data in the array to the specified
+file. It uses the delimiter to separate group names and item
+names for the INI. For example, if the delimiter is set to &quot;|++|&quot;
+and if the current key is &quot;gargle|++|cramped&quot;, this
+action will put <font color="#FF0000">cramped</font><font
+color="#000000">=</font><font color="#0000FF">string or value </font>under
+group <font color="#FF0000">gargle </font>in the INI file. <font
+color="#000000">This action will save the value stored at a key
+so long as the value is <em>not</em> equal to the exclusion value.
+If it is equal to the exclusion value, the action will save the
+string stored at the key instead.</font></p>
+
+<p><strong>Load a List File</strong><br>
+This action clears the array and loads the specified list file,
+which is file containing a list of elements separated by line
+breaks. Each element in the list is loaded as key with a string
+of &quot;&quot; and a value of 0.</p>
+
+<p><strong>Save a List File<br>
+</strong>This action saves the data in the array to the specified
+file. The keys are saved as a list with elements separated by
+line breaks. Strings and values are not saved.</p>
+
+<p><strong>Clear Expression Error Code</strong><br>
+This action clears the expression error code, setting it to 0.</p>
+
+<p><a name="expressions"></a><font color="#0000FF" size="4">Expressions</font></p>
+
+<p><strong>Get a Value from a Key</strong><br>
+<em>GetValue(Object Name, Key)</em><br>
+Returns the value stored at the specified key. If the key is not
+found, returns 0 and generates an error (code 6).</p>
+
+<p><strong>Get a String from a Key</strong><br>
+<em>GetString$(Object Name, Key)</em><br>
+Returns the string stored at the specified key. If the key is not
+found, returns &quot;&quot; and generates an error (code 6).</p>
+
+<p><strong>Get the Value from the Key Found in the Last 'Key
+Exists' Condition</strong><br>
+<em>GetValueAtFoundKey(Object Name)</em><br>
+Returns the value of the key found in the lasy 'Key Exists'
+search. If no key was found in the last search, returns 0 and
+generates an error (code 7).</p>
+
+<p><strong>Get the String from the Key Found in the Last 'Key
+Exists' Condition</strong><br>
+<em>GetStringAtFoundKey$(Object Name)</em><br>
+Returns the string of the key found in the lasy 'Key Exists'
+search. If no key was found in the last search, returns
+&quot;&quot; and generates an error (code 7).</p>
+
+<p><strong>Get Address of First Element in Array</strong><br>
+<em>GetFirstAddress(Object Name)</em><br>
+Returns the address of the first element in the array. If the
+array is empty, returns 0 and generates an error (code 8).</p>
+
+<p><strong>Get Address of Last Element in Array</strong><br>
+<em>GetLastAddress(Object Name)</em><br>
+Returns the address of the last element in the array. If the
+array is empty, returns 0 and generates an error (code 8).</p>
+
+<p><strong>Get Address of a Key</strong><br>
+<em>GetAddress(Object Name, Key)</em><br>
+Returns the address of the specified key. If the key is not
+found, returns 0 and generates an error (code 6).</p>
+
+<p><strong>Get the Address of the Key Found in the Last 'Key
+Exists' Condition</strong><br>
+<em>GetAddressOfFoundKey(Object Name)</em><br>
+Returns the address of the key found in the lasy 'Key Exists'
+search. If no key was found in the last search, returns 0 and
+generates an error (code 7).</p>
+
+<p><strong>Get the Address of the nth Key Starting With a
+Substring</strong><br>
+<em>GetAddyKeysStart(Object Name, Substring, n, Address)</em><br>
+Returns the address of the <em>n</em>th key that starts with the
+specified substring. The search begins at the element at the
+specified address. Returns 0 if there are not <em>n</em> keys
+starting with the substring.</p>
+
+<p><strong>Get the Address of the nth Key Ending With a Substring</strong><br>
+<em>GetAddyKeysEnd(Object Name, Substring, n, Address)</em><br>
+Returns the address of the <em>n</em>th key that ends with the
+specified substring. The search begins at the element at the
+specified address. Returns 0 if there are not <em>n</em> keys
+ending with the substring.</p>
+
+<p><strong>Get the Address of the nth Key Containing a Substring<br>
+</strong><em>GetAddyKeysContain(Object Name, Substring, n,
+Address)</em><strong><br>
+</strong>Returns the address of the <em>n</em>th key that
+contains the specified substring. The search begins at the
+element at the specified address. Returns 0 if there are not <em>n</em>
+keys containing the substring.</p>
+
+<p><strong>Get a Value from an Address</strong><br>
+<em>GetValueAtAddress(Object Name, Address)</em><br>
+Returns the value stored at the specified address. If the address
+is bad (that is, 0), returns 0 and generates an error (code 5).</p>
+
+<p><strong>Get a String from an Address</strong><br>
+<em>GetStringAtAddress$(Object Name, Address)</em><br>
+Returns the string stored at the specified address. If the
+address is bad (that is, 0), returns &quot;&quot; and generates
+an error (code 5).</p>
+
+<p><strong>Get a Key from an Address</strong><em><br>
+GetKeyAtAddress$(Object Name, Address)<br>
+</em>Returns the key at the specified address. If the address is
+bad (that is, 0), returns &quot;&quot; and generates an error (code
+5).</p>
+
+<p><strong>Get Address of Previous Element in Array</strong><br>
+<em>GetNextAddress(Object Name, Address)</em><br>
+Returns the address of the element before the element at the
+specified address in the array. If the address is bad (that is,
+if it's 0 or if the it's the address of the first element in the
+array), returns 0 and generates an error (code 5).</p>
+
+<p><strong>Get Address of Next Element in Array</strong><br>
+<em>GetPreviousAddress(Object Name, Address)</em><br>
+Returns the address of the element after the element at the
+specified address in the array. If the address is bad (that is,
+if it's 0 or if the it's the address of the last element in the
+array), returns 0 and generates an error (code 5).</p>
+
+<p><strong>Get File Progress (percentage)</strong><br>
+<em>GetFileProgress(Object Name)</em><br>
+Returns the current percentage of the file that has been loaded
+or saved.</p>
+
+<p><strong>Get File Loading Interval</strong><br>
+<em>GetLoadInterval(Object Name)</em><br>
+Returns the loading interval.</p>
+
+<p><strong>Get File Saving Interval<br>
+</strong><em>GetSaveInterval(Object Name)</em><br>
+Returns the saving interval.</p>
+
+<p><strong>Get the Number of Keys Starting with a Substring</strong><br>
+<em>GetNumKeysStart(Object Name, Substring)</em><br>
+Returns the number of keys in the array that start with the
+specified substring.</p>
+
+<p><strong>Get the Number of Keys Ending with a Substring</strong><br>
+<em>GetNumKeysEnd(Object Name, Substring)</em><br>
+Returns the number of keys in the array that end with the
+specified substring.</p>
+
+<p><strong>Get the Number of Keys Containing a Substring<br>
+</strong><em>GetNumKeysContain(Object Name, Substring)</em><strong><br>
+</strong>Returns the number of keys in the array that contain the
+specified substring.</p>
+
+<p><strong>Get the Number of Elements in the Array</strong><br>
+<em>GetSize(Object Name)</em><br>
+Returns the number of elements (or keys) in the array. That is,
+returns the size of the array.</p>
+
+<p><strong>Get the Current Error Number</strong><br>
+<em>GetError(Object Name)</em><br>
+Returns the current error number. That is, returns the number of
+the last error encountered in an ACTION or CONDITION. Here's what
+each error number means:<br>
+0: No errors<br>
+1: Error opening file<br>
+2: Error writing to file<br>
+3: Error reading from file<br>
+4: Delimiter cannot be &quot;&quot; when saving to INI<br>
+5: Bad address (that is, you used 0 for an address somewhere)<br>
+6: Key not found<br>
+7: Cannot access data because last 'Key Exists' Search failed<br>
+8: Array is empty and does not have a First or Last element<br>
+9: Cannot work with files while load or save is in progress<br>
+10: Cannot modify array while load or save is in progress<br>
+11: Cannot divide by 0<br>
+12: Invalid operator<br>
+13: Cannot save files in Vitalize mode<br>
+14: Invalid array address<br>
+15: Cannot save/load encrypted files without setting key<br>
+16: Cannot create key &quot;&quot;</p>
+
+<p><strong>Get the Current Expression Error Number</strong><br>
+<em>GetExpressionError(Object Name)</em><br>
+Returns the current expression error number. That is, returns the
+number of the last error encountered in an expression.</p>
+
+<p><strong>Get the Array's Address</strong><br>
+<em>GetArrayAddress(Object Name)</em><br>
+Returns the address of the array. This value is needed in the
+array copying actions.</p>
+
+<p><a href="index.html">Go Back to Matt's MMF Objects</a></p>
+
+<p><a href="http://www.clickteam.com">Go to Clickteam's Web Site</a></p>
+
+<p><a href="../index.html">Go to Bumderland</a></p>
+</body>
+</html>

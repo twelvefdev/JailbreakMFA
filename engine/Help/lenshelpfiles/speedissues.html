@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Lens</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="general.css" type="text/css" />
+
+
+
+<h1>Speed issues</h1>
+
+<a href="main.html">Introduction to Lens</a> - 
+<a href="effects.html">Lens effects</a> - 
+<a href="speedissues.html">Speed issues</a>
+<hr />
+
+<p>
+Lens is a very "heavy" object. It is doing heavy maths and read every single pixel in the lens image 50 time per second. This is very slow so try to keep your lens images small to run a decent speed on lower end computers.
+</p>
+
+<p>
+Since lens is doing pixel by pixel checks, for some reason, turning DirectX on (in your application properties) slows Lens down. If you also enable VRAM, Lens will cause your game/app to run extremely slow.
+I'm sorry I can't fix it. So if you want decent speeds, keep your fingers off DirectX and VRAM ;)
+</p>
+
+<p>
+A tip for improving speed:<br />
+Turn off autoupdating and use the 'Manual update' action when it is needed, for example when Lens is overlapping a moving object that requires the lens object to distort the background once again. If autoupdate is turned off, the lens will keep its last distorted image and whon't use CPU on rendering a new one.
+</p>

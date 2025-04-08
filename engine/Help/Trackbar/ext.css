@@ -1,0 +1,277 @@
+BODY
+{
+    FONT-SIZE: 13px;
+    FONT-FAMILY: verdana;
+    BACKGROUND-COLOR: ivory
+}
+.titlestr
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 150%;
+    PADDING-BOTTOM: 0px;
+    PADDING-TOP: 5px
+}
+DIV#footer A
+{
+    DISPLAY: block
+}
+.editstr
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 20px;
+    FONT-SIZE: 120%;
+    PADDING-BOTTOM: 5px;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: 1px solid;
+    FONT-STYLE: italic
+}
+.editstr SPAN
+{
+    FONT-WEIGHT: normal;
+    FONT-STYLE: italic
+}
+DIV#holder
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-BOTTOM: 5px;
+    MARGIN-LEFT: auto;
+    WIDTH: 770px;
+    MARGIN-RIGHT: auto;
+    PADDING-TOP: 5px;
+    BACKGROUND-COLOR: #fff
+}
+DIV#title
+{
+    PADDING-RIGHT: 15px;
+    PADDING-LEFT: 5px;
+    MARGIN-BOTTOM: 5px;
+    PADDING-BOTTOM: 10px;
+    PADDING-TOP: 5px;
+    BACKGROUND-COLOR: #dfdfff;
+    TEXT-ALIGN: right
+}
+DIV#title IMG
+{
+    PADDING-LEFT: 4px;
+    FLOAT: left;
+    WIDTH: 32px;
+    PADDING-TOP: 4px;
+    HEIGHT: 32px
+}
+DIV#titledesc
+{
+    FONT-SIZE: 115%;
+    FONT-STYLE: italic;
+    TEXT-DECORATION: underline
+}
+DIV#content
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    FLOAT: left;
+    MARGIN: 0px 0px 5px;
+    WIDTH: 545px;
+    BACKGROUND-COLOR: #dfdfff
+}
+DIV#content P
+{
+    PADDING-RIGHT: 10px;
+    TEXT-INDENT: 12px
+}
+DIV#menu
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    FONT-SIZE: 80%;
+    FLOAT: right;
+    MARGIN: 0px 0px 5px;
+    WIDTH: 200px;
+    BACKGROUND-COLOR: #dfdfff
+}
+DIV#menu H3
+{
+    FONT-SIZE: 12px
+}
+DIV#menu UL
+{
+    PADDING-LEFT: 0px;
+    LIST-STYLE-POSITION: inside;
+    MARGIN-LEFT: 4px
+}
+DIV#footer
+{
+    CLEAR: both;
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 5px;
+    PADDING-BOTTOM: 5px;
+    PADDING-TOP: 5px;
+    BACKGROUND-COLOR: #dfdfff;
+    TEXT-ALIGN: center
+}
+.content
+{
+    MARGIN-TOP: 15px;
+    PADDING-LEFT: 5px;
+    TEXT-INDENT: 12px
+}
+.paramheader
+{
+    FONT-WEIGHT: bold
+}
+.paramcontainer
+{
+    MARGIN-TOP: 11px;
+    PADDING-LEFT: 20px;
+    MARGIN-LEFT: 1px;
+    PADDING-TOP: 5px
+}
+DIV.foot
+{
+    MARGIN-TOP: 100px;
+    DISPLAY: block;
+    WIDTH: 500px;
+    COLOR: #000;
+    PADDING-TOP: 10px;
+    TEXT-ALIGN: center
+}
+A
+{
+    COLOR: #0022aa;
+    TEXT-DECORATION: none
+}
+A:visited
+{
+    COLOR: #0022aa;
+    TEXT-DECORATION: none
+}
+A:hover
+{
+    COLOR: #0044ff;
+    TEXT-DECORATION: underline
+}
+DIV.objdesc
+{
+    MARGIN-TOP: 0px;
+    PADDING-LEFT: 5px;
+    PADDING-BOTTOM: 15px;
+    PADDING-TOP: 0px
+}
+DIV.objdesc P
+{
+    MARGIN-TOP: 4px;
+    MARGIN-BOTTOM: 6px;
+    TEXT-INDENT: 12px
+}
+.seperator
+{
+    MARGIN-TOP: 5px;
+    MARGIN-BOTTOM: 5px;
+    OVERFLOW: hidden;
+    HEIGHT: 1px
+}
+.lineseperator
+{
+    BORDER-TOP: 1px solid;
+    MARGIN-TOP: 5px;
+    MARGIN-BOTTOM: 1px;
+    OVERFLOW: hidden;
+    HEIGHT: 1px
+}
+H1
+{
+    FONT-SIZE: 28px
+}
+H2
+{
+    FONT-SIZE: 24px
+}
+H1
+{
+    PADDING-RIGHT: 0px;
+    MARGIN-TOP: 3px;
+    PADDING-LEFT: 0px;
+    MARGIN-BOTTOM: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-TOP: 0px
+}
+H3
+{
+    PADDING-RIGHT: 0px;
+    MARGIN-TOP: 3px;
+    PADDING-LEFT: 0px;
+    MARGIN-BOTTOM: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-TOP: 0px
+}
+H2
+{
+    PADDING-RIGHT: 0px;
+    MARGIN-TOP: 3px;
+    PADDING-LEFT: 0px;
+    MARGIN-BOTTOM: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-TOP: 0px
+}
+H4
+{
+    PADDING-RIGHT: 0px;
+    MARGIN-TOP: 3px;
+    PADDING-LEFT: 0px;
+    MARGIN-BOTTOM: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-TOP: 0px
+}
+UL
+{
+    MARGIN-TOP: 0px;
+    MARGIN-BOTTOM: 8px;
+    PADDING-TOP: 3px
+}
+DIV.maintext H3
+{
+    PADDING-RIGHT: 4px;
+    PADDING-LEFT: 4px;
+    FONT-SIZE: 120%;
+    MARGIN-BOTTOM: 0px;
+    PADDING-BOTTOM: 4px;
+    PADDING-TOP: 4px;
+    BACKGROUND-COLOR: #afafff
+}
+DIV.maintext H4
+{
+    PADDING-RIGHT: 4px;
+    MARGIN-TOP: 0px;
+    DISPLAY: block;
+    PADDING-LEFT: 4px;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 110%;
+    MARGIN-BOTTOM: 10px;
+    PADDING-BOTTOM: 4px;
+    MARGIN-LEFT: 30px;
+    PADDING-TOP: 4px;
+    FONT-STYLE: italic;
+    BACKGROUND-COLOR: #efefff
+}
+DIV#holder DIV#content DIV.maintext P
+{
+    MARGIN-TOP: 0px;
+    MARGIN-BOTTOM: 10px;
+    MARGIN-LEFT: 0px;
+    TEXT-INDENT: 20px
+}
+SPAN.code
+{
+    PADDING-RIGHT: 4px;
+    MARGIN-TOP: 4px;
+    DISPLAY: block;
+    PADDING-LEFT: 4px;
+    FONT-SIZE: 10px;
+    MARGIN-BOTTOM: 10px;
+    PADDING-BOTTOM: 4px;
+    COLOR: #fff;
+    PADDING-TOP: 4px;
+    BACKGROUND-COLOR: #2f2f4f
+}

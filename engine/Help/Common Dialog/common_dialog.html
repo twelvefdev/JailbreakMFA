@@ -1,0 +1,2547 @@
+
+<HTML>
+<HEAD>
+
+<TITLE>3EE.com On-line Extension Documentation</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LEFTMARGIN="0" TOPMARGIN="0">
+
+  
+  
+
+<TABLE CELLPADDING=5 WIDTH="100%"><TR><TD>
+
+
+<TABLE WIDTH="100%">
+<TR>
+<TD VALIGN="top">
+  <B><A NAME="obj_6"><FONT SIZE=4>Common Dialog</FONT></A></B><BR><BR>
+
+  
+  
+    <FONT SIZE=2><A HREF="#type_1">Condition</A></FONT><BR>
+  
+    <FONT SIZE=2><A HREF="#type_2">Action</A></FONT><BR>
+  
+    <FONT SIZE=2><A HREF="#type_3">Expression</A></FONT><BR>
+  
+  </TD>
+
+</TR>
+</TABLE>
+<BR><BR>
+<CENTER>
+<TABLE>
+<TR>
+<TD ALIGN="center">
+  <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10>
+    <TR>
+      <TD><B><FONT SIZE=2>Author:</FONT></B></TD>
+      <TD><FONT SIZE=2>Third Eye Entertainment</FONT></TD>
+    </TR>
+    <TR>
+      <TD><B><FONT SIZE=2>Version:</FONT></B></TD>
+      <TD><FONT SIZE=2>1.01</FONT></TD>
+    </TR>
+  </TABLE></TD>
+</TR>
+</TABLE>
+<BR><BR>
+</CENTER>
+<FONT SIZE=3>The Common Dialog object gives you control of the save and load common dialog that is used by most Windows programs. The Common Dialog gives you control over several properties in how the dialog behaves, and allows you to open a dialog window using an action or expression. You can also set the initial directory, initial filename, use custom filters, and more.<BR>
+<BR>
+The ability to use custom filters is probably the biggest advantage of using the Common Dialog object. A filter is a filename expression that allows you to limit the files that show up in a user's open or save dialog window where the files and folders are listed. For example, the filter "*.txt" would show only files with the file extension txt, usually called Text files. Another popular filter might be "*.exe", which would show all Executable files. You can add these filters to your dialog box by calling Add Filter before opening the dialog window. For every filter you add a new selection will show up in the Filters listbox in your open or save dialog window. If you want more then one filename extension for a single filter (single entry in the listbox) then you can use the pipe character "|" to separate filter names and filter extensions. For example, you could call the action:<BR>
+<BR>
+Add Filter "Extension files" for "*.cox|*.gox"<BR>
+<BR>
+And you will get a single filter that filters for both the cox and gox filename extensions.<BR>
+<BR>
+Features<BR>
+<UL><LI>Flexible adding of custom filters to open and save dialog boxes</LI><BR>
+<LI>Can limit selection of files to a single intial directory</LI><BR>
+<LI>Can limit users to existing folders and/or files</LI><BR>
+<LI>Enable or disable create new file and/or overwrite existing file prompts</LI><BR>
+<LI>You can be notified whether the Open/Save or Cancel button was selected</LI><BR>
+<LI>You can open the open/save dialog box from an expression and have the filename selected returned in-line without using any actions</LI></UL></FONT>
+<BR><BR>
+
+
+</TD></TR></TABLE>
+
+  <HR>
+
+      <TABLE>
+        <TR>
+          
+            <TD><IMG SRC="./comdlg32_icon.gif" WIDTH="16" HEIGHT="16" BORDER=0></TD><TD><B><A HREF="#obj_6"><FONT SIZE=2>Common Dialog</FONT></A></B></TD>
+          
+        </TR>
+      </TABLE>
+      <BR>
+
+      
+
+      
+      <TABLE>
+        <TR><TD COLSPAN=2><B><A NAME="type_1">Condition</A></B></TD></TR>
+        
+        
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_653"><A HREF="#func_653">After Open Dialog</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_655"><A HREF="#func_655">After Save Dialog</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_654"><A HREF="#func_654">Open Cancelled</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_656"><A HREF="#func_656">Save Cancelled</A></A></FONT></TD></TR>
+    
+  
+
+
+      </TABLE>
+      <BR>
+      
+      <TABLE>
+        <TR><TD COLSPAN=2><B><A NAME="type_2">Action</A></B></TD></TR>
+        
+        
+        
+        
+        
+
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Filters</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_661"><A HREF="#func_661">Add Filter</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_660"><A HREF="#func_660">Clear Filters</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Preferences</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Create Prompt</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_701"><A HREF="#func_701">Disable</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_700"><A HREF="#func_700">Enable</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>File Must Exist</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_691"><A HREF="#func_691">Disable</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_690"><A HREF="#func_690">Enable</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Hide Read Only</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_693"><A HREF="#func_693">Disable</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_692"><A HREF="#func_692">Enable</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>No Change Directory</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_695"><A HREF="#func_695">Disable</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_694"><A HREF="#func_694">Enable</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Overwrite Prompt</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_697"><A HREF="#func_697">Disable</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_696"><A HREF="#func_696">Enable</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Path Must Exist</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_699"><A HREF="#func_699">Disable</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_698"><A HREF="#func_698">Enable</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_682"><A HREF="#func_682">Set Default Extension</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_679"><A HREF="#func_679">Set Default Filename</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_681"><A HREF="#func_681">Set Dialog Title</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_680"><A HREF="#func_680">Set Initial Directory</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_657"><A HREF="#func_657">Show Open Dialog</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_658"><A HREF="#func_658">Show Save Dialog</A></A></FONT></TD></TR>
+    
+  
+
+
+      </TABLE>
+      <BR>
+      
+      <TABLE>
+        <TR><TD COLSPAN=2><B><A NAME="type_3">Expression</A></B></TD></TR>
+        
+        
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_703"><A HREF="#func_703">Get File Title</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_702"><A HREF="#func_702">Get Filename</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_704"><A HREF="#func_704">Return Open Dialog</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_705"><A HREF="#func_705">Return Save Dialog</A></A></FONT></TD></TR>
+    
+  
+
+
+      </TABLE>
+      <BR>
+      
+
+      
+
+    
+
+
+
+  <HR>
+
+  
+
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_661"><FONT SIZE=4>Add Filter</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Add Filter <A HREF=#661_szFilterName>szFilterName</A> for <A HREF=#661_szFilterExt>szFilterExt</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Adds the specified filter to the internal filter list, which are used to filter which file types to display in the open and save dialog boxes. You can select between the various filters.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Add Filter "Text files" for "*.txt"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="661_szFilterName">szFilterName</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A name describing an extension filter. For example, a good name for the extension *.exe would be Executable Files.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="661_szFilterExt">szFilterExt</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A filter extension, with wildcards. A filter extension of *.dll would look for all files with the three character extension dll.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_661"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Condition</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_653"><FONT SIZE=4>After Open Dialog</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Open Dialog - OK</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Fired when an open file dialog box has been closed by a user selecting the Load button.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Open Dialog - OK</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_653"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Condition</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_655"><FONT SIZE=4>After Save Dialog</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save Dialog - OK</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Fired when a save file dialog box has been closed by a user selecting the Save button</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save Dialog - OK</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_655"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_660"><FONT SIZE=4>Clear Filters</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Reset Filters</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Removes all of the current filters.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Reset Filters</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_660"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_695"><FONT SIZE=4>Disable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable No Change Directory</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Allow the directory to be changed.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable No Change Directory</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_695"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_697"><FONT SIZE=4>Disable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable Overwrite Prompt</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Do not show a prompt when choosing an existing file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable Overwrite Prompt</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_697"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_699"><FONT SIZE=4>Disable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable Path Must Exist</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>The path chosen does not have to exist.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable Path Must Exist</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_699"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_701"><FONT SIZE=4>Disable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable Create Prompt</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Do not show a prompt when selecting a file that doesn't exist.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable Create Prompt</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_701"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_691"><FONT SIZE=4>Disable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable File Must Exist</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>The file you select does not have to exist.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable File Must Exist</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_691"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_693"><FONT SIZE=4>Disable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable Hide Read Only</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Show the Read Only checkbox.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable Hide Read Only</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_693"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_694"><FONT SIZE=4>Enable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable No Change Directory</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Don't allow the directory to be changed.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable No Change Directory</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_694"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_692"><FONT SIZE=4>Enable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable Hide Read Only</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Don't show the Read Only checkbox.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable Hide Read Only</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_692"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_690"><FONT SIZE=4>Enable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable File Must Exist</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>The file you select must already exist.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable File Must Exist</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_690"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_700"><FONT SIZE=4>Enable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable Create Prompt</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Show a Create Prompt when selecting a file that doesn't exist.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable Create Prompt</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_700"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_698"><FONT SIZE=4>Enable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable Path Must Exist</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>The path chosen must exist.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable Path Must Exist</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_698"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_696"><FONT SIZE=4>Enable</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable Overwrite Prompt</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Show an OK to overwrite prompt when an existing file is selected.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable Overwrite Prompt</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_696"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_703"><FONT SIZE=4>Get File Title</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>GetFileTitle$(<A HREF=#703_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the name of the file selected without an extension.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>GetFileTitle$("Common Dialog object")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="703_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_703"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_702"><FONT SIZE=4>Get Filename</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>GetFilename$(<A HREF=#702_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the path to a file selected in the last open or save dialog box.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>GetFilename$("Common Dialog object")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="702_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_702"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Condition</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_654"><FONT SIZE=4>Open Cancelled</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Open Dialog - Cancel</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Fired when an open file dialog box has been closed by a user selecting the Cancel button.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Open Dialog - Cancel</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_654"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_704"><FONT SIZE=4>Return Open Dialog</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>OpenDialog$(<A HREF=#704_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Shows the open dialog box and returns the filename selected, or an empty string if the dialog was cancelled.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>OpenDialog$("Common Dialog object")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="704_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_704"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_705"><FONT SIZE=4>Return Save Dialog</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>SaveDialog$(<A HREF=#705_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Shows the save dialog box and returns the filename selected, or an empty string if the dialog was cancelled.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>SaveDialog$("Common Dialog object")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="705_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_705"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Condition</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_656"><FONT SIZE=4>Save Cancelled</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save Dialog - Cancel</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Fired when a save file dialog box has been closed by a user selecting the Cancel button</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save Dialog - Cancel</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_656"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_682"><FONT SIZE=4>Set Default Extension</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set Default Filename Extension to <A HREF=#682_szExt>szExt</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>If an extension isn't included with a filename then the specified default filename extension will be added.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set Default Filename Extension to "txt"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="682_"></A></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_682"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_679"><FONT SIZE=4>Set Default Filename</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set Filename to <A HREF=#679_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Sets the initial filename for the open and save dialog boxes.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set Filename to "test.fil"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="679_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_679"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_681"><FONT SIZE=4>Set Dialog Title</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set Dialog Title to <A HREF=#681_szTitle>szTitle</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Sets the title of the open or save dialog box.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set Dialog Title "Save File..."</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="681_szTitle">szTitle</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A title string.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_681"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_680"><FONT SIZE=4>Set Initial Directory</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set Initial Directory to <A HREF=#680_szDirectory>szDirectory</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Sets the initial directory for the open and save dialog box to display when it first appears.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set Initial Directory to "C:\windows"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="680_"></A></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_680"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_657"><FONT SIZE=4>Show Open Dialog</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Show Open Dialog</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Displays the open file dialog box and waits for a file to be selected, or until the window is closed.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Show Open Dialog</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_657"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_658"><FONT SIZE=4>Show Save Dialog</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Show Save Dialog</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Displays the save file dialog box and waits for a file to be selected, or until the window is closed.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Show Save Dialog</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_658"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_6"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+
+</BODY>
+
+
+</HTML>

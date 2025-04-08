@@ -1,0 +1,592 @@
+<html>
+
+<head>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<title>Text Blitter Documentation</title>
+<style type="text/css">
+@import url(default.css);
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<a name="top"></a>
+<h2>Expressions</h2>
+
+<p>Below is a quick and accessible reference of the Text Blitter expressions. First select the menu under which you're expression appears, then select the correct item from the list under that menu</p>
+
+<h4><b>Table</b></h4>
+<p>
+<a href="#callback">Callback</a><br>
+<a href="#balloon">Balloon</a><br>
+-<br>
+<a href="#image">Image</a><br>
+<a href="#character">Characters</a><br>
+-<br>
+<a href="#object">Object</a><br>
+<a href="#alignment">Alignment</a><br>
+<a href="#margins">Margins</a><br>
+<a href="#scrolling">Scrolling</a><br>
+<a href="#animation">Animation</a><br>
+<a href="#text">Text</a><br>
+<a href="#color">Colour</a><br>
+-<br>
+<a href="#advanced">Advanced</a><br>
+-<br>
+<a href="#getstring">Get String</a><br>
+<a href="#getchar">Get Char From Map</a><br>
+</p>
+
+<br>
+<br>
+<a name="callback"></a><h4><b>Callback</b></h4>
+
+<a href="#callback_bgln">Begin Line</a><br>
+<a href="#callback_character">Character</a><br>
+-<br>
+<a href="#callback_curchar">Current Character on Line</a><br>
+<a href="#callback_numchar">Number of Characters on Line</a><br>
+<a href="#callback_curline">Current Line Number</a><br>
+<a href="#callback_numline">Number of lines</a><br>
+
+<blockquote>
+
+<a name="callback_bgln"></a><h4><b>Begin Line</b></h4>
+
+<a href="#callback_bgln_x">X</a><br>
+<a href="#callback_bgln_y">Y</a><br>
+<a href="#callback_bgln_trans">Transparency of Line</a><br>
+-<br>
+<a href="#callback_bgln_ox">Image X Offset</a><br>
+<a href="#callback_bgln_oy">Image Y Offset</a><br>
+
+<blockquote>
+<a name="callback_bgln_x"></a><h4><b>X</b></h4>
+<p>Gets the X coordinate of the line about to be drawn</p>
+<p>: LCBK_DestX()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_bgln_y"></a><h4><b>Y</b></h4>
+<p>Gets the Y coordinate of the line about to be drawn</p>
+<p>: LCBK_DestY()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_bgln_trans"></a><h4><b>Transparency of Line</b></h4>
+<p>Gets the transparency of the line about to be drawn</p>
+<p>: LCBK_Trans()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_bgln_ox"></a><h4><b>Image X Offset</b></h4>
+<p>Gets the Image X offset of the line that is about to be drawn</p>
+<p>: LCBK_ImgX()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_bgln_oy"></a><h4><b>Image Y Offset</b></h4>
+<p>Gets the Image Y offset of the line that is about to be drawn</p>
+<p>: LCBK_ImgY()</p>
+</blockquote>
+
+<a name="callback_character"></a><h4><b>Character</b></h4>
+
+<a href="#callback_character_x">Destination X</a><br>
+<a href="#callback_character_y">Destination Y</a><br>
+<a href="#callback_character_sx">Source X</a><br>
+<a href="#callback_character_sy">Source Y</a><br>
+<a href="#callback_character_cw">Character Width</a><br>
+<a href="#callback_character_ch">Character Height</a><br>
+<a href="#callback_character_trans">Transparency</a><br>
+<a href="#callback_character_c">Character</a><br>
+-<br>
+<a href="#callback_character_ox">Image X Offset</a><br>
+<a href="#callback_character_oy">Image Y Offset</a><br>
+
+<blockquote>
+<a name="callback_character_x"></a><h4><b>Destination X</b></h4>
+<p>Gets the X position on the screen taht the character that is about to be drawn will be placed</p>
+<p>: CCBK_DestX()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_y"></a><h4><b>Destination Y</b></h4>
+<p>Gets the Y position on the screen taht the character that is about to be drawn will be placed</p>
+<p>: CCBK_DestY()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_sx"></a><h4><b>Source X</b></h4>
+<p>Gets the X position on the character-map image, that is to be used when blitting the character to the screen</p>
+<p>: CCBK_SrcX()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_sy"></a><h4><b>Source Y</b></h4>
+<p>Gets the Y position on the character-map image, that is to be used when blitting the character to the screen</p>
+<p>: CCBK_SrcY()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_cw"></a><h4><b>Character Width</b></h4>
+<p>Gets the width of the character that is about to be drawn to the screen</p>
+<p>: CCBK_CharWidth()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_ch"></a><h4><b>Character Height</b></h4>
+<p>Gets the height of the character that is about to be drawn to the screen</p>
+<p>: CCBK_CharHeight()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_trans"></a><h4><b>Transparency</b></h4>
+<p>Gets the transparency of the character that is about to be drawn to the screen</p>
+<p>: CCBK_Trans()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_c"></a><h4><b>Character</b></h4>
+<p>Retusn the character's ASCII code of the character about to be drawn. This variable is unchanged by the source-x and source-y actions</p>
+<p>: CCBK_Char()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_ox"></a><h4><b>Image X Offset</b></h4>
+<p>Returns the Image-X offset that will be used when the character is blitted to the screen</p>
+<p>: CCBK_ImgX()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_character_oy"></a><h4><b>Image Y Offset</b></h4>
+<p>Returns the Image-Y offset that will be used when the character is blitted to the screen</p>
+<p>: CCBK_ImgY()</p>
+</blockquote>
+
+</blockquote>
+
+
+<blockquote>
+<a name="callback_curchar"></a><h4><b>Current Character on Line</b></h4>
+<p>In terms of characters and letters, returns the current position along the current line that is currently be drawn</p>
+<p>: CBK_XCount()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_numchar"></a><h4><b>Number of Characters on Line</b></h4>
+<p>In terms of characters and letters, Returns the number of characters on the line that is about to be drawn</p>
+<p>: CBK_LineLen()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_curline"></a><h4><b>Current Line Number</b></h4>
+<p>Returns the current line number that is about to be drawn</p>
+<p>: CBK_CurLine()</p>
+</blockquote>
+
+<blockquote>
+<a name="callback_numline"></a><h4><b>Number of lines</b></h4>
+<p>Returns the total number of lines to be drawn this mmf-loop</p>
+<p>: CBK_LineCount()</p>
+</blockquote>
+
+
+
+<a name="balloon"></a><h4><b>Balloon</b></h4>
+
+<a href="#balloon_getx">Get X Position</a><br>
+<a href="#balloon_getx">Get Y Position</a><br>
+-<br>
+<a href="#balloon_handle">Get Handle</a><br>
+<a href="#balloon_flags">Get Flags</a><br>
+-<br>
+<a href="#balloon_minx">Min X</a><br>
+<a href="#balloon_miny">Min Y</a><br>
+<a href="#balloon_maxx">Max X</a><br>
+<a href="#balloon_maxy">Max Y</a><br>
+
+<blockquote>
+<a name="balloon_getx"></a><h4><b>Get X Position</b></h4>
+<p>Get the X position of the balloon</p>
+<p>: GetBalloonX()</p>
+</blockquote>
+
+<blockquote>
+<a name="balloon_gety"></a><h4><b>Get Y Position</b></h4>
+<p>Get the Y position of the balloon</p>
+<p>: GetBalloonY()</p>
+</blockquote>
+
+<blockquote>
+<a name="balloon_handle"></a><h4><b>Get Handle</b></h4>
+<p>Get the handle value currently being used</p>
+<p>: GetBalloonHandle()</p>
+</blockquote>
+
+<blockquote>
+<a name="balloon_flags"></a><h4><b>Get Flags</b></h4>
+<p>Get the balloon flags, check balloon info for more information</p>
+<p>: GetBalloonFlags()</p>
+</blockquote>
+
+
+<a name="image"></a><h4><b>Image</b></h4>
+
+<a href="#image_fn">Get Image Filename</a><br>
+-<br>
+<a href="#image_iw">Get Image Width</a><br>
+<a href="#image_ih">Get Image Height</a><br>
+-<br>
+<a href="#image_ox">Get Image X Offset</a><br>
+<a href="#image_oy">Get Image Y Offset</a><br>
+
+<blockquote>
+<a name="image_fn"></a><h4><b>Get Image Filename</b></h4>
+<p>When saving or loading the image, the text blitter remembers the filename you used to save. This expression allows you to retrieve whatever filename was last used.</p>
+<p>: ImageFilename()</p>
+</blockquote>
+
+<blockquote>
+<a name="image_iw"></a><h4><b>Get Image Width</b></h4>
+<p>Returns the width variable. Note, this function does not return the actual width of the image unless you have previously loaded one in using the 'Load Image' action. If you have not previously set a new image width the returned value will be the same as the one that appears in the setup dialog in the frame editor.</p>
+<p>: ImageWidth() <br></p>
+</blockquote>
+
+<blockquote>
+<a name="image_ih"></a><h4><b>Get Image Height</b></h4>
+<p>Returns the height of the image</p>
+<p>: ImageHeight()</p>
+</blockquote>
+
+<blockquote>
+<a name="image_ox"></a><h4><b>Get Image X Offset</b></h4>
+<p>Returns the x offset value</p>
+<p>: ImageXOffset()</p>
+</blockquote>
+
+<blockquote>
+<a name="image_oy"></a><h4><b>Get Image Y Offset</b></h4>
+<p>Returns the y offset value</p>
+<p>: ImageYOffset()</p>
+</blockquote>
+
+<a name="character"></a><h4><b>Character</b></h4>
+
+<a href="#character_w">Get Character Width</a><br>
+<a href="#character_h">Get Character Height</a><br>
+-<br>
+<a href="#character_o">Get Character Offset</a><br>
+<a href="#character_m">Get Character Map</a><br>
+-<br>
+<a href="#character_hs">Get Horizontal Character Spacing</a><br>
+<a href="#character_vs">Get Vertical Character Spacing</a><br>
+
+<blockquote>
+<a name="character_w"></a><h4><b>Get Character Width</b></h4>
+<p>Returns the current character width</p>
+<p>: CharWidth()</p>
+</blockquote>
+
+<blockquote>
+<a name="character_h"></a><h4><b>Get Character Height</b></h4>
+<p>Returns the current character height</p>
+<p>: CharHeight()</p>
+</blockquote>
+
+<blockquote>
+<a name="character_o"></a><h4><b>Get Character Offset</b></h4>
+<p>Returns the current offset</p>
+<p>: CharOffset()</p>
+</blockquote>
+
+<blockquote>
+<a name="character_m"></a><h4><b>Get Character Map</b></h4>
+<p>Returns the character map as a string</p>
+<p>: CharMap$()</p>
+</blockquote>
+
+<blockquote>
+<a name="character_hs"></a><h4><b>Get Horizontal Character Spacing</b></h4>
+<p>Returns the current horizontal character spacing value</p>
+<p>: CharXSpace()</p>
+</blockquote>
+
+<blockquote>
+<a name="character_vs"></a><h4><b>Get Vertical Character Spacing</b></h4>
+<p>Returns the current vertical character spacing value</p>
+<p>: CharYSpace()</p>
+</blockquote>
+
+
+<a name="object"></a><h4><b>Object</b></h4>
+
+<a href="#object_x">Horizontal Position</a><br>
+<a href="#object_y">Vertical Position</a><br>
+-<br>
+<a href="#object_w">Get Width</a><br>
+<a href="#object_h">Get Height</a><br>
+
+
+<blockquote>
+<a name="object_x"></a><h4><b>Horizontal Position</b></h4>
+<p>Returns the horizontal position of the object</p>
+<p>: XObjPos()</p>
+</blockquote>
+
+<blockquote>
+<a name="object_y"></a><h4><b>Vertical Position</b></h4>
+<p>Returns the vertical position of the object</p>
+<p>: YObjPos()</p>
+</blockquote>
+
+<blockquote>
+<a name="object_w"></a><h4><b>Get Width</b></h4>
+<p>Returns the width of the object</p>
+<p>: ObjWidth()</p>
+</blockquote>
+
+<blockquote>
+<a name="object_h"></a><h4><b>Get Height</b></h4>
+<p>Returns the height of the object</p>
+<p>: ObjHeight()</p>
+</blockquote>
+
+
+<a name="alignment"></a><h4><b>Alignment</b></h4>
+
+<a href="#alignment_h">Get Horizontal Alignment</a><br>
+<a href="#alignment_v">Get Vertical Alignment</a><br>
+
+<blockquote>
+<a name="alignment_h"></a><h4><b>Get Horizontal Alignment</b></h4>
+<p>Returns the horizontal alignment, in the terms of either 0 - Left, 1 - Centre or 2 - Right</p>
+<p>: HorzAlign()</p>
+</blockquote>
+
+<blockquote>
+<a name="alignment_v"></a><h4><b>Get Vertical Alignment</b></h4>
+<p>Returns the vertical alignment, in the terms of either 0 - Top, 1 - Centre or 2 - Bottom</p>
+<p>: VertAlign()</p>
+</blockquote>
+
+<a name="margins"></a><h4><b>Margins</b></h4>
+
+<a href="#margins_t">Get Top Margin</a><br>
+<a href="#margins_l">Get Left Margin</a><br>
+<a href="#margins_r">Get Right Margin</a><br>
+<a href="#margins_b">Get Bottom Margin</a><br>
+
+<blockquote>
+<a name="margins_t"></a><h4><b>Get Top Margin</b></h4>
+<p>Returns the height of the top margin</p>
+<p>: GetTopMargin()</p>
+</blockquote>
+
+<blockquote>
+<a name="margins_t"></a><h4><b>Get Left Margin</b></h4>
+<p>Returns the width of the left margin</p>
+<p>: MarginLeft()</p>
+</blockquote>
+
+<blockquote>
+<a name="margins_t"></a><h4><b>Get Right Margin</b></h4>
+<p>Returns the width of the right margin</p>
+<p>: MarginRight(()</p>
+</blockquote>
+
+<blockquote>
+<a name="margins_t"></a><h4><b>Get Bottom Margin</b></h4>
+<p>Returns the height of the top margin</p>
+<p>: MarginBottom()</p>
+</blockquote>
+
+<a name="scrolling"></a><h4><b>Scrolling</b></h4>
+
+<a href="#scrolling_h">Get Horizontal Scrolling</a><br>
+<a href="#scrolling_v">Get Vertical Scrolling</a><br>
+
+<blockquote>
+<a name="scrolling_h"></a><h4><b>Get Horizontal Scrolling</b></h4>
+<p>Returns the horizontal scroll value</p>
+<p>: ScrollX()</p>
+</blockquote>
+
+<blockquote>
+<a name="scrolling_v"></a><h4><b>Get Vertical Scrolling</b></h4>
+<p>Returns the vertical scroll value</p><p>
+<p>: ScrollY()</p>
+</blockquote>
+
+<a name="animation"></a><h4><b>Animation</b></h4>
+
+<a href="#animation_cs">Get Animation Speed</a><br>
+-<br>
+<a href="#animation_sa">Get Animation Type</a><br>
+<a href="#animation_sp">Get Animation Param</a><br>
+
+<blockquote>
+<a name="animation_cs"></a><h4><b>Get Animation Speed</b></h4>
+<p>Returns the speed at which the animation runs, 1 is the fastest at 1:1 speed, the higher the value the higher the delay of the update (per frame), so a speed of 4 will update every 4 MMF frames</p>
+<p>: AnimSpeed()</p>
+</blockquote>
+
+<blockquote>
+<a name="animation_sa"></a><h4><b>Get Animation Type</b></h4>
+<p>Sets the current animation</p>
+<p>: AnimType()</p>
+</blockquote>
+
+<blockquote>
+<a name="animation_sp"></a><h4><b>Get Animation Param</b></h4>
+<p>Gets a parameter from the animation.</p>
+<p>: AnimParam()</p>
+<p>1: Parameter to return</p>
+</blockquote>
+
+<a name="text"></a><h4><b>Text</b></h4>
+
+<a href="#text_fn">Get Text Filename</a><br>
+<a href="#text_tw">Get Tab Width</a><br>
+
+<blockquote>
+<a name="text_fn"></a><h4><b>Get Text Filename</b></h4>
+<p>When text is either saved or loaded, the filename is stored within the extension. This expression returns the filename used last</p>
+<p>: GetTextFilename$()</p>
+</blockquote>
+
+<blockquote>
+<a name="text_tw"></a><h4><b>Get Tab Width</b></h4>
+<p>Returns the current tab width used within the Text Blitter</p>
+<p>: GetTabWidth()</p>
+</blockquote>
+
+<a name="color"></a><h4><b>Colour</b></h4>
+
+<a href="#color_tc">Get Transparent Colour</a><br>
+
+<blockquote>
+<a name="color_tc"></a><h4><b>Get Transparent Colour</b></h4>
+<p>Returns the current transparent color</p>
+<p>: GetTransColor()</p>
+</blockquote>
+
+<a name="advanced"></a><h4><b>Advanced</b></h4>
+
+<p>Through the text blitter being a text orientated object, included are some extra text functions that are a little faster than using the internal routines, however most expressions can only be used with the internal buffer.</p>
+
+<p>Some of the following functions are similar to the in built functions (such as the extraction and length expressions), however, using the in-built functions involves mmf, calling the extension to return the entire string, copying the buffer to another buffer, extracting the appropriate text, removing the old buffer and finally returning the correct result. The extension can do everything within itself and then simply return the correct result faster than using mmf events and expressions. This limits the functions to the extension only but is a little faster.</p>
+
+<a href="#advanced_v">Convert to ASCII Value</a><br>
+<a href="#advanced_c">Convert to ASCII Character</a><br>
+-<br>
+<a href="#advanced_u">Get Uppercase of buffer</a><br>
+<a href="#advanced_l">Get Lowercase of buffer</a><br>
+<a href="#advanced_r">Get Reverse of buffer</a><br>
+-<br>
+<a href="#advanced_el">Extract Left of buffer</a><br>
+<a href="#advanced_er">Extract Right of buffer</a><br>
+<a href="#advanced_em">Extract Mid of buffer</a><br>
+<a href="#advanced_le">Length of buffer</a><br>
+-<br>
+<a href="#advanced_n">Number of lines</a><br>
+<a href="#advanced_g">Get Line</a><br>
+
+
+<blockquote>
+<a name="advanced_v"></a><h4><b>Convert to ASCII Value</b></h4>
+<p>This expression requires a string, however, only the first character of the string is used. The expression returns the integer value of the character.</p>
+<p>: AsciiVal()</p>
+<p> 1: String </p>
+</blockquote>
+
+<blockquote>
+<a name="advanced_c"></a><h4><b>Convert to ASCII Character</b></h4>
+<p>This expression does the reverse of the expression above, it requires an integer and returns as a string, the equivalent ASCII character.</p>
+<p>: AsciiChar$()</p>
+<p> 1: Integer </p>
+</blockquote>
+
+<blockquote>
+<a name="advanced_u"></a><h4><b>Get Uppercase of buffer</b></h4>
+<p>Returns the uppercase version of the buffer</p>
+<p>: Upper$()</p>
+</blockquote>
+
+<blockquote>
+<a name="advanced_l"></a><h4><b>Get Lowercase of buffer</b></h4>
+<p>Returns the lowercase version of the buffer</p>
+<p>: Lower$()</p>
+</blockquote>
+
+<blockquote>
+<a name="advanced_r"></a><h4><b>Get Reverse of buffer</b></h4>
+<p>Returns the buffer reversed. This expression does not alter the buffer, only returns the reversed version.</p>
+<p>: Reverse$()</p>
+</blockquote>
+
+
+<blockquote>
+<a name="advanced_el"></a><h4><b>Extract Left of buffer</b></h4>
+<p>Returns an extract from the left of the main buffer.</p>
+<p>: GetLeft$()</p>
+<p>1: Length of text to retrieve</p>
+</blockquote>
+
+<blockquote>
+<a name="advanced_er"></a><h4><b>Extract Right of buffer</b></h4>
+<p>Returns an extract from the right of the main buffer.</p>
+<p>: GetRight$()</p>
+<p>1: Length of text to retrieve</p>
+</blockquote>
+
+<blockquote>
+<a name="advanced_em"></a><h4><b>Extract Mid of buffer</b></h4>
+<p>Returns an advanced_em from the middle of the text buffer</p>
+<p>: GetRight$()</p>
+<p>1: Starting position<br>
+2: Length of text to retrieve</p>
+</blockquote>
+
+<blockquote>
+<a name="advanced_le"></a><h4><b>Length of buffer</b></h4>
+<p>Returns the length of the buffer.</p>
+<p>: GetLen()</p>
+</blockquote>
+
+
+
+<blockquote>
+<a name="advanced_n"></a><h4><b>Number of lines</b></h4>
+<p>Returns the number of lines, taking into account word wrapping.</p>
+<p>: NumLines()</p>
+</blockquote>
+
+<blockquote>
+<a name="advanced_g"></a><h4><b>Get Line</b></h4>
+<p>Returns a line from the buffer, the line is the same that appears on the screen and word wrapping is taken into account. Because the engine builds a database of all the lines, getting the string on a line is as fast as retrieving the main buffer. If you wish to get the number of lines without word wrapping, simply; turn the feature off, get the line and turn the feature back on.</p>
+<p>: GetLine$()</p>
+<p>1: Line number to retrieve</p>
+</blockquote>
+
+
+
+<a name="getstring"></a><h4><b>Get String</b></h4>
+
+<p>Returns the main buffer as a string. If you are using MM1.2 you will be limited to 1024 characters, however, if you are using MM1.5, you will be able to return the full size of the buffer.</p>
+<p>: GetText$()</p>
+
+<a name="getchar"></a><h4><b>Get Char From Map</b></h4>
+
+<p>Returns a character from the character map string</p>
+<p>: GetChar</p>
+<p>1: Position in string</p>
+
+<p>
+<br>
+<br>
+Content and Design are Copyright (c) 2001-2002 Christopher Lightfoot. All rights reserved.
+</p>
+
+</body>
+
+</html>

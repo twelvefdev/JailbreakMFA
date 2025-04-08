@@ -1,0 +1,54 @@
+<HTML>
+<HEAD><TITLE>Spellcheck Object :: Dialog Box</TITLE>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<div class="set">
+
+
+<div class="title">Contraction Modes</div>
+
+Contractions are words with letters missed out. Where the letters have been missed out, an apostrophe (') is placed. The words <i>Can't</i> , <i>We'll</i> , <i>We're</i> , <i>Don't</i> , <i>Shouldn't</i> and so forth are examples of contractions.<br><Br>
+
+The Spellcheck object has three methods for dealing with contracted words. Each one will be explained here.<Br><br>
+
+<div class="stitle">Mode 1: None (Only contractions in wordlist)</div>
+In this mode, contracted words are treated just like every other word. Every contracted word must be in the wordlist. The problem with this is there are a lot of contracted words, so a complete wordlist would be hard to make. The other two modes include this word - that is, even in modes 2 and 3, if the word is in the word list, it will be accepted.
+
+
+<div class="stitle">Bases and Contraction parts</div>
+The Spellchecker considers a contracted word to be made out of two parts - the base (e.g. <i>should</i> in <i>shouldn't</i>) and the contraction part (e.g. <i>n't</i> in <i>shouldn't</i>). The contractions part first or second letter is always an apostrophe.<br><br>
+
+In Mode 2 and Mode 3, the spellchecker has a list of allowed bases and a list of allowed contractions.
+
+<div class="stitle">Mode 2: Selected Bases</div>
+In Mode 2, there is a list of allowed bases and a list of allowed contractions. Any base with any contraction is considered a valid word. For example, if "Should" is one of the bases, and <i>'ve</i> and <i>n't</i> are among the contractions, then <i>shouldn't</i> and <i>should've</i> would be valid words.<br><br>
+
+The draw back is that if <i>'s</i> was one of the allowed contractions, then <i>should's</i> would be a valid word too.<br><br>
+
+Words with apostrophes in are still allowed in the wordlist, so Mode 2 includes Mode 1.
+
+<div class="stitle">Mode 3: All Bases</div>
+Mode 3 is the same as Mode 2, except that as well as any word in the Base List being allowed to be a base, any word in the <i>wordlist</i> is allowed to be a base. Contraction parts are still limited to the contraction list.<br><br>
+
+This method eliminates the need for a comprehensive list of contracted bases, but it also allows incorrect words to be allowed - for example, you could use 'Bus' or 'Cat' as a base and the spellchecker would not reject it, however Bus've and Busn't are not words.
+
+
+<div class="stitle">A Note on odd contracted words</div>
+There are a few notable contracted words whose bases are not words in themselves. These include "Can't" and "Won't". Also, <i>o'clock</i> is a strange contracted word. These should be put into the wordlist directly.
+
+<div class="seealso">
+See also: <a href="dialog.htm">Dialog Box</a> | <a href="hyphen.htm">Hyphen Modes</a>
+</div>
+</div>
+
+
+
+
+
+</BODY>
+</HTML>

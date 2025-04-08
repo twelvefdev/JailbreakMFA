@@ -1,0 +1,91 @@
+body{
+	font-family: "Trebuchet MS", "Verdana", "Arial";
+}
+
+.outline{
+	border-top: 1px solid #D4D0C8;
+	border-left: 1px solid #D4D0C8;
+	border-right: 1px solid #404040;
+	border-bottom: 1px solid #404040;
+	width: 235px;
+}
+.innerline{
+	border-top: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #808080;
+	border-bottom: 1px solid #808080;
+	background-color: #D4D0C8;
+	padding: 1px;
+}
+
+.item{
+	display: block;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-family: Tahoma;
+	font-size: 11px;
+	text-decoration: none;
+	color: black;
+}
+
+.itema{
+	display: block;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-family: Tahoma;
+	font-size: 11px;
+	text-decoration: none;
+	color: black;
+	background-image: url('arrow.gif');
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+
+.itema:hover{
+	background-color: #0A246A;
+	color: white;
+	background-position: bottom right;
+}
+
+.hr{
+	margin: 2px;
+	padding: 0px;
+	border: 0px;
+	border-bottom: 1px solid #FFFFFF;
+	border-top: 1px solid #808080;
+}
+
+.item:hover{
+	background-color: #0A246A;
+	color: white;
+}
+
+.collapse{
+	visibility: hidden;
+	display: none;
+}
+
+.submenu1{
+	background-color: #E4E0D7;
+	visibility: hidden;
+	display: none;
+}
+.submenu2{
+	background-color: #EAE6DD;
+	visibility: hidden;
+	display: none;
+}
+.submenu3{
+	background-color: #F4EFE5;
+	visibility: hidden;
+	display: none;
+}
+.submenu4{
+	background-color: #FFFFFF;
+	visibility: hidden;
+	display: none;
+}

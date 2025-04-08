@@ -1,0 +1,77 @@
+<HTML>
+<HEAD><TITLE>Spellcheck Object :: Dialog Box</TITLE>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<div class="set">
+
+
+<div class="title">About Auto-parse</div>
+
+The Spellcheck object at its simplest level allows you to check if a word exists, and then to get some suggests for a given misspelt word. Although this provides all you need to write a program which can spellcheck, it would require the MMF programmer manually writing something to take a document and split it up into words. The Auto-parse features of the Spellcheck object hands this responsibility back to the Spellcheck object - for all but the most complex problems, the Auto-parse features should be able to take care of taking a document and spellchecking it.<br><br>
+
+<div class="stitle">Basic use and limitations</div>
+The biggest limitation of the Auto-parse feature is that each Spellcheck object may only Auto-parse once at a time. In the event that the user tries to Auto-parse twice at the same time, an alert box will pop up (To aid in debugging). With this limitation in mind, lets look at how the Auto-parse features work.<Br><br>
+
+You start an auto-parse by selecting the "AutoParse -> Start" action. This takes the string which you want to be spellchecked as the  input.<br><Br>
+
+Whenever the Spellchecker finds a word which is not in the wordlist, it pauses the parse and fires an "On Incorrect Word" trigger. For  ideas on what to do when you get an "On Incorrect Word" trigger see the examples (Generally it is call the "Suggest Corrections" action).  You can use the "Get Incorrect Word" expression to get the word. You can also use the "Change last Incorrect word" action to change the  incorrect word to another word. However, you <b>must remember to invoke the "Autoparse -> Resume" action here once you are ready to go onto  the next word</b>. If you do not, the parse will be in progress (So you cannot start another), but you will not get any more words.<br><Br>
+
+Once every word has been checked, "On Parse Done" is triggered. If "Stop Parse" is called at any time, then "On Parse Aborted" is triggered  and the parse is stopped.<br><br>
+
+Once the parse is done, you may want to use the "Get Corrected String" expression to get back the string you put in, except with all the  changes made from "Change last incorrect word" applied.
+
+<div class="stitle">Ignore keys</div>
+You can put the parser into what is called the "Ignore mode" by specifying an "Ignore key".<br><br>
+
+Imagine you are spellchecking a document, but for some reason you do not want to spellcheck things between Square Brackets (i.e. [ and ] ). This could be because you have something which isn't supposed to be a word in the square brackets (Maybe some peoples names, or city names, or maybe a website address). The Auto-parse features allows you to 'ignore' parts of the document, and just assume that everything within it is spelt correctly. To specify areas which are ignored, you define an ignore key. You can either use the "Add Ignore Key" action or use the dialog box to add one.<br><Br>
+
+<img src="ignore.png"><br><Br>
+
+The purpose of the quotes and escapes options will be revealed later.
+
+<div class="stitle">Neutral</div>
+
+When the parser is ignoring words, it is said to be in 'ignore mode'. When it is not in an ignore mode (And not in any other mode that we are yet to meet), it is said to be in "Neutral Mode". The dialog box and Spellcheck Object actions have a option entitled "Spellcheck in Neutral". When this is on, it will check that each word is in the wordlist when it is in Neutral Mode. If this option is off, then Neutral Mode is treated the same as Ignore mode - that is, everything is assumed to be spelt correctly. When "Spellcheck in Neutral" is off, the parser will only check words are in the wordlist in "Spellcheck Mode". This is described below.
+
+<div class="stitle">Spellcheck keys</div>
+The parser can be put into "Spellcheck Mode" by specifiying a "Spellcheck Key".<br><Br>
+
+These can be added in either the dialog box, or at runtime using the "Add Spellcheck Key" action. Note that "Spellcheck Keys" are mostly helpful when "Spellcheck in Neutral" is <b>off</b> (Although there are exceptions). An example of when it is helpful could be seen if you are familiar with HTML. You could make an Auto-parse which only spellchecks HTML Comments (Which are surrounded by &lt;!-- and --&gt; marks) and ignores the rest of the HTML document.<Br><Br>
+
+<img src="spellcheck.png">
+
+<div class="stitle">Quotes</div>
+
+Whenever the parser is in Neutral Mode, it may enter Spellcheck Mode or Ignore Mode, if it meets the right characters (Called keys). Sometimes this is not what is desired. For example, imagine the following HTML code:<br><br>
+
+<TT class="html">&lt;img src="MyTextHere[WheverWeLike]"&gt;</tt><br><br>
+
+Within the double quotes, we do not want to enter any other modes. Imagine we have an Ignore Key which ignores words in square brackets like described in the "Ignore Key" section - without the quotes feature, the parser would start ignoring words. However, using quotes, we can prevent this behaviour.<br><Br>
+
+The quote characters(s) can be added in the dialog box or with the "Add Quotes" action. If you add double quotes (<i>"</i>) as a quote characters, and make sure "Allow Quotes" is ticked (In the group box entitled "Neutral Mode Settings"), new modes will not be entered when in quotes.<br><br>
+
+You can also use these quotes in Ignore Keys or Spellcheck Keys - just check the "Process Quotes" tickbox whilst you are making them.
+
+
+
+
+<div class="stitle">Escapes</div>
+
+Escape characters make the next characters be ignored. Programmers of many common languages will recall that a Back-slash is often an escape character. See the "Javascript Spellchecker" for more information on how to use these. They are not of much use in everyday spellchecking (They are only of help if you want to spellcheck a programming language, really).
+
+<div class="seealso">
+See also: <a href="dialog.htm">Dialog Box</a>
+</div>
+</div>
+
+
+
+
+
+</BODY>
+</HTML>

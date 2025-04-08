@@ -1,0 +1,564 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Bitwiser Object</title>
+		<style>
+			body {
+				background-color: #e0e0e0;
+				background-image: url(./res/bk.png);
+				background-repeat: repeat;
+			}
+			div.main {
+				position: relative;
+				margin: 32px 32px 64px; 32px;
+				padding: 32px;
+				border: 1px solid #c0c0c0;
+				background-color: #FFF;
+				border-radius: 16px;
+				width: auto;
+				box-shadow: 4px 4px 6px #505050;
+			}
+			div.details {
+				position: relative;
+				margin: 32px 16px 12px; 16px;
+				padding: 32px 64px;
+				border: 1px solid #c0c0c0;
+				background-color: #f5f5f5;
+				border-radius: 8px;
+				width: auto;
+				box-shadow: 2px 2px 4px #505050;
+			}
+			div.details h1, h2, h3, h4, h5 {
+				text-indent: 0px;
+			}
+			div.details table {
+				font-family: sans-serif;
+				font-size: 14px;
+				border-collapse: collapse;
+			}
+			div.details td {
+				font-size: 14px;
+				border: 1px solid #d0d0d0;
+				padding: 4px;
+				width: 320px;
+			}
+			div.details th {
+				text-align: left;
+				font-size: 16px;
+			}
+			td.valname {
+				text-align: right;
+				max-width: 100px;
+			}
+			h1, h2, h3, h4, h5 {
+				font-family: sans-serif;
+			}
+			h1.heading {
+				font-size: 24px;
+				font-family: sans-serif;
+				font-weight: bold;
+				text-align: center;
+				text-shadow: 2px 2px 8px #a0a0a0;
+			}
+			h4.subtext {
+				font-size: 12px;
+				font-style: italic;
+				font-weight: lighter;
+				font-family: sans-serif;
+				text-align: center;
+			}
+			p{
+				font-family: sans-serif;
+				font-size: 14px;
+				text-indent: 32px;
+			}
+			div{
+				font-family: sans-serif;
+				font-size: 14px;
+			}
+			ul.menu {
+				font-family: sans-serif;
+				font-size: 14px;
+				padding: 0;
+				list-style-type: none;
+				border: 1px solid #808080;
+				overflow: hidden;
+				border-radius: 12px;
+				background: rgb(103,110,112); /* Old browsers */
+				background: -moz-linear-gradient(top, rgba(103,110,112,1) 0%, rgba(175,175,175,1) 34%, rgba(140,140,140,1) 57%, rgba(63,63,63,1) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(103,110,112,1) 0%,rgba(175,175,175,1) 34%,rgba(140,140,140,1) 57%,rgba(63,63,63,1) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(103,110,112,1) 0%,rgba(175,175,175,1) 34%,rgba(140,140,140,1) 57%,rgba(63,63,63,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#676e70', endColorstr='#3f3f3f',GradientType=0 ); /* IE6-9 */
+			}
+			li.menu {
+				float: left;
+			}
+			li.menuitem {
+				float: left;
+			}
+			li.dropdown {
+				display: inline-block;
+			}
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				color: #000;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				z-index: 1;
+				border-radius: 8px;
+			}
+			.dropdown-content a {
+				padding: 4px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+			}
+			.dropdown-content a:hover {
+				background-color: #f1f1f1;
+			}
+			.drop:hover .dropdown-content {
+				display: block;
+			}
+			a.menu {
+				display: block;
+				text-align: center;
+				padding: 14px 16px;
+				width: 80px;
+				text-decoration: none;
+			}
+			a.menu:hover {
+				font-weight: bold;
+			}
+			.menuitem a {
+				display: block;
+				text-align: center;
+				padding: 4px 16px;
+				text-decoration: none;
+			}
+			.white {
+				color: white;
+			}
+			.black {
+				color: black;
+			}
+			.menuitem a:hover {
+				background-color: #f1f1f1;
+				border-radius: 8px;
+			}
+			hr.separator {
+				color: #c0c0c0;
+				padding: 0;
+				margin: 4px 0px;
+				border: 0;
+				border-top: 1px solid #e0e0e0;
+			}
+			a.top {
+				color: #000;
+				font-family: sans-serif;
+				font-size: 12px;
+				font-variant: small-caps;
+				padding: 0px 0px 0px 0px;
+				text-decoration: none;
+				display: block;
+				text-align: center;
+			}
+			a.top::before {
+				content: '\21D1  ';
+			}
+			a.top::after {
+				content: ' \21D1';
+			}
+			p.indent {
+				text-indent: 50px;
+				margin: 0;
+			}
+			div.hide {
+				max-height: 88px;
+				overflow: hidden;
+			}
+			div.hide:hover {
+				max-height: 1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='main' id='top'>
+			<img style='position: relative; margin: auto; display: block; box-shadow: 0px 0px 8px #000000' src='.\res\icon.png'>
+			<h1 class='heading'>Bitwiser Object</h1>
+			<h4 class='subtext'>by Danny Worth</h4>
+			<ul class='menu'>
+				<li class='menu drop'><a class='menu white' href=# class='dropbtn'>Conditions</a>
+					<div class='dropdown-content menuitem'>
+						<a class='black menuitem' href=#FS>Flag Set</a>
+					</div>
+				</li>
+				<li class='menu drop'><a class='menu white' href=# class='dropbtn'>Expressions</a>
+					<div class='dropdown-content menuitem'>
+						<a class='black menuitem' href=#OR>OR</a>
+						<a class='black menuitem' href=#XOR>XOR</a>
+						<a class='black menuitem' href=#AND>AND</a>
+						<a class='black menuitem' href=#NOT>NOT</a>
+						<a class='black menuitem' href=#ROL>Rotate Left</a>
+						<a class='black menuitem' href=#ROR>Rotate Right</a>
+						<a class='black menuitem' href=#LSH>Shift Left</a>
+						<a class='black menuitem' href=#RSH>Shift Right</a>
+						<hr class='separator'>
+						<a class='black menuitem' href=#SBF>Set Bit Flag</a>
+						<a class='black menuitem' href=#CBF>Clear Bit Flag</a>
+						<a class='black menuitem' href=#TBF>Toggle Bit Flag</a>
+						<hr class='separator'>
+						<a class='black menuitem' href=#EV>Embed Value</a>
+						<a class='black menuitem' href=#REV>Retrieve Embedded Value</a>
+						<hr class='separator'>
+						<a class='black menuitem' href=#GS>Get Signed</a>
+					</div>
+				</li>
+			</ul>
+			<h1>Description</h1>
+			<div class='details hide'>
+				<p>The Bitwiser Object enables you to easy perform bitwise operations against any value. Bitwise operations are extremely useful. The chances are if you've ever looked into packing multiple values into a single integer or encrypt/decrypt data you would have come across bitwise operations.</p>
+				<p>So what are bitwise operations? Well first lets get into bits. A typical integer in a 32bit application will have 32 binary digits known as bits. These are 4 byte integers. There are also shorts (16bit/2 byte integers) and bytes/chars (8bit/1 byte integers) and even integers with more than 32bits such as 64bit, 128bit and so on. Each bit represents a value and they are totalled for the final value. So as you can see from just stated for every byte, 8 bits are used. Non-unicode characters (ASCII) utilise 1 byte to represent a character and unicode utilise 2 bytes to represent a character. So you can perform bitwise operations to encrypt a string of characters just as easy as you could to a value.<br /><br />
+				Let's take the letter 'A' for example:<br />
+				A = 65 (0x41) in Binary: 01000001</p>
+				<p>As mentioned above the bits of a value represent a value and with the letter 'A' / value 65 2 flags are set. Windows based operating systems are little endian based values which means that we work right to left when working with binary. Apple Mac uses big endian which is left to right.</p>
+				<p>The first bit represents a value of 1. Then for every bit after that the value is doubled so 1, 2, 4, 8, 16, 32, 64, 128 and so on. When working in hexadecimal its a little easier to visualise 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80 and so on. So looking at 'A' 01000001 the 2 bits set are 1 (0x01) and 64 (0x40) totalling 65 (0x41).<br /><br />
+				So now you have a little understanding of how bits make up values I'll move onto bitwise operations. Bitwise operations are just operations that affect the bits in one way or another. A brief overview of each operation:<br /><br />
+				<b>OR: </b>Merges the bits of the 2 values. eg 01000001 ('A') OR 01000010 ('B') would return 01000011 ('C')<br />
+				<b>XOR: </b>Toggles the bits of a value where the bits of the 2 overlap. eg 01000001 XOR 01000010 would return 00000011<br />
+				<b>AND: </b>Clears the bits of a value where the bits of the 2nd value are not set. eg 10101010 AND 00111100 would return 00101000.<br />
+				<b>NOT: </b>Inverts the bits of value. eg 11110000 would return 00001111<br />
+				<b>SHIFT: </b>Moves the bits along in either left or right directions but when the bits move outside of their bounds they are truncated and lost. eg 00110110 Shift right 2 would return 00001101 then if shifted left 2 it would return 00110100.<br />
+				<b>ROTATE: </b>Also known as circular shift, rotate is similar to shift except when the bits move out of bounds they wrap round. eg 00110110 rotate right 3 would return 11000110</p>
+				<p>Using a mixture of the operations on an integer can completely change its value. You could apply a rotate right, XOR with a value and then NOT. It then would be a matter of reversing the process (of course rotating left instead of right) to get it back to its original value. This is a basic encryption method employed with many packets that are sent between game clients and servers to protect the packet data. You could even store 4 x 1 byte values in a single integer. The above examples covered just a single byte but a 32bit integer would look like this 00100110111111101000110110000111 (654216583) 4 x 1 byte values could be extracted from this 00100110 (38), 11111110 (254), 10001101 (141), 10000111 (135). Or 8 x 4 bit values. 4 bits allows you to store a value of 0-15.</p>
+			</div>
+			<h1>Conditions</h1>
+			<div class='details' id='FS'>
+				<h2>Flag Set</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Bit Flag:</b></td>
+						<td>1 Bit of 32bit value (0-31)</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to test</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				Test if a bit within a value is set. eg Bit flag 5 set in 845623: 11001110011100<b>1</b>10111 would be true.
+			</div>
+			<a class='top' href=#top>Top</a>
+			<h1>Expressions</h1>
+			<div class='details' id='OR'>
+				<h2>OR</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>First Value:</b></td>
+						<td>First value to perform OR operation against</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Second value to perform OR operation with</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				There are 3 OR functions one for each 8/16/32bit.<br /><br />
+				Merges the bits of the 2 values. For example OR_32( "Bitwiser Object", 2546, 341996 ) would return 344062.
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='XOR'>
+				<h2>XOR</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>First Value:</b></td>
+						<td>First value to perform XOR operation against</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Second value to perform XOR operation with</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				There are 3 XOR functions one for each 8/16/32bit.<br /><br />
+				Toggles the bits of a value where the bits of the 2 overlap. For example XOR_32( "Bitwiser Object", 2546, 341996 ) would return 343582.
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='AND'>
+				<h2>AND</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>First Value:</b></td>
+						<td>First value to perform AND operation against</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Second value to perform AND operation with</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				There are 3 AND functions one for each 8/16/32bit.<br /><br />
+				Clears the bits of a value where the bits of the 2nd value are not set. For example AND_32( "Bitwiser Object", 2546, 341996 ) would return 480.
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='AND'>
+				<h2>NOT</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to perform NOT operation against</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				There are 3 NOT functions one for each 8/16/32bit.<br /><br />
+				Inverts the bits of value. For example NOT_32( "Bitwiser Object", 2546 ) would return -2547.
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='ROL'>
+				<h2>Rotate Left</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to perform rotate operation against</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Rotate Amount:</b></td>
+						<td>The number of bits to rotate</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				There are 3 Rotate Left functions one for each 8/16/32bit.<br /><br />
+				Also known as circular shift, rotate is similar to shift except when the bits move out of bounds they wrap round. For example ROL_32( "Bitwiser Object", 2546, 3 ) would return 20368.
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='ROR'>
+				<h2>Rotate Right</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to perform rotate operation against</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Rotate Amount:</b></td>
+						<td>The number of bits to rotate</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				There are 3 Rotate Right functions one for each 8/16/32bit.<br /><br />
+				Also known as circular shift, rotate is similar to shift except when the bits move out of bounds they wrap round. For example ROR_32( "Bitwiser Object", 2546, 3 ) would return 1073742142.
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='LSH'>
+				<h2>Shift Left</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to perform shift operation against</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Shift Amount:</b></td>
+						<td>The number of bits to shift</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				There are 3 Shift Left functions one for each 8/16/32bit.<br /><br />
+				Moves the bits along in left direction but when the bits move outside of their bounds they are truncated and lost. For example LSH_32( "Bitwiser Object", 2546, 3 ) would return 20368.
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='RSH'>
+				<h2>Shift Right</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to perform shift operation against</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Shift Amount:</b></td>
+						<td>The number of bits to shift</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				There are 3 Shift Right functions one for each 8/16/32bit.<br /><br />
+				Moves the bits along in right direction but when the bits move outside of their bounds they are truncated and lost. For example RSH_32( "Bitwiser Object", 2546, 3 ) would return 318.
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='SBF'>
+				<h2>Set Bit Flag</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to set bit on</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Bit:</b></td>
+						<td>The number of bit to set (0-31)</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				Sets the specified bit of a value specified in the Bit argument. For example to set the first bit of Global Value A. Set Global Value A to SetBitFlag( "Bitwiser Object", Global Value A, 0 ).
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='CBF'>
+				<h2>Clear Bit Flag</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to clear bit on</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Bit:</b></td>
+						<td>The number of bit to clear (0-31)</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				Clears the specified bit of a value specified in the Bit argument. For example to clear the first bit of Global Value A. Set Global Value A to ClearBitFlag( "Bitwiser Object", Global Value A, 0 ).
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='TBF'>
+				<h2>Toggle Bit Flag</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to toggle bit on</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Bit:</b></td>
+						<td>The number of bit to toggle (0-31)</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				Toggles the specified bit of a value specified in the Bit argument. For example to toggle the first bit of Global Value A. Set Global Value A to ToggleBitFlag( "Bitwiser Object", Global Value A, 0 ).
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='EV'>
+				<h2>Embed Value</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value to embed to:</b></td>
+						<td>Value to embed on</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Value to embed:</b></td>
+						<td>Value to embed</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Bit offset:</b></td>
+						<td>Offset in bits where to place the value</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Bit length:</b></td>
+						<td>Length in bits of the value</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				Embeds a value into another allowing you to store multiple values in 1 integer. For example to embed 2 values 25 and 15 that use 5 bits in Global Value A. Set Global Value A to EmbedValue( "Bitwiser Object", Global Value A, 15, 0, 5 ) then again Set Global Value A to EmbedValue( "Bitwiser Object", Global Value A, 25, 5, 5 ).
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='REV'>
+				<h2>Retrieve Embedded Value</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value to retrieve from:</b></td>
+						<td>Value to retrieve embedded from</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Bit offset:</b></td>
+						<td>Offset in bits where to retrieve the value</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Bit length:</b></td>
+						<td>Length in bits of the value</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				Retrieves an embedded value from a value. For example to retrieve 2 embedded values that use 5 bits from Global Value A. Set First Value to RetrieveEmbeddedValue( "Bitwiser Object", Global Value A, 0, 5 ) then again Set Value 2 to EmbedValue( "Bitwiser Object", Global Value A, 5, 5 ).
+			</div>
+			<a class='top' href=#top>Top</a>
+			<div class='details' id='GS'>
+				<h2>Get Signed</h2>
+				<h3>Arguments</h3><hr class='separator'><br />
+				<table>
+					<tr>
+						<td class='valname'><b>Value:</b></td>
+						<td>Value to get signed from</td>
+					</tr>
+					<tr>
+						<td class='valname'><b>Returns:</b></td>
+						<td>Result integer</td>
+					</tr>
+				</table><br />
+				<h3>Details</h3><hr class='separator'><br />
+				There are 2 Get Signed functions one each for 8/16bit.<br /><br />
+				Values in Fusion are all 32bit signed even if you retrieve a 8 or 16 bit value. As a result when retrieving an 8 or 16 bit value it returns an equivilent value of an unsigned value (as it is below the limit of a signed 32bit value). Get signed converts a 8/16bit value to signed. For example Signed8( "Bitwiser Object", 255 ) would return -1.
+			</div>
+			<a class='top' href=#top>Top</a>
+		</div>
+	</body>
+</html>

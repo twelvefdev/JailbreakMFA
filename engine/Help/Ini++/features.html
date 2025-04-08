@@ -1,0 +1,303 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ini++ Documentation</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta name="copyright" content="Copyright 2007-2008 Jack Webster - All rights reserved" />
+		<meta name="author" content="Olivier Behr - www.oliverpearl.com" />
+	</head>
+<body>
+
+<h1>Advanced Features</h1>
+
+<p>This section explains a few of the more advanced, non-standard features.</br>
+</br>
+<a href="#compression">Compression</a></br>
+<a href="#encryption">Encryption</a></br>
+<a href="#groupitemrepeats">Group and Item Repeats</a></br>
+<a href="#quotingstrings">Quoting Strings</a></br>
+<a href="#escapechars">Escape Characters</a></br>
+<a href="#hashing">Hashing</a></br>
+<a href="#subgroups">Subgroups</a></p>
+
+</br>
+<a id="compression"></a><h2>Compression</h2>
+<p>Huffman compression can be used to compress the Ini file. This works best 
+for large files. Please note that it is possible for the compressed file to be 
+larger than the uncompressed file. This is true for any type of compression.</br>
+</br>Ini++ cannot automatically detect if an Ini file is compressed or not. The 
+“Use Compression” setting should always be enabled when loading a compressed 
+file for it to be loaded correctly. Similarly, loading an uncompressed 
+file with the “Use Compression” setting selected will not work.</br>
+</br>If an Ini file is loaded with “Use Compression” off, it can still be later turned 
+on so that subsequent saves are compressed. The same applies the other way 
+around. The “Back-up To...” action allows you to save the Ini as compressed 
+without changing the settings at all.</br>
+</br>Please note that the data is not compressed in memory.</br>
+</br>The compression setting does not affect the “Load From String” action or the debugger.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<a id="encryption"></a><h2>Encryption</h2>
+<p>INI files can be encrypted. A key is specified, and the key used to encrypt it 
+must be used to decrypt it. Specifying the wrong key will incorrect decrypt the file.</br>
+</br>
+The encryption is not easily broken but it is recommended that sensitive 
+data is not stored in this fashion. The encryption method will never change 
+the size of the file. Encryption is performed before compression (if both are 
+enabled), and so encryption may make compression less effective.</br>
+</br>
+Ini++ cannot automatically detect if an Ini file is encrypted or not. The 
+“Encryption” setting should always be enabled and the correct key specified 
+when loading an encrypted file for it to be loaded correctly. Similarly, loading 
+an unencrypted file with the “Encryption” setting selected will not work.</br>
+</br>
+If an Ini file is loaded without encryption, it can still be later turned on 
+so that subsequent saves are compressed. The same applies the other way 
+around, and the key can also be changed. The “Back-up To...” action allows 
+you to save the Ini as encrypted without changing the settings at all.</br>
+</br>
+Please note that the data is not encrypted in memory. The data can still 
+be extracted using a program that can read the computers memory directly. 
+The key can also be extracted in this manor. It is also possible that the key 
+might be stored as plain text if it was hard-coded in Multimedia Fusion.</br>
+</br>The encryption setting does not affect the “Load From String” action or the debugger.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<a id="groupitemrepeats"></a><h2>Group and Item Repeats</h2>
+<p>In an Ini file it is possible for a group to appear twice. It is also possible for 
+an item to appear twice within the same group. For instance,</p>
+<div class="code">Example Ini 4: The file before it is loaded before Ini++</br>
+</br>
+[group]</br>
+1=one</br>
+1=single</br>
+2=two</br>
+[group]</br>
+3=three
+</div>
+<p>Normally in this case the first instance only is read. So only the first instance 
+of the group will be read, and inside the groups only the first instance of every 
+value will be used. Ini++ has extra settings which makes it do something more sensible.</p>
+
+<h3>Groups</h3>
+<p>There are four options for what to do if there are multiple groups with the same name:</br>
+</br>
+<strong>First</strong> Takes the first instance only, like the standard Ini object does</br>
+</br>
+<strong>Last</strong> Takes the last instance only</br>
+</br>
+<strong>Merge</strong> Merges the groups together. See below.</br>
+</br>
+<strong>Rename</strong> Renames further groups so they have a unique value. See below.</br>
+</br>
+Consider the following example file which has a repeated group (but for simplicity, no repeated items):</p>
+<div class="code">Example Ini 5: The file before it is loaded before Ini++</br>
+</br>
+[group]</br>
+1=a</br>
+2=b</br>
+3=c</br>
+[group]</br>
+4=d
+</div>
+<p>In “Merge” setting, the groups are all treated as the same one. So the example will be loaded as:</p>
+<div class="code">Example Ini 6: Example 5 after it is loaded before Ini++ 
+using ‘Merge’ group repeat mode</br>
+</br>
+[group]</br>
+1=a</br>
+2=b</br>
+3=c</br>
+4=d
+</div>
+<p>This is probably the most useful mode and is the default despite its behavior being different to the standard Ini object.</p>
+<div class="code">Example Ini 7: Example 5 after it is loaded before Ini++ 
+using ‘Merge’ group repeat mode</br>
+</br>
+[group]</br>
+1=a</br>
+2=b</br>
+3=c</br>
+[group.1]</br>
+4=d
+</div>
+<p>The rename mode renames repeated groups. For instance, the example would be loaded as:</br>
+As can be seen, subsequent instances of the group are named in the form “Name.n”, where n is a number.</br>
+The “Perform Search” action can be used to find items in groups of this form.</p>
+
+<h3>Items</h3>
+<p>Repeated items works in a similar way, although “merge” makes no sense in this context.</br>
+</br>
+<strong>First</strong> Takes the first instance only, like the standard Ini object does</br>
+</br>
+<strong>Last</strong> Takes the last instance only</br>
+</br>
+<strong>Rename</strong> Renames subsequent items in the form “Name.n”, where n is a 
+number. The “Find Repeats of Item” action can search for all those in 
+the form easily.</br>
+</br>
+If the ‘Save repeated items as original’ option is used then any item in the 
+form ‘item.anything’ will be saved just as ‘item’. This does not effect the 
+data in memory.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<a id="quotingstrings"></a><h2>Quoting Strings</h2>
+<p>Values in Ini files can surrounded by double quotation marks (“””). This is 
+important if the item has leading or trailing white space, as that is ignored. 
+The standard Ini object correctly reads quoted strings but never writes them. 
+This causes leading and trailing spaces to be lost when data is saved using 
+the standard Ini object.</br>
+</br>
+Ini++ will always quote strings when they are required to be. With the 
+“Always Quote Strings?” option selected, strings will be quoted even if it is 
+not required. Otherwise, it will not quote the strings if it is not required.</br>
+</br>
+With the Standard Ini object, group names are trimmed so that they can 
+never start or end with a space. In Ini++, this is not the case, regardless of 
+mode, and no quotation marks are necessary.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<a id="escapechars"></a><h2>Escape Characters</h2>
+<p>Suppose you wish to have an item called “1=1”. Then your Ini file would look a bit like this:</p>
+<div class="code">[group]</br>
+1=1 = value</br>
+</div>
+<p>However, this would be read incorrectly as representing an item with name 
+“1” and value “1 = value”. Usually there is no way around this, but Ini++ 
+adds in escape characters.</br>
+</br>
+When escape characters are enabled, “\=” represents an equals sign but 
+without the meaning of it. Therefore, when escape characters are enabled in 
+the items name, we can represent it correctly as:</p>
+<div class="code">[group]</br>
+1\=1 = value</br>
+</div>
+<p>The following is a list of escape characters supported:<p>
+<div style="margin-left: 40px">
+\n New line&sup1;</br>
+</br>
+\t Tab character, which is otherwise removed as white space at the start or end of an item name</br>
+</br>
+\_ Space character, which is otherwise removed as white space at the start or end of an item name</br>
+</br>
+\q Quote character, so values can start and end with quotation marks. \” also works.</br>
+</br>
+\= Valid only in item names</br>
+</br>
+\; Valid only at the start of item names, to prevent the line being a comment</br>
+</br>
+\[ Valid only at the start of item names, to prevent it being interpreted as a group</br>
+</div>
+<p>Please note that escape characters are handled automatically. When you 
+use the “Get” expressions, the escape characters are automatically turned 
+back in to what they represent. When you use the “Set” actions, your string 
+automatically get the escape characters added when necessary.</br>
+Escape characters for groups, items and values can all be set separately.</p>
+<p class="small">&sup1; This represents a new line in the sense of the new line character 
+set in the options, not necessarily a line break.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<a id="hashing"></a><h2>Hashing</h2>
+<p>“Hashing” turns a string into a number in a non-reversible way. This is good 
+for storing passwords. For instance,</p>
+<div style="margin-left: 40px">
+1. User selects a password for her log in. It is stored using the “Set String 
+(MD5 Hashed)” action. This means the password is never stored, only 
+a number representing it is, and the password cannot be worked out 
+from that.</br>
+</br>
+2. Another day, the user wants to log on again. She writes her password 
+in again and the password is compared to the old one using the “Item 
+Has Hashed Value” condition.</br>
+</br>
+3. If they match she is allowed to log in. Otherwise, the password is wrong 
+and the log on has failed.
+</div>
+<p>If this is done then the Ini file should be encrypted as well. Otherwise, 
+somebody wishing to gain entry to the account could open the Ini file and 
+change the entry to their own value, where they know which string hashes 
+to that value. They have then effectively changed the password. Encryption 
+means they cannot simply change the file to what they want.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<a id="subgroups"></a><h2>Subgroups</h2>
+<p>Sometimes it is desirable for an Ini group to have subgroups. This is not a 
+standard feature of Ini files, but Ini++ allows it to be easily simulated.</br>
+</br>
+In a file, a convenient for a subgroup to be denoted by tabs. For instance, you 
+could imagine a file as follows. Here, ‘parent’ has an item named ‘item’ and 
+has subgroup ‘a’. ‘a’ again has an item named ‘item’ and two subgroups, 
+called ‘aa’ and ‘ab’. This illustrates how subgroups can themselves have subgroups.</p>
+<div class="code">Example Ini 8: An example of subgroups</br>
+</br>
+[parent]</br>
+item = 0</br>
+<div style="margin-left: 20px">[a]</br>
+item = 1</br></div>
+<div style="margin-left: 40px">[aa]</br>
+item = 2</br>
+[ab]</br>
+item = 2</br></div>
+<div style="margin-left: 60px">[aba]</br>
+item = 3</br>
+[abb]</br>
+item = 3</br></div>
+<div style="margin-left: 80px">[abba]</br>
+item = 4</div>
+</div>
+<p>Now, ordinarily if you asked Ini++ to load this file, it look as below in 
+example 9. This is because tabs are normally ignored as white space in Ini 
+files. However, these is a special option, Load and Save Subgroups, which will 
+load this file in a more helpful way.</p>
+<div class="code">Example Ini 9: Example 8 when loaded without the Load and Save Subgroups option</br>
+</br>
+[parent]</br>
+item = 0</br>
+[a]</br>
+item = 1</br>
+[aa]</br>
+item = 2</br>
+[ab]</br>
+item = 2</br>
+[aba]</br>
+item = 3</br>
+[abb]</br>
+item = 3</br>
+[abba]</br>
+item = 4
+</div>
+<p>With the Load and Save Subgroups option, every subgroup will be renamed 
+to a path representing it. For instance, the example would be loaded as in 
+example 10 below:</p>
+<div class="code">Example Ini 10: Example 8 when loaded with the Load and Save Subgroups option</br>
+</br>
+[parent]</br>
+item=0</br>
+[parent/a]</br>
+item=1</br>
+[parent/a/aa]</br>
+item=2</br>
+[parent/a/ab]</br>
+item=2</br>
+[parent/a/ab/aba]</br>
+item=3</br>
+[parent/a/ab/abb]</br>
+item=3</br>
+[parent/a/ab/abb/abba]</br>
+item=4
+</div>
+<p>There are then actions like ‘Find Subgroups’ which will list all subgroups 
+of a group. This action has options so you can find the direct subgroups, 
+all subgroups, the first 3 layers of subgroups, those which are exactly ‘great 
+grandson’ groups of the group, or whatever. It is a technique to keep in 
+mind!</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</body>
+</html>

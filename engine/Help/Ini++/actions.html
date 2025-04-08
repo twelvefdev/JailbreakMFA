@@ -1,0 +1,1020 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ini++ Documentation</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta name="copyright" content="Copyright 2007-2008 Jack Webster - All rights reserved" />
+		<meta name="author" content="Olivier Behr - www.oliverpearl.com" />
+	</head>
+<body>
+
+<h1>Actions</h1>
+
+Main Menu</br>
+<div style="margin-left: 40px">
+<a href="#setcurrentgroup">Set Current Group</a>
+</div>
+</br>Current Group
+</br>
+</br>Setting Items
+<div style="margin-left: 40px">
+<a href="#setvalue">Set Value</a></br>
+<a href="#setstring">Set String</a></br>
+<a href="#setstringmd5">Set String (MD5 Hashed)</a></br>
+<a href="#saveobject">Save Object</a></br>
+<a href="#loadobject">Load Object</a></br>
+<a href="#saveposition">Save Position</a></br>
+<a href="#saveglobalvalues">Save Global Values</a></br>
+<a href="#loadglobalvalues">Load Global Values</a></br>
+<a href="#addrepeateditem">Add Repeated Item</a>
+</div>
+</br>Moving and Copying
+<div style="margin-left: 40px">
+<a href="#renamegroup">Rename Group</a></br>
+<a href="#renameitem">Rename Item</a></br>
+<a href="#moveitem">Move Item</a></br>
+<a href="#moveitembtwgroups">Move Item between groups</a></br>
+<a href="#copygroup">Copy Group</a></br>
+<a href="#copyitem">Copy Item</a></br>
+<a href="#shiftsortshuffle">Shift, Sort, Shuffle</a>
+</div>
+</br>Deleting
+<div style="margin-left: 40px">
+<a href="#deletegroup">Delete Group</a></br>
+<a href="#deleteitem">Delete Item</a></br>
+<a href="#deleteiteminallgroups">Delete Item in all groups</a></br>
+<a href="#deletebypattern">Delete by Pattern</a></br>
+<a href="#clearall">Clear All</a>
+</div>
+</br>Searching
+<div style="margin-left: 40px">
+<a href="#performsearch">Perform Search</a></br>
+<a href="#findrepeatsofitem">Find 'Repeats' of Item</a></br>
+<a href="#findsubgroups">Find 'Subgroups'</a></br>
+<a href="#clearresults">Clear Results</a></br>
+<a href="#searchputresultinifile">Search and put result in Ini file</a></br>
+<a href="#searchputresultiniobject">Search and put result in Ini object</a>
+</div>
+</br>Merging
+<div style="margin-left: 40px">
+<a href="#mergefile">Merge (with file)</a></br>
+<a href="#mergegroupfile">Merge Group (with file)</a></br>
+<a href="#mergeiniobject">Merge (with other Ini++ object)</a></br>
+<a href="#mergegroupiniobject">Merge Group (with other Ini++ object)</a>
+</div>
+</br>Loading and Saving
+<div style="margin-left: 40px">
+<a href="#changecurrentfile">Change Current File</a></br>
+<a href="#loadfile">Load File</a></br>
+<a href="#savefile">Save File</a></br>
+<a href="#saveas">Save As</a></br>
+<a href="#backupto">Backup To</a></br>
+<a href="#close">Close</a></br>
+<a href="#importexportcsv">Import/Export CSV</a></br>
+<a href="#importexportcsvarray">Import/Export CSV Array</a></br>
+<a href="#loadfromstring">Load From String</a></br>
+<a href="#changeglobaldataslot">Change Global Data Slot</a></br>
+<a href="#setautoloadsave">Set Auto Load/Save</a></br>
+<a href="#setcompression">Set Compression</a></br>
+<a href="#setencryption">Set Encryption</a></br>
+<a href="#setreadonly">Set Read Only</a>
+</div>
+</br>Dialog Box
+<div style="margin-left: 40px">
+<a href="#opendialog">Open Dialog</a></br>
+<a href="#closedialog">Close Dialog</a></br>
+<a href="#refreshdialog">Refresh Dialog</a>
+</div>
+</br>Chart Object
+<div style="margin-left: 40px">
+<a href="#displaydatachartobject">Display Data in Chart Object</a>
+</div>
+</br>Advanced Settings
+<div style="margin-left: 40px">
+<a href="#setcasesensitivity">Set Case Sensitivity</a></br>
+<a href="#escapecharssettings">Escape Characters Settings</a></br>
+<a href="#enabledisablealwaysquotestrings">Enable/Disable ‘always quote strings’</a></br>
+<a href="#setrepeatmodes">Set Repeat Modes</a></br>
+<a href="#setnewlinestring">Set Newline String</a></br>
+<a href="#setfefaultdirectory">Set Default Directory</a></br>
+<a href="#groupsettings">Group Settings (subgroups, empty groups)</a>
+</div>
+</br>Extra Functions
+<div style="margin-left: 40px">
+<a href="#compressfile">Compress File</a></br>
+<a href="#decompressfile">Decompress File</a>
+</div>
+<p></p>
+
+</br>
+<h2>Main Menu</h2>
+<a id="setcurrentgroup"></a><h4>Set Current Group</h4>
+<p>This changes the current group for use with the actions and expressions in 
+the “Current Group” sub-menus. The second parameter allows you to specify 
+if the object should ensure a new group name is specified. If it is set to 0, 
+then the current group is set to the first parameter, no matter what.</br>
+</br>
+If the second parameter is set to 1, then the current group is set to the first 
+parameter with ‘.x’ appended to the end, where x is the lowest number which 
+means the group does not exist.</br>
+</br>
+For instance, if the first parameter is set to group and the second parameter 
+is set to 1, then if there already exist groups group, group.1, group.3, then 
+the current group would be set to group.2.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Current Group</h2>
+<p>All the actions in this sub-menu are identical to the more general version of 
+the action, except with the “group” parameter set to the current group, as 
+specified by the Set Current Group action.</br>
+</br>
+There is one remark to be made. The Rename Group action will also change 
+the current group to the new name of the group.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Setting Items</h2>
+<a id="setvalue"></a><h4>Set Value</h4>
+<p>This action sets the value of the specified item to a number.</br>
+</br>
+The third parameter asks whether the number specified in the forth parameter 
+will be an integer (whole number) or floating point number (not whole 
+number). The advantage of specifying floating point is obviously that the 
+digits after the decimal point will be saved. The disadvantage of selecting 
+‘floating point’ is that if you are just working with large whole number, they 
+may get approximated. If ‘integer’ is selected then there are a larger range 
+of values until it is approximated.</br>
+</br>
+For instance, if 1, 000, 002, 124 is stored as an integer, it can be received 
+exactly. However, if the floating point option was used it would actually be 
+stored and received as 1, 000, 002, 112. Therefore: If you just want to store 
+whole numbers, use the whole number setting.</br>
+</br>
+When integer mode is used, large integers can ‘wrap around’ to large negative integers.</br>
+</br>
+When the floating point mode is used, you may sometimes notice that numbers 
+aren’t stored exactly as you would expect. This is because some numbers 
+cannot be exactly represented in floating point.</br>
+</br>
+If the number is extremely large, it may be represented as ‘1.#INF’.</p>
+<a id="setstring"></a><h4>Set String</h4>
+<p>This action sets the value of the specified item to a specified string.</p>
+<a id="setstringmd5"></a><h4>Set String (MD5 Hashed)</h4>
+<p>This action sets the value of the specified item to the MD5 hash value from a string.</br>
+</br>
+What is meant by this is a fixed length code that represents the string. For  
+instance, some strings hash as follows:</p>
+<ul>
+<li>“Hello” hashes to 8b1a9953c4611296a827abf8c47804d7</li>
+<li>“Ini++ is probably the best thing ever” hashes to a6da1d8f5556dce9c12bf9ba0de45000</li>
+<li>“An ion is a charged atomic particle. The idea of the Trapped Ion 
+system of Quantum Computing is to suspend an ion in free space in 
+a vacuum. It is known that this cannot be done using static forces, 
+however it can be done using oscillating forces. The oscillating electric 
+fields form a saddle shape, which the ion will eventually get stuck in 
+the middle of. The information is stored in the charge state of the 
+ion. Lasers can be fired at the ions to change their states or cause 
+interference.” hashes to 188c77b0329cb69619d15c77b87707e5</li>
+</ul>
+<p>Obviously, many strings might harsh to the same value, but there are still a 
+large number of different possible codes. Therefore it can be used to store 
+a password without anybody being able to work out what the password originally was.</br>
+</br>
+Hashing is case sensitive regardless of case sensitivity options.</br>
+</br>
+Use the Item Has Hashed Value condition to see if the value of a particular 
+item is the hash generated from a particular string.</p>
+<a id="saveobject"></a><h4>Save Object</h4>
+<p>This allows some attributes of an active object (or an object with similar 
+property to an active object) to be saved easily. A group is specified and 
+items in that group store various values.</br>
+</br>
+The second parameter allows the user to specify if the position of the object 
+is saved. If this parameter is non-zero, then the following items will be stored 
+in the group:</p>
+<ul>
+<li>posx: The x position of the object</li>
+<li>posy: The y position of the object</li>
+<li>dir: The direction of the object</li>
+<li>spd: The speed of the object</li>
+</ul>
+<p>The second parameter allows the user to specify if the alterable values of the 
+object is saved. If this parameter is non-zero, then the following items will 
+be stored in the group:</p>
+<ul>
+<li>flags: The flags of the object</li>
+<li>valn: The nth alterable value, for n between 0 and 25. So for instance, val04</li>
+<li>strn: The nth alterable string, for n between 0 and 25. So for instance, str12</li>
+</ul>
+<a id="loadobject"></a><h4>Load Object</h4>
+<p>The first parameter allows an object to be specified. The second parameter 
+specifies a group. The various item in this group are loaded into the object. 
+The meanings of the items are as specified above in the Save Object section,</br>
+</br>
+If any values are missing, they will not be loaded.</p>
+<a id="saveposition"></a><h4>Save Position</h4>
+<p>Saves the specified position as a string in the form “x position,y position”. 
+Use the Get X Position and Get Y Position expressions to easily receive the 
+x and y positions.</p>
+<a id="saveglobalvalues"></a><h4>Save Global Values</h4>
+<p>This saves the global values and strings into the specified group. Global 
+strings are written in the form strn and global values in the form valn. 
+Single digits values of n will have a zero prefixed, for instance str03 instead of str3.</br>
+</br>
+vals specifies the number of global values and strs specifies the number of global strings.</p>
+<a id="loadglobalvalues"></a><h4>Load Global Values</h4>
+<p>This load the global values and strings from the specified group. All present 
+values in the form strn and valn are loaded (for n at least two digits long 
+and less than strs and vals). The number of global values and strings will 
+be dynamically altered if required.</p>
+<a id="addrepeateditem"></a><h4>Add Repeated Item</h4>
+<p>“Add Repeated Item” will automatically rename the item name (or group
+name) to a similar but unique name, so data can easily be saved without
+overwriting anything else.</br>
+</br>
+The first parameter specifies a group name, the second an item name, the
+third the value for the item to have and the forth will decide the mode.</br>
+</br>
+If the last parameter is 0 then the action will ensure the item is unique by
+changing the item name. It will do this by appending ‘.n’ to the end of
+the name, where n is the lowest whole number such that the item does not
+already exist in the specified group. It will not change the group name.</br>
+</br>
+If the last parameter is 1 then the action will ensure the item is unique by
+changing the group name. It will do this by appending ‘.n’ to the end of
+the name, where n is the lowest whole number such that the group does not
+already contain an item with the given name. The group may already exist.
+It will not change the item name.</br>
+</br>
+The value must be specified as a string. Use the Str expression to convert a
+number to a string.</br>
+</br>
+See also the Set Current Group action, which can set the current group to a
+new group using a similar renaming system.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Moving and Copying</h2>
+<p>The actions in this menu allow items to be moved and copied between groups 
+and groups to be renamed and copied.</p>
+<a id="renamegroup"></a><h4>Rename Group</h4>
+<p>This action will rename a group.</br>
+</br>
+The third parameter specifies what to do if a group with the new specified 
+already exists. This can be one of the following:</p>
+<div style="margin-left: 40px">
+<p><strong>0 (Overwrite)</strong> The existing group with the destination name is overwritten.</br>
+</br>
+<strong>1 (Merge)</strong> The old group and the new group are merged together. The 
+group being renamed has priority if the two groups have items in common.</br>
+</br>
+<strong>2 (Never Overwrite)</strong> If a group already exists with the destination name, the action fails.</p>
+</div>
+<a id="renameitem"></a><h4>Rename Item</h4>
+<p>This action renames an item within a group. It will not move it outside the group.</br>
+</br>
+The forth parameter specifies whether this operation will allow another piece 
+of information to be overwritten. If it is set so that overwrites are not allowed 
+and there is already an item with the destination name in the group, this action will fail.</br>
+</br>
+Note that Move Item is a more general version of this action.</p>
+<a id="moveitem"></a><h4>Move Item</h4>
+<p>This action allows an item to be moved from one group to another, possibly 
+changing its name in the process.</br>
+</br>
+The fifth parameter specifies whether this operation will allow another piece 
+of information to be overwritten. If it is set so that overwrites are not allowed 
+and there is already an item with the destination name in the destination 
+group, this action will fail.</br>
+</br>
+Note that Rename Item and Move Item between groups are less general versions of this action.</p>
+<a id="moveitembtwgroups"></a><h4>Move Item between groups</h4>
+<p>This action allows an item to be moved from one group to another, keeping 
+its item name intact.</br>
+</br>
+The forth parameter specifies whether this operation will allow another piece 
+of information to be overwritten. If it is set so that overwrites are not allowed 
+and there is already an item with the same name in the destination group, 
+this action will fail.</br>
+</br>
+Note that Move Item is a more general version of this action.</p>
+<a id="copygroup"></a><h4>Copy Group</h4>
+<p>This action allows a complete group to be copied into another group.</br>
+</br>
+The third parameter specifies what this operation will do in the event the 
+destination group already exists. The options are:</p>
+<div style="margin-left: 40px">
+<p><strong>0 (Overwrite)</strong> The existing group with the destination name is overwritten.</br>
+</br>
+<strong>1 (Merge)</strong> The old group and the new group are merged together. The
+source group has priority if the two groups have items in common.</p>
+</div>
+<a id="copyitem"></a><h4>Copy Item</h4>
+<p>This action copies an item. The destination group name and item name can be specified.</br>
+</br>
+This action will always overwrite any existing data, there is no option for it. 
+If you wish to ensure it does now overwrite data, check if it exists using the 
+Group Has Item condition.</p>
+<a id="shiftsortshuffle"></a><h4>Shift, Sort, Shuffle</h4>
+<p>As the name suggests, this action can perform various operations, such as 
+shifting data, sorting data and shuffling data.</br>
+</br>
+The first parameter selects the operation to be performed, and the second 
+parameter selects the group for it to be performed on. The various operations 
+are listed below. The following group is used for examples:</p>
+<div class="code">Example Ini 11</br>
+</br>
+[group]</br>
+Cat = Jess</br>
+Dog = Rex</br>
+Elephant = Elly
+</div>
+<div style="margin-left: 40px">
+<p><strong>Sort</strong> Sorts the values without changing the item names. For instance, the example would be sorted as:</p>
+<div class="code">Example Ini 12</br>
+</br>
+[group]</br>
+Cat = Elly</br>
+Dog = Jess</br>
+Elephant = Rex
+</div>
+<p><strong>Shuffle</strong> Randomly swaps the values about, whilst keeping the item names unchanged.</br>
+</br>
+<strong>Shift Up/Down</strong> ‘Shift up’ shifts all the values up, discarding the first value 
+and deleting the last item name. ‘Shift down’ is similar.</br>
+</br>
+<strong>Cycle Up/Down</strong> ‘Cycle up’ shifts all the values up, and sets the last item 
+name to the old first value (hence ‘cycling’ the values). ‘Cycle down’ is similar.</br>
+</br>
+<strong>Reverse</strong> Reverses the pairing between item names and values. For instance 
+the example would become:</p>
+<div class="code">Example Ini 13</br>
+</br>
+[group]</br>
+Cat = Elly</br>
+Dog = Rex</br>
+Elephant = Jess
+</div>
+<p><strong>Swap items and values</strong> Swaps the item names for their values. If there 
+are repeats, the last is used. For instance, on the example group:</p>
+<div class="code">Example Ini 14</br>
+</br>
+[group]</br>
+Elly = Cat</br>
+Jess = Elephant</br>
+Rex = Dog
+</div>
+<p><strong>Renumber items</strong> Changes each item name to a number. For instance, the 
+example becomes:</p>
+<div class="code">Example Ini 15</br>
+</br>
+[group]</br>
+1 = Cat</br>
+2 = Elephant</br>
+3 = Dog</br>
+</div>
+</div>
+</br>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Deleting</h2>
+<p>This menu contains a variety of actions which can delete items.</p>
+<a id="deletegroup"></a><h4>Delete Group</h4>
+<p>This action deletes a group. All items in the group are removed. If the group 
+does not exist the action does nothing.</p>
+<a id="deleteitem"></a><h4>Delete Item</h4>
+<p>This action deletes an item in a group. If the group or item does not exist, 
+this action does nothing.</br>
+</br>
+If the ‘Allow empty groups’ option is not checked (by default it is not), and 
+the item removed is the last in a group, the whole group will be removed. 
+Otherwise it will still exist, although it will be empty.</p>
+<a id="deleteiteminallgroups"></a><h4>Delete Item in all groups</h4>
+<p>This action deletes all items with a specified name, regardless of what group 
+they reside in. The name of the item to be deleted is in the first and only 
+parameter.</p>
+<a id="deletebypattern"></a><h4>Delete by Pattern</h4>
+<p>This action deletes all items which match a search.</br>
+</br>
+Search patterns can be specified for the group name, item name and item 
+value. These are the first, second and third parameters respectively. For an 
+item to be deleted, it must match each search pattern. In a search pattern, 
+‘.’ means any single character and ‘*’ denotes any sequence of characters.</br>
+</br>
+The final parameter decides if the search is case sensitive. Even if it is set to 
+1, the group and item names will only be case sensitive if object is in case sensitive mode.</p>
+<a id="clearall"></a><h4>Clear All</h4>
+<p>Removes all data in the object. It does not change the current file. Contract this to ‘New File’.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Searching</h2>
+<p>This menu contains a variety of actions which can allow the object to be searched.</p>
+<a id="performsearch"></a><h4>Perform Search</h4>
+<p>This action performs a search. It looks at each item in the Ini++ object 
+(subject to optimizations) and compares the group name, item name and 
+item value to the three patterns given. If an item matches all of these (unless 
+the ‘match any of these conditions’ option is used), it is added to the search 
+results. The search results can be accessed by expressions in the ‘Search 
+Results’ section of the expressions menu.</br>
+</br>
+The patterns are usual strings. However, the character ‘.’ (dot) denotes 
+“any character”, and the character ‘*’ (asterisk) denotes “any sequence of 
+characters”. For instance:</p>
+<ul>
+<li>The pattern ‘Hello’ matches ‘Hello’ and nothing else.</li>
+<li>The pattern ‘.. Fred’ matches ’‘Hi Fred’, ‘Go Fred’, ‘Yo Fred’, etc.</li>
+<li>The pattern ‘a*’ matches ‘apple’, ‘acorn’ and any string which begins with an ‘a’.</li>
+<li>The pattern ‘*a*’ matches any string that has an ‘a’ in it.</li>
+<li>The pattern ‘*’ matches anything.</li>
+</ul>
+<p>You can also prefix the expression by an exclamation mark (‘!’) for it to 
+mean the opposite. For instance,</p>
+<ul>
+<li>The pattern ‘!a*’ matches any string which does not start with an ‘a’.</li>
+<li>The pattern ‘!*a*’ matches any string which does not contain an ‘a’.</li>
+<li>The pattern ‘!*’ does not match anything.</li>
+</ul>
+<p>The first parameter is the pattern for the group. The second is the pattern 
+for the item name, and the third is the pattern for the item value.</br>
+</br>
+The forth parameter determines which settings are used. These are as follows:</p>
+<div style="margin-left: 40px">
+<p><strong>Case sensitive</strong> This determines if the search is case sensitive. When the 
+Ini++ object is not in case sensitive mode, this option will only apply 
+to the ‘value’ pattern, with the other two patterns not case sensitive. 
+When the Ini++ object is in case sensitive mode, it applies to all patterns.</br>
+</br>
+<strong>Match any of the conditions</strong> An item is added to the search results if it 
+matches any of the three conditions. Without this, it must match them 
+all. Note this mode is slower than other modes as it must search every group.</br>
+</br>
+<strong>Add group name only to results</strong> When this is selected, only the name 
+of the group is added to the results if an item is found in the group. 
+The item name and value fields are left blank. This is useful when 
+the aim of the search is to find groups with a certain property. It also 
+allows you to use ‘and’, ‘or’ and ‘xor’ in these situations.</p>
+</div>
+<p>You may also select how the results are combined with the old results (if at 
+all). The possibilities are:</p>
+<div style="margin-left: 40px">
+<p><strong>Discard previous results</strong> The old search results are cleared before the 
+search is performed.</br>
+</br>
+<strong>Or</strong> The results are merged with the old results.</br>
+</br>
+<strong>And</strong> An item will only be in the results if it is in both the old results and 
+satisfies the new search.</br>
+</br>
+<strong>Xor</strong> An item will be in the results if it was in the old results or if it satisfies 
+the new search, but not both</p>
+</div>
+<p>It should be noted that when an item is put into the search results, the entire 
+item is copied into the search results. This means that the results can be 
+received exactly how they were when the search was performed, regardless of 
+if items were deleted or modified. Use the expressions in the ‘Search Results’ 
+subsection of the expressions menu to receive this information.</br>
+</br>
+The search results can be cleared by the ‘Clear Results’ action. The ‘Find 
+’Repeats’ of Item’ and ‘Find ’Subgroups” actions can also modify the search results.</p>
+<a id="findrepeatsofitem"></a><h4>Find 'Repeats' of Item</h4>
+<p>This finds all items that correspond to a repeat of an item, when the ‘Rename’ 
+repeat mode is enabled. That is, it finds all those in the form ‘item.*’ in the 
+specified group. The search results will also include ‘item’ itself, if it exists.</br>
+</br>
+The first parameter is the group name and the second parameter is the item name.</br>
+</br>
+The search is always case sensitive. The results to this are put into the usual 
+search results, accessible from expressions. The previous results are always 
+cleared before the action is performed.</br>
+</br>
+For instance, given the file:</p>
+<div class="code">Example Ini 16</br>
+</br>
+[group]</br>
+item = 4</br>
+item.3 = 21</br>
+item.hello = 343</br>
+item4 = 12</br>
+[group2]</br>
+item.4 = 42
+</div>
+<p>Then the search results for when this action is performed with group ‘group’ 
+and item ‘item’ would be:</p>
+<div class="code">Example Ini 17</br>
+</br>
+[group]</br>
+item = 4</br>
+item.3 = 21</br>
+item.hello = 343
+</div>
+<a id="findsubgroups"></a><h4>Find 'Subgroups'</h4>
+<p>This finds the names of all groups that correspond to subgroups of another
+group, when the ‘Allow Subgroups’ option is enabled.</br>
+</br>
+The first parameter is the name of the group to find the subgroups of. This
+can itself by a subgroup (i.e. one with a ‘/’ in its name).</br>
+</br>
+The second parameter is the number of levels. If this is a positive number, it
+finds all subgroups at that level or less. If it is a negative number, it finds all
+subgroups at exactly that level. If it is 0, if finds all subgroups of any depth.</br>
+</br>
+For instance, consider the following Ini++ file with subgroups enabled:</p>
+<div class="code">Example Ini 18</br>
+</br>
+[parent]</br>
+<div style="margin-left: 20px">[a]</br>
+item = 1</br></div>
+<div style="margin-left: 40px">[aa]</br>
+item = 2</br>
+[ab]</br>
+item = 2</br></div>
+<div style="margin-left: 60px">[aba]</br>
+item = 3</br>
+[abb]</br>
+item = 3</br></div>
+<div style="margin-left: 80px">[abba]</br>
+item = 4</div>
+<div style="margin-left: 20px">[b]</br>
+item = 1</br></div>
+<div style="margin-left: 40px">[bb]</br>
+item = 2</br></div>
+</div>
+<p>(The item called ‘item’ in each group is actually the depth of that group with
+respect to ‘parent’)</br>
+</br>
+Then if you:</p>
+<ul>
+<li>Find the subgroups of ‘parent’ with depth 1, you get: a, b</li>
+<li>Find the subgroups of ‘parent’ with depth 2, you get: a, aa, ab, b, bb</li>
+<li>Find the subgroups of ‘parent’ with depth -2, you get: aa, ab, bb</li>
+<li>Find the subgroups of ‘parent’ with depth -4, you get: abba</li>
+<li>Find the subgroups of ‘a’ with depth 2 you get: aa, ab, aba, abb</li>
+<li>Find the subgroups of ‘parent’ with depth 0, you get: a, aa, ab, aba, abb, abba, b, bb</li>
+</ul>
+<p>For this example, the proper names of the groups have not been used to make 
+it easier. For instance, ‘aba’ is really called ‘group/a/ab/aba’. It is the latter 
+which will come up in the search results.</br>
+</br>
+The results are put in the usual search results, accessible by expressions. The 
+previous search results are cleared first. The item names and item values for 
+all the search results are all blank from this, as they are not relevant.</p>
+<a id="clearresults"></a><h4>Clear Results</h4>
+<p>This clears the current search results. There is no necessary reason to do 
+this (as every search action either automatically or gives you the option to 
+clear the current results), but it might help with the logic of your program.</p>
+<a id="searchputresultinifile"></a><h4>Search and put result in Ini file</h4>
+<p>This is as the ‘Perform Search’ action, however the result is saved as an Ini 
+file to the specified path. This Ini file will contain only those items that fulfill 
+the search. The settings for the Ini file will be taken from the object.</br>
+</br>
+The first parameter is the file name to save to. This may be a relative path. 
+In that case, it will be relative to the default directory.</br>
+</br>
+The remaining parameters are as with the ‘Perform Search’ action.</br>
+</br>
+This action does not effect the search results.</p>
+<a id="searchputresultiniobject"></a><h4>Search and put result in Ini object</h4>
+<p>This is as the ‘Perform Search’ action, however all the matched items are 
+copied into another Ini++ object.</br>
+</br>
+The first parameter is the name of the Ini++ object to copy the data into. 
+This is the name of the object as set in the frame editor. It should be typed 
+exactly, noting it is case sensitive.</br>
+</br>
+The target Ini++ object cannot be the same as the Ini++ object that is 
+generating the action. In addition, it cannot share data with it. This means 
+they cannot both be global objects. When the program is ran from the event 
+editor, if either of these things happen, or the Ini++ object specified does 
+not exist, a message box will be displayed. When the program is built, there 
+will be no error message and the action will just fail.</br>
+</br>
+The remaining parameters are as with the ‘Perform Search’ action.</br>
+</br>
+This action does not effect the search results.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Merging</h2>
+<p>This menu contains a variety of actions which allow one Ini++ object to be merged with another.</p>
+<a id="mergefile"></a><h4>Merge (with file)</h4>
+<p>A file and the current data in the Ini++ object are merged with this action.</br>
+</br>
+The first parameter is the file to merge with. This can be a relative path, 
+and it will be relative to the default path.</br>
+</br>
+The second parameter decides if overwrites are allowed. If they are (that is, 
+this parameter is set to 1), then all the data is copied from the file into the 
+object. However, if they are not allowed (that is, the parameter is set to 0) 
+then data is only copied from the file into the object if it does not overwrite 
+any existing data.</br>
+</br>
+This generated the ‘On Merge’ condition event.</p>
+<a id="mergegroupfile"></a><h4>Merge Group (with file)</h4>
+<p>This merges a specific groups from a file with the current data.</br>
+</br>
+The first parameter is the file to merge with. This can be a relative path, 
+and it will be relative to the default path.</br>
+</br>
+The second parameter asks for the name of the group in the Ini file.</br>
+</br>
+The third parameter asks for the name of the destination name of the group. 
+This is what the group will be called in the Ini++ object. Often you will 
+just want this to be the same as the second parameter.</br>
+</br>
+The forth parameter decides if overwrites are allowed. If they are not allowed 
+(that is, this parameter is set to 0) then data is only copied from the file into 
+the object if it does not overwrite any existing data.</br>
+</br>
+This generated the ‘On Merge’ condition event.</p>
+<a id="mergeiniobject"></a><h4>Merge (with other Ini++ object)</h4>
+<p>This action merges two Ini++ objects together, and puts the result in the calling object.</br>
+</br>
+The first parameter is the name of the Ini++ object to merge with. This is 
+the name of the object as set in the frame editor. It should be typed exactly, 
+noting it is case sensitive. The specified Ini++ object cannot be the same 
+as the Ini++ object that is generating the action. In addition, it cannot 
+share data with it. This means they cannot both be global objects. When 
+the program is ran from the event editor, if either of these things happen, or 
+the Ini++ object specified does not exist, a message box will be displayed. 
+When the program is built, there will be no error message and the action will just fail.</br>
+</br>
+It should be stressed that the object that is typed in for this parameter will 
+not be modified. Only the calling object will be modified.</br>
+</br>
+The second parameter determines whether data from the specified object 
+can overwrite data in the calling object. If this is set to 0, then in effect the 
+calling object gets priority if there are items in with the same name and in 
+the same group in both objects. Otherwise, if it is set to 1, then the object 
+specified in the first parameter does.</br>
+</br>
+This generated the ‘On Merge’ condition event.</p>
+<a id="mergegroupiniobject"></a><h4>Merge Group (with other Ini++ object)</h4>
+<p>This action merges a specific group in two Ini++ objects together, and puts 
+the result in the calling object.</br>
+</br>
+The first parameter is the name of the Ini++ object to merge with. This is 
+the name of the object as set in the frame editor. It should be typed exactly, 
+noting it is case sensitive. The specified Ini++ object cannot be the same 
+as the Ini++ object that is generating the action. In addition, it cannot 
+share data with it. This means they cannot both be global objects. When 
+the program is ran from the event editor, if either of these things happen, or 
+the Ini++ object specified does not exist, a message box will be displayed. 
+When the program is built, there will be no error message and the action 
+will just fail.</br>
+</br>
+It should be stressed that the object that is typed in for this parameter will 
+not be modified. Only the calling object will be modified.</br>
+</br>
+The second parameter asks for the name of the group in the specified Ini++ 
+object to be merged.</br>
+</br>
+The third parameter asks for the name of the destination name of the group. 
+This is what the group will be called in the calling Ini++ object. Often you 
+will just want this to be the same as the second parameter.</br>
+</br>
+The final parameter determines whether data from the specified object can 
+overwrite data in the calling object. If this is set to 0, then in effect the 
+calling object gets priority if there are items in with the same name in both 
+objects. Otherwise, if it is set to 1, then the object specified in the first 
+parameter does.</br>
+</br>
+This generated the ‘On Merge’ condition event.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Loading and Saving</h2>
+<p>This menu contains a variety of actions to do with loading and saving.</p>
+<a id="changecurrentfile"></a><h4>Change Current File</h4>
+<p>This action changes the filename of the current file, possibly clearing all the data.</br>
+</br>
+The first parameter is the filename of the new file. This may be a relative 
+path. If this is left blank (i.e. it is the empty string) then the file is kept internal.</br>
+</br>
+The second parameter decides if the current data should be cleared or not. 
+Setting it to 0 retains the current data. Setting it to 1 clears the current data. 
+If 0 is selected, and auto save is enabled, then the file will be immediately 
+saved. However, if 1 is selected then it will not be saved regardless of the 
+auto save settings.</br>
+</br>
+Read only status is unaffected by this action.</br>
+</br>
+It should be noted that this action is different to ‘Load File’ as it does not 
+actually load the file. It just sets it as the current file for auto save and auto load.</p>
+<a id="loadfile"></a><h4>Load File</h4>
+<p>This action clears all the current data and loads an Ini file.</br>
+</br>
+The file is loaded based on the current settings. This includes encryption and 
+compression settings. Make sure you load the file with the correct settings!</br>
+</br>
+The second parameter specifies whether the file should be opened in read 
+only mode. This means ‘Save’ and the auto-save feature are both disabled. 
+The data can still be modified in memory.</br>
+</br>
+If the ‘Create folders for files if they do not exit?’ option is selected, then 
+folders will be created for the file to ensure it can be created so long as read 
+only was not selected. If read only was selected, folders will not be created, 
+regardless of the settings.</p>
+<a id="savefile"></a><h4>Save File</h4>
+<p>This action saves the Ini++ object to the current file. All the settings are respected.</br>
+</br>
+The action will fail if the file is in read only mode, or there is no current 
+file (which is the case if ‘New’ had been used with a blank string as the 
+parameter, or if ‘New’ or ‘Load’ haven’t been used and no file was specified 
+in the frame editor).</p>
+<a id="saveas"></a><h4>Save As</h4>
+<p>This action saves the Ini++ object to the specified file. All the settings are respected.</br>
+</br>
+The current file will be set to the specified file name. This can be a relative path.</br>
+</br>
+The action will work even if the file is in read only mode. If the file is 
+successfully saved, read only mode will be disabled.</p>
+<a id="backupto"></a><h4>Backup To</h4>
+<p>This action saves the Ini++ object to a file. Compression and encryption 
+settings can be specified.</br>
+</br>
+The first parameter is the file name. This may be a relative path, and it will 
+be relative to the default directory.</br>
+</br>
+The second parameter decides if the file should be compressed.</br>
+</br>
+The third parameter is the encryption key. If this is blank (i.e. the empty 
+string), then there is no encryption.</br>
+</br>
+This action does not change the current file path. The action will work even 
+if the file is in read only mode. It will not change read only mode.</p>
+<a id="close"></a><h4>Close</h4>
+<p>This clears all the data and sets the current path to the blank string, making the file internal.</p>
+<a id="importexportcsv"></a><h4>Import/Export CSV</h4>
+<p>This action allows data to be imported or exported in CSV form. CSV 
+stands for ’comma-separated values’, and it is just a list of values separated 
+by commas (or another character of your choice).</br>
+</br>
+The fist parameter asks if you wish to import or export. Input 0 to import and 1 to export.</br>
+</br>
+This action does not affect the current file path.</p>
+<div style="margin-left: 40px">
+<h4>Importing</h4>
+<p>This imports data from a CSV file.</br>
+</br>
+The second parameter is the file name to load from. This can be a relative path.</br>
+</br>
+The third parameter is the name of the group to load. If it is left blank then 
+each group can be on a line of its own and the first value on each line is 
+considered the group name.</br>
+</br>
+The forth parameter is the separator. Usually this will be a comma, but 
+if commas might occur in your data then you might wish to change it to a 
+symbol you don’t use. For instance, the pipeline character ‘k’ is a popular 
+separation character.</br>
+</br>
+As an example, consider the following CVS file (with separator ’,’):</br>
+</br>
+Group 1|Item 1|Value 1|Item 2|Value 2</br>
+Group 2|Item 3|Value 3|Item 4|Value 4|Item 5|Value 5</br>
+</br>
+If the group setting is left blank, it will be loaded as:</p>
+<div class="code">Example Ini 19</br>
+</br>
+[Group 1]</br>
+Item 1 = Value 1</br>
+Item 2 = Value 2</br>
+[Group 2]</br>
+Item 3 = Value 3</br>
+Item 4 = Value 4</br>
+Item 5 = Value 5
+</div>
+<p>On the other hand, if the group parameter is set as “Group”, then it is loaded as follows:</p>
+<div class="code">Example Ini 20</br>
+</br>
+[Group 1]</br>
+Group 1 = Item 1</br>
+Value 1 = Item 2</br>
+Group 2 = Item 3</br>
+Value 3 = Item 4</br>
+Value 4 = Item 5</br>
+</div>
+<p>(Note how if there is an item with no data at the end of the line, it is ignored) 
+This action does not clear the old data first.</p>
+<h4>Exporting</h4>
+<p>This exports data as a CSV file.</br>
+</br>
+The second parameter is the file name to save to. This can be a relative path.</br>
+</br>
+The third parameter is the name of the group to save. If it is left blank then 
+each group will be on line of its own and the first value on each line will be 
+the groups name. Otherwise only the specified group is saved and its name 
+will not be prefixed to the line.</br>
+</br>
+The forth parameter is the separator. Usually this will be a comma, but 
+if commas might occur in your data then you might wish to change it to a 
+symbol you don’t use. For instance, the pipeline character ‘k’ is a popular 
+separation character.</br>
+</br>
+Settings like ‘Save repeated items as original’ are not respected and escape 
+characters are not used.</br>
+</br>
+Use the ‘Get INI as CSV String’ expression to get this data without saving it to disc.</p>
+</div>
+<a id="importexportcsvarray"></a><h4>Import/Export CSV Array</h4>
+<p>This action can import data or export the data as a CSV Array. This is a 
+CSV file where the top line defines the possible items for each group, and 
+the following lines represent each individual group.</br>
+</br>
+The first parameter decides whether the file should be imported or exported 
+to. The second parameter decides the file (which may be relative) and the 
+final parameter decides the separator character (usually a comma).</br>
+</br>
+For instance, suppose we have the data:</p>
+<div class="code">Example Ini 21</br>
+</br>
+[Group 1]</br>
+item1 = Hat</br>
+item2 = Toothbrush</br>
+item3 = Lipstick</br>
+item4 = Key</br>
+[Group 2]</br>
+item1 = Glass</br>
+item2 = Chewing Gum</br>
+item3 = Hammer
+</div>
+<p>Then this would be exported as:</br>
+</br>
+Group,item1,item2,item3,item4</br>
+Group 1,Hat,Toothbrush,Lipstick,Key</br>
+Group 2,Glass,Chewing Gum,Hammer</br>
+</br>
+Notice how the first line defines the item names. Each line has these items,
+with the first item its group name.</br>
+</br>
+Importing is similar. Data is not cleared before the import. If an item is
+blank, it is not loaded. For instance,</br>
+</br>
+Group,item1,item2,item3,item4</br>
+Group 1,Hat,Toothbrush,,Key</br>
+</br>
+Would merely be loaded as:</p>
+<div class="code">Example Ini 22</br>
+</br>
+[Group 1]</br>
+item1 = Hat</br>
+item2 = Toothbrush</br>
+item4 = Key
+</div>
+<p>As the third item was blank. It is not loaded as a blank string.</br>
+</br>
+Neither mode changes the current file path.</p>
+<a id="loadfromstring"></a><h4>Load From String</h4>
+<p>This action loads an INI file from a string. The string must be formatted 
+as an INI file. All settings (including the choice of new line character) are 
+respected when this is loaded except compression and encryption.</br>
+</br>
+The first parameter is the string you wish to load. The second parameter 
+decides if you want to clear all the old data (0) or if you wish to merge the 
+new data with the old data (1). In the case of a merge, the new data will 
+replace any old data if they have the same group and item names.</p>
+<a id="changeglobaldataslot"></a><h4>Change Global Data Slot</h4>
+<p>This action changes the currently selected global data slot. If the slot does 
+not exist, it is created.</br>
+</br>
+If the object was not created in ‘global’ mode, it will be converted to global 
+mode. This means the local data will be removed from memory. So make 
+sure you save it if you want to keep it!</p>
+<a id="setautoloadsave"></a><h4>Set Auto Load/Save</h4>
+<p>This action allows auto-load and auto-save to be enabled and disabled. This 
+does not modify the data in any form.</p>
+<a id="setcompression"></a><h4>Set Compression</h4>
+<p>This action allows compression to be enabled or disabled (for auto-load, autosave, 
+‘Load’, ‘Save’ and ‘Save As...’). This does not change the data, but it 
+may change how the file is saved. It therefore causes the file to be re-saved.</p>
+<a id="setencryption"></a><h4>Set Encryption</h4>
+<p>This action allows the encryption key to be set. Leaving the key blank causes 
+encryption to be disabled. The encryption key is used for auto-load, autosave, 
+‘Load’, ‘Save’ and ‘Save As...’. This does not change the data, but it 
+may change how the file is saved. It therefore causes the file to be re-saved.</p>
+<a id="setreadonly"></a><h4>Set Read Only</h4>
+<p>Allows the read-only status of the object to be changed. This does not 
+change the data or the way the data is saved. Regardless of how this option 
+is set, the object can still be modified in memory. However, read-only mode 
+disabled auto-save and the ‘Save’ action.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Dialog Box</h2>
+<p>The Ini++ object has a built in dialog that can be of help when debugging 
+your applications. It can also serve as a cheat screen, an advanced opitions 
+editor or a data editor in the released program.</p>
+<a id="opendialog"></a><h4>Open Dialog</h4>
+<p>This action opens the dialog box.</br>
+</br>
+Only one dialog can be ran at a time. If another dialog box is open, it will closed.</br>
+</br>
+The first parameter allows the title bar text for the dialog to be set. The 
+second parameter allows the various options to be set. These are:</p>
+<ul>
+<li><em>Disallow deleting groups</em></br>
+Groups may not be directly deleted. Note that if ‘Disallow deleting
+items’ is not selected, and the ‘Allow empty groups’ option is not on,
+then a group can still be deleted by removing all items in it.</li>
+<li><em>Disallow deleting items</em></br>
+Items may not be directly deleted. Note that if ‘Disallow deleting
+groups’ is not selected then an item may still be removed by removing
+the group it is part of.</li>
+<li><em>Disallow renaming groups</em></br>
+Groups may not be renamed.</li>
+<li><em>Disallow renaming items</em></br>
+Items may not be renamed.</li>
+<li><em>Values are read-only</em></br>
+Item values may not be changed.</li>
+<li><em>No ‘Refresh’ menu option</em></br>
+The right click menu will not include a ‘Refresh’ option, which would
+allow the user to update the object.</li>
+<li><em>Disallow adding groups</em></br>
+New groups may not be added.</li>
+<li><em>Disallow adding items</em></br>
+Items may not be added to groups. Note that if ‘Disallow adding
+groups’ is not selected then one item will still be added to any new
+group.</li>
+<li><em>Do not refresh item values</em></br>
+When this is unchecked, the object will automatically update any values
+on the ‘On Data Modified’ event. This will not deal with new, deleted
+or renamed items. If the object is going to be regularly modified then
+this may slow the program down considerably.</li>
+<li><em>Pause program whilst open</em></br>
+If this is selected, the program will pause until the dialog box is closed.
+Otherwise it will be run in a new thread, in the background. If this is
+selected the options related to refreshing make no sense and so cannot
+be selected.</li>
+</ul>
+<p>The drop down menu at the bottom of the dialog allows the formatting of 
+items on the tree to be selected.</br>
+</br>
+The dialog box is automatically shut when the frame changes, as the object 
+it is associated with will not exist anymore.</p>
+<a id="closedialog"></a><h4>Close Dialog</h4>
+<p>If a dialog box is open, this action closes it. This will cause the ‘On Dialog Closed’ condition event.</br>
+</br>
+If no dialog box is open, this does nothing.</p>
+<a id="refreshdialog"></a><h4>Refresh Dialog</h4>
+<p>If a dialog box is open, this performs a complete refresh of it. This may be 
+distracting to the user, and for large amounts of data it could be slow.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Chart Object</h2>
+<a id="displaydatachartobject"></a><h4>Display Data in Chart Object</h4>
+<p>This is yet to be made.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Advanced Settings</h2>
+<p>The actions in this sub-menu allow the options of the object to be set.</p>
+<a id="setcasesensitivity"></a><h4>Set Case Sensitivity</h4>
+<p>Allows the Ini++ object to change between case insensitive and case sensitive 
+modes. Changing from case sensitive mode to case insensitive mode may 
+cause data to be changed.</p>
+<a id="escapecharssettings"></a><h4>Escape Characters Settings</h4>
+<p>Allows the escape character modes to be toggled.</p>
+<a id="enabledisablealwaysquotestrings"></a><h4>Enable/Disable ‘always quote strings’</h4>
+<p>Allows the ‘always quote strings’ option to be changed.</p>
+<a id="setrepeatmodes"></a><h4>Set Repeat Modes</h4>
+<p>Allows the repeat mode settings to be changed. See the title of the parameter 
+dialog boxes for information.</p>
+<a id="setnewlinestring"></a><h4>Set Newline String</h4>
+<p>Allows the new line string to be set. If the empty string is given, the default 
+new line string is used (an actual windows new line).</p>
+<a id="setfefaultdirectory"></a><h4>Set Default Directory</h4>
+<p>Allows the default directory to be set. This must be a path. If you wish 
+to use the program folder, windows folder, etc., then it is best to use the 
+properties in the frame editor.</p>
+<a id="groupsettings"></a><h4>Group Settings (subgroups, empty groups)</h4>
+<p>Allows the group settings to be changed. This is: Should loading and saving 
+recognise subgroups and should empty groups be allowed? Beware: Changing 
+from allowing to not allowing empty groups can cause data to change.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Extra Functions</h2>
+<p>The actions in this sub-menu allow the options of the object to be set.</p>
+<a id="compressfile"></a><h4>Compress File</h4>
+<p>Compresses the file specified in the first parameter and places it in the location 
+specified by the second parameter.</br>
+</br>
+Some Ini++ settings are respected. For instance, relative paths may be used 
+and folders will be created for destination file if ‘Create folders for files if 
+they do not exit?’ is enabled. Folders are never created for the source file, 
+regardless of options.</p>
+<a id="decompressfile"></a><h4>Decompress File</h4>
+<p>Decompresses the file specified in the first parameter and places it in the 
+location specified by the second parameter.</br>
+</br>
+Some Ini++ settings are respected. For instance, relative paths may be used 
+and folders will be created for destination file if ‘Create folders for files if 
+they do not exit?’ is enabled. Folders are never created for the source file, 
+regardless of options.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</body>
+</html>

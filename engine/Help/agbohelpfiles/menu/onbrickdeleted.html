@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="../general.css" type="text/css" />
+
+
+
+<h2>On brick deleted</h2>
+<hr>
+
+This condition is triggered when you did any action that caused ABGO to delete any brick. for example if you used some of the actions to delete a line, inserted a brick into the board and the brick at the end, got "pushed out" of the board. You can then get the bricks old position where it was just as it got deleted,what brick type it was and what the stored fixed value of it was.
+<br />
+Note! This condition only triggers if you turned the option ON in the setup box AND also note that this doesn't trigger if you manually set the brick type to 0 with the Set brick at x,y action. It DOES trigger though if you use the "Delete brick" action.
+<br /><br />
+
+<div class="event">On brick deleted</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ini++ Documentation</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta name="copyright" content="Copyright 2007-2008 Jack Webster - All rights reserved" />
+		<meta name="author" content="Olivier Behr - www.oliverpearl.com" />
+	</head>
+<body>
+
+<h1>Introduction</h1>
+
+<p>Ini files are plain text files that are used to store data for programs. Traditionally, 
+Ini files were used to store program settings (Ini is short for initialization), 
+however the registry is often used for this now. It is a format which 
+is simple to edit and simple to work with and so is often a good choice for 
+storing data in Multimedia Fusion.</br>
+</br>
+Multimedia Fusion always has an object for reading and writing Ini files. 
+Ini++ is just an upgrade of this, including many new features.</br>
+</br>
+<a href="#inifiles">Ini Files</a></br>
+<a href="#whatsnew">What’s New?</a></br>
+<a href="#negativeaspects">Negative Aspects</a></p>
+
+</br>
+<a id="inifiles"></a><h2>Ini Files</h2>
+<p>An Ini file consists of multiple groups. In each group, are multiple items. The
+start of the group is signified by the name of the group in square brackets.
+Items consist of their name, followed by an equals sign (‘=’), followed by the
+corresponding value associated with it. For instance,</p>
+<div class="code">Example Ini 1: An Example File</br>
+</br>
+[goals]</br>
+Henry=21</br>
+Hleb=4</br>
+Fabragas=2</br>
+[yellow_cards]</br>
+Rosisky=2</br>
+Hleb=3</br>
+Fabragas=5
+</div>
+<p>Here there are two groups, goals and yellow cards. The groups need not 
+have the same item names in each one. In the ‘goal’ group there are three 
+items: Henry, Hleb and Fabragas. They have corresponding values 21, 4 and 
+2 respectively. Similarly for the ‘yellow cards’ group.</br>
+</br>
+INI files are as simple as that, in principle. However, Ini++ has options to 
+add extra features to them, which can make them a bit more complicated 
+than this.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<a id="whatsnew"></a><h2>What’s New?</h2>
+<p>Ini++ has many features that the standard Ini object does not have. These are listed here:</br>
+</br>
+<strong>Compression and Encryption</strong> Ini++ allows the files to be compressed
+and encrypted when saved to disk.</br>
+</br>
+<strong>Path Features</strong> You may select the path that relative paths are relative to.
+You may save to directories which do not exist and they will be created.
+There is a read-only mode if you do not wish to modify the file.</br>
+</br>
+<strong>Initial Data</strong> You can specify initial data to be loaded into the object in the
+frame editor, as well as an initial file to load.</br>
+</br>
+<strong>Dialog Box</strong> Ini++ features a dialog box which can be opened at run-time.
+It is helpful for debugging or cheat menus.</br>
+</br>
+<strong>Case Sensitive</strong> If you wish, the Ini file can be case sensitive.</br>
+</br>
+<strong>Repeated Groups and Items</strong> Repeated groups can be merged together.
+Repeated groups and items can also be automatically renamed.</br>
+</br>
+<strong>Debugging Tools</strong> View and modify the Ini file as text from the Multimedia
+Fusion Debugger.</br>
+</br>
+<strong>Auto-Save</strong> Ini++ can be set so it does not automatically rewrite the file to
+disk when it has been modified, however it can still do this if desired.</br>
+</br>
+<strong>No Limits</strong> There are no limits for the size of the Ini files, the number of
+groups, the number of items, the size of values or anything like that!</br>
+</br>
+<strong>Searching</strong> There are actions and expressions for searching Ini files and even
+putting the results in other Ini++ objects.</br>
+</br>
+<strong>Merging Functions</strong> There are new functions for merging together Ini files</br>
+</br>
+<strong>Subgroups</strong> Groups with subgroups can be simulated with the object.</br>
+</br>
+<strong>Global Data Stores</strong> An infinite number of global data stores that can be
+shared across subapps.</br>
+</br>
+<strong>Hashed Values</strong> There are functions for having hashed data values, which
+is useful for passwords and so on.</br>
+</br>
+<strong>Get and Set as Text</strong> Ini files can be loaded in directly as text, or the data
+can be received as a string.</br>
+</br>
+<strong>Listing Groups and Items</strong> Expression for listing the items of the Ini file
+without previously knowing the names of the items. There are also
+expressions for finding out how many items and groups there are.</br>
+</br>
+<strong>Reordering Groups</strong> Sort, shift, shuffle groups and more...</br>
+</br>
+<strong>Receive Information Quickly</strong> Quickly find out which groups have certain
+properties with the ‘Perform calculations’ expressions.</br>
+</br>
+<strong>Escape Characters</strong> Escape Characters can be used in group names, item
+names and item values. This allows new lines to be represented in the
+data, for instance.</br>
+</br>
+And more...</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<a id="negativeaspects"></a><h2>Negative Aspects</h2>
+<p>Ini++ does have a side-effect that, whilst often positive, could be thought 
+of as negative. Ini++ loads the whole Ini to memory and then saves it all 
+back to disc in the most efficient manor when it saves. This means it does 
+not preserve the ‘human structure’ of the file. By this, it is meant that if 
+you opened an Ini file in Ini++ and then saved it again straight away, you 
+would lose the following:</p>
+<ul>
+<li>Comments (i.e. anything after a semi-colon on a line).</li>
+<li>The ordering of items and groups (it will be alphabetical).</li>
+<li>Blank lines, extra spaces, and so forth.</li>
+<li>If a group was previously split up and ‘merge’ group repeat mode was used, the group will be in one place.</li>
+</ul>
+<p>This will result in the smallest possible file size, which is often what is wanted. 
+However, if the Ini file is to be regularly edited by humans then this might 
+not be wanted. To get around this, you could open the file in Read Only mode.</br>
+</br>
+As an example of this, consider the following Ini file:</p>
+<div class="code">Example Ini 2: The original file</br>
+</br>
+;This group represents the scores for the various players</br>
+[Scores]</br>
+Jack = 32</br>
+Fred = 12</br>
+Oliver = 33</br>
+</br>
+[Time]</br>
+Jack=15</br>
+</br>
+;More scores</br>
+[Scores]</br>
+Alex = 22
+</div>
+<p>Now if this is loaded with the ‘Group repeat setting’ set to merge (see section 
+2.3 for information on this), and saved it again, we would find the file looks as follows:</p>
+<div class="code">Example Ini 3: Example 2 after being saved with Ini++</br>
+</br>
+[Scores]</br>
+Alex=22</br>
+Fred=12</br>
+Jack=32</br>
+Oliver=33</br>
+[Time]</br>
+Jack=15
+</div>
+<p>So, the extra blank lines and white space has been removed. The case of 
+group and item names has changed. The ordering is different, comments 
+have been removed and the previously split up groups have been merged.<p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</body>
+</html>

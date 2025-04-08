@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+<link rel="stylesheet" href="general.css" type="text/css" />
+</head>
+<body leftmargin="25" topmargin="25">
+
+
+
+
+<h1>Extra looping</h1>
+
+<a href="main.html">Introduction to AGBO</a> - <a href="waystodisplay.html">Ways to display bricks</a> - 
+<a href="setupbox.html">The setup box</a> - <a href="xtralooping.html">Extra looping</a>
+<hr>
+
+Advanced Game Board Object not only supports searching for connected bricks, you can with the extra looping actions loop do usefull looping through the bricks you want. For example you can loop through the 
+<br /><br />
+
+You can read the help documents on the extra looping and what they do here:<br />
+<a href="menu/loopall.html">Loop all bricks in board</a><br />
+<a href="menu/looptype.html">Loop all bricks of type</a><br />
+<a href="menu/loopsurrounding.html">Loop surrounding of brick</a><br />
+<a href="menu/loophozline.html">Loop through horizontal line</a><br />
+<a href="menu/loopverline.html">Loop through vertical line</a><br />
+<br />
+Basically it will loop through the bricks and when it finds a brick, it will like <div class="event">On found brick</div> trigger a <div class="event">On <b>looped</b> brick</div><br />
+You can then get all the info you need about the currently looped brick or you can do anything with it (like either changing the bricktype or delete it)<br />
+<br />
+
+You are allowed to start theese extra loops <b>inside</b> the "Search for connected" loops or opposite. (But you don't have to of course)<br />
+You can't run an "extra loop" inside another "extra loop". (You can't nest them)
+
+</body>
+</html>

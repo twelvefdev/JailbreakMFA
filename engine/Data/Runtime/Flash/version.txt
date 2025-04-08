@@ -1,0 +1,33 @@
+Build 283.1
+-----------
+- "Value within range" expression returns incorrect results with floating point values
+
+Build 283.0
+-----------
+- Active Backdrop Object: bug in SetY action.
+- Physics Objects: physics modified to react more like the Windows runtime.
+- FGL Object: remade the object so that it works in several frames.
+- Physics - Rope and Chain Object: now correctly locates the attached object.
+- Physics Objects: the retrieved direction now corresponds to the angle.
+- Physical objects/movements: the Get Angle function now returns floating point values for a better precision.
+- Physical objects/movements: new Get Mass expression.
+
+Build 281.8
+-----------
+- Physics Platform movement, now stops if speed is close to zero.
+
+Build 281.3
+-----------
+- New Runtime, includes all Physics object and movements.
+- Corrected some errors from version 2.0
+- Built-in foreach.
+- Timer Events ported and fully operational.
+- Parser Object, fix in tokenizing of source strings.
+- Active System Box now scrolls at the same speed as other objects.
+- SpaceShip actions from Movement controller object now work as intended.
+- Infinite Scrolling now works as intended.
+- Force Frame Animation works correctly.
+- Added HotSpotChanger Object.
+- Added MultipleTouch Object. Warning: works only on touch screens and mobile devices.
+- Added FGL flash Object.
+- Note: minimum required version of Flash Player is now 10.1

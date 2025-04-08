@@ -1,0 +1,7554 @@
+
+
+<HTML>
+<HEAD>
+
+<TITLE>3EE.com On-line Extension Documentation</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LEFTMARGIN="0" TOPMARGIN="0">
+
+  
+
+<TABLE CELLPADDING=5 WIDTH="100%"><TR><TD>
+
+
+<TABLE WIDTH="100%">
+<TR>
+<TD VALIGN="top">
+  <B><A NAME="obj_4"><FONT SIZE=4>String Parser 2</FONT></A></B><BR><BR>
+
+  
+  
+    <FONT SIZE=2><A HREF="#type_1">Condition</A></FONT><BR>
+  
+    <FONT SIZE=2><A HREF="#type_2">Action</A></FONT><BR>
+  
+    <FONT SIZE=2><A HREF="#type_3">Expression</A></FONT><BR>
+  
+  </TD>
+
+
+  <TD VALIGN="top" ALIGN="right">
+    <IMG SRC="./parser2_icon.gif" ALT="String Parser 2" BORDER=0>
+  </TD>
+
+</TR>
+</TABLE>
+<BR><BR>
+<CENTER>
+<TABLE>
+<TR>
+<TD ALIGN="center">
+  <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10>
+    <TR>
+      <TD><B><FONT SIZE=2>Author:</FONT></B></TD>
+      <TD><FONT SIZE=2>Third Eye Entertainment</FONT></TD>
+    </TR>
+    <TR>
+      <TD><B><FONT SIZE=2>Version:</FONT></B></TD>
+      <TD><FONT SIZE=2>2.02</FONT></TD>
+    </TR>
+  </TABLE></TD>
+</TR>
+</TABLE>
+<BR><BR>
+</CENTER>
+<FONT SIZE=3>The String Parser 2 object gives the developer access to powerful parsing and tokenizing functions to tear apart or put together strings and substrings of information. The parsing and substring functions allow you to separate important pieces of information, and to search for known or even unknown, using the wildcard support, substrings. The wide assortment of tokenizing functions can make dealing with complicated sequences of information a snap.<BR>
+<BR>
+A list is a string of tokens separated by delimiters. A token is simply a substring that is separated from other tokens/substrings. The delimiter(s) are what do the separating. String Parser 2 supports any number of delimiters, all of which can be of varying length, and can support wildcard matching in wildcard search mode.<BR>
+<BR>
+Here is an example where I may want to count the number of words in a sentence... <BR>
+<BR>
+List example, we'll take the following sentences:<BR>
+<BR>
+Sean was here.  Hey guys! See how we can spell D-E-L-I-M-E-T-E-R-S... wait--did you hear that?<BR>
+<BR>
+So what I'm going to do is say that my delimiters are as follows:<BR>
+" "<BR>
+"."<BR>
+","<BR>
+"!"<BR>
+"?"<BR>
+"--"<BR>
+<BR>
+That's a total of five delimiters I have to set for these particular sentences. If you were to do this for a whole document be sure to include other punctuation such as ";", ":", etc.<BR>
+<BR>
+Now if I ask for ListGetAt$("String Parser", 3") I'll get "here" Notice how you get the 3rd word? Cool huh? How about if we get a little trickier and enable wildcards, then we can ask for ListFind$("String Parser", "?-E*", 1) and we'll get 11, because the 11th token, "D-E-L-I-M-E-T-E-R-S" is the first (1) token to match this wildcard expression. And here is the complete list of tokens (words!) you have with those delimiters listed above:<BR>
+1) "Sean"<BR>
+2) "was"<BR>
+3) "here"<BR>
+4) "Hey"<BR>
+5) "guys"<BR>
+6) "See"<BR>
+7) "how"<BR>
+8) "we"<BR>
+9) "can"<BR>
+10) "spell"<BR>
+11) "D-E-L-I-M-E-T-E-R-S"<BR>
+12) "wait"<BR>
+13) "did"<BR>
+14) "you"<BR>
+15) "hear"<BR>
+16) "that"<BR>
+<BR>
+If you do a ListCount("String Parser") you'll get 16 ;)<BR>
+<BR>
+Features<BR>
+<UL><LI>Just about all of the features of the old String Parser + lots more</LI><BR>
+<LI>No limit to the amount of text that can be stored or manipulated.</LI><BR>
+<LI>Loading and saving to file (text, CSV, INI, MMF Array, Dynamic Array)</LI><BR>
+<LI>Case sensitive and case insensitive string comparison modes</LI><BR>
+<LI>Easy enable/disable switch of wildcard or literal search modes, wildcard supports:<UL><LI>? will match a single character</LI><LI>* will match zero or more characters</LI></UL></LI><LI>No limit to the number of delimiters that can be used for list tokenizing</LI><BR>
+<LI>No limit to the length of a delimiter that can be used for list tokenizing</LI><BR>
+<LI>New URLEncode function and Is URL Safe condition to format arguments for a URL (web page)</LI><BR>
+<LI>Fifteen List tokenizing functions! Including: ListFind, ListContains, ListSortAsc, etc.</LI><BR>
+<LI>Wildcard support in list delimiters for all list tokenizing functions</LI><BR>
+<LI>Export and import of Comma-Delimited text files (CSV) which can be imported and exported by Excel, StarCalc, ODBC, etc.</LI><BR>
+<LI>Export and import of MMF 1.5 Array files, MMF Pre-1.5 array files can be imported</LI><BR>
+<LI>Export and import of Dynamic Array 2 files</LI><BR>
+<LI>New feature: Import and export to INI file format</LI><BR>
+<LI>Get the MD5 signature of the source string to use as verification or as a checksum</LI></UL></FONT>
+<BR><BR>
+
+
+      
+
+
+</TD></TR></TABLE>
+
+    
+
+
+
+  <HR>
+
+  
+
+      
+
+      <TABLE>
+        <TR>
+          
+            <TD><IMG SRC="./parser2_icon.gif" WIDTH="16" HEIGHT="16" BORDER=0></TD><TD><B><A HREF="#obj_4"><FONT SIZE=2>String Parser 2</FONT></A></B></TD>
+          
+        </TR>
+      </TABLE>
+      <BR>
+
+      
+
+      
+      <TABLE>
+        <TR><TD COLSPAN=2><B><A NAME="type_1">Condition</A></B></TD></TR>
+        
+        
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_455"><A HREF="#func_455">Is URL Safe?</A></A></FONT></TD></TR>
+    
+  
+
+
+      </TABLE>
+      <BR>
+      
+      <TABLE>
+        <TR><TD COLSPAN=2><B><A NAME="type_2">Action</A></B></TD></TR>
+        
+        
+        
+        
+        
+
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>File</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_463"><A HREF="#func_463">Append from file</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_462"><A HREF="#func_462">Append to file</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_461"><A HREF="#func_461">Load from file</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_460"><A HREF="#func_460">Save to file</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>List Tokenizing</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Delimiters</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_467"><A HREF="#func_467">Add delimiter</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_470"><A HREF="#func_470">Delete delimiter</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_469"><A HREF="#func_469">Delete delimiter index</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_466"><A HREF="#func_466">Reset delimiters</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_472"><A HREF="#func_472">Set default delimiter</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_471"><A HREF="#func_471">Set default delimiter index</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_468"><A HREF="#func_468">Set delimiter</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Files</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_474"><A HREF="#func_474">Load from CSV</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_478"><A HREF="#func_478">Load from Dynamic Array</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_934"><A HREF="#func_934">Load from INI</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_476"><A HREF="#func_476">Load from MMF Array</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_473"><A HREF="#func_473">Save as CSV</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_477"><A HREF="#func_477">Save as Dynamic Array</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_933"><A HREF="#func_933">Save as INI</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_475"><A HREF="#func_475">Save as MMF Array</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_456"><A HREF="#func_456">Set source string</A></A></FONT></TD></TR>
+    
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Settings</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Search Mode</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_483"><A HREF="#func_483">Literal</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_484"><A HREF="#func_484">Wildcards</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>String Comparisons</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_481"><A HREF="#func_481">Case Insensitive (A == a)</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_482"><A HREF="#func_482">Case Sensitive (A < a)</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+
+      </TABLE>
+      <BR>
+      
+      <TABLE>
+        <TR><TD COLSPAN=2><B><A NAME="type_3">Expression</A></B></TD></TR>
+        
+        
+        
+        
+        
+
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>ASCII</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_505"><A HREF="#func_505">Get ASCII character</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_506"><A HREF="#func_506">Get ASCII value</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_507"><A HREF="#func_507">Get ASCII value list</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Filters</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_709"><A HREF="#func_709">Get MD5 Signature</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_486"><A HREF="#func_486">Get length of string</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_485"><A HREF="#func_485">Get string</A></A></FONT></TD></TR>
+    
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>List Tokenizing</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_512"><A HREF="#func_512">Append element</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_523"><A HREF="#func_523">Change delimiters</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_519"><A HREF="#func_519">Delete element</A></A></FONT></TD></TR>
+    
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Delimiters</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_527"><A HREF="#func_527">Get default delimiter</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_528"><A HREF="#func_528">Get default delimiter index</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_525"><A HREF="#func_525">Get delimiter</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_526"><A HREF="#func_526">Get delimiter index</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_524"><A HREF="#func_524">Get number of delimiters</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_514"><A HREF="#func_514">Get element</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_518"><A HREF="#func_518">Get element containing</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_517"><A HREF="#func_517">Get element matching</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_515"><A HREF="#func_515">Get first element</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_516"><A HREF="#func_516">Get last element</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_509"><A HREF="#func_509">Get number of elements</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_511"><A HREF="#func_511">Insert element</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_513"><A HREF="#func_513">Prepend element</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_510"><A HREF="#func_510">Set element</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_521"><A HREF="#func_521">Sort elements ascending</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_522"><A HREF="#func_522">Sort elements descending</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_520"><A HREF="#func_520">Swap elements</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_706"><A HREF="#func_706">Set string, return ""</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_707"><A HREF="#func_707">Set string, return 0</A></A></FONT></TD></TR>
+    
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Substrings</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_496"><A HREF="#func_496">Get index of first substring</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_497"><A HREF="#func_497">Get index of last substring</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_495"><A HREF="#func_495">Get index of substring</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_494"><A HREF="#func_494">Get number of substrings</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_500"><A HREF="#func_500">Insert substring</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_491"><A HREF="#func_491">Left substring</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_493"><A HREF="#func_493">Middle substring</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_498"><A HREF="#func_498">Remove substrings</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_499"><A HREF="#func_499">Replace substrings</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_492"><A HREF="#func_492">Right substring</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Transform</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_503"><A HREF="#func_503">Lowercase string</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_501"><A HREF="#func_501">Reverse string</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_502"><A HREF="#func_502">Uppercase string</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_504"><A HREF="#func_504">URL Encoded string</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+
+      </TABLE>
+      <BR>
+      
+
+      
+
+    
+
+
+
+  <HR>
+
+  
+
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_467"><FONT SIZE=4>Add delimiter</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Add delimiter <A HREF=#467_szDelimiter>szDelimiter</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Adds the specified delimiter to be used as a list delimiter in addition to existing delimiters. A delimiter can be of any length and wildcards can be used in delimiters if wildcards are enabled.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Add delimiter ","</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="467_szDelimiter">szDelimiter</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string used to separate tokens (substrings). The purpose of a delimiter is to break a larger string into smaller substrings.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_467"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_512"><FONT SIZE=4>Append element</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listAppend$(<A HREF=#512_szObject>szObject</A>, <A HREF=#512_szElement>szElement</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the list with the specified element append to the list.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listAppend$("String Parser", "testing")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="512_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="512_szElement">szElement</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string list element, also called tokens (or substrings). Elements are separated by delimiters.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_512"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_463"><FONT SIZE=4>Append from file</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Append from file <A HREF=#463_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads the contents of a file into the source string. If the source string has text, the loaded text will be appended to the existing string.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Append from file "myfile.txt"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="463_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_463"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_462"><FONT SIZE=4>Append to file</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Append to file <A HREF=#462_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the string to a file, appending the string to the end of an existing file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Append to file "myfile.txt"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="462_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_462"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_481"><FONT SIZE=4>Case Insensitive (A == a)</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Comparisons are case insensitive</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Forces all string comparisons in operations such as Position of Substring, Find Element Matching, Find Element Containing, Sorts etc. to use case insensitive comparisons. Capitals and lowercase letters will appear as the same.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Comparisons are case insensitive.</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_481"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_482"><FONT SIZE=4>Case Sensitive (A < a)</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Comparisons are case sensitive</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Forces all string comparisons in operations such as Position of Substring, Find Element Matching, Find Element Containing, Sorts etc. to use case sensitive comparisons. Capitals and lowercase letters will appear as different characters.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Comparisons are case sensitive</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_482"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_523"><FONT SIZE=4>Change delimiters</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listChangeDelims$(<A HREF=#523_szObject>szObject</A>, <A HREF=#523_szDelimiter>szDelimiter</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the list with all current delimiters replaced with the specified delimiter. The specified delimiter does not have to be an existing delimiter.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listChangeDelims$("String Parser", "+")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="523_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="523_szDelimiter">szDelimiter</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string used to separate tokens (substrings). The purpose of a delimiter is to break a larger string into smaller substrings.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_523"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_470"><FONT SIZE=4>Delete delimiter</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Delete delimiter <A HREF=#470_szDelimiter>szDelimiter</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Deletes the specified delimiter. Using list tokenizing routines this delimiter will no longer be used to separate tokens.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Delete delimiter " "</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="470_szDelimiter">szDelimiter</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string used to separate tokens (substrings). The purpose of a delimiter is to break a larger string into smaller substrings.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_470"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_469"><FONT SIZE=4>Delete delimiter index</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Delete delimiter at index <A HREF=#469_nIndex>nIndex</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Deletes the delimiter at the specified index position.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Delete delimiter at index 2</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="469_nIndex">nIndex</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Index number in a collection, list, or array.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_469"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_519"><FONT SIZE=4>Delete element</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listDeleteAt$(<A HREF=#519_szObject>szObject</A>, <A HREF=#519_szIndex>szIndex</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the list with the specified element removed.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listDeleteAt$("String Parser", 7)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="519_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="519_"></A></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_519"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_505"><FONT SIZE=4>Get ASCII character</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>chr$(<A HREF=#505_szObject>szObject</A>, <A HREF=#505_nASCII>nASCII</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the ASCII character represented by the decimal value specified.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>chr$("String Parser", 60)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="505_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="505_nASCII">nASCII</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>An ASCII number representing an ASCII character.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_505"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_506"><FONT SIZE=4>Get ASCII value</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>asc(<A HREF=#506_szObject>szObject</A>, <A HREF=#506_szASCII>szASCII</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the number representing the ASCII character specified.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>asc("String Parser", "c")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="506_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="506_szASCII">szASCII</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>An ASCII string where only the first character is examined.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_506"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_507"><FONT SIZE=4>Get ASCII value list</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>ascList$(<A HREF=#507_szObject>szObject</A>, <A HREF=#507_szDelimiter>szDelimiter</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the numbers of every ASCII character in the source string in a list separated by the specified delimiter.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>ascList$("String Parser", ",")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="507_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="507_szDelimiter">szDelimiter</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string used to separate tokens (substrings). The purpose of a delimiter is to break a larger string into smaller substrings.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_507"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_527"><FONT SIZE=4>Get default delimiter</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>getDefDelim$(<A HREF=#527_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the default delimiter.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>getDefDelim$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="527_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_527"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_528"><FONT SIZE=4>Get default delimiter index</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>getDefDelimIndex(<A HREF=#528_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the index of the default delimiter.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>getDefDelimIndex("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="528_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_528"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_525"><FONT SIZE=4>Get delimiter</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>getDelim$(<A HREF=#525_szObject>szObject</A>, <A HREF=#525_nIndex>nIndex</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the delimiter at the specified index from the internal delimiter array.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>getDelim$("String Parser", 0)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="525_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="525_nIndex">nIndex</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Index number in a collection, list, or array.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_525"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_526"><FONT SIZE=4>Get delimiter index</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>getDelimIndex(<A HREF=#526_szObject>szObject</A>, <A HREF=#526_szDelimiter>szDelimiter</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the index of the specified delimiter in the internal delimiter array.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>getDelimIndex("String Parser", " ")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="526_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="526_szDelimiter">szDelimiter</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string used to separate tokens (substrings). The purpose of a delimiter is to break a larger string into smaller substrings.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_526"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_514"><FONT SIZE=4>Get element</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listGetAt$(<A HREF=#514_szObject>szObject</A>, <A HREF=#514_nIndex>nIndex</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the element at the specified position in the list.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listGetAt$("String Parser", 9)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="514_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="514_nIndex">nIndex</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Index number in a collection, list, or array.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_514"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_518"><FONT SIZE=4>Get element containing</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listContains$(<A HREF=#518_szObject>szObject</A>, <A HREF=#518_szFind>szFind</A>, <A HREF=#518_szCount>szCount</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the index of the nCount'th occurrence of the specified substring within the list. An element will match even if it partially matches. This function can use wildcards.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listContains("String Parser, "Hey", 2)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="518_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="518_szFind">szFind</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A search substring.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="518_"></A></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_518"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_517"><FONT SIZE=4>Get element matching</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listFind$(<A HREF=#517_szObject>szObject</A>, <A HREF=#517_szFind>szFind</A>, <A HREF=#517_szCount>szCount</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the index of the nCount'th occurrence of the specified search string. The string must match the element completely. This function can use wildcards.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listFind("String Parser", "b*ing", 1)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="517_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="517_szFind">szFind</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A search substring.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="517_"></A></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_517"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_515"><FONT SIZE=4>Get first element</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listFirst$(<A HREF=#515_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the first element in the list.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listFirst$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="515_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_515"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_496"><FONT SIZE=4>Get index of first substring</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>firstSub(<A HREF=#496_szObject>szObject</A>, <A HREF=#496_szFind>szFind</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the first occurrence of the specified substring. This function can use wildcards.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>firstSub("String Parser", "hey")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="496_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="496_szFind">szFind</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A search substring.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_496"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_497"><FONT SIZE=4>Get index of last substring</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>lastSub(<A HREF=#497_szObject>szObject</A>, <A HREF=#497_szFind>szFind</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the last occurrence of the specified substring. This function can use wildcards.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>lastSub("String Parser", "hey")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="497_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="497_szFind">szFind</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A search substring.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_497"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_495"><FONT SIZE=4>Get index of substring</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>indexOfSub(<A HREF=#495_szObject>szObject</A>, <A HREF=#495_szFind>szFind</A>, <A HREF=#495_nCount>nCount</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the position of the nCount'th occurrence of the specified substring. This function can use wildcards.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>indexOfSub("String Parser", "hey", 1)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="495_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="495_szFind">szFind</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A search substring.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="495_nCount">nCount</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>The nCount'th occurrence.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_495"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_516"><FONT SIZE=4>Get last element</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listLast$(<A HREF=#516_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the last element in the list.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listLast$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="516_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_516"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_486"><FONT SIZE=4>Get length of string</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>length(<A HREF=#486_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the length of the string.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>length("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="486_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_486"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_709"><FONT SIZE=4>Get MD5 Signature</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>mdFive$(<A HREF=#709_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the 32byte hexadecimal MD5 signature for the source string. An MD5 signature is a unique text string generated using a one-way hash algorithm to verify a string or binary piece of information has been unchanged.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>mdFive$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="709_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_709"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_524"><FONT SIZE=4>Get number of delimiters</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>numberOfDelims(<A HREF=#524_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the current number of delimiters. You can Add delimiters and Set delimiters.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>numberOfDelims("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="524_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_524"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_509"><FONT SIZE=4>Get number of elements</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listCount(<A HREF=#509_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the number of elements in the list.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listCount("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="509_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_509"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_494"><FONT SIZE=4>Get number of substrings</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>numberOfSub(<A HREF=#494_szObject>szObject</A>, <A HREF=#494_szFind>szFind</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the number of occurrences of the specified substring. This function can use wildcards.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>numberOfSub("String Parser", "hello")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="494_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="494_szFind">szFind</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A search substring.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_494"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_485"><FONT SIZE=4>Get string</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>string$(<A HREF=#485_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the source string.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>string$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="485_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_485"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_511"><FONT SIZE=4>Insert element</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listInsertAt$(<A HREF=#511_szObject>szObject</A>, <A HREF=#511_szElement>szElement</A>, <A HREF=#511_nIndex>nIndex</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the list with the specified element inserted at the specified position.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listInsertAt$("String Parser", "Sean", 1)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="511_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="511_szElement">szElement</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string list element, also called tokens (or substrings). Elements are separated by delimiters.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="511_nIndex">nIndex</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Index number in a collection, list, or array.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_511"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_500"><FONT SIZE=4>Insert substring</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>insert$(<A HREF=#500_szObject>szObject</A>, <A HREF=#500_szNew>szNew</A>, <A HREF=#500_nStart>nStart</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns a string with the specified substring inserted at the specified position.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>insert$("String Parser", "nn", 3)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="500_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="500_szNew">szNew</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A new substring.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="500_nStart">nStart</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>The starting position.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_500"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Condition</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_455"><FONT SIZE=4>Is URL Safe?</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Is URL Safe</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns true if the source string is safe to be used in URLs. This means it does not contain any invalid characters that must be escaped.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Is URL Safe</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_455"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_491"><FONT SIZE=4>Left substring</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>leftstr$(<A HREF=#491_szObject>szObject</A>, <A HREF=#491_nBytes>nBytes</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns nBytes number of characters from the start of the string.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>leftstr$("String Parser", 3)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="491_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="491_nBytes">nBytes</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Number of bytes or characters.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_491"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_483"><FONT SIZE=4>Literal</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable wildcards</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Forces all string searches in operations such as Position of Substring, Find Element Matching, Find Element Containing, Add delimiter etc. to use literal matching.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable wildcards</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_483"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_474"><FONT SIZE=4>Load from CSV</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from CSV <A HREF=#474_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads the source string as new from a comma-delimited text file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from CSV "myfile.csv"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="474_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_474"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_478"><FONT SIZE=4>Load from Dynamic Array</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from Dynamic Array <A HREF=#478_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads the source string as new from a Dynamic Array file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from Dynamic Array "myfile.dar"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="478_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_478"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_461"><FONT SIZE=4>Load from file</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from file <A HREF=#461_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads a new string from the specified file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from file "myfile.txt"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="461_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_461"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_934"><FONT SIZE=4>Load from INI</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from INI <A HREF=#934_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads every item value (on the right side of the = sign) into the source string as a list delimited by the default delimiter.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from INI "myfile.ini"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="934_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_934"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_476"><FONT SIZE=4>Load from MMF Array</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from MMF Array <A HREF=#476_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads the source string as new from an MMF Array file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from MMF Array "myfile.arr"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="476_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_476"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_503"><FONT SIZE=4>Lowercase string</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>lowercase$(<A HREF=#503_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the string in all lowercase.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>lowercase$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="503_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_503"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_493"><FONT SIZE=4>Middle substring</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>midstr$(<A HREF=#493_szObject>szObject</A>, <A HREF=#493_nStart>nStart</A>, <A HREF=#493_nBytes>nBytes</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the substring of length nBytes beginning at nStart. Attempting to get a substring that goes past the end of the source string will result in a shortened result.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>midstr$("String Parser", 4, 2)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="493_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="493_nStart">nStart</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>The starting position.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="493_nBytes">nBytes</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Number of bytes or characters.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_493"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_513"><FONT SIZE=4>Prepend element</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listPrepend$(<A HREF=#513_szObject>szObject</A>, <A HREF=#513_szElement>szElement</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the list with the specified element prepended to the beginning of the list.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listPrepend$("String Parser", "tested!")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="513_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="513_szElement">szElement</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string list element, also called tokens (or substrings). Elements are separated by delimiters.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_513"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_498"><FONT SIZE=4>Remove substrings</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>remove$(<A HREF=#498_szObject>szObject</A>, <A HREF=#498_szFind>szFind</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns a string with all occurrences of the specified substring removed. This function can use wildcards.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>remove$("String Parser", "guys")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="498_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="498_szFind">szFind</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A search substring.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_498"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_499"><FONT SIZE=4>Replace substrings</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>replace$(<A HREF=#499_szObject>szObject</A>, <A HREF=#499_szFind>szFind</A>, <A HREF=#499_szNew>szNew</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns a string with all occurrences of the specified search substring replaced by the new substring. This function can use wildcards.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>replace$("String Parser", "-old-", "new")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="499_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="499_szFind">szFind</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A search substring.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="499_szNew">szNew</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A new substring.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_499"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_466"><FONT SIZE=4>Reset delimiters</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Reset delimiters</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Deletes all of the existing delimiters.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Reset delimiters</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_466"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_501"><FONT SIZE=4>Reverse string</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>reverse$(<A HREF=#501_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the string reversed. The first character will be the last, and vice versa.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>reverse$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="501_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_501"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_492"><FONT SIZE=4>Right substring</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>rightstr$(<A HREF=#492_szObject>szObject</A>, <A HREF=#492_nBytes>nBytes</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns nBytes number of characters from the end of the string.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>rightstr$("String Parser", 3)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="492_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="492_nBytes">nBytes</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Number of bytes or characters.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_492"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_473"><FONT SIZE=4>Save as CSV</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as CSV <A HREF=#473_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the string as a comma-delimited text file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as CSV "myfile.csv"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="473_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_473"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_477"><FONT SIZE=4>Save as Dynamic Array</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as Dynamic Array <A HREF=#477_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the string as a Dynamic Array file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as Dynamic Array "myfile.dar"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="477_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_477"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_933"><FONT SIZE=4>Save as INI</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as INI <A HREF=#933_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the list elements as an INI File. All elements will be under the group "List" and there will be an item called Elements which will be set to the number of elements in the list. Then each element will be listed using the item name "Element1", "Element2", and so on where each ElementN item will be set to a different element in the list.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as INI "myfile.ini"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="933_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_933"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_475"><FONT SIZE=4>Save as MMF Array</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as MMF Array <A HREF=#475_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the string in MMF 1.5 Array format.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as MMF Array "myfile.arr"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="475_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_475"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_460"><FONT SIZE=4>Save to file</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save to file <A HREF=#460_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the string to the specified file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save to file "myfile.txt"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="460_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_460"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_472"><FONT SIZE=4>Set default delimiter</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set default delimiter to <A HREF=#472_szDelimiter>szDelimiter</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Sets the default delimiter to the delimiter specified. The specified delimiter must already exist as a delimiter, either by the Add delimiter or Set delimiter actions.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set default delimiter to "_"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="472_szDelimiter">szDelimiter</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string used to separate tokens (substrings). The purpose of a delimiter is to break a larger string into smaller substrings.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_472"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_471"><FONT SIZE=4>Set default delimiter index</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set default delimiter at index <A HREF=#471_nIndex>nIndex</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Sets the default delimiter, the one inserted when elements are added to a list, to the delimiter found at the specified index.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set default delimiter at index 0</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="471_nIndex">nIndex</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Index number in a collection, list, or array.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_471"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_468"><FONT SIZE=4>Set delimiter</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set delimiter to <A HREF=#468_szDelimiter>szDelimiter</A> at <A HREF=#468_nIndex>nIndex</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Changes the delimiter at the specified index to the specified delimiter. Effectively deletes the existing delimiter and creates a new one. The new delimiter may not be at the same index position as the deleted delimiter. Wildcards can be used in delimiters if wildcards are enabled.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set delimiter to "+" at 0</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="468_szDelimiter">szDelimiter</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string used to separate tokens (substrings). The purpose of a delimiter is to break a larger string into smaller substrings.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="468_nIndex">nIndex</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Index number in a collection, list, or array.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_468"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_510"><FONT SIZE=4>Set element</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listSetAt$(<A HREF=#510_szObject>szObject</A>, <A HREF=#510_szElement>szElement</A>, <A HREF=#510_nIndex>nIndex</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the list with the specified element replaced.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listSetAt$("String Parser", "Sean", 3)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="510_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="510_szElement">szElement</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A string list element, also called tokens (or substrings). Elements are separated by delimiters.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="510_nIndex">nIndex</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>Index number in a collection, list, or array.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_510"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_456"><FONT SIZE=4>Set source string</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set source string to <A HREF=#456_szString>szString</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Sets the source string to the specified string. Most String Parser actions and expressions will act on this string.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set source string to "my test string"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="456_szString">szString</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A text string.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_456"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_706"><FONT SIZE=4>Set string, return ""</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>set$(<A HREF=#706_szObject>szObject</A>, <A HREF=#706_szString>szString</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Sets the source string in-line and returns an empty string. This expression can be prepended to other expressions if you want a more efficient way to set the source string without using an action. Returns an empty string which can be append or prepended to any string without changing it.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>set$("String Parser", "new source string")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="706_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="706_szString">szString</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A text string.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_706"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_707"><FONT SIZE=4>Set string, return 0</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>set(<A HREF=#707_szObject>szObject</A>, <A HREF=#707_szString>szString</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Sets the source string in-line and returns an empty string. This expression can be prepended to other expressions if you want a more efficient way to set the source string without using an action. Returns 0, which can be added to any other value without changing it.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>set("String Parser", "new source string")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="707_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="707_szString">szString</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A text string.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_707"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_521"><FONT SIZE=4>Sort elements ascending</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listSortAsc$(<A HREF=#521_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the list with the elements sorted in an ascending order.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listSortAsc$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="521_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_521"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_522"><FONT SIZE=4>Sort elements descending</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listSortDesc$(<A HREF=#522_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the list with the elements sorted in an descending order.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listSortDesc$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="522_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_522"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_520"><FONT SIZE=4>Swap elements</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>listSwap$(<A HREF=#520_szObject>szObject</A>, <A HREF=#520_szIndex>szIndex</A>, <A HREF=#520_szIndex2>szIndex2</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the list with the two specified elements swapped. Effectively the elements replace one another.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>listSwap$("String Parser", 2, 4)</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="520_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="520_"></A></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+      </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="520_"></A></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+        <TD><FONT SIZE=2></FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_520"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_502"><FONT SIZE=4>Uppercase string</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>uppercase$(<A HREF=#502_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the string in all uppercase.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>uppercase$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="502_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_502"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_504"><FONT SIZE=4>URL Encoded string</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>urlEncode$(<A HREF=#504_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the string in URL encoded format where invalid URL characters are escaped and made URL safe.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>urlEncode$("String Parser")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="504_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_504"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_484"><FONT SIZE=4>Wildcards</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable wildcards</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Forces all string searches in operations such as Position of Substring, Find Element Matching, Find Element Containing, Add delimiter etc. to use wildcard matching. This is a little slower then a literal search, but the single matching character ?, and the multi-character matching operator * can be used.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable wildcards</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_484"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_4"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    <HR>
+  
+
+</BODY>
+
+
+</HTML>

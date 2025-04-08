@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="%s" href="%s">
+  <information>
+    <title>%s</title>
+    <vendor>%s</vendor> 
+    <description>%s</description>
+    <offline-allowed/>
+  </information>
+  <security> 
+  </security>
+  <resources>
+    <j2se version="1.6"/>
+    <jar href="%s"/>
+  </resources>
+  <application-desc main-class="CRuntime" />
+</jnlp>

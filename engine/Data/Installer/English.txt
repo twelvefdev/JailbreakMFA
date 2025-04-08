@@ -1,0 +1,334 @@
+#04#
+*0000*
+Welcome
+
+*0001*
+ 
+
+*0002*
+<b><fontsize=12>Welcome to the #title Install program</font></b>.
+
+*0003*
+This program allows you to install #title on your hard drive.
+
+*0004*
+It is strongly recommended that before proceeding, you ensure that no other Windows programs are running.
+
+*0005*
+If you do not wish to install #title, click 'Exit' now, otherwise click 'Next' to continue.
+
+*0100*
+Information
+
+*0101*
+Please read the information below.
+
+*0102*
+ 
+
+*0103*
+ 
+
+*0200*
+License
+
+*0201*
+Please read the license agreement below.
+
+*0202*
+Please read the license agreement below and select "I Agree" if you agree with its terms and conditions.
+
+*0203*
+ 
+
+*0204*
+I agree with the above terms and conditions
+
+*0205*
+I do not agree
+
+*0300*
+Directory
+
+*0301*
+Choose an installation folder and click Next to continue.
+
+*0302*
+#Title's files will be installed in the following directory:
+
+*0303*
+ 
+
+*0304*
+ 
+
+*0305*
+Click 'Next' to continue.
+
+*0306*
+Disk space needed :
+
+*0307*
+Available disk space :
+
+*0308*
+%d Mb
+
+*0400*
+Confirmation
+
+*0401*
+You are now ready to install #title.
+
+*0402*
+ 
+
+*0403*
+This program will install #title into %s.
+
+*0404*
+ 
+
+*0405*
+Click 'Start' to install #title.
+
+*0500*
+Installing
+
+*0501*
+Installation in progress, please wait.
+
+*0502*
+File :
+
+*0503*
+ 
+
+*0600*
+End
+
+*0601*
+Installation completed.
+
+*0602*
+#Title has been successfully installed.
+
+*0603*
+Click the following button if you want to see the latest information concerning #title :
+
+*0604*
+Select the following option if you want #title to be launched after exiting this install program :
+
+*0605*
+#Title has not been totally installed because of the following reason:
+
+%s
+
+You will have to run this utility again to completely install #title.
+
+*0606*
+View %s
+
+*0607*
+Launch #title
+
+*0608*
+You need to restart Windows so that all installed options can take effect. Click 'Restart' if you want to restart Windows immediately.
+
+*0609*
+ 
+
+*0700*
+#Title Install Program
+
+*0701*
+Please select a directory
+
+*0702*
+Directory name:
+
+*0703*
+Drives
+
+*0704*
+Checking...
+
+*0705*
+Invalid directory.
+
+*0706*
+The destination directory doesn't exist. Do you want it to be created?
+
+*0707*
+One or more files are write-protected. Do you want to overwrite them anyway?
+
+*0708*
+This program cannot install #title because of the following reason:
+
+*0709*
+The access to the following file is denied:
+%s
+
+*0710*
+The following file is in use:
+
+%s
+
+Please close it and retry.
+
+*0711*
+There is not enough disk space in the target directory. Do you want to try anyway?
+
+*0712*
+Out of memory!
+
+*0713*
+You are currently in the process of installing components.
+If you exit now, these components will not be installed correctly.
+
+Are you sure you want to cancel?
+
+*0714*
+Install has not completed. Are you sure you want to exit?
+
+*0715*
+The Install wizard did not complete the installation successfully.
+
+*0716*
+Cannot open the following file:
+%s
+
+*0717*
+Cannot create the following file:
+%s
+
+*0718*
+File corrupt or unreadable:
+%s
+
+*0719*
+Cannot write to the following file:
+%s
+
+*0720*
+Disk full!
+
+*0721*
+CRC error - cannot install the following file:
+%s
+
+*0722*
+The access to the following file is denied:
+%s
+
+*0723*
+successfully updated
+
+*0724*
+successfully removed
+
+*0725*
+successfully installed
+
+*0726*
+cannot remove, denied access
+
+*0727*
+error - cannot replace, denied access
+
+*0728*
+Please insert disk number %d.
+
+*0729*
+%s
+
+This file exists and is a more recent version than the file to install.
+
+Do you want to overwrite the installed version anyway?
+
+*0730*
+%s
+
+This file exists and is a different language than the file to install.
+
+Do yo want to overwrite the installed version anyway?
+
+*0731*
+This file contains invalid data.
+
+*0732*
+Data error in the following file:
+%s
+
+Do you want to continue anyway?
+
+*0800*
+< &Back
+
+*0801*
+&Next >
+
+*0802*
+E&xit
+
+*0803*
+&Start
+
+*0804*
+OK
+
+*0805*
+&Cancel
+
+*0806*
+&Restart
+
+*0900*
+Uninstall
+
+*0901*
+This program will uninstall #title from your hard drive. Click OK to continue.
+
+*0902*
+#Title has been successfully removed from your hard drive.
+
+*0903*
+&Yes
+
+*0904*
+Yes to &all
+
+*0905*
+&No
+
+*0906*
+No t&o all
+
+*0907*
+Out of memory!
+
+*0908*
+Invalid uninstall info. This program cannot uninstall #title.
+
+*0909*
+The following file is write-protected:
+%s
+Do you want to remove it anyway?
+
+*0910*
+The following system file is apparently no longer used:
+%s
+Do you want to remove it?
+
+*0911*
+Removing files...
+
+*0912*
+Removing icons...
+
+*0913*
+Removing directories...
+
+*0914*
+Removing registry keys...
+

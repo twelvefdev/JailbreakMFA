@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>TimeStamp Extension Docs</title>
+<style>
+h1 {margin-bottom: 0; font-family: arial}
+h2 {color: purple; font-style: italic; text-decoration: underline}
+h3 {margin-bottom: 0; font-weight: normal}
+code{color: red}
+</style>
+</head>
+<body>
+<div><a href="">Visit DynamicArcade</a></div>
+<div><h1><img src="./Extimg.bmp"/> TimeStamp Extension</h1>
+version 0.10 for MMF2</div>
+<div><h2>Actions</h2>
+This extension has no actions.
+</div>
+<div><h2>Conditions</h2>
+This extension has no conditions.
+</div>
+<div><h2>Expressions</h2>
+<h3>Today Stamp("TimeStamp object")</h3>
+Gets the timestamp of the current time.
+<h3>Time Stamp("TimeStamp object", Year, Month, Day, Hours, Minutes, Seconds)</h3>
+Converts separate values into a single Timestamp value.<br/>
+Note that the parameters for this function are in local time and timestamps are in UTC (0 timezone), so TimeStamp(2000,1,1,0,0,0) will give a different timestamp depending what timezone the user's pc is set to.
+<h3>Timezone("TimeStamp object")</h3>
+Gets the computer's timezone.
+<br/><br/>
+<h3>TSYearDiff("TimeStamp object", TimeStamp1, TimeStamp2)</h3>
+Subtracts TimeStamp2 from TimeStamp1 and returns the number of whole years difference.<br/>
+This and the following all return their part of a date difference, so it calculates that 12:01:01 minus 12:00:00 is "1 minute and 1 second", not "1 minute or 61 seconds". If the second date is later then the difference will be negative.<br/>
+Note that these functions take daylight savings time into consideration, so midnight december 15 (non-dst) minus midnight june 15 (dst) is 6 months and 1 hour.
+<h3>TSMonthDiff("TimeStamp object", TimeStamp1, TimeStamp2)</h3>
+Subtracts and returns the number of months difference.
+<h3>TSDayDiff("TimeStamp object", TimeStamp1, TimeStamp2)</h3>
+Subtracts and returns the number of days difference.
+<h3>TSHoursDiff("TimeStamp object", TimeStamp1, TimeStamp2)</h3>
+Subtracts and returns the number of hours difference.
+<h3>TSMinutesDiff("TimeStamp object", TimeStamp1, TimeStamp2)</h3>
+Subtracts and returns the number of minutes difference.
+<h3>TSSecondsDiff("TimeStamp object", TimeStamp1, TimeStamp2)</h3>
+Subtracts and returns the number of seconds difference.
+<br/><br/>
+<h3>TSYear("TimeStamp object", TimeStamp)</h3>
+Extracts the year from a Timestamp.<br/>
+This and the following work in local time, so will return different dates and times depending on the current timezone of the user's pc.
+<h3>TSMonth("TimeStamp object", TimeStamp)</h3>
+Extracts the month from a Timestamp.
+<h3>TSDay("TimeStamp object", TimeStamp)</h3>
+Extracts the day from a Timestamp.
+<h3>TSHours("TimeStamp object", TimeStamp)</h3>
+Extracts the hours from a Timestamp.
+<h3>TSMinutes("TimeStamp object", TimeStamp)</h3>
+Extracts the minutes from a Timestamp.
+<h3>TSSeconds("TimeStamp object", TimeStamp)</h3>
+Extracts the seconds from a Timestamp.
+<h3>TSDayofWeek("TimeStamp object", TimeStamp)</h3>
+Extracts the day of the week from a Timestamp.
+<br/><br/>
+<h3>AddYears("TimeStamp object", TimeStamp, y)</h3>
+Adds y years to a Timestamp.<br/>
+Note that these functions adjust for daylight savings time, so midnight December 15 (non-dst) plus 6 months equals 1am June 15 (dst).
+<h3>AddMonths("TimeStamp object", TimeStamp, m)</h3>
+Adds m months to a Timestamp.
+<h3>AddWeeks("TimeStamp object", TimeStamp, w)</h3>
+Adds w weeks to a Timestamp.
+<h3>AddDays("TimeStamp object", TimeStamp, d)</h3>
+Adds d days to a Timestamp.
+<h3>AddHours("TimeStamp object", TimeStamp, h)</h3>
+Adds h hours to a Timestamp.
+<h3>AddMinutes("TimeStamp object", TimeStamp, m)</h3>
+Adds m minutes to a Timestamp.
+<h3>AddSeconds("TimeStamp object", TimeStamp, s)</h3>
+Adds s seconds to a Timestamp.
+<br/><br/>
+<h3>Full Date String("TimeStamp object", TimeStamp)</h3>
+Converts a Timestamp into a text string.
+<h3>TSYYYYMMDD("TimeStamp object", TimeStamp)</h3>
+Converts a Timestamp into a "YYYYMMDD" form text string.
+<h3>TSHHMMSS("TimeStamp object", TimeStamp)</h3>
+Converts a Timestamp into a "HHMMSS" form text string.
+<h3>TS_Str$("TimeStamp object", TimeStamp)</h3>
+Converts a Timestamp into a string that correctly represents the Timestamp. May return a different string to MMF's Str$() if the timestamp is in the extended date range, which mmf sees as negative.
+<h3>TS_Val("TimeStamp object", String)</h3>
+Converts a string into the correct Timestamp. May return a different value to MMF's Val() if the number in the string is a larger positive number than mmf can understand, as this function will read the number as being part of the extended timestamp range, which mmf sees as negative.
+</div>
+<div><h2>Notes</h2>
+All number functions return -1 on error, all text functions return "Error: ..." on error.<br/>
+All <code>Add???()</code> expressions take daylight savings into account, so, for example, adding 2 hours to midnight October 31 2004 gives 1am.<br/>
+Timestamps between 0 and 2147483647 are the standard range and represent Jan 01 1970, 0:00:00 to Jan 19 2038, 3:14:07.<br/>
+Timestamps between -2147483648 to -2 are the extended range and represent Jan 19 2038, 3:14:08 to Feb 07 2106, 6:28:14. <code>TS_Str$</code> and <code>TS_Val()</code> should be used to translate these to or from the correct (positive number) string representation.<br/>
+</div>
+<div><h2>Known issues</h2>
+Timestamps for after the year 2001 don't fit in an mmf counter, so global/local values or strings (or other storage) must be used.<br/>
+</div>
+<div><h2>Technical Notes</h2>
+This extension's extended date range compared to the range of normal 32-bit timestamps is because normal 32-bit timestamps only use positive numbers, and assume all negative numbers are errors. This means that they are effectively only using 31 bits. This extension uses 64-bit timestamps internally and returns the smallest 32-bits to mmf, and if the timestamp is larger than 32-bits then it returns -1. This means that it uses all 32 bits, however mmf only supports signed numbers so if the highest bit is set the number shows as negative.<br/>
+Normally you won't be able to directly transfer a negative (extended-range) timestamp to another program, because the program will treat it as an error. To transfer it successfully, verify that the other program uses 64-bit timestamps and then either use the <code>TS_Str$()</code> expression to output your timestamp as text correctly, or use the binary object or similar to write a binary 64-bit number with your timestamp in the lower 32-bits and 0 in the upper.<br/>
+<div><h2>Examples</h2>
+<h3>TimeStamp Demo</h3>
+<a href="./Demos/TimeStamp.mfa">Launch TimeStamp Demo.mfa</a><br/>
+</div>
+<div><h2>Changelog</h2>
+<h3>0.10 for MMF2</h3>
+First release for MMF2. Doesn't have a setup box, but it only had the credits and help button on it anyway. I've made the help button on the extension's MMF2 property page work instead.<br/>
+Added parameter names to all the expressions, so now it says <code>Time Stamp( "TimeStamp object", >Year<, >Month<, >Day<, >Hours<, >Minutes<, >Seconds<)</code> instead of <code>Time Stamp( "TimeStamp object", > Enter value here <, > Enter value here <, > Enter value here <, > Enter value here <, > Enter value here <, > Enter value here < )</code>.<br/>
+<div><h2>Older Changelog</h2>
+<h3>0.10</h3>
+Added support for extended timestamps, this doubles the range of dates that can be used to 136 years (1970-2106). The extra range shows up as negative numbers in mmf.<br/>
+Added <code>TS_Str$()</code> to convert a timestamp to a string containing a positive number. This string will be compatible with any programs that read timestamps from strings and understand 64-bit timestamps.<br/>
+Added <code>TS_Val()</code> to convert a string containing a number to a timestamp, as the reverse of <code>TS_Str$()</code>.<br/>
+Fixed the <code>TS???Diff()</code> and <code>TSAddDays()</code> expressions so that they all understood daylight savings time and didn't occassionally return negative numbers when they shouldn't (especially <code>TSDayDiff()</code>).<br/>
+Changed the example to use the two new functions.<br/>
+<h3>0.9c</h3>
+Fixed a bug with the month being 0-based in <code>TSYYYYMMDD()</code>.<br/>
+<h3>0.9b</h3>
+Fixed a bug with treatment of daylight savings time in <code>TSMonthDiff()</code> and <code>TSDayDiff()</code>.<br/>
+<h3>0.9</h3>
+Added <code>TSYearDiff()</code>, <code>TSMonthDiff()</code>, <code>TSWeekDiff()</code>, <code>TSDayDiff()</code>, <code>TSHoursDiff()</code>, <code>TSMinutesDiff()</code>, <code>TSSecondsDiff()</code> functions.<br/>
+Modified example to show TS...Diff() functions working, added example link to docs.<br/>
+<h3>0.8d2</h3>
+Major Fix: Extension was found to need MSVCR71.dll, which is only present on Windows XP SP2 (and above, I guess). Build options changed to include the necessary code in the extension instead of using the dll, but the size of the extension is now 43KB for the run-only version instead of 9KB.<br/>
+<h3>0.8d</h3>
+Added <code>TSHHMMSS()</code> function.<br/>
+Changed credits to read "has been released" instead of "will be released".<br/>
+<h3>0.8c</h3>
+Added <code>TSYYYYMMDD()</code> function.<br/>
+Added jpcr and joewski to credits for their feature requests.<br/>
+<h3>0.8b</h3>
+Added <code>Timezone()</code> function.<br/>
+Added version detection to the extension, it will now tell you if you are loading a cca made with a newer version of the extension.<br/>
+<h3>0.8</h3>
+Added <code>Full Date String()</code> function.<br/>
+Added <code>AddYears()</code>, <code>AddMonths()</code>, <code>AddWeeks()</code>, <code>AddDays()</code>, <code>AddHours()</code>, <code>AddMinutes()</code>, <code>AddSeconds()</code> functions.<br/>
+Fixed Help button on setup dialog, now looks relative to mmf install dir not current dir.<br/>
+Example no longer requires the Cellosoft Timer Object. YAY!!!
+<h3>0.7c</h3>
+Fixed bug introduced in 0.7b, the <code>TSYear()</code>... etc. functions would return -1 almost all the time, instead of just on error.
+<h3>0.7b</h3>
+Used build_small configs, filesize now 16kB for edit-time and 6.5kB for run-only (was 56 / 52).<br/>
+Added changelog to help file.<br/>
+Fixed version information in TimeStamp.cox.<br/>
+Changed output of <code>TSYear()</code>... etc. functions to be -1 on error.
+<h3>0.7</h3>
+Added <code>Today Stamp()</code> and <code>TSDayofWeek()</code> functions<br/>
+Added help file and enabled Help button.
+<h3>0.6</h3>
+Added <code>TSYear()</code>, <code>TSMonth()</code>, <code>TSDay()</code>, <code>TSHours()</code>, <code>TSMinutes()</code>, <code>TSSeconds()</code> functions.<br/>
+Fixed a bug with treatment of daylight savings time.<br/>
+Changed Month to 1-based instead of 0-based.
+<h3>0.5</h3>
+First release, only <code>Time Stamp()</code> function existed. (dunno why it wasn't 0.1)
+</div>
+</body>
+</html>

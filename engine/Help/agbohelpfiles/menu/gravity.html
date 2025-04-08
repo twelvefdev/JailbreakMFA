@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="../general.css" type="text/css" />
+
+
+
+<h2>Gravity: Up, Down, Left & Right - 1 or more slots</h2>
+<hr>
+
+Theese actions affect the bricks in the board with gravity in the direction you decide. Bricks resting on another brick will obviously not fall down.
+<br /><br />
+Here is an example on how the downwards gravity works:
+<br />
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+</table>
+<br />
+After a "Down: Drop bricks 1 slot" action the board would look like this:
+<br />
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+</table>
+<br />
+And after another one of them, the board would look like this:
+<br />
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+</table>
+<br />
+The other directions works with the same principle.<br />
+<br />
+
+In the actions where is sais "Drop x amount", it means that it basically runs the drop action the amount of times you want it to. So if you wrote '2' as the parameter, the board would look like the third picture after a single action of that type. This is usefull if you want bricks to drop instantly to a position where they can't fall anymore or just for faster fall speeds.
+
+</body>
+</html>

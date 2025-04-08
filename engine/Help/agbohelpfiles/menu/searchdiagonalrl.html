@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="../general.css" type="text/css" />
+
+
+
+<h2>Search diagonal / (northeast to southwest)</h2>
+<hr>
+
+This action searches all diagonals (not only corner to corner but all 45 degree lines in the board) for a given bricktype.
+<br />
+<br />
+<b>Parameters:</b><br />
+bricktype - What bricktype you want to search for. If you want to search for more bricktypes, you can simply run the action again with another bricktype.<br /><br />
+
+When you start a search, its like starting a fastloop. AGBO will trigger a condition similar to an "on loop" condition when it finds a system of connected bricks. Here AGBO triggers this condition:
+<div class="event">On found connected</div>
+
+You can then through expressions get how many bricks was found in the current system. "On found connected" will keep trigger untill it has been through all systems it has found. <br />
+<br />
+Tip: use the action "Loop through found bricks" when "On found connected" is triggered and use the condition "On found brick" to get each bricks in the systems it finds.
+
+
+</body>
+</html>

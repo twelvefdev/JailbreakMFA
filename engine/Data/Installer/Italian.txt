@@ -1,0 +1,324 @@
+#04#
+*0000*
+Benvenuti 
+
+*0001*
+
+
+*0002*
+<b><fontsize=12>Benvenuti all'installazione di #title</font></b>. 
+
+*0003*
+Questo programma installerà #title all'interno del vostro hard disk. 
+
+*0004*
+Si consiglia di chiudere tutti i programmi precedentemente aperti sul computer prima di procedere. 
+
+*0005*
+Se non desiderate installare #title ora selezionate 'Esci', oppure selezionate 'Avanti' per continuare. 
+
+*0100*
+Informazioni 
+
+*0101*
+Vi preghiamo di leggere le informazioni riportate qui di seguito. 
+
+*0102*
+
+
+*0103*
+
+
+*0200*
+Licenza 
+
+*0201*
+Vi preghiamo di leggere i seguenti termini di contratto 
+
+*0202*
+Vi preghiamo di leggere il contratto e selezionare "Accetto" per accettare i termini contenuti in esso e continuare l'installazione. 
+
+*0203*
+
+
+*0204*
+Accetto 
+
+*0205*
+Non accetto 
+
+*0300*
+Cartella di destinazione 
+
+*0301*
+Selezionate una cartella per l'installazione e selezionate 'Avanti' per continuare. 
+
+*0302*
+I files di #Title verranno installati nella seguente cartella : 
+
+*0303*
+ 
+
+*0304*
+ 
+
+*0305*
+Selezionate 'Avanti' per continuare. 
+
+*0306*
+Spazio richiesto su disco : 
+
+*0307*
+Spazio libero disponibile : 
+
+*0308*
+%d Mb 
+
+*0400*
+Pronto all'installazione 
+
+*0401*
+Il sistema è ora pronto per installare #title. 
+
+*0402*
+
+
+*0403*
+Questo programma installerà #title all'interno della cartella %s. 
+
+*0404*
+
+
+*0405*
+Selezionate 'Avvia' per installare #title adesso. 
+
+*0500*
+Installazione 
+
+*0501*
+Installazione in corso, attendere prego. 
+
+*0502*
+File : 
+
+*0503*
+
+
+*0600*
+Operazione completata 
+
+*0601*
+L'installazione dei files è stata completata. 
+
+*0602*
+#Title è stato installato con successo. 
+
+*0603*
+Fate click sul seguente pulsante per ottenere informazioni aggiornate su #title : 
+
+*0604*
+Selezionate la seguente opzione se desiderate lanciare #title al termine dell'installazione : 
+
+*0605*
+#Title non è stato completamente installato a causa della seguente motivazione : 
+%s 
+Sarà necessario riavviare questo programma per completare l'installazione di #title. 
+
+*0606*
+Visualizza %s 
+
+*0607*
+Lancia #title 
+
+*0608*
+E' necessario riavviare Windows per completare l'installazione. Selezionate 'Riavvia' se desiderate riavviare il sistema immediatamente. 
+
+*0609*
+
+
+*0700*
+Installazione di #Title 
+
+*0701*
+Selezionate una cartella
+
+*0702*
+Nome della cartella : 
+
+*0703*
+Unità 
+
+*0704*
+Controllo... 
+
+*0705*
+Cartella non valida. 
+
+*0706*
+La cartella di destinazione non esiste. Si desidera crearla? 
+
+*0707*
+Uno o più files sono protetti contro la scrittura. Si desidera sovrascriverli comunque? 
+
+*0708*
+Il programma non è stato in grado di installare #title a causa della seguente motivazione: 
+
+*0709*
+L'accesso al seguente file è negato: 
+%s 
+
+*0710*
+Il seguente file è attualmente in uso: 
+%s 
+Vi preghiamo di chiuderlo e di riprovare. 
+
+*0711*
+Non è presente abbastanza spazio su disco nella cartella di destinazione. Desiderate provare ad installare comunque? 
+
+*0712*
+Memoria esaurita! 
+
+*0713*
+Il sistema sta attualmente installando i componenti. 
+Se decidete di uscire ora, tali componenti non verranno installati correttamente 
+Siete sicuri di voler annullare l'operazione? 
+
+*0714*
+L'installazione non è stata completata. Siete sicuri di voler uscire? 
+
+*0715*
+Il programma non è stato in grado di completare l'installazione. 
+
+*0716*
+Impossibile aprire il seguente file: 
+%s 
+
+*0717*
+Impossibile creare il seguente file: 
+%s 
+
+*0718*
+File corrotto o illeggibile: 
+%s 
+
+*0719*
+Impossibile scrivere sul seguente file: 
+%s 
+
+*0720*
+Disco pieno! 
+
+*0721*
+Errore di CRC - Impossibile installare il seguente file: 
+%s 
+
+*0722*
+Accesso negato al seguente file: 
+%s 
+
+*0723*
+Aggiornato con successo 
+
+*0724*
+Rimosso con successo 
+
+*0725*
+Installato con successo 
+
+*0726*
+Impossibile rimuovere il programma, accesso negato 
+
+*0727*
+Errore - Impossibile sostituire, accesso negato 
+
+*0728*
+Vi preghiamo di inserire il disco numero %d. 
+
+*0729*
+%s 
+Questo file esiste già ed è presente in una versione più recente di quello che si sta per installare. 
+Desiderate sovrascrivere il file comunque? 
+
+*0730*
+%s 
+Questo file esiste già ed è in una lingua diversa da quello che si sta per installare. 
+Siete sicuri di voler sovrascrivere il file? 
+
+*0731*
+Questo file contiene dati non validi. 
+
+*0732*
+Si è verificato un errore di dati nel seguente file: 
+%s 
+Siete sicuri di voler continuare l'installazione? 
+
+*0800*
+< &Indietro 
+
+*0801*
+&Avanti > 
+
+*0802*
+&Esci 
+
+*0803*
+&Avvia 
+
+*0804*
+OK 
+
+*0805*
+A&nnulla 
+
+*0806*
+&Riavvia 
+
+*0900*
+Disinstalla 
+
+*0901*
+Questo programma disinstallerà #title dal vostro hard disk. Selezionate OK per continuare. 
+
+*0902*
+#Title E' stato rimosso con successo dal vostro hard disk. 
+
+*0903*
+&Si 
+
+*0904*
+Si a &Tutti 
+
+*0905*
+&No 
+
+*0906*
+No &a tutti 
+
+*0907*
+Memoria esaurita! 
+
+*0908*
+Informazioni di disinstallazione non valide. Questo programma non è in grado di disinstallare #title. 
+
+*0909*
+Il seguente file è protetto dalla scrittura: 
+%s 
+Desiderate rimuoverlo comunque? 
+
+*0910*
+Il seguente file apparentemente non è più in uso: 
+%s 
+Desiderate rimuoverlo? 
+
+*0911*
+Rimozione dei files... 
+
+*0912*
+Rimozione delle icone... 
+
+*0913*
+Rimozione delle directory... 
+
+*0914*
+Rimozione delle chiavi di registro... 
+

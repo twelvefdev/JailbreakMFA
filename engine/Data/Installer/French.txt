@@ -1,0 +1,336 @@
+#04#
+*0000*
+Bienvenue
+
+*0001*
+ 
+
+*0002*
+<b><fontsize=12>Bienvenue dans le programme d'installation de #title</font></b>.
+
+*0003*
+Ce programme vous permet d'installer #title sur votre disque dur.
+
+*0004*
+Il est fortement recommandé de fermer toutes les autres applications avant de continuer.
+
+*0005*
+Si vous ne souhaitez pas installer #title, cliquez sur 'Quitter' maintenant, cliquez sur 'Suivant' pour continuer.
+
+*0100*
+Information
+
+*0101*
+Veuillez lire les informations ci-dessous.
+
+*0102*
+ 
+
+*0103*
+ 
+
+*0200*
+Licence
+
+*0201*
+Veuillez lire le contrat de licence ci-dessous.
+
+*0202*
+Lisez attentivement le contrat de licence ci-dessous et sélectionnez "Je suis d'accord" si vous acceptez ses termes et conditions.
+
+*0203*
+ 
+
+*0204*
+Je suis d'accord avec les termes et conditions ci-dessus.
+
+*0205*
+Je ne suis pas d'accord.
+
+*0300*
+Répertoire
+
+*0301*
+Choisissez un répertoire d'installation puis cliquez sur 'Suivant' pour continuer.
+
+*0302*
+Les fichiers de #Title seront installés dans le répertoire suivant:
+
+*0303*
+ 
+
+*0304*
+ 
+
+*0305*
+Cliquez sur 'Suivant' pour continuer.
+
+*0306*
+Espace disque nécessaire :
+
+*0307*
+Espace disque disponible :
+
+*0308*
+%d Mo
+
+*0400*
+Confirmation
+
+*0401*
+Vous êtes maintenant prêt à installer #title.
+
+*0402*
+ 
+
+*0403*
+Ce programme va installer #title dans %s.
+
+*0404*
+ 
+
+*0405*
+Cliquez sur 'Démarrer' pour installer #title.
+
+*0500*
+Installation
+
+*0501*
+Installation en cours, veuillez patienter.
+
+*0502*
+Fichier :
+
+*0503*
+ 
+
+*0600*
+Fin
+
+*0601*
+Installation terminée.
+
+*0602*
+#Title a été installé avec succès.
+
+*0603*
+Cliquez sur le bouton suivant si vous désirez voir les dernières informations concernant #title :
+
+*0604*
+Sélectionnez l'option suivante si vous désirez lancer #title en quittant ce programme :
+
+*0605*
+#Title n'a pas été complètement installé pour la raison suivante:
+
+%s
+
+Vous devez relancer ce programme encore une fois pour installer complètement #title.
+
+*0606*
+Voir %s
+
+*0607*
+Lancer #title
+
+*0608*
+Vous devez redémarrer Windows pour que l'installation soit terminée. Cliquez 'Redémarrer' si vous désirez redémarrer Windows immédiatement.
+
+*0609*
+ 
+
+*0700*
+Installation de #Title
+
+*0701*
+Veuillez sélectionner un répertoire
+
+*0702*
+Nom de répertoire:
+
+*0703*
+Lecteurs
+
+*0704*
+Vérification...
+
+*0705*
+Répertoire invalide.
+
+*0706*
+Le répertoire destination n'existe pas. Voulez vous le créer?
+
+*0707*
+Un fichier ou plus sont protégés en écriture. Voulez-vous les écraser quand même?
+
+*0708*
+Ce programme ne peut pas installer #title pour la raison suivante :
+:
+
+*0709*
+L'accès au fichier suivant est interdit:
+%s
+
+*0710*
+Le fichier suivant est en cours d'utilisation:
+
+%s
+
+Veuillez le fermer et recommencer.
+
+*0711*
+Il n'y a pas assez d'espace disque dans le répertoire destination.
+Désirez-vous essayer quand même?
+
+*0712*
+Pas assez de mémoire!
+
+*0713*
+Vous êtes en train d'installer des fichiers.
+Si vous arrêtez maintenant, ces fichiers ne seront pas correctement installés.
+
+Etes vous sûr de vouloir arrêter?
+
+*0714*
+Ce programme n'a pas terminé l'installation. Etes vous sûr de vouloir arrêter?
+
+*0715*
+Ce programme n'a pas terminé l'installation.
+
+*0716*
+Impossible d'ouvrir le fichier:
+%s
+
+*0717*
+Impossible de créer le fichier :
+%s
+
+*0718*
+Fichier corrompu ou illisible:
+%s
+
+*0719*
+Impossible d'écrire dans le fichier suivant:
+%s
+
+*0720*
+Disque plein!
+
+*0721*
+erreur CRC - impossible d'installer le fichier suivant:
+%s
+
+*0722*
+L'accès au fichier suivant est interdit:
+%s
+
+*0723*
+mis à jour avec succès
+
+*0724*
+enlevé avec succès
+
+*0725*
+installé avec succès
+
+*0726*
+impossible à enlever, accès interdit
+
+*0727*
+erreur - impossible à remplacer, accès interdit
+
+*0728*
+Veuillez insérer le disque numéro %d.
+
+*0729*
+%s
+
+Ce fichier existe et est plus récent que le fichier à installer.
+
+Désirez-vous le remplacer quand même?
+
+*0730*
+%s
+
+Ce fichier existe et est d'une langue différente de celle du fichier à installer.
+
+Désirez-vous le remplacer quand même?
+
+*0731*
+Ce fichier contient des données invalides.
+
+*0732*
+Données erronées dans le fichier suivant:
+%s
+
+Désirez-vous continuer quand même?
+
+*0800*
+< &Précédent
+
+*0801*
+&Suivant >
+
+*0802*
+Q&uitter
+
+*0803*
+&Démarrer
+
+*0804*
+OK
+
+*0805*
+&Annuler
+
+*0806*
+Redémarrer
+
+*0900*
+Désinstallation
+
+*0901*
+Ce programme va désinstaller #title de votre disque dur. Cliquez OK pour continuer.
+
+*0902*
+#Title a été enlevé avec succès de votre disque dur.
+
+*0903*
+O&ui
+
+*0904*
+Oui pour tou&s
+
+*0905*
+&Non
+
+*0906*
+N&on pour tous
+
+*0907*
+Pas assez de mémoire!
+
+*0908*
+Information de désinstallation invalide. Ce programme ne peut pas désinstaller #title.
+
+*0909*
+Le fichier suivant est protégé en écriture:
+%s
+Désirez-vous l'enlever quand même?
+
+*0910*
+Le fichier système suivant n'est apparemment plus utilisé:
+%s
+Désirez-vous l'enlever?
+
+*0911*
+Désinstallation des fichiers...
+
+*0912*
+Désinstallation des icônes...
+
+*0913*
+Désinstallation des répertoires...
+
+*0914*
+Désinstallation des clefs du registre...
+

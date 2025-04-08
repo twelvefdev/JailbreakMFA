@@ -1,0 +1,599 @@
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="SaveGame-filer/filelist.xml">
+<title>Platform Movement object documentation</title>
+
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-name:"Normal\,webb";
+	mso-style-parent:"";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+.eventComplexBlock { width: 100%;font-size: 14px;padding: 1px;margin: 3px;color: #FFF;background-color: #FFF;border: 1px solid #E5DCC4; }
+.headerEvents { font-family: Verdana, Arial;font-size: 24px;padding: 10 6 10 4;border-width: 1px;border-color: #FFF #888 #888 #FFF;border-style: solid;font-weight: bold;margin: 1 2 0 2;color: #000;background-color: #D4D0C8; }
+.eventsTable { width: 100%; }
+.eventsTableHead { font-size: 14px;padding: 5;border-width: 1px;border-color: #FFF #888 #888 #FFF;border-style: solid;font-weight: bold;color: #000;background-color: #D4D0C8; }
+.eventNumBox { font-size: 14px;padding: 5;border-width: 1px;border-color: #FFF #888 #888 #FFF;border-style: solid;font-weight: bold;text-align: center;color: #000;background-color: #D4D0C8; }
+.actionBox { padding: 4 4 4 30; }
+.conditionBox { padding: 4 4 4 4; }
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Normal tabell";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+</head>
+
+<body lang=SV style='tab-interval:65.2pt'>
+<div class=Section1> 
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><b><span lang=EN-GB style='font-size:10.0pt;font-family:
+Arial;color:black;mso-ansi-language:EN-GB'>Platform Movement object</span></b><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='font-size:10.0pt;font-family:Arial;
+mso-ansi-language:EN-GB'>This document refers to an extension made for <i>Multimedia 
+    Fusion</i>, by Olle Fredriksson (Fodo), in 2003.</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='mso-ansi-language:EN-GB'>&nbsp;</span></font></p>
+  <hr>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span><b><span lang=EN-GB style='font-size:10.0pt;font-family:
+Arial;mso-ansi-language:EN-GB'>What does the object do?</span></b><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='font-size:10.0pt;font-family:Arial;
+mso-ansi-language:EN-GB'>The Platform Movement object was made to replace the 
+    simple, in built platform movement in Multimedia Fusion. Now, afterwards, 
+    I see it more like a base for a custom platform engine. The cool thing is 
+    that it's totally customisable - if you want! You can also use in built premade 
+    functions for everything, or get down on a low level manipulating velocities 
+    and variables.</span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='mso-ansi-language:EN-GB'>&nbsp;</span></font></p>
+  <hr>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span><b><span lang=EN-GB style='font-size:10.0pt;font-family:
+Arial;mso-ansi-language:EN-GB'>Usage</span></b><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>The first thing you will see after placing 
+    the object in your frame is the dialog, with lots of values to tinker with. 
+    I suggest you don't bother too much about it from the beginning, I think it's 
+    simpler to just code in the needed events first, then tinker with all values 
+    and the presets to get your platform movement the way You want it.</o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p>So, for now, just leave it and click 
+    <i>Ok</i>.</span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif">One big 
+    difference between this object and the in built movements is that for this 
+    object, you need to use another object as the detector object - it will not 
+    work good with a character that animates and varies in size. So, create a 
+    detector object, for an example an object with a filled box, about the size 
+    of your visible animation object. If you want, make your detector invisible 
+    at the start of the frame (either by events or in the object properties).</font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>If you haven't already, create some obstacle 
+    backdrops, and possibly some actives with a qualifier to work as jump through 
+    platform.</o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>The first thing you need to do in the events 
+    editor is to tell the Platform Movement object what object it should operate 
+    and move around. Do this with the <i>Set object </i>action. Select your detector. 
+    If you have an animation object, always set it to position (0,0) from the 
+    detector object.</o:p><o:p></o:p></span></font></p>
+  <div class='eventComplexBlock'> 
+    <table class='eventsTable'>
+      <tr> 
+        <td class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+        <td width=100% class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">Events</font></td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            Start of Frame<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Set object to <img src='MMFActive.gif' border='0' style='vertical-align:middle' alt='MMFActive.gif' /> 
+            <br>
+            </font></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <p>&nbsp;</p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>The extension SDK is quite limited when it 
+    comes to detecting collisions from an extension, it's not possible at all, 
+    unless you use the workaround I've used in this object. The way this works 
+    is a bit more complex, and it requires some work from the user - but it gives 
+    you all of the work back in flexibility.</o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>When the extension needs to test for an obstacle 
+    collision, it triggers it's own condition <i>Test for obstacle overlap, </i>and 
+    it's in this event, you are supposed to test for an obstacle overlap and tell 
+    the object that the object is overlapping an obstacle.</o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>So, what you do, is that you create an event 
+    with the <i>Test for obstacle overlap </i>condition, from the Platform Movement 
+    object, then, under that line, test if the detector is overlapping a backdrop. 
+    If this event is true, use the action <i>Object does overlap with obstacle 
+    </i> so that the extension knows that a collision occured. If you have more 
+    than one type of obstacles, maybe an active object, or a group of active objects 
+    that function as obstacles, you have to make a new <i>Test for obstacle overlap 
+    </i>function for each of these types, and return that the object does overlap.</o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>If you want the object to stop when it leaves 
+    the play area, make a new <i>Test for obstacle overlap </i>event and test 
+    if the detector is not in the play area.</o:p><o:p></o:p></span></font></p>
+  <div class='eventComplexBlock'> 
+    <table class='eventsTable'>
+      <tr> 
+        <td class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+        <td width=100% class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">Events</font></td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Test for obstacle overlap<br>
+            </font></div>
+          <div class='conditionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            + <img src='MMFActive.gif' border='0' style='vertical-align:middle' alt='MMFActive.gif' /> 
+            is overlapping a backdrop<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Selected object overlaps an obstacle<br>
+            </font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Test for obstacle overlap<br>
+            </font></div>
+          <div class='conditionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            + <img src='MMFNegate.gif' border='0' style='vertical-align:middle' alt='MMFNegate.gif' /> 
+            <img src='MMFActive.gif' border='0' style='vertical-align:middle' alt='MMFActive.gif' /> 
+            is in the play area<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Selected object overlaps an obstacle<br>
+            </font></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>The next thing you want to do is adding left/right 
+    key movement. So make two events - repeat while pressing right, and left, 
+    and use the actions in the extension - <i>User is holding right input key</i>, 
+    and same with left.</o:p><o:p> </o:p></span></font></p>
+  <div class='eventComplexBlock'> 
+    <table class='eventsTable'>
+      <tr> 
+        <td class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+        <td width=100% class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">Events</font></td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            Repeat while <img src='MMFEvJoystick.gif' border='0' style='vertical-align:middle' alt='MMFEvJoystick.gif' /> 
+            Moved right<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : User is holding right input key<br>
+            </font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            Repeat while <img src='MMFEvJoystick.gif' border='0' style='vertical-align:middle' alt='MMFEvJoystick.gif' /> 
+            Moved left<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : User is holding left input key<br>
+            </font></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <p>&nbsp;</p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>There! You now have a working platform movement! 
+    You probably want jumping, too.</o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>To add jumping, you use the same procedure, 
+    but with the <i>Jump</i> action, and you should also add the condition <i>Object 
+    is standing on ground </i> from the extension.</o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p>If you want higher jumps when the user is 
+    holding the jump key, make a new event, Repeat while pressing jump key, and 
+    from the extension <i>Object is jumping, </i>and then use the extension's 
+    in built <i>User is holding jump in the air</i> function.</o:p></span></font></p>
+  <div class='eventComplexBlock'> 
+    <table class='eventsTable'>
+      <tr> 
+        <td class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+        <td width=100% class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">Events</font></td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFEvJoystick.gif' border='0' style='vertical-align:middle' alt='MMFEvJoystick.gif' /> 
+            Pressed fire 1<br>
+            </font></div>
+          <div class='conditionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            + <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Object is standing on ground<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Jump<br>
+            </font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            Repeat while <img src='MMFEvJoystick.gif' border='0' style='vertical-align:middle' alt='MMFEvJoystick.gif' /> 
+            Pressed fire 1<br>
+            </font></div>
+          <div class='conditionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            + <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Object is jumping<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : User is holding jump in the air<br>
+            </font></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <font face="Arial, Helvetica, sans-serif" size="3"><br>
+  </font> 
+  <hr>
+  <p><font face="Arial, Helvetica, sans-serif" size="3"><b>Variables</b></font></p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3">All variables, except 
+    max step up and downhill slope correction are measured with 1/100th of a pixel 
+    accuracy. That means that speed 200 is 2 pixels per frame.</font></p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3">Variables can be used 
+    for your own custom movement types and additions to your movement. If you 
+    want to add ladders, moving platforms and such, you must use the values.</font></p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3">All variables can be changed 
+    in the event editor, but the ones categorized as <i>Setup box </i>can also 
+    be changed in the setup box. You can apply presets of the setup box variables 
+    from the setup box, those are loaded from an ini file named <i>PlatformMovPresets.ini</i>, 
+    in the extension directory. If you open that ini file in notepad you will 
+    see instructions on how to add your own presets for use in the object.</font></p>
+  <p>&nbsp;</p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3"><i>Setup box</i></font></p>
+</div>
+<ul>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Max 
+      X velocity - the X velocity will automaticly be set to this value if it's 
+      higher than it.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Max 
+      Y velocity - same as above but on the vertical axis.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">X acceleration 
+      - how much to accelerate when moving left and right.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">X deceleration 
+      - how much to decelerate each frame when not moving left or right.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Gravity 
+      - how much to add to the Y velocity when the selected object is not standing 
+      on the ground.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Jump 
+      strength - what the extension sets the Y velocity to when using the <i>Jump</i> 
+      action.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Jump 
+      hold strength - how much to take from the Y velocity when holding the jump 
+      key in the air.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Max 
+      step up - how many pixels the object can walk up (steps) without stopping.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Downhill 
+      slope correction - how many pixels down the extension will look for obstacles 
+      to &quot;stick&quot; to when close to the ground.</font></div>
+  </li>
+</ul>
+<div class=Section1> 
+  <p><font face="Arial, Helvetica, sans-serif" size="3"><i>Event editor only</i></font></p>
+</div>
+<ul>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">X velocity 
+      - horizontal speed.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Y velocity 
+      - vertical speed.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Additional 
+      X velocity - horizontal velocity that isn't affected by any other variables, 
+      use this for for an example moving platforms and magnet effects.</font></div>
+  </li>
+  <li> 
+    <div class=Section1><font face="Arial, Helvetica, sans-serif" size="3">Additional 
+      Y velocity - same as above but on the vertical axis.</font></div>
+  </li>
+</ul>
+<div class=Section1> 
+  <p><font face="Arial, Helvetica, sans-serif" size="3"><br>
+    </font></p>
+  <hr>
+  <p><font face="Arial, Helvetica, sans-serif" size="3"><b>Additional notes</b></font></p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3"><b>Moving platforms</b> 
+    can be tricky to get working fully. There are many ways to achieve this, but 
+    the way I do it, is that the moving platform has a custom movement, preferably 
+    using the same 1/100th of a pixel accuracy as the extension for it's speed. 
+    When you've got your platform, make a <i>Test for jump through overlap </i>event, 
+    testing the platform you just made, then, use the <i>Selected object overlaps 
+    a jump trough platform</i>, but also, set the additional X velocity of the 
+    extension to the speed of the platform. You also have to disable the movement, 
+    set additional X velocity to 0, do this in a negated <i>Object is standing 
+    on ground </i> event, from the extension. Also do it in the <i>Test for obstacle 
+    overlap </i>event, for security. Example:</font></p>
+  <div class='eventComplexBlock'> 
+    <table class='eventsTable'>
+      <tr> 
+        <td class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+        <td width=100% class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">Events</font></td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Test for jump through platform overlap<br>
+            </font></div>
+          <div class='conditionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            + <img src='MMFActive.gif' border='0' style='vertical-align:middle' alt='MMFActive.gif' /> 
+            is overlapping <img src='MMFMPlatform.gif' border='0' style='vertical-align:middle' alt='MMFMPlatform.gif' /> 
+            <br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Selected object overlaps a jump through platform<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Set additional X velocity to 200<br>
+            </font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFNegate.gif' border='0' style='vertical-align:middle' alt='MMFNegate.gif' /> 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Object is standing on ground<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Set additional X velocity to 0<br>
+            </font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Test for obstacle overlap<br>
+            </font></div>
+          <div class='conditionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            + <img src='MMFActive.gif' border='0' style='vertical-align:middle' alt='MMFActive.gif' /> 
+            is overlapping a backdrop<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' />: 
+            Selected object overlaps an obstacle<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Set additional X velocity to 0<br>
+            </font></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <p>&nbsp;</p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3"><b>Ladders </b>can be 
+    done in many different ways, too. The simplest way is probably to test if 
+    the selected object overlaps with the ladder object, and the user is pressing 
+    the up key, then set additional Y velocity to -100 or another negative value, 
+    also set the maximum Y velocity to 0. Set additional Y velocity to 0 when 
+    the user is not pressing the up key, and set the maximum Y velocity to it's 
+    default value again. Also do the same when pressing down on a ladder.</font></p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3">If you need to <b>stop 
+    the movement completely</b>, <i>Pause movement </i> does this, the selected 
+    object will be stopped until you use the <i>Unpause movement </i>action.</font></p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3"><b>Springs</b> are very 
+    easy to add. If the selected object overlaps with your spring object, set 
+    the Y velocity to a negative value.</font></p>
+  <p>&nbsp;</p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3"><b>Animations </b>is something 
+    I wanted to have automated... But I found no good way to do this, so you will 
+    have to code in the animations with events. But don't see this as a bad thing, 
+    it actually gives you more freedom. Remember that you can compare all variables 
+    from the extension using <i>Compare two general values </i>under the Special 
+    object in Multimedia Fusion.</font></p>
+  <p><font face="Arial, Helvetica, sans-serif" size="3">Here is a small example 
+    on animation... also don't forget setting the direction of the animation object 
+    to right and left when the user presses right and left. And most important, 
+    remember to always place the animation object relative to the detector object.</font></p>
+  <div class='eventComplexBlock'> 
+    <table class='eventsTable'>
+      <tr> 
+        <td class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+        <td width=100% class='eventsTableHead'><font face="Arial, Helvetica, sans-serif" size="3">Events</font></td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Object is standing on ground<br>
+            </font></div>
+          <div class='conditionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            + <img src='MMFNegate.gif' border='0' style='vertical-align:middle' alt='MMFNegate.gif' /> 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Object is moving<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFActive.gif' border='0' style='vertical-align:middle' alt='MMFActive.gif' /> 
+            : Change animation sequence to Stopped<br>
+            </font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Object is jumping<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFActive.gif' border='0' style='vertical-align:middle' alt='MMFActive.gif' /> 
+            : Change animation sequence to Jumping<br>
+            </font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Object is falling<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFActive.gif' border='0' style='vertical-align:middle' alt='MMFActive.gif' /> 
+            : Change animation sequence to Falling<br>
+            </font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td class='eventNumBox'>&nbsp;</td>
+        <td class='eventBox'> 
+          <div class='conditionBox'> <font face="Arial, Helvetica, sans-serif" size="3">&bull; 
+            <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            : Object is standing on ground<br>
+            </font></div>
+          <div class='conditionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            + Abs( GetXVelocity( &quot; <img src='MMFEvPlat.gif' border='0' style='vertical-align:middle' alt='MMFEvPlat.gif' /> 
+            &quot; ) ) &gt; 70<br>
+            </font></div>
+          <div class='actionBox'><font face="Arial, Helvetica, sans-serif" size="3"> 
+            : <img src='MMFActive.gif' border='0' style='vertical-align:middle' alt='MMFActive.gif' /> 
+            : Change animation sequence to Walking<br>
+            </font></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <p>&nbsp;</p>
+  <hr>
+  <p><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span><b><span lang=EN-GB style='font-size:10.0pt;font-family:
+Arial;mso-ansi-language:EN-GB'>Credits</span></b><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='font-size:10.0pt;font-family:Arial;
+mso-ansi-language:EN-GB'>These people and some others that I've totally forgotten 
+    helped me. Thanks to:</span><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><i><span lang=EN-GB style='font-size:10.0pt;font-family:
+Arial;mso-ansi-language:EN-GB'>Burkey</span></i><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;mso-ansi-language:EN-GB'> - coding</span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p> and docs</o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><i><span lang=EN-GB style='font-size:10.0pt;font-family:
+Arial;mso-ansi-language:EN-GB'>Mattis Lorentzon</span></i><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;mso-ansi-language:EN-GB'> - icon</span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p><o:p> and docs</o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='mso-ansi-language:EN-GB'><i>CT 
+    Knowledge Base </i>- event HTML creator</span></font></p>
+  <hr>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-family:Arial;mso-ansi-language:EN-GB'>Disclaimer<o:p></o:p></span></b></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='font-family:Arial;mso-ansi-language:
+EN-GB'>The extension written by myself, the author, is provided on an &quot;as 
+    is&quot; basis. I do not guarantee fitness for any purpose. In no event will 
+    I be liable for any direct, indirect, incidental, punitive or consequential 
+    damages of any kind whatsoever with respect to this extension and its usage. 
+    This includes corruption and/or loss of data.<o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='font-family:Arial;mso-ansi-language:
+EN-GB'>(In short: you use this at your own risk. I am not responsible for anything 
+    that happens when using Platform Movement object.)</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></font></p>
+  <hr>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><span lang=EN-GB style='font-size:10.0pt;font-family:Arial;
+mso-ansi-language:EN-GB'>That's all! Good luck using the object!</span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></font></p>
+  <p class=MsoNormal><font size="3" face="Arial, Helvetica, sans-serif"><b><span style='font-size:10.0pt;font-family:Arial'>Fodo</span></b></font></p>
+</div>
+
+</body>
+
+</html>

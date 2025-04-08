@@ -1,0 +1,109 @@
+
+           THE BIG BOX, CREATED BY PHANOO
+         *********************************
+         ***     SPECIAL FUNCTIONS     ***
+         *********************************
+
+
+Some functions are particular, maybe they need some explanations:
+
+
+
+INSTALLED OS:
+¯¯¯¯¯¯¯¯¯¯¯¯¯
+   Retrieve a value that corresponds to the version of your Windows:
+          1= Windows 3.51
+          2= Windows 4.0
+          3= Windows 95
+          4= Windows 98
+          5= Windows Me
+          6= Windows 2000
+          7= Windows XP
+          8= Windows Server 2003 Family
+
+
+
+CHANGE THE BACKGROUND COLOR OF THE DESKTOP:
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+   The background color will only be visible if there is no wallpaper above !! To disable-it, do "Change wallpaper", choose "Expression" then keep the field empty ("").
+
+
+
+FONT SMOOTHING:
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+   This function enable/disable Windows' smoothing. Of course,  the smoothing works with MMF too; but if you change the smoothing parameters, you need to restart your application.
+
+
+
+MUSIC WITH THE INTERNAL SPEAKER:
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+   There is a function in the expression that retrieves for
+you the frequency of the 12 musical notes of an octave.
+You can use it with the BEEP function to make a melody.
+When the speaker is beeping, the application is paused,
+I haven't found a way to prevent that.
+The BEEP works only with Windows XP.
+
+
+
+OBTAIN THE CPU SPEED:
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+   It uses an ASM code that calculate in real-time the
+processor speed, this function is quite slow, it's why you must
+NOT use it in a condition that repeats often (ex: Always, every 0,05 s...).
+
+
+
+OPEN A WEBSITE:
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+   The file will be opened with the default program associated.
+If you specify a website, it will be loaded into the default browser.
+
+
+
+CHANGE SYSTEM COLOURS:
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+   There are a lot of parameters for the system colours, it's why i've
+took them into one. You choose which parameter to modify by entering
+a number between 0 and 25; they correspond to:
+
+     0 = COLOR_3DDKSHADOW
+     1 = COLOR_3DFACE
+     2 = COLOR_BTNFACE
+     3 = COLOR_3DHILIGHT
+     4 = COLOR_3DLIGHT
+     5 = COLOR_3DSHADOW
+     6 = COLOR_ACTIVEBORDER
+     7 = COLOR_ACTIVECAPTION
+     8 = COLOR_APPWORKSPACE
+     9 = COLOR_BACKGROUND
+     10 = COLOR_BTNTEXT
+     11 = COLOR_CAPTIONTEXT
+     12 = COLOR_GRAYTEXT
+     13 = COLOR_HIGHLIGHT
+     14 = COLOR_HIGHLIGHTTEXT
+     15 = COLOR_INACTIVEBORDER
+     16 = COLOR_INACTIVECAPTION
+     17 = COLOR_INACTIVECAPTIONTEXT
+     18 = COLOR_INFOBK
+     19 = COLOR_INFOTEXT
+     20 = COLOR_MENU
+     21 = COLOR_MENUTEXT
+     22 = COLOR_SCROLLBAR
+     23 = COLOR_WINDOW
+     24 = COLOR_WINDOWFRAME
+     25 = COLOR_WINDOWTEXT
+
+
+
+
+
+
+
+
+If you saw a bug in this extension, please contact me at gfactphn@hotmail.com
+
+You can visit my website at http://thephanoo.free.fr
+
+
+Phanoo

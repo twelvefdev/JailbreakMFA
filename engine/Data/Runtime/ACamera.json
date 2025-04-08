@@ -1,0 +1,106 @@
+{   "About":
+    {
+        "Name": "Android Camera Object",
+        "Author": "Clickteam",
+        "Copyright": "Copyright (C) 2014 Clickteam",
+        "Website": "http://www.clickteam.com",
+        "Comment": "Part of the Android exporter. Provides Camera functionality.",
+        "URL": "http://www.clickteam.com",
+        "Help": "Help\\ACamera.chm",
+        "Identifier": "ACam",
+    },
+
+    "ActionMenu":
+    [
+        [0, "Set Album Name"],
+        [1, "Take Picture"],
+        [2, "Take Video"],
+        "Separator",
+        [3, "Select from Gallery"],
+        "Separator"
+		
+	],
+
+    "ConditionMenu":
+    [
+        [0, "On Picture taken"],
+        [1, "On Video taken"],
+        [2, "On Gallery return"],
+        [3, "On Error Occurred"]
+		
+    ],
+
+    "ExpressionMenu":
+    [
+        [0, "Get Error"],
+        [1, "Get Error String"],
+        [2, "Get Image Pathname"],
+        [3, "Get Video Pathname"],
+        [4, "Get Gallery Pathname"],
+        [5, "Get Number of Cameras"],
+        "Separator",
+        [6, "Get Image Angle"],
+        "Separator"
+
+    ],
+
+    "Actions":
+    [
+        { "Title": "Set Album name to %0",
+			"Parameters": [["Text", "Enter Album Name"]] },
+		  
+        { "Title": "Take Picture using camera %0, with title %1 and description %2",
+			"Parameters": [["Integer", "Camera (0:Back, 1:Front)"],
+			           ["Text", "Enter Title"],
+		               ["Text", "Enter Description"]] },
+        
+	{ "Title": "Take Video using camera %0",
+			"Parameters": [["Integer", "Camera (0:Back, 1:Front)"]]  },
+		
+        { "Title": "Select from Gallery with type %0",
+			"Parameters": [["Integer", "Select Type (0:All, 1:Pics, 2:Videos)"]] }		  		  	  		  
+   ],
+
+    "Conditions":
+    [
+        {   "Title": "%o : On Picture Taken?",
+            "Triggered": true
+        },
+        {   "Title": "%o : On Video Taken?",
+            "Triggered": true
+        },
+        {   "Title": "%o : On Gallery Return?",
+            "Triggered": true
+        },
+        {   "Title": "%o : On Error Occurred?",
+            "Triggered": true
+        }	
+	],
+
+    "Expressions":
+    [
+        {   "Title": "Error(",
+            "Returns": "Integer"
+        },
+		{   "Title": "Error$(",
+            "Returns": "Text"
+        },
+		{   "Title": "ImagePath$(",
+            "Returns": "Text"
+        },
+		{   "Title": "VideoPath$(",
+            "Returns": "Text"
+        },
+		{   "Title": "GalleryPath$(",
+            "Returns": "Text"
+        },
+		{   "Title": "NumberOfCameras(",
+            "Returns": "Integer"
+        },
+		{   "Title": "ImageAngle(",
+            "Returns": "Integer"
+        }
+	]
+}
+
+

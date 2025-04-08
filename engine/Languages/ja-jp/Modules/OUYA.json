@@ -1,0 +1,453 @@
+﻿
+{   "About":
+    {
+        "Name": "OUYA オブジェクト",
+        "Author": "Clickteam",
+        "Copyright": "Copyright (C) 2013 Clickteam",
+        "Website": "http://www.clickteam.com",
+        "Comment": "Android Exporter の一部です。 OUYA コンソール上での実行時に特別な機能を提供します。",
+        "URL": "http://www.clickteam.com",
+        "Help": "OUYA.chm",
+        "Identifier": "OUYA",
+    },
+
+    "ActionMenu":
+    [
+        ["IAP",
+            [0, "IAP を初期化"],
+            [1, "現在の製品を変更"],
+            [2, "現在の製品を購入"],
+        ],
+       "Separator",
+        [3, "タッチパッドをメインパッドとして定義"]
+    ],
+
+    "ConditionMenu":
+    [
+       [30, "デバイスが OUYA である"],
+       "Separator",
+       ["ボタンを押した時",
+           [15, "O"],
+           [16, "U"],
+           [17, "Y"],
+           [18, "A"],
+           [19, "L1"],
+           [20, "L2"],
+           [21, "R1"],
+           [22, "R2"],
+           [23, "Menu"],
+           [24, "D-Pad 上"],
+           [25, "D-Pad 下"],
+           [26, "D-Pad 左"],
+           [27, "D-Pad 右"],
+           [28, "R3"],
+           [29, "L3"]
+       ],
+       ["ボタンを離した時",
+           [31, "O"],
+           [32, "U"],
+           [33, "Y"],
+           [34, "A"],
+           [35, "L1"],
+           [36, "L2"],
+           [37, "R1"],
+           [38, "R2"],
+           [39, "Menu"],
+           [40, "D-Pad 上"],
+           [41, "D-Pad 下"],
+           [42, "D-Pad 左"],
+           [43, "D-Pad 右"],
+           [44, "R3"],
+           [45, "L3"]
+       ],
+       ["プレイヤーでボタンが押されている",
+           [0, "O"],
+           [1, "U"],
+           [2, "Y"],
+           [3, "A"],
+           [4, "L1"],
+           [5, "L2"],
+           [6, "R1"],
+           [7, "R2"],
+           [8, "Menu"],
+           [9, "D-Pad 上"],
+           [10, "D-Pad 下"],
+           [11, "D-Pad 左"],
+           [12, "D-Pad 右"],
+           [13, "R3"],
+           [14, "L3"]
+       ],
+       "Separator",
+       ["IAP",
+            [48, "IAP 初期化時"],
+            [49, "IAP 初期化失敗時"],
+            "Separator",
+            [46, "製品選択時"],
+            [53, "製品選択失敗時"],
+            "Separator",
+            [51, "購入成功時"],
+            [52, "購入失敗時"],
+            "Separator",
+            [50, "プレイヤーが製品を持っている"]
+       ],
+       "Separator",
+		[54, "システム ボタンのダブルタップ時"]
+    ],
+
+    "ExpressionMenu":
+    [
+        [0, "現在のプレイヤー番号を取得"],
+        "Separator",
+        ["軸の値を取得 (現在のプレイヤー)",
+            [1, "左スティック X"],
+            [2, "左スティック Y"],
+            "Separator",
+            [3, "右スティック X"],
+            [4, "右スティック Y"],
+            "Separator",
+            [12, "L2 スティック"],
+            [13, "R2 スティック"]
+        ],
+        ["軸の値を取得 (プレイヤー番号)",
+            [5, "左スティック X"],
+            [6, "左スティック Y"],
+            "Separator",
+            [7, "右スティック X"],
+            [8, "右スティック Y"],
+            "Separator",
+            [14, "L2 スティック"],
+            [15, "R2 スティック"]
+        ],
+        "Separator",
+        ["IAP",
+            [9, "現在の製品名"],
+            [10, "現在の製品価格 (US セント)"],
+            [19, "現在の製品購入通貨"],
+            [20, "現在の製品購入価格"],
+            [11, "ゲーマー UUID"]
+        ],
+        "Separator",
+        ["エクストラ",
+            [16, "ユーザー名"],
+            [17, "コンソール名"],
+            [18, "対応デバイス"]
+        ]
+    ],
+
+    "Actions":
+    [
+        { "Title": "デベロッパー ID %0、 キーファイル %1 で IAP を初期化",
+          "Parameters": [
+                ["Text", "デベロッパー ID"], 
+                ["File", "キーファイル"]
+          ]
+        },
+        { "Title": "製品 %0 を選択",
+          "Parameters": [
+                ["Text", "製品 ID"] 
+          ]
+		},
+        { "Title": "現在の製品を購入"},
+
+        {"Title": "コントローラー %0 のタッチパッドを既定に設定",
+            "Parameters": [["Integer", "コントローラー番号 (0 から 3)"]]
+        }		
+    ],
+
+    "Conditions":
+    [
+        {   "Title": "%o : ボタン O がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : ボタン U がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : ボタン Y がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : ボタン A がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : ボタン L1 がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : ボタン L2 がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : ボタン R1 がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : ボタン R2 がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : Menu ボタンがプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : D-Pad 上がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : D-Pad 下がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : D-Pad 左がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : D-Pad 右がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : ボタン R3 がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+        {   "Title": "%o : ボタン L3 がプレイヤー %0 で押されている",
+            "Triggered": false,
+            "Parameters": [
+                ["Integer", "プレイヤー番号"]
+            ]
+        },
+
+        {   "Title": "%o : ボタン O が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン U が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン Y が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン A が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン L1 が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン L2 が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン R1 が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン R2 が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : Menu ボタンが押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : D-Pad 上が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : D-Pad 下が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : D-Pad 左が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : D-Pad 右が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン R3 が押された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン L3 が押された時",
+            "Triggered": true
+        },
+
+        {   "Title": "%o : デバイスが OUYA である",
+            "Triggered": false
+        },
+
+        {   "Title": "%o : ボタン O が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン U が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン Y が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン A が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン L1 が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン L2 が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン R1 が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン R2 が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : Menu ボタンが離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : D-Pad 上が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : D-Pad 下が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : D-Pad 左が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : D-Pad 右が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン R3 が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : ボタン L3 が離された時",
+            "Triggered": true
+        },
+        {   "Title": "%o : 製品選択時",
+            "Triggered": true
+        },
+        {   "Title": "%o : UUID 受け取り時",
+            "Triggered": true
+        },
+        {   "Title": "%o : IAP 初期化時",
+            "Triggered": true
+        },
+        {   "Title": "%o : IAP 初期化失敗時",
+            "Triggered": true
+        },
+        {   "Title": "%o : プレイヤーが製品 %0 を持っている",
+            "Parameters": [["Text", "製品 ID"]],
+            "Triggered": false
+        },
+        {   "Title": "%o : 購入成功時",
+            "Triggered": true
+        },
+        {   "Title": "%o : 購入失敗時",
+            "Triggered": true
+        },
+        {   "Title": "%o : 製品選択失敗時",
+            "Triggered": true
+        },
+        {   "Title": "%o : システム ボタンのダブルタップ時",
+            "Triggered": true
+        }
+		
+    ],
+
+    "Expressions":
+    [
+        {   "Title": "CurrentPlayer(",
+            "Returns": "Integer"
+        },
+        {   "Title": "LeftStickX(",
+            "Returns": "Float"
+        },
+        {   "Title": "LeftStickY(",
+            "Returns": "Float"
+        },
+        {   "Title": "RightStickX(",
+            "Returns": "Float"
+        },
+        {   "Title": "RightStickY(",
+            "Returns": "Float"
+        },
+        {   "Title": "LeftStickXForPlayer(",
+            "Returns": "Float",
+            "Parameters": ["Integer", "プレイヤー"]
+        },
+        {   "Title": "LeftStickYForPlayer(",
+            "Returns": "Float",
+            "Parameters": ["Integer", "プレイヤー"]
+        },
+        {   "Title": "RightStickXForPlayer(",
+            "Returns": "Float",
+            "Parameters": ["Integer", "プレイヤー"]
+        },
+        {   "Title": "RightStickYForPlayer(",
+            "Returns": "Float",
+            "Parameters": ["Integer", "プレイヤー"]
+        },
+        {   "Title": "ProductName$(",
+            "Returns": "Text",
+            "Parameters": []
+        },
+        {   "Title": "ProductPriceinUSCents(",
+            "Returns": "Float",
+            "Parameters": []
+        },
+        {   "Title": "GamerUUID$(",
+            "Returns": "Text",
+            "Parameters": []
+        },
+        {   "Title": "L2_Stick(",
+            "Returns": "Float"
+        },
+        {   "Title": "R2_Stick(",
+            "Returns": "Float"
+        },
+        {   "Title": "L2_StickForPlayer(",
+            "Returns": "Float",
+            "Parameters": [["Integer", "プレイヤー"]]
+		},
+        {   "Title": "R2_StickForPlayer(",
+            "Returns": "Float",
+            "Parameters": [["Integer", "プレイヤー"]]
+		},	
+        {   "Title": "UserName$(",
+            "Returns": "Text"
+        },
+        {   "Title": "ConsoleName$(",
+            "Returns": "Text"
+        },
+        {   "Title": "SupportedDevice(",
+            "Returns": "Integer"
+        },
+        {   "Title": "ProductPurchaseCurrency$(",
+            "Returns": "Text",
+            "Parameters": []
+        },
+        {   "Title": "ProductPurchasePrice$(",
+            "Returns": "Text",
+            "Parameters": []
+        }
+    ]
+}

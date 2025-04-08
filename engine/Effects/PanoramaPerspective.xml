@@ -1,0 +1,62 @@
+<effect>
+<name>Panorama Perspective</name>
+<author>Emil Macko (Interface by VoyVivika)</author>
+<description>Pixel Shader Alternative to the Perspective Object (Possibly lighter weight)</description>
+<parameter>
+		<name>Horizontal Ratio</name>
+		<code>hr</code>
+		<description>The ratio between the widths of the view and the background image (in pixels).</description>
+		<type>float</type>
+		<property>edit</property>
+		<value>1.0</value>
+</parameter>
+<parameter>
+		<name>Vertical Ratio</name>
+		<code>vr</code>
+		<description>The ratio between the heights of the view and the background image (in pixels).</description>
+		<type>float</type>
+		<property>edit</property>
+		<value>1.0</value>
+</parameter>
+<parameter>
+		<name>Horizontal FOV</name>
+		<code>hfov</code>
+		<description>Horizontal FOV angle of the whole background image (in degrees).</description>
+		<type>float</type>
+		<property>edit</property>
+		<value>1.0</value>
+</parameter>
+<parameter>
+		<name>Vertical FOV</name>
+		<code>vfov</code>
+		<description>Vertical FOV angle of the whole background image (in degrees).</description>
+		<type>float</type>
+		<property>edit</property>
+		<value>1.0</value>
+</parameter>
+<parameter>
+		<name>Horizontal Position Factor</name>
+		<code>ho</code>
+		<description>The factor of the horizontal position of the view.</description>
+		<type>float</type>
+		<property>edit</property>
+		<value>1.0</value>
+</parameter>
+<parameter>
+		<name>Vertical Position Factor</name>
+		<code>vo</code>
+		<description>The factor of the vertical position of the view, with respect to how much the view can move within the background image.</description>
+		<type>float</type>
+		<property>edit</property>
+		<value>1.0</value>
+</parameter>
+<parameter>
+		<name>Zoom</name>
+		<code>z</code>
+		<description>The amount to zoom the image in or out, measured in the amount of the image to show (lower values = zoomed in).</description>
+		<type>float</type>
+		<property>edit</property>
+		<value>1.0</value>
+</parameter>
+</effect>
+

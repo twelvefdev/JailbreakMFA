@@ -1,0 +1,113 @@
+﻿Fusion 2.5 HTML5 Runtime Build 283.1 Beta 2 - 09/09/2014
+By Francois Lionet
+Copyright (c) Clickteam 2014
+
+Build 283.1 Beta 2 Correction list
+----------------------------------
+- INI object, incorporating the INI file in the binary data of the application. The HTML5 runtime was mixing up Unicode, UTF8 and ASCII formats, make the file unreadable. It now understands all formats properly. The UTF8 property is now supported.
+- Box2D Particle object : initial torque property made the object move in a wrong direction
+- Box2D Rope and Chain object : the rope was not positionned at the correct location (depending on the angle of the rope)
+- Box2D Rope and Chain object : collisions between an object and a rope were sometimes not detected
+- Set Channel Frequency, Set Sample Frequency : actions now use the proper frequencies for calculation
+- New functions in CExtension class : findFirstObject(name) and findNextObject(object) to find objects from their names
+- New functions in CRun class : findFirstObject(name) and findNextObject(object)
+
+Build 283.1 Beta 1 Correction list
+----------------------------------
+- Active Picture Object : none of the expressions of the objects were implemented. They all are now.
+- Question and Answers object : crash if "Restart frame" was called in an event that started with "Correct answer" or "Wrong answer" condition.
+- Scroll-bars are no longer hidden from within the Javascript code in non full-screen modes
+- Build-in debugger to display strings from the Javascript code
+- Sounds : a sound was not stopped when the Stop and Play action were used in the same line of events
+- String object : only the first line of long texts without any space was displayed
+- Mouse and Keyboard object : Left mouse key has been pressed was only detected when the mouse key was released (click)
+- Clock object, count down, condition "Compare to count down" was always true when the timer was not started
+- Advanced game Board object : Easy Grid Features expressions returned floating point values
+- Edit Box object : Text has been modified / Set text modified ON / Set modified OFF did not work as on the Windows runtime
+- Active and Background System Box object : many problems preventing mouse clicks to be detected (and caused problems when several System object objects were used in the same frame).
+
+Build 281.3 Beta 6 Correction list
+----------------------------------
+- After a frame with a mouse-movement, the cursor was hidden on the next frame
+- When the application was not in full window mode, resizing the browser did not reposition the DOM control elements (like edit boxes)
+- Easing object : the Is Object Moving condition made the application crash
+- Edit box object now supports Horizontally and right aligned text
+- Edit box object now supports Underlined and Strikedout text
+- On iOS or Android, a single touch on the screen reported two "Click" conditions
+
+Build 281.3 Beta 5 Correction list
+----------------------------------
+- Counters with animations always displayed the previous image of the list of images
+- Binary files after the first one of the list were ignored
+- Loading .arr files into an Array object ALWAYS erased value like the default X, Y and Z indexes, whereas in the C++ version, they are only erased if the various dimensions of the arrays are different
+- Counters displayed as numbers were always displayed with an angle of 1 degree, making them look distorted
+- Counters, Lives, Score objects Effect / Compatibility / Set semi transparency action had no effect
+- Counters, Lives, Score objects Effect / Compatibility / Get semi transparency expression reported what it had in mind, but not  really the good value
+- HTML5 object. New "Get URL", "Get Host", "Get Hostname", "Get hash", "Get Search" functions (see documentation). (only available when ane version of the editor will be published)
+- Implementation of the basic functions of the Cursor object : change shape of cursor to pre-defined shapes, matching the HTML cursors as best with the Windows cursor shapes. Please read documentation for correspondances. NO implementation so far of cursor shapes based on images.
+- Implementation of the FLG object, enabling you to insert adverts and leaderboards in your games
+
+Build 281.3 Beta 4 Correction list
+----------------------------------
+- You can now procuce Final Builds, even with build 281.2 of Fusion 2.5 editor
+- Corrected an error in the InAndout movement that was preventing Final HTML5 
+  projects to be compiled
+- Applications that contained a Physics Background movement and no Physics Static 
+  movement could not be built in Final Project mode
+
+Build 281.3 Beta 3 Correction list
+----------------------------------
+- If running on iOS, and if sounds are present in the application, a screen inviting 
+  the user to touch the screen appears at the end of the load
+- The text displayed is "Please touch the screen to continue", and cannot be changed 
+  in this beta version. You will be able to change it in the editor when we publish the next version
+- This default text is displayed if you do not use a preloader (simple growing bar), 
+  or use an image preloader. A frame preloader does not include this automatic feature: 
+  you must detect the touch manually in the preloader, and perform an "End application" 
+  from within the preloader frame to start the game.
+
+Build 281.3 Beta 2 Correction list
+----------------------------------
+- Applications using vertical synchronisation (the VSynch property in the application 
+  properties), crashed on IE 9 and 10. If you set VSynch on a browser that does not 
+  support it, it will simply stay at the current frame rate
+- Actions SET VSYNCH ON and SET VSYNCH OFF now implemented
+- Condition IS VERTICAL SYNCHRO (cant remember the name exactly) is now implementer 
+  in HTML5, but you will need the next build of Fusion 2.5 to be able to use it
+- Warning : I have removed the possibility to pass the game in VSynch by setting a 
+  negative framerate, as I have implemented the SET VSYNCH actions.
+
+Build 281.3 Beta 1 Correction list
+----------------------------------
+- Preloader (image and frame) now work.
+- In this version, all the data of the application is loaded at start (like a Flash app) : 
+  no waiting time between frame. This is a new property of the editor (checked by default), 
+  to come with the official build 
+- A small non-intrusive preloader is displayed when you have not selected any preloader, 
+  so that one knows that something is happening (as for Flash)
+- Rope and Chain object : a call to Climb Up or Climb Down less than two seconds 
+  after Detaching the object could crash or induce later crashes
+- Physics Movements : objects with a physic movement could crash when they were destroyed
+- Firefox : Set sample volume and Set channel volume had little or no effect
+- Image preloader : R and G values of the colors were inverted
+- Virtual joystick not displayed anymore under Windows or Mac
+- on iOS : sounds now work fine
+- on iOS : new property "Enable sounds after load", forcing the game to wait for a user touch 
+  on the screen to play a silent sound that will enable the sounds on iOS. In this beta version, 
+  it is enabled by default : you will have to touch the screen after the preloader to load the sounds
+- Games included in an iframe now automatically have keyboard focus (you had to click on 
+  the frame for the keys to work in the game)
+- Active Picture object : loading a picture from a server crashed
+- Active Picture object : the resize property was not taken into account when loading a picture from an action 
+- Active Picture object : image was never smoothed, whatever the settings of the "Resize" property
+- Set Frame Rate storyboard object action had no effect, and crashed in Final HTML5 project mode
+- Combo Box object, List object, getting the current line after a Reset crashed
+- Full Screen action now works fine (had weird effect before)
+- Layer object : all the conditions involving an object (like is Object in front) crashed the application
+- Active Picture object : none of the actions contained in the "Effect" menu changed anything to the object
+- Angle, Angle(Object), Distance, Distance(Object) now approximates the values correctly and not to value -1
+- For Each object : Max iteration expression returned the value + 1
+- Virtual Joystick : general improvement of the use of the virtual joystick, makes easier to move an object
+- At any time you can type the string "***version***" on your keyboard and it will display 
+  information about the version of the HTML5 exporter used to create the application.
+

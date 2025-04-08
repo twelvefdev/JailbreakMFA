@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 10.0-b22 (Sun Microsystems Inc.)
+MIDlet-1: CMidlet,%s,Application.CMIDlet
+MIDlet-Vendor: %s
+MIDlet-Name: %s
+MIDlet-Version: %s
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0
+

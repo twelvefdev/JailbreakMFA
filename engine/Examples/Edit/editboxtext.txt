@@ -1,0 +1,35 @@
+OVERVIEW
+
+This is an Edit object example. Edit objects can be used for entering, displaying, and modifying text.
+
+This text can then be retrieved by other objects, saved to disk, used as via its file name, used as a search string, etc.  It is useful in any situation where you want to enter text into an application. the fact that the text can be altered when displayed makes this object flexible and powerful.
+
+This object can be tested for the user clicking within it or modifying it.  Changes can be undone or even forbidden.   The text can be converted or forced to all upper or lower case.  Vertical and horizontal scroll bars can be added. The background color can be changed ... and more.
+
+The contents of the Edit object can be saved and loaded as a text file (.txt).  However, you are free to use a custom extension for the filename as long as your application uses the same when loading the file.  It is good to avoid common extensions used by other software to avoid confusion.
+
+EXAMPLES
+
+Example 1, (blue) allows for a multi-line display, with scroll bars.
+
+Example 2, (red) has been set to have border, and no auto scroll or scroll bars. Enter text in here and it is displayed in the other two Edit Boxes.  Note the case modification.  This Edit Box has been set to upper-case, and so, all text entered will be capital letters only.
+
+Example 3, (green) is set for entering passwords. Any text displayed or entered into this is obscured by the * symbol. In addition, everything entered is forced into lower case. 
+
+Example 4, (black) you can type some text into this Edit Box and then click the "Save" button to choose a name and location for the file.  Note: If you are running this example off of the CD ROM, you must choose a location on your hard disk to save in.
+
+You can also load a text file from your hard drive to view its contents.  Just click on the "Load" button.  That text can be edited and then saved again.  Be careful not to edit or change any of your important text files while testing this.
+
+Clicking "Undo" performs an undo on the text, i.e., undoes the last typing or editing done by the user.
+
+Clicking "Reset" clears the text in the Edit object and makes it ready for new text.
+
+NOTE: Please see the .mfa file in the folder that contains the examples to learn even more about how this object works.  Comments are provided to show you how it is done and help you on your way to understanding and using TGF2/MMF2 like a pro.
+
+MORE
+
+As you advance in your knowledge and understanding of this object, you will find even more powerful options and control through conditions and actions and by combining the Edit Box with other objects and extensions in TGF2/MMF2/MMF2 Pro.   
+
+For instance, you can use the File Object or the Explorer Object, (MMF2 Pro) for more customized control of your user's file operations.  You can also confirm your user's choices BEFORE they save or load a file to avoid mistakes by prompting before the file operation.
+
+Multimedia Fusion 2 Professional includes a time-saving and full-featured Dialog Box Object that is perfect for dialog pop-ups, confirmations, warnings, and a host of other uses too numerous to describe here. 

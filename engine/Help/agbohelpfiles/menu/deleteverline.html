@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="../general.css" type="text/css" />
+
+
+
+<h2>Delete vertical line</h2>
+<hr>
+
+This action takes an X coordinate. It then deletes all bricks in the certical line where the X coordinate is equal the line of your choice. The next parameter takes a value. If you leave it as 0, the line will simply be deleted and nothing more will happen. If you enter '1' as the value, all bricks above the deleted line, will be moved one slot downwards. If you enter '2', all lines below the deleted line are moved one slot upwards.
+
+All bricks moved will trigger a "On brick moved" condition and all deleted bricks in the line will trigger a "On brick deleted" condition.
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>
+            Menu
+        </title>
+		<style type="text/css">
+table.menu{
+background-color:ThreeDFace;
+border-top:solid 1px ThreeDLightShadow;
+border-left:solid 1px ThreeDLightShadow;
+border-bottom:solid 1px ThreeDShadow;
+border-right:solid 1px ThreeDShadow;
+}
+a{
+color:black;
+text-decoration: none;
+}
+table.menu td:hover{
+background-color:Highlight;
+color:HighlightText ;
+}
+table.menu td:hover a{
+background-color:Highlight;
+color:HighlightText ;
+}
+
+	</style>
+
+    </head>
+
+    <body>
+        <h1>
+            Actions
+        </h1>
+        <table>
+            <tr>
+                <td valign="top">
+                    <table class="menu">
+                        <tr>
+
+                            <td>
+                                <a onmouseover='document.getElementById("Setting").style.display = "table"; document.getElementById("Step").style.display = "none"; document.getElementById("Rotate").style.display = "none";document.getElementById("Custom").style.display = "none";'>Settings</a>
+                            </td>
+                            <td width="20">
+                                <div>
+                                    &gt;
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a onmouseover='document.getElementById("Setting").style.display = "none"; document.getElementById("Step").style.display = "table"; document.getElementById("Rotate").style.display = "none";document.getElementById("Custom").style.display = "none";'>Step</a>
+                            </td>
+                            <td width="20">
+                                <div>
+                                    &gt;
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a onmouseover='document.getElementById("Setting").style.display = "none"; document.getElementById("Step").style.display = "none"; document.getElementById("Rotate").style.display = "table";document.getElementById("Custom").style.display = "none";'>Rotation</a>
+                            </td>
+                            <td width="20">
+
+                                <div>
+                                    &gt;
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a onmouseover='document.getElementById("Setting").style.display = "none"; document.getElementById("Step").style.display = "none"; document.getElementById("Rotate").style.display = "none";document.getElementById("Custom").style.display = "table";'>Custom</a>
+
+                            </td>
+                            <td width="20">
+                                <div>
+                                    &gt;
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+
+                                <a onmouseover='document.getElementById("Setting").style.display = "none"; document.getElementById("Step").style.display = "none"; document.getElementById("Rotate").style.display = "none";document.getElementById("Custom").style.display = "none";' href="help.html#t17" target="f1">Stop</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a onmouseover='document.getElementById("Setting").style.display = "none"; document.getElementById("Step").style.display = "none"; document.getElementById("Rotate").style.display = "none";document.getElementById("Custom").style.display = "none";' href="help.html#t18" target="f1">Bounce</a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+                <td valign="top">
+                    <table class="menu" style="display: none" id="Setting">
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t1" target="f1">Set speed</a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t2" target="f1">Set rotation speed</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+
+                                <a href="help.html#t3" target="f1">Set acceleration</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t4" target="f1">Set deceleration</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t5" target="f1">Select car object</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top">
+
+                    <table class="menu" style="display: none" id="Step">
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t6" target="f1">Step forward</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+
+                                <a href="help.html#t7" target="f1">Step backward</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top">
+                    <table class="menu" style="display: none" id="Rotate">
+                        <tr>
+
+                            <td colspan="2">
+                                <a href="help.html#t8" target="f1">Rotate right</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t9" target="f1">Rotate left</a>
+                            </td>
+
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top">
+                    <table class="menu" style="display: none" id="Custom">
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t10" target="f1">Step in amount</a>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t11" target="f1">Rotate in amount</a>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2">
+                                <a href="help.html#t12" target="f1">Set postion</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t13" target="f1">Set angle</a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t14" target="f1">Set current speed</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+
+                                <a href="help.html#t15" target="f1">Step in angle</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t16" target="f1">Step in angle and amount</a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <h1>
+            Expressions
+        </h1>
+        <table>
+            <tr>
+
+                <td valign="top">
+                    <table class="menu">
+                        <tr>
+                            <td colspan="2">
+                                <a onmouseover='document.getElementById("CSetting").style.display = "none";' href="help.html#t19" target="f1">Get car X</a>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2">
+                                <a onmouseover='document.getElementById("CSetting").style.display = "none";' href="help.html#t20" target="f1">Get car Y</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a onmouseover='document.getElementById("CSetting").style.display = "none";' href="help.html#t21" target="f1">Get car dir</a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a onmouseover='document.getElementById("CSetting").style.display = "none";' href="help.html#t22" target="f1">Get car angle</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+
+                                <a onmouseover='document.getElementById("CSetting").style.display = "none";' href="help.html#t23" target="f1">Get current speed</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a onmouseover='document.getElementById("CSetting").style.display = "table";'>Setting</a>
+                            </td>
+                            <td width="20">
+
+                                <div>
+                                    &gt;
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td valign="top">
+                    <table class="menu" style="display: none" id="CSetting">
+
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t24" target="f1">Get speed</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t25" target="f1">Get rotation speed</a>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t26" target="f1">Get acceleration</a>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2">
+                                <a href="help.html#t27" target="f1">Get deceleration</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <h1>
+            Conditions
+        </h1>
+        <table>
+            <tr>
+                <td valign="top">
+                    <table class="menu">
+                        <tr>
+                            <td colspan="2">
+
+                                <a href="help.html#t28" target="f1">Before move</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="help.html#t29" target="f1">After move</a>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

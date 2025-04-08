@@ -1,0 +1,199 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>The Default Menu Options Object</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p align="center"><font color="#FF0000" size="6">The Default Menu
+Options Object<br>
+</font><font color="#000000" size="4">By Matt Galanto</font></p>
+
+<p><font color="#0000FF" size="4"><strong>Index</strong></font></p>
+
+<ul>
+    <li><a href="#legal">Disclaimer</a></li>
+    <li><a href="#basics">The Basics</a></li>
+    <li><a href="#conditions">Conditions</a><br>
+        - Are Samples On?<br>
+        - Are Samples in a Particular State?<br>
+        - Is Music On?<br>
+        - Is Music in a Particular State?<br>
+        - Is the Menu Hidden?<br>
+        - Is the Menu in a Particular State?</li>
+    <li><a href="#actions">Actions</a><br>
+        - <em><u>F</u></em><em>ile</em><br>
+        -&gt; <u>N</u>ew<br>
+        -&gt; Pass<u>w</u>ord<br>
+        -&gt; <u>P</u>ause<br>
+        -&gt; Pla<u>y</u>ers<br>
+        -&gt; <u>Q</u>uit<br>
+        - <em><u>O</u></em><em>ptions</em><br>
+        -&gt; <em>Play </em><em><u>s</u></em><em>amples</em><br>
+        -&gt; -&gt; Toggle Samples<br>
+        -&gt; -&gt; Set Samples On<br>
+        -&gt; -&gt; Set Samples Off<br>
+        -&gt; -&gt; Set Samples State<br>
+        -&gt; <em>Play </em><em><u>m</u></em><em>usics</em><br>
+        -&gt; -&gt; Toggle Music<br>
+        -&gt; -&gt; Set Music On<br>
+        -&gt; -&gt; Set Music Off<br>
+        -&gt; -&gt; Set Music State<br>
+        -&gt; <em><u>H</u></em><em>ide the menu</em><br>
+        -&gt; -&gt; Toggle Menu Visibility<br>
+        -&gt; -&gt; Hide Menu<br>
+        -&gt; -&gt; Show Menu<br>
+        -&gt; -&gt; Set Menu Visibility<br>
+        -&gt; Full Screen<br>
+        - <em><u>H</u></em><em>elp</em><br>
+        -&gt; <u>C</u>ontents<br>
+        -&gt; <u>A</u>bout...</li>
+    <li><a href="#expressions">Expressions</a><br>
+        - State of Samples<br>
+        - State of Music<br>
+        - State of Menu</li>
+</ul>
+
+<p><a name="legal"></a><font color="#0000FF" size="4"><strong>Disclaimer</strong></font></p>
+
+<p>The author of this extension makes no claims concerning the
+fitness of this extension for any purpose whatsoever, and makes
+no gurantees, written or implied, of its level of security and
+safety to authors or to end users in any respect. You agree to
+use this extension at your own risk and to hold the author
+harmless in any event. </p>
+
+<p><a name="basics"></a><font color="#0000FF" size="4"><strong>The
+Basics</strong></font></p>
+
+<p>The Default Menu Object allows you to execute all of the menu
+options of the default menu for applications. Each of the actions
+is simply the execution of the corresponding menu option. In
+addition, more control is given over toggling options (Play
+samples, Play musics, and Hide the menu).</p>
+
+<p><a name="conditions"></a><font color="#0000FF" size="4"><strong>Conditions</strong></font></p>
+
+<p><strong>Are Samples On?</strong><br>
+Returns true is samples are currently enabled.</p>
+
+<p><strong>Are Samples in a Particular State?</strong><br>
+Returns true if samples are in the given state. A state of 0
+checks for samples being disabled, and and a state of 1 checks
+for them being enabled.</p>
+
+<p><strong>Is Music On?</strong><br>
+Returns true is music is currently enabled.</p>
+
+<p><strong>Is Music in a Particular State?</strong><br>
+Returns true if music is in the given state. A state of 0 checks
+for music being disabled, and a state of 1 checks for it being
+enabled.</p>
+
+<p><strong>Is the Menu Hidden?</strong><br>
+Returns true if the menu is currently hidden.</p>
+
+<p><strong>Is the Menu in a Particular State?<br>
+</strong>Returns true if the menu is in the given state. A state
+of 0 checks for the menu being visible, and a state of 1 checks
+for it being hidden.</p>
+
+<p><a name="actions"></a><font color="#0000FF" size="4"><strong>Actions</strong></font></p>
+
+<p><strong>File-&gt;New</strong><br>
+This action restarts the application.</p>
+
+<p><strong>File-&gt;Password</strong><br>
+This action brings up the password dialog if any frames have a
+password set. Otherwise, it does nothing.</p>
+
+<p><strong>File-&gt;Pause</strong><br>
+This action pauses the application and brings up the paused
+dialog.</p>
+
+<p><strong>File-&gt;Players</strong><br>
+This action brings up the players' controls dialog.</p>
+
+<p><strong>File-&gt;Quit</strong><br>
+This action closes the application.</p>
+
+<p><strong>Options-&gt;Play samples-&gt;Toggle Samples</strong><br>
+This action toggles the state of samples. If they were enabled,
+they become disabled. If they were disabled, they become enabled.</p>
+
+<p><strong>Options-&gt;Play samples-&gt;Set Samples On<br>
+</strong>This action enables samples.</p>
+
+<p><strong>Options-&gt;Play samples-&gt;Set Samples Off</strong><br>
+This action disables samples.</p>
+
+<p><strong>Options-&gt;Play samples-&gt;Set Samples State</strong><br>
+This actions sets samples to the specified state. If the
+specified state is 1, samples are enabled. If it is 0, they are
+disabled.</p>
+
+<p><strong>Options-&gt;Play musics-&gt;Toggle Music</strong><br>
+This action toggles the state of music. If it was enabled, it
+becomes disabled. If it was disabled, it becomes enabled.</p>
+
+<p><strong>Options-&gt;Play musics-&gt;Set Music On<br>
+</strong>This action enables music.</p>
+
+<p><strong>Options-&gt;Play musics-&gt;Set Music Off<br>
+</strong>This action disables music.</p>
+
+<p><strong>Options-&gt;Play musics-&gt;Set Music State<br>
+</strong>This actions sets music to the specified state. If the
+specified state is 1, music is enabled. If it is 0, it is
+disabled.</p>
+
+<p><strong>Options-&gt;Hide the menu-&gt;Toggle Menu Visibility<br>
+</strong>This action toggles the state of the menu. If it was
+hidden, it becomes visible. If it was visible, it becomes hidden.</p>
+
+<p><strong>Options-&gt;Hide the menu-&gt;Hide Menu<br>
+</strong>This action hides the menu.</p>
+
+<p><strong>Options-&gt;Hide the menu-&gt;Show Menu<br>
+</strong>This action shows the menu.</p>
+
+<p><strong>Options-&gt;Hide the menu-&gt;Set Menu Visibility</strong><br>
+This actions sets the menu to the specified state. If the
+specified state is 1, the menu is hidden. If it is 0, it is
+shown.</p>
+
+<p><strong>Options-&gt;Full Screen<br>
+</strong>This action toggles the full screen state of the window
+(if it can be toggled).</p>
+
+<p><strong>Help-&gt;Contents</strong><br>
+This action displays the applications help file.</p>
+
+<p><strong>Help-&gt;About...<br>
+</strong>This action brings up the about dialog.</p>
+
+<p><a name="expressions"></a><font color="#0000FF" size="4"><strong>Expressions</strong></font></p>
+
+<p><strong>State of Samples</strong><br>
+<em>SamplesState(ObjectName)<br>
+</em>Returns 1 if samples are enabled or 0 if they are disabled.</p>
+
+<p><strong>State of Music</strong><br>
+<em>MusicState(ObjectName)<br>
+</em>Returns 1 if music is enabled or 0 if it is disabled.</p>
+
+<p><strong>State of Menu<br>
+</strong><em>MenuState(ObjectName)<br>
+</em>Returns 1 if menu is hidden or 0 if it is visible.</p>
+
+<p><a href="index.html">Go Back to Matt's MMF Objects</a></p>
+
+<p><a href="http://www.clickteam.com">Go to Clickteam's Web Site</a></p>
+
+<p><a href="../index.html">Go to Bumderland</a></p>
+</body>
+</html>

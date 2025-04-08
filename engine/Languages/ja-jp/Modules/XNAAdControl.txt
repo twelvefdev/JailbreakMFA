@@ -1,0 +1,50 @@
+﻿{
+	"version" : 1,
+	"lang" : 1041,
+	"general" : {
+		"%o: A new ad has been displayed" : "%o: 新しい広告が表示されている",
+		"%o: Ad is in auto-refresh mode" : "%o: 広告が自動更新モードである",
+		"%o: Ad is visible" : "%o: 広告が表示されている",
+		"%o: User is engaged with ad" : "%o: ユーザーが広告を閲覧中",
+		"Ad Control" : "アドコントロール",
+		"Ad Identifier" : "広告 ID",
+		"Advertisement number %i" : "広告番号 %i",
+		"Auto Refresh" : "自動更新",
+		"Border" : "境界線",
+		"Border color" : "境界線の色",
+		"Check this box to automatically set the geolocation of the ad to the user longitude and latitude." : "チェックすると、広告の位置情報をユーザーの緯度経度に自動的に変更します。",
+		"Check this box to avoid closing the ad at the end of the frame, this keeping it alive for the next frames." : "チェックすると、フレームの終わりで広告を閉じずに、次のフレームでも表示したままにします。",
+		"Check this box to make the ad visible" : "チェックすると広告が表示されます",
+		"Check to display a border around the ad." : "チェックすると広告の周囲に境界線を表示します。",
+		"Check to display a shadow under the ad." : "チェックすると広告の下にシャドウを表示します。",
+		"Choose the color of the border." : "境界線の色を選択します。",
+		"Display next ad" : "次の広告を表示",
+		"Displays advertisements in a Windows Phone application." : "Windows Phone アプリケーションで広告を表示します。",
+		"Drop shadow" : "ドロップシャドウ",
+		"Enter 0 to hide the ad, 1 to show it" : "広告を隠す場合は 0、表示する場合は 1 を入力します。",
+		"Enter the Ad identifier as defined in pubCenter." : "pubCenter で定義されている広告 IDを入力します。",
+		"Enter the keywords that target the audience for the advertisements." : "広告の読者をターゲットにするキーワードを入力します。",
+		"Keep Ad open" : "広告を開いたままにする",
+		"Keywords" : "キーワード",
+		"Set ad visibility to %0" : "広告の可視性を %0 に変更",
+		"Set location" : "場所を変更",
+		"Uncheck to manually go from one ad to another." : "チェックしない場合は、広告の切り替えを手動で行います。",
+		"Visible" : "表示されている",
+		"XNA Ad Control" : "XNA アドコントロール"
+	},
+	"menu_20000" : {
+		"Actions" : "アクション",
+		"Display next ad" : "次の広告を表示",
+		"Hide / Show ad window" : "広告ウィンドウを隠す/表示"
+	},
+	"menu_20001" : {
+		"A new ad has been displayed" : "新しい広告が表示されている",
+		"Ad is in auto-refresh mode" : "広告が自動更新モードである",
+		"Ad is visible" : "広告が表示されている",
+		"Conditions" : "条件",
+		"User is engaged in ad" : "ユーザーが広告を閲覧中"
+	},
+	"menu_20002" : {
+		"Expressions" : "数式"
+	}
+}

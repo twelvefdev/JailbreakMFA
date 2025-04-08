@@ -1,0 +1,156 @@
+{   "About":
+    {
+        "Name": "Android Old INI object",
+        "Author": "Clickteam",
+        "Copyright": "Copyright (C) 2014 Clickteam",
+        "Website": "http://www.clickteam.com",
+        "Comment": "Part of the Android exporter. Clone of the old INI object, to use if necessary for compatibility with old applications.",
+        "URL": "http://www.clickteam.com",
+        "Help": "",
+        "Identifier": "AOin",
+    },
+
+    "ActionMenu":
+    [
+        [6, "Set Current File"],
+        [0, "Set Current Group"],
+        [1, "Set Current Item"],
+		
+        "Separator",
+           
+        [2, "Set value"],
+        [7, "Set value (item)"],
+        [8, "Set value (group - item)"],
+ 
+        "Separator",
+		
+        [5, "Set string"],
+        [9, "Set string (item)"],
+        [10, "Set string (group - item)"],
+  
+        "Separator",
+
+		[13, "Delete Group"],
+		[11, "Delete Item"],
+		[12, "Delete Item in Group"],
+		
+        "Separator",
+		
+        [3, "Save Object Position"],
+		[4, "Load Object Position"],
+
+        "Separator"
+		
+	],
+
+    "ConditionMenu":
+    [
+
+    ],
+
+    "ExpressionMenu":
+    [
+        [0, "Get value"],
+        [2, "Get value (item)"],
+        [3, "Get value (group - item)"],
+ 
+        "Separator",
+        [1, "Get string"],
+        [4, "Get string (item)"],
+        [5, "Get string (group - item)"],
+  
+        "Separator",
+
+    ],
+
+    "Actions":
+    [
+        { "Title": "Set current group to %0",
+          "Parameters": [["Text", "Enter Group Name"]] },
+		  
+        { "Title": "Set current item to %0",
+          "Parameters": [["Text", "Enter Item Name"]] },
+		  
+        { "Title": "Set item value %0",
+          "Parameters": [["Integer", "Enter Value"]] },
+		  
+        { "Title": "Save position of %0",
+          "Parameters": [["Object", "Object"]] },
+		  
+        { "Title": "Load position of %0",
+          "Parameters": [["Object", "Object"]] },
+          
+        { "Title": "Set item string %0",
+          "Parameters": [["Text", "Enter String"]] },
+          
+        { "Title": "Set current file to %0",
+          "Parameters": [["Text", "Set current file"]] },
+          
+        { "Title": "Set value %1 to item %0",
+          "Parameters": [["Text", "Enter Item Name"],
+                        ["Integer", "Enter Value"]] },
+
+        { "Title": "Set value %2 to item %1 in group %0",
+          "Parameters": [["Text", "Enter Group Name"],
+                         ["Text", "Enter Item Name"],
+						 ["Integer", "Enter Value"]] },
+
+        { "Title": "Set string %1 to item %0",
+          "Parameters": [["Text", "Enter Item Name"],
+                        ["Text", "Enter String"]] },
+
+        { "Title": "Set string %2 to item %1 in group %0",
+          "Parameters": [["Text", "Enter Group Name"],
+                         ["Text", "Enter Item Name"],
+						 ["Text", "Enter String"]] },
+
+ 
+        { "Title": "Delete item %0",
+          "Parameters": [["Text", "Enter Item Name"]]
+        },
+
+        { "Title": "Delete item %1 in group %0",
+          "Parameters": [["Text", "Enter Group Name"],
+						 ["Text", "Enter Item Name"]]
+        },
+
+        { "Title": "Delete group %0",
+          "Parameters": [["Text", "Enter Group Name"]]
+        }
+   ],
+
+    "Conditions":
+    [
+
+	],
+
+    "Expressions":
+    [
+        {   "Title": "value of(",
+            "Returns": "Integer"
+        },
+		{   "Title": "string of$(",
+            "Returns": "Text"
+        },
+        {   "Title": "ItemValue(",
+            "Returns": "Integer",
+			"Parameters": [["Text", "Item Name"]]
+		},
+        {   "Title": "GroupItemValue(",
+            "Returns": "Integer",
+			"Parameters": [["Text", "Group Name"],
+                           ["Text", "Item name"]]
+		},
+        {   "Title": "ItemString$(",
+            "Returns": "Text",
+			"Parameters": [["Text", "Item Name"]]
+        },
+        {   "Title": "GroupItemString$(",
+            "Returns": "Text",
+			"Parameters": [["Text", "Group Name"],
+                           ["Text", "Item name"]]
+        }
+	]
+}
+
+

@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ini++ Documentation</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta name="copyright" content="Copyright 2007-2008 Jack Webster - All rights reserved" />
+		<meta name="author" content="Olivier Behr - www.oliverpearl.com" />
+	</head>
+<body>
+
+<h1>The Property Pane</h1>
+
+<p>The following is a list of the options found in the properties pane for the Ini++ object.</p>
+<ul>
+<li>If Global Data is checked then this Ini++ object uses a global data 
+store. The name of the global data store is specified by Global data 
+key. All Ini++ objects which share the same data key share the same data.</li>
+<li>Default File specifies the path of a file to load at the start of the frame. 
+This can be a relative path. If Read Only is checked then this file is 
+loaded in read-only mode.</li>
+<li>Base Folders specifies the path that relative paths are relative to. This can be:</li>
+</ul>
+<div style="margin-left: 80px">
+– Windows Folder (e.g. C:\Windows)</br>
+– (Initial) current folder. This can be changed by the user when the 
+program is launched (for instance, if a short cut to the program 
+is made it can be specified there). If the current folder changes 
+during the frame, this path will not be changed.</br>
+– The folder that the EXE is in. When the program is run from 
+MMF, this will instead be the folder that the mfa file is saved in.</br>
+– User Application Data (e.g. C:\Documents and Settings\Jax\Application Data)</br>
+– Common Application Data (e.g. C:\Documents and Settings\All Users\Application Data)</br>
+Note that in early versions of Windows the last two folders do not exist. 
+In this case the Windows directory will be used.
+</div>
+<ul>
+<li>Initial Data is some text as Ini data which is to be loaded after the 
+default file is loaded. This should respect all the settings of the object 
+except compression or encryption. That is, it should be uncompressed 
+and unencrypted regardless of settings. There is a limit of 3000 characters.</li>
+<li>If Enable ‘Auto Load’ is selected then the current file is reloaded from 
+the disc every time it is read. It is not recommended you use this for it is slow.</li>
+<li>If Enable ‘Auto Save’ is selected then the data is written to the current 
+file every time it is changed. If you do not require this, it is best not to use it.</li>
+<li>Checking the Create folders for files if they do not exist box means that 
+if you try to save an Ini file to a path that does not exist, then the folder 
+will be created for you automatically. This works recursively, too. If 
+for some reason this is not what you want, just uncheck it.</li>
+<li>If 1-based index is checked then all expressions which require a number 
+(like Get Nth Group Name) will start at 1. Otherwise they will start at zero.</li>
+<li>If you don’t want to worry about the rest of the settings, just check 
+Use Standard Settings. Then the rest of the settings will work as you expect them to!</li>
+</ul>
+
+</br>
+<p>If you have not checked Use Standard Settings then custom settings are as follows:</p>
+<ul>
+<li>If Use Compression is checked, file are loaded and saved using compression.</li>
+<li>If the Encryption box is checked, files are loaded and saved using encryption. 
+The encryption key should be written in the box provided.</li>
+<li>If the new line box is unchecked then the standard windows new line 
+will be used. Otherwise the string input in the box will be used as the new line string.</li>
+<li>Always quote strings determines if strings are always quoted or not in saved files.</li>
+<li>Case sensitive determines if the Ini++ object is case sensitive or not. 
+This affects loading and saving too.</li>
+<li>If Allow empty groups is checked then the object can contain empty groups. 
+Otherwise they are just deleted.</li>
+<li>The use of Load and Save Subgroups is described in the Subgroups section of the Advanced Features.</li>
+<li>The use of the Repeated groups, Repeated Items and Save repeated items 
+as original settings are described in the Group and Item Repeats section of the Advanced Features.</li>
+<li>The use of the Escape characters in group names, in item names and 
+in item values options are described in the Escape Characters section of the Advanced Features.</li>
+</ul>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</body>
+</html>

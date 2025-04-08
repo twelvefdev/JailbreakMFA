@@ -1,0 +1,344 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>The Color Dialog Object</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p align="center"><font color="#0000FF" size="6">The Color Dialog
+Object<br>
+</font><font color="#FF0000" size="4">By Matt Galanto</font></p>
+
+<p><font color="#0000FF" size="4"><strong>Index</strong></font></p>
+
+<ul>
+    <li><a href="#legal">Disclaimer</a></li>
+    <li><a href="#basics">The Basics</a></li>
+    <li><a href="colordialognames.html">Color Names List</a></li>
+    <li><a href="#conditions">Conditions</a><br>
+        - Dialog is Closed by OK<br>
+        - Dialog is Closed by Cancel<br>
+        - Has an Error Occurred?</li>
+    <li><a href="#actions">Actions</a><br>
+        - <em>Open Dialog</em><br>
+        -&gt; Open the Color Dialog<br>
+        -&gt; Open the Color Dialog at Position<br>
+        - <em>Selected Color</em><br>
+        -&gt; Set Selected Color by RGB<br>
+        -&gt; Set Selected Color by Color Reference<br>
+        - <em>Settings</em><br>
+        -&gt; Set Dialog Window's Title<br>
+        -&gt; Restore Custom Colors on Cancel<br>
+        -&gt; Dialog Fully Open by Default<br>
+        -&gt; Cannot Fully Open Dialog<br>
+        -&gt; Round to Solid Colors (256 color mode)<br>
+        - <em>Custom Colors</em><br>
+        -&gt; Set a Custom Color by RGB<br>
+        -&gt; Set a Custom Color by Color Reference<br>
+        -&gt; Back-up Current Custom Colors<br>
+        -&gt; Restore Current Custom Colors<br>
+        - <em>Errors</em><br>
+        -&gt; Clear Expression Error Code</li>
+    <li><a href="#expressions">Expressions</a><br>
+        - Get Selected Color<br>
+        - Get a Custom Color<br>
+        - Get Last State of Dialog Openness<br>
+        - <em>Settings</em><br>
+        -&gt; Get Dialog Window's Title<br>
+        -&gt; Get State of 'Restore Custom Colors on Cancel'<br>
+        -&gt; Get State of 'Dialog Fully Open by Default'<br>
+        -&gt; Get State of 'Cannot Fully Open Dialog'<br>
+        -&gt; Get State of 'Round to Solid Colors (256 color mode)'<br>
+        - <em>Color Conversions</em><br>
+        -&gt; <em>Reference &lt;-&gt; RGB Values</em><br>
+        -&gt; -&gt; Convert RGB values to Color Reference<br>
+        -&gt; -&gt; Get Red Value from Color Reference<br>
+        -&gt; -&gt; Get Green Value from Color Reference<br>
+        -&gt; -&gt; Get Blue Value from Color Reference<br>
+        -&gt; <em>Reference &lt;-&gt; Color Names</em><br>
+        -&gt; -&gt; Get Name of Color from Color Reference<br>
+        -&gt; -&gt; Get Color Reference from Name of Color<br>
+        -&gt; <em>Reference &lt;-&gt; Hex String</em><br>
+        -&gt; -&gt; Convert Color Reference to Hex String<br>
+        -&gt; -&gt; Convert Hex String to Color Reference<br>
+        -&gt; <em>RGB Values &lt;-&gt; Color Names</em><br>
+        -&gt; -&gt; Get Name of Color from RGB Values<br>
+        -&gt; <em>Hex String &lt;-&gt; RGB Values</em><br>
+        -&gt; -&gt; Convert RGB values to Hex String<br>
+        -&gt; -&gt; Get Red Value from Hex String<br>
+        -&gt; -&gt; Get Green Value from Hex String<br>
+        -&gt; -&gt; Get Blue Value from Hex String<br>
+        - <em>Errors</em><br>
+        -&gt; Get Error Code<br>
+        -&gt; Get Expression Error Code</li>
+</ul>
+
+<p><a name="legal"></a><font color="#0000FF" size="4"><strong>Disclaimer</strong></font></p>
+
+<p>The author of this extension makes no claims concerning the
+fitness of this extension for any purpose whatsoever, and makes
+no gurantees, written or implied, of its level of security and
+safety to authors or to end users in any respect. You agree to
+use this extension at your own risk and to hold the author
+harmless in any event. </p>
+
+<p><a name="basics"></a><font color="#0000FF" size="4"><strong>The
+Basics</strong></font></p>
+
+<p>The Color Dialog Object allows you to use the standard Windows
+color dialog. This dialog allows users to select from a list of
+specific colors or allows them to create custom colors.
+Additionally, this object allows you to convert among various
+color representations.</p>
+
+<p><a name="conditions"></a><font color="#0000FF" size="4"><strong>Conditions</strong></font></p>
+
+<p><strong>Dialog is Closed by OK</strong><br>
+This condition will return true if the color dialog is closed by
+the OK button. Events with this condition will be executed as
+soon as the dialog is closed.</p>
+
+<p><strong>Dialog is Closed by Cancel<br>
+</strong>This condition will return true if the color dialog is
+closed by the Cancel button or by otherwise closing the dialog
+without OK. Events with this condition will be executed as soon
+as the dialog is closed.</p>
+
+<p><strong>Has an Error Occurred?<br>
+</strong>This condition will return true if an error has occured
+in an action or in a condition. Events with this condition will
+be executed as soon as an error occurs in the object. The error
+code for the error will only be available to events with this
+condition. For getting errors in expressions, use the 'Get
+Expression Error Code' expression.</p>
+
+<p><a name="actions"></a><font color="#0000FF" size="4"><strong>Actions</strong></font></p>
+
+<p><strong>Open the Color Dialog<br>
+</strong>This action opens the color dialog at the position at
+which it was last closed.</p>
+
+<p><strong>Open the Color Dialog at Position</strong><br>
+This action opens the color dialog at the specified position. The
+position is relative to the top-left corner of the monitor
+display, not the top-left corner of the frame.</p>
+
+<p><strong>Set Selected Color by RGB</strong><br>
+This action sets the selected to color to the specified color,
+given by its RGB values. The selected color is the color selected
+in the color dialog.</p>
+
+<p><strong>Set Selected Color by Color Reference</strong><br>
+This action sets the selected to color to the specified color,
+given by its color reference. The selected color is the color
+selected in the color dialog.</p>
+
+<p><strong>Set Dialog Window's Title</strong><br>
+This action sets the title of the color dialog window to the
+specified text.</p>
+
+<p><strong>Restore Custom Colors on Cancel</strong><br>
+This action sets this option to the specified state. State 0
+means this option is disabled. Otherwise, it is enabled. When
+this option is enabled, changes to custom colors made by the user
+are not saved when the dialog is closed by cancel. This is
+contrary to the Windows standard functioning of the color dialog.</p>
+
+<p><strong>Dialog Fully Open by Default</strong><br>
+This action sets this option to the specified state. State 0
+means this option is disabled. Otherwise, it is enabled. When
+this option is enabled, the color dialog is fully open when the
+color dialog is opened. A fully opened dialog cannot be shrunk by
+the user.</p>
+
+<p><strong>Cannot Fully Open Dialog</strong><br>
+This action sets this option to the specified state. State 0
+means this option is disabled. Otherwise, it is enabled. When
+this option is enabled, the color dialog cannot be fully opened
+by the user, preventing them from editing the custom colors.</p>
+
+<p><strong>Round to Solid Colors (256 color mode)</strong><br>
+This action sets this option to the specified state. State 0
+means this option is disabled. Otherwise, it is enabled. When
+this option is enabled, colors not native to 256 color mode are
+rounded to the nearest native color. If it is disabled, non-native
+colors are simulated.</p>
+
+<p><strong>Set a Custom Color by RGB</strong><br>
+This action sets the specified custom color to the specified
+color, given by its RGB values. The custom color is specified by
+its index, which may range from 1 to 16.</p>
+
+<p><strong>Set a Custom Color by Color Reference</strong><br>
+This action sets the specified custom color to the specified
+color, given by its color reference. The custom color is
+specified by its index, which may range from 1 to 16.</p>
+
+<p><strong>Back-up Current Custom Colors</strong><br>
+This action stores the current custom colors so that they can be
+restored later.</p>
+
+<p><strong>Restore Current Custom Colors<br>
+</strong>This action restores the custom colors last backed-up.</p>
+
+<p><strong>Clear Expression Error Code<br>
+</strong>This action sets the current expression error code to 0.</p>
+
+<p><a name="expressions"></a><font color="#0000FF" size="4"><strong>Expressions</strong></font></p>
+
+<p><strong>Get Selected Color</strong><br>
+<em>SelectedColor(&quot;Color Dialog&quot;)<br>
+</em>This expression returns the color reference of the selected
+color. The selected color is the color selected in the color
+dialog.</p>
+
+<p><strong>Get a Custom Color</strong><br>
+<em>CustomColor(&quot;Color Dialog&quot;,Index)<br>
+</em>This expression returns the color reference of the specified
+custom color. <em>Index</em> specifies the custom color. It must
+range from 1 to 16.</p>
+
+<p><strong>Get Last State of Dialog Openness</strong><br>
+<em>DialogLastOpen(&quot;Color Dialog&quot;)<br>
+</em>This expression returns 0 if the dialog was not fully open
+when the color dialog was last closed. It returns 1 if the dialog
+was fully open when the color dialog was last closed</p>
+
+<p><strong>Get Dialog Window's Title</strong><br>
+<em>DialogTitle$(&quot;Color Dialog&quot;)<br>
+</em>This expression returns the current title of the color
+dialog window.</p>
+
+<p><strong>Get State of 'Restore Custom Colors on Cancel'</strong><br>
+<em>RestoreState(&quot;Color Dialog&quot;)<br>
+</em>This expression returns 0 if the option is disabled. It
+returns 1 if it is enabled.</p>
+
+<p><strong>Get State of 'Dialog Fully Open by Default'</strong><br>
+<em>FullOpenState(&quot;Color Dialog&quot;)<br>
+</em>This expression returns 0 if the option is disabled. It
+returns 1 if it is enabled.</p>
+
+<p><strong>Get State of 'Cannot Fully Open Dialog'</strong><br>
+<em>NoFullOpenState(&quot;Color Dialog&quot;)<br>
+</em>This expression returns 0 if the option is disabled. It
+returns 1 if it is enabled.</p>
+
+<p><strong>Get State of 'Round to Solid Colors (256 color mode)'</strong><br>
+<em>SolidColorsState(&quot;Color Dialog&quot;)<br>
+</em>This expression returns 0 if the option is disabled. It
+returns 1 if it is enabled.</p>
+
+<p><strong>Convert RGB values to Color Reference</strong><br>
+<em>RGBToRef(&quot;Color Dialog&quot;,Red,Green,Blue)<br>
+</em>This expression returns color reference of the color
+described by <em>Red, Green,</em> and <em>Blue</em>.</p>
+
+<p><strong>Get Red Value from Color Reference</strong><br>
+<em>RefToRed(&quot;Color Dialog&quot;,Reference)<br>
+</em>This expression returns the red value of <em>Reference</em>.</p>
+
+<p><strong>Get Green Value from Color Reference</strong><br>
+<em>RefToGreen(&quot;Color Dialog&quot;,Reference)<br>
+</em>This expression returns the green value of <em>Reference</em>.</p>
+
+<p><strong>Get Blue Value from Color Reference<br>
+</strong><em>RefToBlue(&quot;Color Dialog&quot;,Reference)<br>
+</em>This expression returns the blue value of <em>Reference</em>.</p>
+
+<p><strong>Get Name of Color from Color Reference</strong><br>
+<em>RefToName$(&quot;Color Dialog&quot;,Reference)<br>
+</em>This expression returns the name of the color specified by <em>Reference</em>.
+If the specified color does not have a name, the expressions
+returns &quot;&quot;.<br>
+<a href="colordialognames.html">Color Names List</a></p>
+
+<p><strong>Get Color Reference from Name of Color</strong><br>
+<em>NameToRef(&quot;Color Dialog&quot;,Name)<br>
+</em>This expression returns the reference of the color specified
+by <em>Name</em>. If <em>Name</em> is not a color, the
+expressions returns -1.<br>
+<a href="colordialognames.html">Color Names List</a></p>
+
+<p><strong>Convert Color Reference to Hex String</strong><br>
+<em>RefToHex$(&quot;Color Dialog&quot;,Reference)<br>
+</em>This expression returns the hex string of the color
+specified by <em>Reference</em>. A hex string has the form <font
+color="#FF0000">##</font><font color="#00FF00">##</font><font
+color="#0000FF">##</font><font color="#000000">, where the first
+two digits are the hexadecimal code for the red value, the next
+two for the green value, and the third two for the blue value.</font></p>
+
+<p><strong>Convert Hex String to Color Reference</strong><br>
+<em>HexToRef(&quot;Color Dialog&quot;,HexString)<br>
+</em>This expression returns the color reference of the color
+specified by <em>HexString</em>. A hex string has the form <font
+color="#FF0000">##</font><font color="#00FF00">##</font><font
+color="#0000FF">##</font><font color="#000000">, where the first
+two digits are the hexadecimal code for the red value, the next
+two for the green value, and the third two for the blue value.</font></p>
+
+<p><strong>Get Name of Color from RGB Values</strong><br>
+<em>RGBToName$(&quot;Color Dialog&quot;,Red,Green,Blue)<br>
+</em>This expression returns the name of the color specified by <em>Red,
+Green, </em>and<em> Blue</em>. If the specified color does not
+have a name, the expressions returns &quot;&quot;.<br>
+<a href="colordialognames.html">Color Names List</a></p>
+
+<p><strong>Convert RGB values to Hex String</strong><br>
+<em>RGBToHex$(&quot;Color Dialog&quot;,Red,Green,Blue)<br>
+</em>This expression returns the hex string of the color
+specified by <em>Red, Green, </em>and<em> Blue</em>. A hex string
+has the form <font color="#FF0000">##</font><font color="#00FF00">##</font><font
+color="#0000FF">##</font><font color="#000000">, where the first
+two digits are the hexadecimal code for the red value, the next
+two for the green value, and the third two for the blue value.</font></p>
+
+<p><strong>Get Red Value from Hex String</strong><br>
+<em>HexToRed(&quot;Color Dialog&quot;,HexString)<br>
+</em>This expression returns the red value of the color specified
+by <em>HexString</em>. A hex string has the form <font
+color="#FF0000">##</font><font color="#00FF00">##</font><font
+color="#0000FF">##</font><font color="#000000">, where the first
+two digits are the hexadecimal code for the red value, the next
+two for the green value, and the third two for the blue value.</font></p>
+
+<p><strong>Get Green Value from Hex String</strong><br>
+<em>HexToGreen(&quot;Color Dialog&quot;,HexString)<br>
+</em>This expression returns the green value of the color
+specified by <em>HexString</em>. A hex string has the form <font
+color="#FF0000">##</font><font color="#00FF00">##</font><font
+color="#0000FF">##</font><font color="#000000">, where the first
+two digits are the hexadecimal code for the red value, the next
+two for the green value, and the third two for the blue value.</font></p>
+
+<p><strong>Get Blue Value from Hex String<br>
+</strong><em>HexToBlue(&quot;Color Dialog&quot;,HexString)<br>
+</em>This expression returns the blue value of the color
+specified by <em>HexString</em>. A hex string has the form <font
+color="#FF0000">##</font><font color="#00FF00">##</font><font
+color="#0000FF">##</font><font color="#000000">, where the first
+two digits are the hexadecimal code for the red value, the next
+two for the green value, and the third two for the blue value.</font></p>
+
+<p><strong>Get Error Code</strong><br>
+<em>Error(&quot;Color Dialog&quot;)<br>
+</em>This expression returns the current error code resulting
+from an error in an action or condition, which is only meaningful
+when the event has an &quot;Has an Error Occurred?&quot;
+condition.<br>
+Error Codes:<br>
+0: No errors<br>
+1: Invalid custom color index</p>
+
+<p><strong>Get Expression Error Code</strong><br>
+<em>ExpressionError(&quot;Color Dialog&quot;)<br>
+</em>This expression returns the current error code resulting
+from an error in an expression. The same codes apply here as
+above.</p>
+</body>
+</html>

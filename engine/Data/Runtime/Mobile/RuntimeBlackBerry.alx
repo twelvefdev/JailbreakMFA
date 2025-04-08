@@ -1,0 +1,31 @@
+<loader version="1.0">
+	<application id="%s">
+		<name >
+			
+		</name>
+		<description >
+			%s
+		</description>
+		<version >
+			%s
+		</version>
+		<vendor >
+			%s
+		</vendor>
+		<copyright >
+			%s
+		</copyright>
+		<fileset Java="1.18">
+			<directory >
+				
+			</directory>
+			<files >
+				%s
+
+			</files>
+
+		</fileset>
+
+	</application>
+
+</loader>

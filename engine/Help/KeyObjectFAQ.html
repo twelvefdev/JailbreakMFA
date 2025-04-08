@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+ </head>
+ <body>
+ <div style="text-align: center">
+  <h1>Key Object</h1>
+  <h2>By LIJI</h2>
+<h3>FAQ</h3></div>
+
+<h4>What are specific keys?</h4>
+<p>The specific keys feature makes the Get Last Key Pressed/Released expressions return "Left Shift" or "Right Shift" instead of just "Shift", for example.</p>
+<h4>The key names that the Key Object return does not match my keyboard, why?</h4>
+<p>The Key Object does the Key to String conversion by a QWERTY USA Keyboard. Some non-alpha-numeric character keys such as accent and spiecal signs will return incorrect values in other keyboards.</p>
+<h4>How do I add an On any key pressed/released condition?</h4>
+<p>The key object doesn't support it directly, but you can add a condition like those by adding an "On key pressed/released" condition and use "Last key pressed/released" as the parameter.</p>
+<h4>What are control types?</h4>
+<p>Control type is the type of the player in MMF2. It can either be a keyboard type or joystick type. When you need to enter a control type value use 0 for keyboard, 1-4 for Joystick 1-4 and anything else for undefined. (Undefined will also remove the X from the Ctrl+Y dialog)</p>
+<h4>What is a key number?</h4>
+<p>A Key number is a value from 0 to 7 that represent a player key. value 0 is Up, 1 is Down, 2 is Left, 3 is Right and 4-7 are the action buttons.</p>
+ </body>
+</html>

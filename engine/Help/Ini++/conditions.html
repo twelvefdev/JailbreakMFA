@@ -1,0 +1,123 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ini++ Documentation</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta name="copyright" content="Copyright 2007-2008 Jack Webster - All rights reserved" />
+		<meta name="author" content="Olivier Behr - www.oliverpearl.com" />
+	</head>
+<body>
+
+<h1>Conditions</h1>
+
+Main Menu</br>
+<div style="margin-left: 40px">
+<a href="#hasgroup">Group Exists</a></br>
+<a href="#hasitem">Group Has Item</a></br>
+<a href="#hashashedvalue">Item Has Hashed Value</a></br>
+<a href="#onmerge">On Merge</a></br>
+<a href="#ondatamodified">On Data Modified</a></br>
+<a href="#onnewitem">On New Item</a></br>
+<a href="#onsave">On Save</a>
+</div>
+</br>Current Group
+</br>
+</br>Dialog Box
+<div style="margin-left: 40px">
+<a href="#onopen">On Open</a></br>
+<a href="#onclose">On Close</a></br>
+<a href="#onmodified">On Modified</a>
+</div>
+</br>Search Results
+<div style="margin-left: 40px">
+<a href="#onresultsfound">On Results Found</a></br>
+<a href="#onnoresultsfound">On No Results Found</a>
+</div>
+</br>Extra Functions
+<div style="margin-left: 40px">
+<a href="#iswildcatmatch">Is Wildcat Match</a>
+</div>
+<p></p>
+
+</br>
+<h2>Main Menu</h2>
+<a id="hasgroup"></a><h4>Group Exists</h4>
+<p>Tests if the group specified exists. When ‘Allow empty groups’ is enabled, 
+a group may exist but have no elements. When this mode is not selected, a 
+group may exist even if it has no elements (but not every group exists).</p>
+<a id="hasitem"></a><h4>Group Has Item</h4>
+<p>Tests if the specified item exists.</p>
+<a id="hashashedvalue"></a><h4>Item Has Hashed Value</h4>
+<p>Tests if an items value is equal to a given string, hashed. The third parameter 
+allows the default value of the item to be given. This will be hashed if it is required, 
+so there is no need to hash it!</br>
+For instance, suppose we have the Ini file:</br>
+<p class="code">[group]</br>
+item=2063c1608d6e0baf80249c42e2be5804</br>
+</p>
+(The value of item is ‘value’ hashed)</br>
+</br>
+Now if we compare ‘item’ (in ‘group’) to ‘value’, it will be true. If we 
+compare it to ‘tree’ it will be false, as ‘tree’ hashes to something else.</br>
+Now suppose we compare some item which does not exist and give it the 
+default value ‘value’ and compare it to ‘value’. This will be true. But if we 
+give it the default value ‘2063c1608d6e0baf80249c42e2be5804’ and compare 
+it to ‘value’, it will be false, even though ‘value’ hashes to that value.</p>
+<a id="onmerge"></a><h4>On Merge</h4>
+<p>This event is fired when a merge action was successful. These are: Merge 
+from file, merge group from file, merge from object and merge group from object.</br>
+‘Successful’ means that either the file or the object existed.</p>
+<a id="ondatamodified"></a><h4>On Data Modified</h4>
+<p>This event is fired if the data in the Ini++ object is modified in any way.
+For global data, this occurs even if the data is modified from another Ini++ 
+object. Note that switching which global data slot the object is using does 
+not count as modifying the data (as no modification takes place).</br>
+</br>
+Any action that modifies the data calls this event. Therefore if an action 
+which modifies the data were used from this condition, an infinite loop would 
+occur. Therefore the Ini++ object forbids this to occur. All actions which 
+modify data are disabled from this condition. When the program is run from 
+within MMF, a message box will warn the user that this has occurred.</p>
+<a id="onnewitem"></a><h4>On New Item</h4>
+<p>This event is fired when a new item is added to the Ini++ object.</p>
+<a id="onsave"></a><h4>On Save</h4>
+<p>This event is fired when the data is saved. This includes auto-saves.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Current Group</h2>
+<p>This section provides conditions similar to ‘Group Exists’, ‘Group Has Item’ and 
+‘Item Has Hashed Value’ listed above. The difference is the group it applies to the current group.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Dialog Box</h2>
+<a id="onopen"></a><h4>On Open</h4>
+<p>This event is fired when the dialog box is opened.</p>
+<a id="onclose"></a><h4>On Close</h4>
+<p>This event is fired when the dialog box is closed. This does not include when
+it is closed due to the frame changing or application ending.</p>
+<a id="onmodified"></a><h4>On Modified</h4>
+<p>This event is fired when the Ini++ object is modified via the dialog box. ‘On
+data modified’ will also be true in this situation.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Search Results</h2>
+<a id="onresultsfound"></a><h4>On Results Found</h4>
+<p>Fired when there is a search and the search has results. (In this case of ‘and’, 
+‘or’ and ‘xor’ searches, this means the results count is non-zero.)</p>
+<a id="onnoresultsfound"></a><h4>On No Results Found</h4>
+<p>Fired when there is a search and the search has no results. (In this case of 
+‘and’, ‘or’ and ‘xor’ searches, this means the results count is zero.)</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</br>
+<h2>Extra Functions</h2>
+<a id="iswildcatmatch"></a><h4>Is Wildcat Match</h4>
+<p>Checks if a string fits a pattern in the exact same way as ‘Perform Search’ 
+does. This allows use of ‘.’, ‘*’ and ‘!’.</p>
+<div style="text-align:right"><a href="#top">top</a></div>
+
+</body>
+</html>

@@ -1,0 +1,464 @@
+<html>
+<head><title>Spellcheck Object for Multimedia Fusion</title>
+
+<style>
+body{ font-family:arial; }
+
+div.section{ font-size:400%; border-bottom:thick black solid; padding-botton:10px; margin-bottom:10px;}
+
+
+
+div.title{ font-size:200%; border-bottom:thin black solid; padding-bottom:3px;}
+
+div.txt{ padding-left: 10px; margin-top:10px; margin-bottom:20px; }
+
+</style>
+
+
+</head>
+<body>
+
+
+<div class="section">Conditions</div>
+
+<a name="iswordinignorelist">
+<div class="title">Is word in Ignore list?</div>
+<div class="txt">
+
+Condition is true when the given parameter is in the internal list of words to ignore. Words can be ignored using the "Ignore Word" action.
+
+</div>
+
+<a name="iswordcorrect">
+<div class="title">Is word Correct?</div>
+<div class="txt">
+
+Condition is true when the given parameter is in the wordlist or in the ignore list. Note that hyphenation and contraction settings will be considered.
+
+</div>
+
+
+<a name="isloadinginbackground">
+<div class="title">Is loading in background?</div>
+<div class="txt">
+
+Condition is true when a load is being preformed in the background. A background load is triggered by the "Load Wordlist in Background" action.
+
+</div>
+
+
+<a name="onloading">
+<div class="title">On Loading</div>
+<div class="txt">
+
+Condition is triggered periodically whilst a background load is happening. This condition is helpful for uploading a "Loading" progress bar (etc)
+
+</div>
+
+
+<a name="oncorrectionsuggestion">
+<div class="title">On Correction Suggestion</div>
+<div class="txt">
+
+Condition is triggered once for each spelling correction suggestion to the word given in the "List Suggestions" action.<br><br>
+
+Use the "Get Suggestions" action to determine what the correction actually is.
+
+</div>
+
+<a name="isparseinprogress">
+<div class="title">Is Parse in Progress</div>
+<div class="txt">
+
+This condition is true when a parse is in progress. See the general documentation for more information about what this means.
+
+</div>
+
+<a name="onincorrectword">
+<div class="title">On Incorrect Word</div>
+<div class="txt">
+
+This condition is triggered when an incorrect word is found in an Autoparse.<br><br>
+
+Note that when this condition occurs the parse is automatically stopped. The "Resume Parse" action should be used to continue.
+
+</div>
+
+
+<a name="onparsedone">
+<div class="title">On Parse Done</div>
+<div class="txt">
+
+This condition is triggered when a parse has completed. This is when the whole text has been checked for spelling mistakes. If the "Stop Parse" action was used, this does not get triggered.
+
+</div>
+
+
+<a name="onparseaborted">
+<div class="title">On Parse Aborted</div>
+<div class="txt">
+
+This condition is triggered when a parse has aborted using the "Stop Parse" action.
+
+</div>
+
+<div class="section">Actions</div>
+
+
+
+<a name="listsuggestions">
+<div class="title">List Suggestions</div>
+<div class="txt">
+
+Lists spelling suggestions for the given word. For each correction found, "On Correction Suggestion" will be triggered.<Br><br>
+
+Note that:
+<ul>
+<li>Only words in the word list are considered. Words in the ignore list are not.
+<li>Contracted words and hyphenated words will not be listed among the suggestions.
+<li>The words will be returned will respecting the ordering and suggestion settings.
+</ul>
+
+</div>
+
+
+
+<a name="loadwordlistpausesmmf">
+<div class="title">Load Wordlist (Pauses MMF)</div>
+<div class="txt">
+
+Loads a word list. Using this action will cause your program to freeze until it has completed. This makes it quicker and suitable for small dictionaries, however for loading large wordlists the "Load Wordlist in Background" action should be used. This function will fail if ran whilst a dictionary is being loaded in the background.<br><br>
+
+Words in the word list can be separated by any non-alpha character.
+
+</div>
+
+
+<a name="loadwordlistinbackground">
+<div class="title">Load Wordlist in background</div>
+<div class="txt">
+
+Loads a wordlist in the background. Only one wordlist may be loaded in the background at one time. If this action is called whilst another dictionary is loading in the background then it will fail.<br><br>
+
+After calling this action "On Loading" will be periodically triggered. Additionally, "Get Loading Percentage" allows the percentage to be retrieved at any time.
+
+<br><br>
+
+Words in the word list can be separated by any non-alpha character.
+
+</div>
+
+
+
+
+<a name="savewordlistusingnullseperators">
+<div class="title">Save Word List (Using null separators)</div>
+<div class="txt">
+
+Saves the currently loaded wordlist as a "Null Separated Word List". This is where each word in the list is separated by the "Null Character", which is a hidden character. For large wordlists, the size of this format will be significantly lower than the "Using New Line Separators" variation of this action.
+
+</div>
+
+
+<a name="savewordlistusingnewlineseperators">
+<div class="title">Save Word List (Using new line separators)</div>
+<div class="txt">
+
+Saves the currently loaded wordlist, separating each word with a new line. (Note that these are Windows style new lines)
+
+</div>
+
+
+
+<a name="addword">
+<div class="title">Add Word</div>
+<div class="txt">
+
+Adds a word into the wordlist. Note that wordlists (including any wordlists loaded using the "Load" functions) are global and shared between every Spellcheck object, and global between frames.
+
+</div>
+
+<a name="removeword">
+<div class="title">Remove Word</div>
+<div class="txt">
+
+Removes a word from the wordlist. Note that wordlists (including any wordlists loaded using the "Load" functions) are global and shared between every Spellcheck object, and global between frames. If the word is not currently in the wordlist, this action has no effect.
+
+</div>
+
+
+<a name="ignoreword">
+<div class="title">Ignore Word</div>
+<div class="txt">
+
+Ignores a word, such that "Is Word correct?" does not detect it as an incorrectly spelt word. This can be used to implement "Ignore All" buttons in spellcheckers.
+
+</div>
+
+
+<a name="unignoreword">
+<div class="title">Unignore Word</div>
+<div class="txt">
+
+Unignores a word, removing it from the Ignore List.
+
+</div>
+
+
+<a name="setsugesstionsettings">
+<div class="title">Set Suggestion Settings</div>
+<div class="txt">
+
+This action modifies how the "List Suggestions" action works.<br><br>
+
+The first parameter sets the minimum relevance that the word must be the queried word to be suggested. This is a percentage of how similar the two words are.<br><br>
+
+The second parameter decided the maximum number of words that can be returned by "List Suggestions". Setting this to -1 will allow unlimited.
+</div>
+
+
+<a name="setorderingsettings">
+<div class="title">Set Ordering Settings</div>
+<div class="txt">
+
+This action modifies how the "List Suggestions" action works. Specifically, it modifies the order in which the words are suggested.<br><br>
+
+It is beyond the scope of this document to explain what exactly that parameters do, however by playing around with the values (perhaps with the help of the example), you can see which values you prefer.
+
+</div>
+
+
+
+
+
+<a name="setcontractionandhyphenmode">
+<div class="title">Set Contraction and Hyphen mode</div>
+<div class="txt">
+
+This action modifies which words "Is Word Correct?" accepts as correct by modifying how hyphenated words and contraction are treated.<br><br>
+
+See the tutorial style introduction to this object for more information on what the different types mean.
+
+</div>
+
+
+
+<a name="addbase">
+<div class="title">Add Base</div>
+<div class="txt">
+This adds a contraction base to the Contraction Base List, for when the Contraction mode is "Selected Bases".<br><br>
+See the tutorial style introduction to this object for more information on what this means.
+</div>
+
+<a name="removebase">
+<div class="title">Remove Base</div>
+<div class="txt">
+This removes a contraction base from the Contraction Base List, for when the Contraction mode is "Selected Bases".<br><br>
+See the tutorial style introduction to this object for more information on what this means.
+</div>
+
+
+
+
+<a name="addcontraction">
+<div class="title">Add Contraction</div>
+<div class="txt">
+
+This adds a contraction ending to the list of contraction endings, for when the Contraction mode is either "Selected Bases" or "Any bases".<br><br>
+
+Contraction must be either in the form X'X (e.g. n't), 'X (e.g. 's) or 'XX (e.g. 've).
+<br><br>
+See the tutorial style introduction to this object for more information on what this means.
+</div>
+
+
+<a name="removecontraction">
+<div class="title">Remove Contraction</div>
+<div class="txt">
+
+This removes a contraction ending to the list of contraction endings, for when the Contraction mode is either "Selected Bases" or "Any bases".
+<br><br>
+See the tutorial style introduction to this object for more information on what this means.
+</div>
+
+
+<a name="start">
+<div class="title">Start</div>
+<div class="txt">
+Starts an Autoparse. The parameter is the text to parse. If an Autoparse is already happening when this action is executed, nothing will happen.<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+<a name="resumeparse">
+<div class="title">Resume Parse</div>
+<div class="txt">
+Resumes the Autoparse after it has been paused. The Autoparse is automatically paused after the "On Incorrect Word" event is called.<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+<a name="stopparse">
+<div class="title">Stop Parse</div>
+<div class="txt">
+Stops the Autoparse. "On Parse Aborted" will be triggered.<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+
+<a name="changelastincorrectword">
+<div class="title">Change Last Incorrect Word</div>
+<div class="txt">
+When "On Incorrect Word" is triggered, you may replace the last incorrect word in the text with a new word by using the "Change Last Incorrect Word" action. To get the correct string after the parse is done, use the "Get Corrected String" expression.
+<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+<a name="addignorekey">
+<div class="title">Add Ignore Key</div>
+<div class="txt">
+Adds a key to the list of keys that cause the parser to get into "Ignore mode". To remove this key, you must use "Reset all parse settings".
+<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+
+<a name="addspellcheckkey">
+<div class="title">Add Spellcheck Key</div>
+<div class="txt">
+Adds a key to the list of keys that cause the parser to get into "Spellcheck mode". To remove this key, you must use "Reset all parse settings".
+<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+<a name="addescapechar">
+<div class="title">Add Escape Char</div>
+<div class="txt">
+Adds a character to the list of characters that cause the parser to get into "Escape mode". To remove this character, you must use "Reset all parse settings".
+<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+
+
+<a name="addquotechar">
+<div class="title">Add Quote Char</div>
+<div class="txt">
+Adds a character to the list of characters that cause the parser to get into "Quote mode". To remove this character, you must use "Reset all parse settings".
+<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+
+<a name="setneutralandgeneralsettings">
+<div class="title">Set Neutral and General Settings</div>
+<div class="txt">
+Sets various Autoparse advanced features. 
+<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+
+
+<a name="resetallparsesettings">
+<div class="title">Reset all parse settings</div>
+<div class="txt">
+Resets all parse settings (those options settable in this menu)
+<br><br>
+See the tutorial style introduction to this object for more information on the Autoparse features.
+</div>
+
+
+
+<div class="section">Expressions</div>
+
+<a name="getcontractionmode">
+<div class="title">Get Contraction Mode</div>
+<div class="txt">
+Gets the current contraction mode.<br><br>
+
+0 = None<br>
+1 = Selected Bases<br>
+2 = Any Base<br>
+</div>
+
+
+
+<a name="getcontractionmode">
+<div class="title">Get Contraction Mode</div>
+<div class="txt">
+Gets the current contraction mode.<br><br>
+
+0 = None<br>
+1 = Selected Bases<br>
+2 = Any Base<br>
+</div>
+
+
+<a name="getmaxresults">
+<div class="title">Get Maxs Results</div>
+<div class="txt">
+Gets the maximum number of results that "List Suggestions" might return.
+</div>
+
+
+<a name="gmror">
+<div class="title">Get Min Relevance of Results</div>
+<div class="txt">
+Gets the minimum relevance necessary for "List Suggestions" to return a word.
+</div>
+
+<a name="findhowsimilartwostringsare">
+<div class="title">Find how similar two strings are</div>
+<div class="txt">
+Given two strings, find how similar they are to each other. This is effected by the "Set Ordering Settings" action (and dialog box options).<br><br>
+
+This is a percentage, where higher is nearer (i.e. 100% = Exactly the same)
+</div>
+
+
+<a name="getsuggestion">
+<div class="title">Get Suggestion</div>
+<div class="txt">
+Returns the last suggested word, after a "On Correction Suggestion" event.
+</div>
+
+
+<a name="getloadingpercentage">
+<div class="title">Get Loading Percentage</div>
+<div class="txt">
+Returns a percentage value indicating how near to competition a background load is.
+</div>
+
+
+<a name="getincorrectword">
+<div class="title">Get Incorrect Word</div>
+<div class="txt">
+Gets the incorrect word which caused the "On Incorrect Word" event.
+</div>
+
+<a name="getincorrectwordsstartindex">
+<div class="title">Get Incorrect Words Start Index</div>
+<div class="txt">
+Returns the index in the string that the incorrect word which caused the "On Incorrect Word" event is.
+</div>
+
+
+<a name="getincorrectwordslength">
+<div class="title">Get Incorrect Words Length</div>
+<div class="txt">
+Returns the length of the incorrect word which caused the "On Incorrect Word" event.
+</div>
+
+
+<a name="getcorrectedstring">
+<div class="title">Get Corrected String</div>
+<div class="txt">
+Returns the string passed to the "Start Autoparse" action. However, any incorrect words which were replaced with the "Change Last Incorrect Word" action are accounted for. That is, this returns the corrected string.
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+</body>
+
+
+
+</html>

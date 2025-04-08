@@ -1,0 +1,58 @@
+﻿{
+	"version" : 1,
+	"lang" : 1041,
+	"general" : {
+		"Check this box, and the Can Purchase condition will return true." : "有効にすると、購入可能の条件が真となります。",
+		"Check to allow only online profiles" : "オンラインプロファイルのみ許可する場合に有効にします",
+		"Check to automatically sign in at start of frame" : "チェックを入れると、フレームの開始時に自動的にサインインします",
+		"Check to connect the player to gamer services at start of frame." : "有効の場合、フレームの開始時にプレイヤーをゲーマーサービスに接続します。",
+		"Connect at start" : "開始時に接続",
+		"Connect to Gamer Services" : "ゲーマーサービスに接続",
+		"Connected to Gamer Services..." : "ゲーマーサービスに接続済み...",
+		"Enter 0 for local players (+ online), and 1 for online only" : "ローカルプレイヤー (+ オンライン) は 0 を、オンラインのみは 1 を入力します",
+		"Enter one of the presence describers as listed in the object's documentation" : "オブジェクトのドキュメントに記載されているプレゼンス文字列をいずれか 1 つを入力します",
+		"Enter the number of players to sign in" : "サインインするプレイヤーの数を入力します",
+		"Enter the number of players you want to sign in" : "サインインしたいプレイヤーの数を入力します",
+		"Enter the player index, 1, 2, 3 or 4" : "プレイヤーインデックス (1、2、3 または 4) を入力します",
+		"Enter the value you wish to associate to the presence string" : "プレゼンス文字列に関連付けたい値を入力します",
+		"Gamer Services" : "ゲーマーサービス",
+		"Gamer Services are connected" : "ゲーマーサービスが接続済み",
+		"Gamer Services functions for XNA applications." : "XNA アプリ用のゲーマーサービス機能",
+		"Number of players" : "プレイヤー数",
+		"Online profiles" : "オンラインプロファイル",
+		"Player %i" : "プレイヤー %i",
+		"Player can purchase game" : "プレイヤーはゲームの購入が可能",
+		"Player index" : "プレイヤーインデックス",
+		"Player(s) has(ve) signed in" : "プレイヤーがサインイン済み",
+		"Players have signed in." : "プレイヤーがサインイン済みです。",
+		"Set presence of player #%0 to %1" : "プレイヤー #%0 のプレゼンスを %1 に変更",
+		"Set presence value of player #0 to %1" : "プレイヤー #0 のプレゼンス値を %1 に変更",
+		"Show Marketplace for player %0" : "プレイヤー %0 にマーケットプレイスを表示",
+		"Show Marketplace for player %i" : "プレイヤー %i にマーケットプレイスを表示",
+		"Sign In" : "サインイン",
+		"Sign In at start" : "開始時にサインイン",
+		"Sign in for %0 panes, online %1" : "%0 ペイン、オンライン %1 にサインイン",
+		"Simulate purchase ability" : "購入機能をシミュレート"
+	},
+	"menu_20000" : {
+		"Actions" : "アクション",
+		"Connect" : "接続",
+		"Set presence" : "プレゼンスを変更",
+		"Set presence value" : "プレゼンス値を変更",
+		"Show Marketplace" : "マーケットプレイスを表示",
+		"Sign in" : "サインイン"
+	},
+	"menu_20001" : {
+		"Are Gamer Services connected?" : "ゲーマーサービスが接続されている？",
+		"Can player purchase game?" : "プレイヤーはゲームを購入できる？",
+		"Conditions" : "条件",
+		"Has player signed in?" : "プレイヤーがサインイン済み？"
+	},
+	"menu_20002" : {
+		"Expressions" : "数式",
+		"Get number of players signed in" : "サインイン済みのプレイヤー数を取得",
+		"Get player alias" : "プレイヤーのエイリアスを取得",
+		"Get player presence" : "プレイヤーのプレゼンスを取得",
+		"Get player presence value" : "プレイヤーのプレゼンス値を取得"
+	}
+}

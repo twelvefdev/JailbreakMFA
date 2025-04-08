@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+<link rel="stylesheet" href="general.css" type="text/css" />
+<script src="script.js"></script>
+</head>
+<body leftmargin="25" topmargin="25">
+
+
+
+<h1>Setup box</h1>
+
+<a href="main.html">Introduction to AGBO</a> - <a href="waystodisplay.html">Ways to display bricks</a> - 
+<a href="setupbox.html">The setup box</a> - <a href="xtralooping.html">Extra looping</a>
+<hr>
+
+
+<map name="Map">
+<area shape="rect" href="#size" coords="20,50 170,100" onclick="highlight('size')">
+<area shape="rect" href="#minconnected" coords="20,100 170,145" onclick="highlight('minconnected')">
+<area shape="rect" href="#movefixed" coords="220,58 389,79" onclick="highlight('movefixed')">
+<area shape="rect" href="#triggeronmoved" coords="220,80 390,105" onclick="highlight('triggeronmoved')">
+<area shape="rect" href="#triggerdeleted" coords="220,105 390,130" onclick="highlight('triggerdeleted')">
+<area shape="rect" href="#origin" coords="25,176 192,217" onclick="highlight('origin')">
+<area shape="rect" href="#celldimensions" coords="25,221 227,263" onclick="highlight('celldimensions')">
+<area shape="rect" href="#aboutme" coords="246,163 409,280" onclick="highlight('aboutagbo')">
+</map>
+<img src="setupbox.png" border="0" usemap="#Map" />
+
+<br />
+
+<a id="size" class="about"><b>Initial size of the board</b><br />
+Here you can enter the intitial size of the AGBO board. You can change it later from the event editor.
+</a>
+
+
+
+<a id="minconnected" class="about"><b>Minimum connected bricks</b><br />
+This sets the minimum connected bricks a system must have before AGBO triggers "On found connected" conditions.</a>
+
+
+<a id="origin" class="about"><b>Origin for grid</b><br />
+Here you can change the origin for the easy grid features of AGBO. The values you enter is MMF X and Y coordinates. This is the top left corner of your board.</a>
+
+
+<a id="celldimensions" class="about"><b>Dimensions for cells</b><br />
+Here you can change the width and height of the cells used when using the easy grid features of AGBO.</a>
+
+
+<a id="movefixed" class="about"><b>Move fixed with bricks</b><br />
+When this option is turned on and you do any actions that move the bricks in AGBO, the fixed values you have stored in the board will move along with the bricks. Read more in the general tutorial about displaying the bricks to find out more..</a>
+
+
+<a id="triggeronmoved" class="about"><b>Trigger 'On moved' condition</b><br />
+
+When this option is turned on, the condition "On brick moved" will be triggered when any brick has moved. This is especially usefull if you have active objects representing the AGBO board visually and wants to get notified when an object should be moved.</a>
+
+<a id="triggerdeleted" class="about"><b>Trigger 'On deleted' condition</b><br />
+When this option is turned on, the condition "On brick deleted" will be triggered when any brick has been deleted by any of the actions that could cause bricks to be deleted such as "Delete horizontal line", "Delete vertical line", "Delete brick", "Move brick" (only if you overwrite </a>
+
+
+<a id="aboutme" class="about"></a><div id="aboutagbo"><b>About</b><br />
+Extension made by Anders Riggelsen (Andos)<br />
+Bug reports to: <a href="mailto:anders@pfft.dk">anders@pfft.dk</a>
+
+</div>
+
+<br /><br /><br /><br /><br /><br /><br />
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<title>Text Blitter Documentation</title>
+<style type="text/css">
+@import url(default.css);
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<a name="top"></a>
+<h2>Callback</h2>
+
+<a name="intro"></a><h4><b>Introduction</b></h4>
+
+<p>Callbacks are a widely used method within professional programming. Callbacks allow you to take control and alter how certain events are handled. Callbacks can range from controlling huge to very snall amounts of data and are applyable to most situations.</p>
+
+<p>The use of callbacks within the Text Blitter extension are primarily to control how the extension draws itself within your game or application.</p>
+
+<p>The process which controls the callbacks are very similar to those used in the 'Fast-Loop' functions within Multimedia Fusion. The difference here is that, instead of handling loop iterations, you handling a specific task.</p>
+
+
+<p><font color="red">[ NOTE: <u>Do <b>NOT</b> use the standard actions when handling a callback condition</u>, you will change the internal data that is currently being used to draw the text and it is mostly likely you will crash the application or corrupt the data. (This is runtime only, we dont want you making applications that crash now do we :P)] </font></p>
+
+<p><font color="red">[ NOTE: <u>Callback will <b>NOT</b> work when any animtaions are set. The system is designed to be a replacment for the animation system and cannot work together with it.</u> ] </font></p>
+
+
+<p>Along with the callbacks are specific actions and expressions that give you the power to change properties before they are used to draw the text to the screen.</p>
+
+<a name="imgblt"></a><h4><b>No longer a Text Blitter...</b></h4>
+
+<p>For the clever ones among you, you will notice that having total control over how the text is drawn to the screen gives you the power to turn the extension into what could be called an <b>Image Blitter</b>. You now have the control to choose where on the screen you wish to position the character and where on the character map you wish to grab the image, you can control how wide and how high the image will be, and how much transparency will be used.</>
+
+
+<h4>Info</h4>
+
+<p>Below is a quick reference to what each of the callback conditions do
+  and how you can take control using them.</p>
+<ul>
+  <li><b>On Begin:</b> is called after the initialisation of the drawing has completed,
+    just before the extension prepares to draw the first line. This event is used
+    best for reseting outside variables that monitor the text in the extension and
+    how everything is being drawn. There are currently no specific actions or expressions
+    for this event as there is nothing you can change.<br><br></li>
+  <li><b>On Begin Line:</b> is called after the line has been set up and is about to
+    draw the first character. This event is very generic and with the help of
+    a couple of actions and expressions you can create special effects by moving
+    the lines around.<br><br></li>
+  <li><b>On Character:</b> is called just before the character is being drawn, from
+    this event you have total control over what is displayed, from the destination
+    positions, source positions to the transparency of the image. This event in
+    the most powerfull.<br><br></li>
+  <li><b>On End Line:</b>, is called once the line has finished being drawn, just before
+    the extension is about to move onto the next line. This event has no actions
+    or expressions but gives you a pointer to when the line is finished for use
+    with other things within your application<br><br></li>
+  <li><b>On End:</b> is called when the object has finished drawing its text and about
+    to exit from the drawing routine, this allows to you know that drawing has
+    completed and run any specific tasks.<br><br></li>
+</ul>
+
+<p>
+<br>
+<br>
+Content and Design are Copyright (c) 2001-2002 Christopher Lightfoot. All rights reserved.
+</p>
+
+</body>
+
+</html>

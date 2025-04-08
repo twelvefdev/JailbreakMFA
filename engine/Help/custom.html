@@ -1,0 +1,555 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>The Custom Object</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p align="center"><font color="#0000FF" size="6">The Custom
+Object<br>
+</font><font color="#FF0000" size="4">By Matt Galanto</font></p>
+
+<p><font color="#0000FF" size="4"><strong>Index</strong></font></p>
+
+<ul>
+    <li><a href="#legal">Disclaimer</a></li>
+    <li><a href="#basics">The Basics</a></li>
+    <li><a href="#func">Functions</a></li>
+    <li><a href="#conditions">Conditions</a><br>
+        - On Creation of an Instance<br>
+        - On Function<br>
+        - On Destruction of an Instance<br>
+        - On Error</li>
+    <li><a href="#actions">Actions</a><br>
+        - Create Instance<br>
+        - Destroy Instance<br>
+        - Destroy All Instances<br>
+        - Set Default Instance<br>
+        - <em>Specify an Instance</em><br>
+        -&gt; Call a Function<br>
+        -&gt; Set an Integer Variable<br>
+        -&gt; Set a Float Variable<br>
+        -&gt; Set a String Variable<br>
+        - <em>Current Instance</em><br>
+        -&gt; Call a Function<br>
+        -&gt; Set an Integer Variable<br>
+        -&gt; Set a Float Variable<br>
+        -&gt; Set a String Variable<br>
+        - <em>Returns and Loops</em><br>
+        -&gt; Return<br>
+        -&gt; Return an Integer<br>
+        -&gt; Return a Float<br>
+        -&gt; Return a String<br>
+        -&gt; Set Function to Loop<br>
+        - <em>Global Variables</em><br>
+        -&gt; Create a Global Variable<br>
+        -&gt; Set an Integer Variable<br>
+        -&gt; Set a Float Variable<br>
+        -&gt; Set a String Variable<br>
+        - <em>Local Variables</em><br>
+        -&gt; Create a Local Variable<br>
+        -&gt; Set an Integer Variable<br>
+        -&gt; Set a Float Variable<br>
+        -&gt; Set a String Variable<br>
+        - <em>Errors</em><br>
+        -&gt; Generate an Error<br>
+        -&gt; Clear Expression Error Code</li>
+    <li><a href="#expressions">Expressions</a><br>
+        - Slot Data<br>
+        -&gt; Get an Integer from a Slot<br>
+        -&gt; Get a Float from a Slot<br>
+        -&gt; Get a String from a Slot<br>
+        - <em>Specify an Instance</em><br>
+        -&gt; Get an Integer Variable<br>
+        -&gt; Get a Float Variable<br>
+        -&gt; Get a String Variable<br>
+        - <em>Current Instance</em><br>
+        -&gt; Get Name of Instance<br>
+        -&gt; Get an Integer VariableI<br>
+        -&gt; Get a Float Variable<br>
+        -&gt; Get a String Variable<br>
+        - <em>Global Variables</em><br>
+        -&gt; Get an Integer Variable<br>
+        -&gt; Get a Float Variable<br>
+        -&gt; Get a String Variable<br>
+        - <em>Local Variables</em><br>
+        -&gt; Get an Integer Variable<br>
+        -&gt; Get a Float Variable<br>
+        -&gt; Get a String Variable<br>
+        - <em>Errors</em><br>
+        -&gt; Get Current Error Code<br>
+        -&gt; Get Current Expression Error Code<br>
+        - <em>Miscellaneous</em><br>
+        -&gt; Get Loop Index of Current Function<br>
+        -&gt; Get Number of Parameters of Current Function<br>
+        -&gt; Get Return Type of Current Function<br>
+        -&gt; Format a String<br>
+        -&gt; Unformat a String<br>
+        -&gt; Get Number of Selected Objects</li>
+</ul>
+
+<p><a name="legal"></a><font color="#0000FF" size="4"><strong>Disclaimer</strong></font></p>
+
+<p>The author of this extension makes no claims concerning the
+fitness of this extension for any purpose whatsoever, and makes
+no gurantees, written or implied, of its level of security and
+safety to authors or to end users in any respect. You agree to
+use this extension at your own risk and to hold the author
+harmless in any event. </p>
+
+<p><a name="basics"></a><font color="#0000FF" size="4"><strong>The
+Basics</strong></font></p>
+
+<p>The Custom Object may seem like it's overwhelming and
+complicated at first, but I think the time needed to learn the
+object may just be worth it. The first thing I want to do is
+define some terms:<br>
+- <strong>Instance: </strong>An instance is a lot like an object
+in MMF. In fact, I chose <em>instance </em>instead of <em>object</em>
+simply so that things wouldn't be so confusing. Creating an
+instance is just like creating an object in MMF. You can create
+multiple instances of a particular Custom Object just like you
+can create multiple duplicate objects of a particular Active
+Object.<br>
+- <strong>Default Instance:</strong> The default instance can be
+set with the <em>Set Default Instance</em> action. Once set,
+whenever an action, condition, or expression asks for an
+instance, you can use &quot;&quot; to specify the default
+instance. The exception is the &quot;Create Instance&quot; action
+for obvious reasons.<br>
+- <strong>Function:</strong> A function doesn't really have an
+MMF analogy. Basically, when you <em>call or evaluate a function</em>,
+the object executes events corresponding to the particular
+function that has been called. The object continues executing
+these events until a Return action is executed.<br>
+- <strong>Variable:</strong> A variable is just like an Alterable
+Value, Global Value, or Alterable String in MMF. Unlike in MMF,
+avariable in the Custom Object stores three separate values: an
+integer, a float (an integer will a decimal), <em>and</em> a
+string. There are three types of variables.<br>
+- <strong>Global Variable:</strong> A global variable is a
+variable that is accessible by <strong>all</strong> Custom
+Objects (including clones) and at all times. Global variables do
+not keep their data over frames.<br>
+- <strong>Local Variable:</strong> A local variable is the most
+complicated type of variable to explain. A local variable is
+accessible by all instances of a particular Custom Object and is
+not shared with other Custom Objects. Local variables are subject
+to function scope. Basically, what happens is that everytime a
+function is called or when an instance is created or destroyed, a
+fresh set of local variables, consisting of the parameters passed
+to the function, is created. The old local variables are left
+inaccessible until the function returns, at which time, the old
+local variables become accessible again.<br>
+- <strong>Member Variable:</strong> A member variable is
+associated to a particular instance. Each instance has its own
+unique set of member variables. These variables are accessible at
+all times</p>
+
+<p><a name="func"></a><font color="#0000FF" size="4"><strong>Functions</strong></font></p>
+
+<p>Basically, when you <em>call or evaluate a function</em>, the
+object executes events corresponding to the particular function
+that has been called. The object continues executing these events
+until a proper Return action is executed. There are 2 actions and
+6 expressions that call functions. Each has two basic components:
+a function name and a parameter list. I want to take you step-by-step
+through what happens when you call a function:</p>
+
+<ol>
+    <li>If the &quot;Verify Function&quot; option is selected.
+        The object checks to make sure that the function exists.
+        If it does not, an error is generated.</li>
+    <li>The object sets the current instance to the specified
+        instance.</li>
+    <li>The object creates a fresh set off local variables for
+        the newly called function. This set of local variables is
+        empty at this time.</li>
+    <li>The object parses the parameter list and creates local
+        variables named <em>p1, p2, p3,</em> etc. to store each
+        of the parameters. Each variable created from a parameter
+        stores an integer, a float, a string created from the
+        parameter. Each string is then unformatted automatically
+        using the <em>Unformat a String</em> expression. Because
+        of this, all string parameters should be formatted by the
+        <em>Format a String</em> expression (this is NOT done
+        automatically).</li>
+    <li>The object now starts testing the conditions of events
+        with the <em>On Function</em> condition. If all
+        conditions are true, the event is executed.</li>
+    <li>If the &quot;Automatically Loop Functions&quot; option is
+        selected, the object continues cycling through the events
+        until a proper Return action is executed. At this point
+        the current event is finished being executed, the <em>On
+        Function</em> condition is set to return false, and the
+        object finishes its current loop, which should not have
+        anymore events being executed.</li>
+    <li>If the &quot;Automatically Loop Functions&quot; option is
+        notselected, the object cycles through the events until a
+        proper Return action is executed as earlier or until the
+        end of the events at which point an error is generated.
+        The <em>Set Function to Loop</em> action can be used to
+        have the function loop itself at the end of the events.</li>
+    <li>Once the last loop finishes, the local variables of that
+        function are destroyed and the old data (the old local
+        variables and the old current instance) are restored.</li>
+    <li>If an action called the function, execution returns to
+        the event that called the function.</li>
+    <li>If an expression called the function, execution returns
+        to that expression, which returns the value specified in
+        the Return action.</li>
+</ol>
+
+<p>A word about <strong>Patrameter Lists:</strong> Parameter
+lists are comma delimited lists. They should not contain spaces
+unless you want a space in your string. Also, you should use the <em>Format
+a String</em> expression on any strings that you want to pass.
+Otherwise, any backslahes or commas in your string will mess
+things up. String parameters are unformatted automatically by the
+object. Here are some sample parameter lists:</p>
+
+<ul>
+    <li>&quot;0,0.23,2435,0.3232,Hi I'm Matt,90,Yo&quot;</li>
+    <li>&quot;3232,234.5,&quot;+FomatString$(&quot;Custom Object&quot;,
+        &quot;I'm using commas,,,,,,, in this string.&quot;)</li>
+    <li>&quot;Hi,0.2342&quot;</li>
+    <li>&quot;0&quot;</li>
+    <li>&quot;23.45,Word,3232&quot;</li>
+    <li>FomatString$(&quot;Custom Object&quot;, string$(&quot;FileName&quot;))</li>
+</ul>
+
+<p><a name="conditions"></a><font color="#0000FF" size="4"><strong>Conditions</strong></font></p>
+
+<p><strong>On Creation of an Instance</strong><br>
+This condition is used to denote an event that will be executed
+when an instance is created. They are executed right after the
+instance is created. The created instance will be the current
+instance.</p>
+
+<p><strong>On Function</strong><br>
+This condition is used to denote an event that will be executed
+when the specified function is called.</p>
+
+<p><strong>On Destruction of an Instance</strong><br>
+This condition is used to denote an event that will be executed
+when an instance is destroyed. They are executed just <em>before</em>
+the instance is destroyed. The instance to be destroyed will be
+the current instance.</p>
+
+<p><strong>On Error<br>
+</strong>This condition will return true if an error has occured
+in an action or in a condition. Events with this condition will
+be executed as soon as an error occurs in the object. The error
+code for the error will only be available to events with this
+condition. For getting errors in expressions, use the 'Get
+Current Expression Error Code' expression.</p>
+
+<p><a name="actions"></a><font color="#0000FF" size="4"><strong>Actions</strong></font></p>
+
+<p><strong>Create Instance</strong><br>
+This action creates an instance with the specified name. After
+the instance is created, events with the <em>On Creation of an
+Instance</em> condition are executed with the specified
+parameters. A fresh set of local variables are created for the
+execution of these events. You should <em>not</em> use a Return
+with these events.</p>
+
+<p><strong>Destroy Instance</strong><br>
+This action destroys the specified instance. Before the instance
+is destroyed, events with the <em>On Destruction of an Instance</em>
+condition are executed. A fresh set of local variables are
+created for the execution of these events. You should <em>not</em>
+use a Return with these events. If an instance is in use, it
+cannot be destroyed. An error will be generated, and the instance
+will be left alone.</p>
+
+<p><strong>Destroy All Instances</strong><br>
+This action destroys all instances. Before the instance is
+destroyed, events with the <em>On Destruction of an Instance</em>
+condition are executed. A fresh set of local variables are
+created for the execution of these events. You should <em>not</em>
+use a Return with these events. If an instance is in use, it
+cannot be destroyed. An error will be generated, and the instance
+will be left alone.</p>
+
+<p><strong>Set Default Instance</strong><br>
+This action sets the default instance that is used in place of
+&quot;&quot; when an instance is requested. See the <em>Basics</em>
+section for more details.</p>
+
+<p><font color="#000000"><em><strong>Specify an Instance</strong></em></font><br>
+The actions under this menu heading ask you to enter a specific
+instance to be used.</p>
+
+<p><font color="#000000"><em><strong>Current Instance</strong></em></font><br>
+The actions under this menu heading use the current instance. For
+the next four actions, I will refer to this as the specified
+instance. The current instance is only applicable when inside a
+function, creation, or destruction. For whatever instance the
+function, creation, or destruction has been called, that is the
+current instance.</p>
+
+<p><strong>Call a Function</strong><br>
+This action executes events with the <em>On Function</em>
+condition and with the specified function name with the specified
+parameters. The current instance is set to the specified instance
+and a fresh set of local variables is created. The returned value
+is converted to the specified type and stored in the specified
+slot. Slots range from 0 to 10 inclusive. If the return type is 0,
+the return value is ignored and nothing is stored in a slot.
+Return types: 0 = void, 1 = integer, 2 = float, 3 = string.</p>
+
+<p><strong>Set an Integer Variable</strong> (Member Variable)<br>
+This action sets the specified member integer of the specified
+instance to the specified value.</p>
+
+<p><strong>Set a Float Variable</strong> (Member Variable)<br>
+This action sets the specified member float of the specified
+instance to the specified value.</p>
+
+<p><strong>Set a String Variable</strong> (Member Variable)<br>
+This action sets the specified member string of the specified
+instance to the specified string.</p>
+
+<p><strong>Return</strong><br>
+This action halts the current function and returns to the event
+that called the function. The function will literally return at
+the end of the current event!</p>
+
+<p><strong>Return an Integer</strong><br>
+This action halts the current function and returns the specified
+integer to the expression that called the function. The function
+will literally return at the end of the current event!</p>
+
+<p><strong>Return a Float</strong><br>
+This action halts the current function and returns the specified
+float to the expression that called the function. The function
+will literally return at the end of the current event!</p>
+
+<p><strong>Return a String</strong><br>
+This action halts the current function and returns the specified
+string to the expression that called the function. The function
+will literally return at the end of the current event!</p>
+
+<p><strong>Set Function to Loop</strong><br>
+This action sets the function to repeat itself when it finishes
+with its current iteration. The function will not repeat if it
+returns.</p>
+
+<p><strong>Create a Global Variable</strong><br>
+This action creates a global variable of the specified name. The
+default integer is 0, the default float is 0.0, and the default
+string is &quot;&quot;.</p>
+
+<p><strong>Set an Integer Variable</strong> (Global Variable)<br>
+This action sets the specified global integer to the specified
+value.</p>
+
+<p><strong>Set a Float Variable</strong> (Global Variable)<br>
+This action sets the specified global float to the specified
+value.</p>
+
+<p><strong>Set a String Variable</strong> (Global Variable)<br>
+This action sets the specified global string to the specified
+string.</p>
+
+<p><strong>Create a Local Variable</strong><br>
+This action creates a local variable of the specified name. The
+default integer is 0, the default float is 0.0, and the default
+string is &quot;&quot;.</p>
+
+<p><strong>Set an Integer Variable</strong> (Local Variable)<br>
+This action sets the specified local integer to the specified
+value.</p>
+
+<p><strong>Set a Float Variable</strong> (Local Variable)<br>
+This action sets the specified local float to the specified value.</p>
+
+<p><strong>Set a String Variable</strong> (Local Variable)<br>
+This action sets the specified local string to the specified
+string.</p>
+
+<p><strong>Generate an Error<br>
+</strong>This action generates an error with the specified code
+as if the error had occured in a condition or in an action.</p>
+
+<p><strong>Clear Expression Error Code<br>
+</strong>This action sets the current expression error code to 0.</p>
+
+<p><a name="expressions"></a><font color="#0000FF" size="4"><strong>Expressions</strong></font></p>
+
+<p><strong>Get an Integer from a Slot</strong><br>
+<em>IntegerSlot(&quot;Custom Object&quot;, Slot)</em><br>
+This expression returns the integer stored in the specified slot.
+Slot values range from 0 to 10 inclusive. If an invalid slot is
+entered, the return values is 0. There is a separate set of slots
+for each data type, so having a function store a string in slot 1
+will not overwrite the integer and float stored in slot 1.</p>
+
+<p><strong>Get a Float from a Slot</strong><br>
+<em>FloatSlot(&quot;Custom Object&quot;, Slot)</em><br>
+This expression returns the float stored in the specified slot.
+Slot values range from 0 to 10 inclusive. If an invalid slot is
+entered, the return values is 0.0. There is a separate set of
+slots for each data type, so having a function store a string in
+slot 1 will not overwrite the integer and float stored in slot 1.</p>
+
+<p><strong>Get a String from a Slot<br>
+</strong><em>StringSlot$(&quot;Custom Object&quot;, Slot)</em><br>
+This expression returns the string stored in the specified slot.
+Slot values range from 0 to 10 inclusive. If an invalid slot is
+entered, the return values is &quot;&quot;. There is a separate
+set of slots for each data type, so having a function store a
+string in slot 1 will not overwrite the integer and float stored
+in slot 1.</p>
+
+<p><strong>Get an Integer Variable</strong> (Specify an Instance)
+(Member Variable)<br>
+<em>IntOfInstance(&quot;Custom Object&quot;, Instance Name,
+Variable Name)<br>
+</em>This expression returns the specified integer of the
+specified instance.</p>
+
+<p><strong>Get a Float Variable </strong>(Specify an Instance) (Member
+Variable)<br>
+<em>FloatOfInstance(&quot;Custom Object&quot;, Instance Name,
+Variable Name)<br>
+</em>This expression returns the specified float of the specified
+instance.</p>
+
+<p><strong>Get a String Variable</strong> (Specify an Instance) (Member
+Variable)<br>
+<em>StringOfInstance$(&quot;Custom Object&quot;, Instance Name,
+Variable Name)<br>
+</em>This expression returns the specified string of the
+specified instance.</p>
+
+<p><strong>Get Name of Instance</strong> (Current Instance)<br>
+<em>GetInstanceName$(&quot;Custom Object&quot;)<br>
+</em>This expression returns the name of the current instance.</p>
+
+<p><strong>Get an Integer Variable</strong> (Current Instance) (Member
+Variable)<br>
+<em>IntOfCurrInstance(&quot;Custom Object&quot;, Variable Name)<br>
+</em>This expression returns the specified integer of the current
+instance.</p>
+
+<p><strong>Get a Float Variable </strong>(Current Instance) (Member
+Variable)<br>
+<em>FloatOfCurrInstance(&quot;Custom Object&quot;, Variable Name)<br>
+</em>This expression returns the specified float of the current
+instance.</p>
+
+<p><strong>Get a String Variable</strong> (Current Instance) (Member
+Variable)<br>
+<em>StringOfCurrInstance$(&quot;Custom Object&quot;, Variable
+Name)<br>
+</em>This expression returns the specified string of the current
+instance.</p>
+
+<p><strong>Get an Integer Variable</strong> (Global Variable)<br>
+<em>GlobalInt(&quot;Custom Object&quot;, Variable Name)<br>
+</em>This expression returns the specified global integer.</p>
+
+<p><strong>Get a Float Variable </strong>(Global Variable)<br>
+<em>GlobalFloat(&quot;Custom Object&quot;, Variable Name)<br>
+</em>This expression returns the specified global float.</p>
+
+<p><strong>Get a String Variable</strong> (Global Variable)<br>
+<em>GlobalString$(&quot;Custom Object&quot;, Variable Name)<br>
+</em>This expression returns the specified global string.</p>
+
+<p><strong>Get an Integer Variable</strong> (Local Variable)<br>
+<em>LocalInt(&quot;Custom Object&quot;, Variable Name)<br>
+</em>This expression returns the specified local integer.</p>
+
+<p><strong>Get a Float Variable </strong>(Local Variable)<br>
+<em>LocalFloat(&quot;Custom Object&quot;, Variable Name)<br>
+</em>This expression returns the specified local float.</p>
+
+<p><strong>Get a String Variable</strong> (Local Variable)<br>
+<em>LocalString$(&quot;Custom Object&quot;, Variable Name)<br>
+</em>This expression returns the specified local string.</p>
+
+<p><strong>Get Current Error Code</strong><br>
+<em>Error(&quot;Custom Object&quot;)<br>
+</em>This expression returns the current error code resulting
+from an error in an action or condition, which is only meaningful
+when the event has an <em>On Error</em> condition.<br>
+Error Codes:<br>
+0: No errors<br>
+1: Instance does not exists<br>
+2: Functions does not exist<br>
+3: Variable does not exist<br>
+4: Cannot call another function after current function has
+returned<br>
+5: Cannot destroy an instance that is in use<br>
+6: Instance already exists<br>
+7: Variable already exist<br>
+8: Invalid slot number<br>
+9: Cannot return when not in a function or during a creation or
+destruction<br>
+10: Alrady returned from function<br>
+11: Function did not return<br>
+12: Cannot Loop a Function that Has Returned<br>
+13: Cannot have an instance named &quot;&quot;<br>
+14: Cannot refer to current instance when not in a function or
+during a creation or destruction<br>
+15: Invalid fixed value</p>
+
+<p><strong>Get Current Expression Error Code</strong><br>
+<em>ExpressionError(&quot;Custom Object&quot;)<br>
+</em>This expression returns the current error code resulting
+from an error in an expression. The same codes apply here as
+above.</p>
+
+<p><strong>Get Loop Index of Current Function</strong><br>
+<em>FunctionLoopNumber(&quot;Custom Object&quot;)<br>
+</em>This expression returns the loop index of the current
+function. The loop index is the number of times the current
+function has repeated itself. The loop index of the first loop is
+0.</p>
+
+<p><strong>Get Number of Parameters of Current Function</strong><br>
+<em>NumberOfParameters(&quot;Custom Object&quot;)<br>
+</em>This expression returns the number of parameters of the
+current function.</p>
+
+<p><strong>Get Return Type of Current Function<br>
+</strong><em>GetReturnType(&quot;Custom Object&quot;)<br>
+</em>This expression returns the return type of the current
+function:<br>
+-&gt; -1 indicates that there is are currently no active
+functions or that an <em>On Creation</em> or <em>On Destruction</em>
+event is currently in progress.<br>
+-&gt; 0 indicates that no return value is expected.<br>
+-&gt; 1 indicates that an integer is expected.<br>
+-&gt; 2 indicates that a float is expected.<br>
+-&gt; 3 indicates that a string is expected.</p>
+
+<p><strong>Format a String</strong><br>
+<em>FormatString$(&quot;Custom Object&quot;, String)<br>
+</em>This expression takes a string and places escape characters
+before backslashes (\) and commas (,). Doing this allows you to
+use strings with these characters in them as parameters to a
+function. When converting parameters to variables, all parameters
+are Unformatted automatically whether you formatted them or not.</p>
+
+<p><strong>Unformat a String<br>
+</strong><em>UnformatString$(&quot;Custom Object&quot;, String)<br>
+</em>This expression takes a string and removes escape characters.
+When converting parameters to variables, all parameters are
+Unformatted automatically whether you formatted them or not.</p>
+
+<p><strong>Get Number of Selected Objects</strong><br>
+<em>CountSelected(&quot;Custom Object&quot;, Fixed Value)<br>
+</em>This expression counts the number of objects of the
+specified type for which the current conditions are true. The
+type of object is specified by the fixed value if one of those
+objects.</p>
+</body>
+</html>

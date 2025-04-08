@@ -1,0 +1,8 @@
+MIDlet-1: %s,%s,Application.CMIDlet
+MIDlet-Jar-Size: %i
+MIDlet-Jar-URL: %s
+MIDlet-Name: %s
+MIDlet-Vendor: %s
+MIDlet-Version: %s
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0

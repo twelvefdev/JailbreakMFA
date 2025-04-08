@@ -1,0 +1,216 @@
+<html>
+<head>
+<title>Advanced Game Board Object</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="general.css" type="text/css" />
+
+
+
+<h1>Introduction to AGBO</h1>
+
+<a href="main.html">Introduction to AGBO</a> - <a href="waystodisplay.html">Ways to display bricks</a> - 
+<a href="setupbox.html">The setup box</a> - <a href="xtralooping.html">Extra looping</a>
+<hr>
+
+AGBO (Advanced Game Board Object) is just like a two dimensional array you might know from the MMF array object. AGBO can help you make board games faster than before with it's inbuilt searching and looping features. The main use for this object is to search for connected bricks in various ways.
+To make a simple board game with some bricks, you can set a brick type (a value from 1 to -?) at positions of your choice. You can then use AGBO's inbuilt searching features to search for connected bricks. There are different ways to search the board for connected bricks:
+
+<br /><br />
+
+
+Search for connected bricks on all horizontal lines
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+</table>
+
+<br />
+<br />
+Search for connected bricks on all vertical lines
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+</tr>
+</table>
+
+
+<br />
+<br />
+Search for connected bricks on diagonal lines (left-right)
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+</table>
+
+<br />
+<br />
+Search for connected bricks on diagonal lines (right-left)
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+</table>
+
+<br />
+<br />
+
+Search for all complex connected bricks from a given start point.
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="brick"></td>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+</table>
+
+<br /> <br />
+
+When AGBO finds connected bricks, it triggers a condition called "On found connected".
+You can then get the array x and y coordinates of each brick using an index value, or you can use another one of AGBO's features that can loop through all the found bricks in the recent found system of connected bricks. Then each brick found will then trigger another condition called "On found brick". You can then get the currently looped brick's array x and y coordinates and more. This is an easier way than if you manually had to loop through the bricks yourself.<br />
+For example you have a board like shown before:
+<table class="board" cellspacing="1" cellpadding="0">
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+<td class="brick"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+<tr>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+<td class="empty"></td>
+</tr>
+</table>
+When you then search for connected bricks, AGBO starts something similar to a fastloop and triggers this condition each time it finds a system of connected bricks.
+<div class="event">On found connected</div>
+Just like an "On loop" condition does for fastloops.
+<br />
+<br />
+Now when the object has found a connection of bricks, our next task is to find out which bricks it actually found. You can as mentioned before, get the number of found bricks in the currently found connection and then get the X, Y and bricktype out from an index value through the expressions in the submenu "On found connected". (first brick in the connection has index 0 and second has index 1 and so on)<br />
+AGBO also offers an easier way though. In the submenu "On found connected/brick" there is an action to loop though all found bricks. This is also like a fastloop and triggers this condition for every brick in the currently found system:
+<div class="event">On found brick</div>
+<br />
+When this condition is triggered, you can get the current X, Y and brick type from the currently looped brick through the expressions in the submenu "On found brick".
+
+
+</body>
+</html>

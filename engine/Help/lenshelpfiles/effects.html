@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Lens</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="general.css" type="text/css" />
+
+
+
+<h1>Lens effects</h1>
+
+<a href="main.html">Introduction to Lens</a> - 
+<a href="effects.html">Lens effects</a> - 
+<a href="speedissues.html">Speed issues</a>
+<hr />
+
+<p>
+Lens allows many different effects. Its only up to your creativity to make you own effects.
+</p>
+<p>
+In this chapter I'll tell a little bit about which special effects you can make other than the standard zoom and refraction ones:
+</p>
+<br />
+<br />
+
+<b>Water mirror effect</b><br />
+<img src="mirroreffect.png"> <img src="mirroreffectlens.png">
+<p>
+This water/mirror effect is made by using the lens you see on the right. You'll notice there is a slight gradient in it that goes from gray to lighter gray at the bottom. This makes the perspective effect you see. The small distortions in the lens image is what makes it look like water.
+</p>
+<p>
+I made the lens object mirror whats above it, by changing the Y offset multiplier to a negative value. This makes everything in the lens go upside down. When i changed it to a very small value (float) i make Lens stretch the image. I also changed the origin of the lens. The origin is from where on the screen lens should get the source pixels from (relative to the lens' position).
+</p>
+<p>
+In the example file you can see this effect using the scrooling actions to make the water look animated.
+</p>
+
+<br />
+<br />
+
+<b>Bottle upside down</b><br />
+<img src="upsidedownbottle.png">
+<p>
+This is the same bottle from the front page but with zoom effect. I also here changed the Y offset multiplier to a negative value to make the reult lens come out upside down. Just like some bottles do in real life.
+</p>
+
+<br />
+<br />
+
+<b>Vortex/portal effect</b><br />
+<img src="vortex.png">
+<p>
+Interesting result of using a negative height multiplier. Here i used the lens image on the right and gave it the height multiplier -5 in the setup box.
+</p>
+
+<br />
+<br />

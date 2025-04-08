@@ -1,0 +1,324 @@
+#04#
+*0000*
+Välkommen
+
+*0001*
+ 
+
+*0002*
+<b><fontsize=12>Välkommen till #title Installations programmet</font></b>.
+
+*0003*
+Detta program tillåter dig att installera #title på din hårddisk.
+
+*0004*
+Vi rekommenderar kraftigt att innan du fortsätter är säker på att inget annat Windows program är igång och körs.
+
+*0005*
+Om du inte vill installera #title, tryck på 'Avsluta' nu, annars klicka på 'Nästa' för att fortsätta.
+
+*0100*
+Information
+
+*0101*
+Läs informationen nedan.
+
+*0102*
+ 
+
+*0103*
+ 
+
+*0200*
+Licens
+
+*0201*
+Läs licens avtalet nedan.
+
+*0202*
+Läs licens avtalet medan och markera "Jag Godkänner" om du godkänner och håller med dessa regler och bestämmelser.
+
+*0203*
+ 
+
+*0204*
+Ja, jag godkänner med ovanstående regler och bestämmelser
+
+*0205*
+Nej, jag godkänner inte
+
+*0300*
+Katalog
+
+*0301*
+Välj vilken mapp som du vill installera i och klicka på Nästa för att fortsätta.
+
+*0302*
+#Title filer kommer att installeras i följande katalog:
+
+*0303*
+ 
+
+*0304*
+
+
+*0305*
+Klicka på 'Nästa' för att fortsätta.
+
+*0306*
+Hårddisk utrymme som behövs :
+
+*0307*
+Tillgängligt hårddisk utrymme :
+
+*0308*
+%d Mb
+
+*0400*
+Bekräftelse
+
+*0401*
+Du är nu redo att installera #title.
+
+*0402*
+ 
+
+*0403*
+Detta program kommer att installera #title till följande katalog %s.
+
+*0404*
+ 
+
+*0405*
+Klicka på 'Installera' för att starta installationen för #title.
+
+*0500*
+Installerar
+
+*0501*
+Installerar, var god vänta...
+
+*0502*
+Fil :
+
+*0503*
+ 
+
+*0600*
+Avslutning
+
+*0601*
+Installationen är slutfört.
+
+*0602*
+#Title har blivit installerad utan några problem.
+
+*0603*
+Klicka på följande knapp om du vill få den senaste informationen angående #title :
+
+*0604*
+Markera följande val om du vill att ##title skall startas efter installationen avslutas :
+
+*0605*
+#Title har inte blivit installerad på grund av följande anledning :
+%s
+Du måste köra detta program igen för att fullständigt kunna installera #title.
+
+*0606*
+Visa %s
+
+*0607*
+Starta #title
+
+*0608*
+Du måstea starta om datorn innan alla installerade inställningar börjar ta effekt. Klicka på 'Starta om nu' om du vill starta om datorn direkt.
+
+*0609*
+
+
+*0700*
+#Title Installations Program
+
+*0701*
+Välj en installations katalog
+
+*0702*
+Katalogens namn:
+
+*0703*
+Enheter
+
+*0704*
+Kontrollerar...
+
+*0705*
+Ogiltig katalog.
+
+*0706*
+Katalogen du valde existerar inte. Vill du skapa den?
+
+*0707*
+En eller flera filer är skrivskyddade. Är det säkert du vill skriva över dem ändå?
+
+*0708*
+Det gick inte att installera ##title på grund av följande anledning:
+
+*0709*
+Gick inte att komma åt följande fil:
+%s
+
+*0710*
+Följande fil används redan:
+%s
+Stäng programmet och försök igen.
+
+*0711*
+Det finns inte tillräckligt med hårddisk utrymme i katalogen. Vill du försöka ändå?
+
+*0712*
+Slut på utrymme!
+
+*0713*
+Du är för närvarande i installations processen av komponenter.
+Om du avslutar nu, kommer dessa komponenter inte bli rätt installerade.
+Är du säker på att du vill avbryta?
+
+*0714*
+Installationen är inte klar. Är du säker på att du vill avsluta ändå?
+
+*0715*
+Installations guiden avslutade inte installationen på rätt sätt.
+
+*0716*
+Gick inte att öppna följande fil:
+%s
+
+*0717*
+Gick inte skapa följande fil:
+%s
+
+*0718*
+Filen är skadad eller oläsbar:
+%s
+
+*0719*
+Gick inte skriva till följande fil:
+%s
+
+*0720*
+Disken är full!
+
+*0721*
+CRC fel - gick inte installera följande fil:
+%s
+
+*0722*
+Åtkomsten till följande fil nekades:
+%s
+
+*0723*
+uppdaterad utan några problem
+
+*0724*
+bort tagen utan några problem
+
+*0725*
+installerad utan några problem
+
+*0726*
+gick inte ta bort, åtkomst nekad
+
+*0727*
+fel - gick inte ersätta, åtkomst nekad
+
+*0728*
+Sätt in diskett nummer %d.
+
+*0729*
+%s
+Denna fil finns redan och är nyare än filen som håller på att installeras.
+Vill du skriva över den installerade filen ändå?
+
+*0730*
+%s
+Denna fil finns redan och är i ett annat språk än den som finns i installationen.
+Vill du skriva över den installerade filen ändå?
+
+*0731*
+Denna fil innehåller ogiltig data.
+
+*0732*
+Data fel i följande fil:
+%s
+Vill du fortsätta ändå?
+
+*0800*
+< &Tillbaka
+
+*0801*
+&Nästa >
+
+*0802*
+A&vsluta
+
+*0803*
+Installera
+
+*0804*
+OK
+
+*0805*
+&Avbryt
+
+*0806*
+&Starta om
+
+*0900*
+Avinstallera
+
+*0901*
+Detta program kommer att avinstallera #title från din hårddisk. Klicka på OK för att fortsätta.
+
+*0902*
+#Title har blivit avinstallerad från din hårddisk.
+
+*0903*
+&Ja
+
+*0904*
+Ja till &alla
+
+*0905*
+&Nej
+
+*0906*
+Nej t&ill alla
+
+*0907*
+Slut på utrymme!
+
+*0908*
+Ogiltig avinstallation info. Detta program kan inte avinstallera #title.
+
+*0909*
+Följande fil är skrivskyddad:
+%s
+Är du säker på att du vill ta bort filen ändå?
+
+*0910*
+Följande system fil  används uppenbarligen inte längre:
+%s
+Vill du ta bort den?
+
+*0911*
+Tar bort filer...
+
+*0912*
+Tar bort ikoner...
+
+*0913*
+Tar bort kataloger...
+
+*0914*
+Tar bort register nycklar...
+

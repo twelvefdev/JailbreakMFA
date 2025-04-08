@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Lens</title>
+</head>
+<body leftmargin="25" topmargin="25">
+<link rel="stylesheet" href="general.css" type="text/css" />
+
+
+
+<h1>Lens object</h1>
+
+<a href="main.html">Introduction to Lens</a> - 
+<a href="effects.html">Lens effects</a> - 
+<a href="speedissues.html">Speed issues</a>
+<hr />
+
+<p>
+Lens object allows you to distort everything below the lens object like if it was seen through a piece of glass or some water.
+</p>
+<p>
+The effect is controlled by a grayscale image you can edit at edittime from Lens' setupbox or you can import it from your external bitmap files, active objects or overlay objects.
+</p>
+Theese lens images:<br />
+<img src="sourcelens.png"><br />
+Would give theese results:
+<br />
+<img src="results.png"><br /><br />
+
+
+<p>
+The default lens effect is the zoom effect. The brighter the gray color is, the more zoomed the objects and background begind the lens will look like. The darker they get, the more 'zoomed out' it will be. So RGB(128,128,128) (gray) will mean no zoom at all. (transparent color whon't zoom as well)
+</p>
+
+<p>
+There is also another lens effect called "Refraction". It is not like the zoom effect. If your lens is one plain color, it whon't distort the background at all. If there are differences in the lens image, it will dirstort the background. The more difference in color there are from a pixel to its neighbours, the more distortion.
+</p>
+<img src="refraction.png"><br /><br />
+
+<p>
+You can alter the 'amount' of distortion Lens should do to the background by changing the 'Height multiplier'.
+</p>
+<p>
+By default it's set to 1.0<br />
+If you change this to 2.0 it means that you get twice the distortion. You can also set it to lower values for getting a lesser distortion. If you set it to 0, there will be no effect at all.
+</p>
+
+
+</body>
+</html>

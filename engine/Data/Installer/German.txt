@@ -1,0 +1,325 @@
+#04#
+*0000*
+Willkommen...
+
+*0001*
+ 
+
+*0002*
+<b><fontsize=12>Willkommen zu der #title Installation</font></b>
+
+*0003*
+Dieses Installationsprogramm wird nun #title auf Ihrer Festplatte installieren.
+
+*0004*
+Es wird dringend empfohlen, dass Sie alle Windows-Programme beenden, bevor Sie mit der Installation fortfahren.
+
+*0005*
+Falls Sie #title nicht installieren möchten, wählen Sie 'Ende', ansonsten 'Weiter' um fortzufahren.
+
+*0100*
+Information...
+
+*0101*
+Bitte lesen Sie die nachfolgenden Informationen sorgfältig durch.
+
+*0102*
+ 
+
+*0103*
+
+
+*0200*
+Lizenzvereinbarung...
+
+*0201*
+Bitte lesen Sie die Lizenzvereinbarung sorgfältig durch.
+
+*0202*
+Sind Sie mit allen Bedingungen der Lizenzvereinbarung einverstanden?
+
+*0203*
+ 
+
+*0204*
+Ich bin mit den obigen Lizenzvereinbarungen einverstanden.
+
+*0205*
+Ich bin nicht einverstanden.
+
+*0300*
+Installationsverzeichnis wählen...
+
+*0301*
+Wählen Sie ein Verzeichnis für die Installation aus.
+
+*0302*
+Das Installationsprogramm installiert #title in das folgende Verzeichnis:
+
+*0303*
+ 
+
+*0304*
+ 
+
+*0305*
+Wählen Sie 'Weiter' um mit der Installation fortzufahren.
+
+*0306*
+Benötigter Speicherplatz :
+
+*0307*
+Vorhandener Speicherpatz :
+
+*0308*
+%d Mb
+
+*0400*
+Bestätigung...
+
+*0401*
+Sie sind nun bereit um #title zu installieren.
+
+*0402*
+
+
+*0403*
+#title wird in das folgende Verzeichnis installiert:
+%s
+
+*0404*
+ 
+
+*0405*
+Wählen Sie 'Start' um die Installation von #title zu starten.
+
+*0500*
+Installationsfortschritt...
+
+*0501*
+Die Installation wird ausgeführt. Bitte warten ...
+
+*0502*
+Datei :
+
+*0503*
+ 
+
+*0600*
+Ende...
+
+*0601*
+Die Installation ist abgeschlossen.
+
+*0602*
+#title wurde erfolgreich installiert.
+
+*0603*
+Klicken Sie auf den folgenden Button, um Aktuelle Informationen über #title zu erfahren:
+
+*0604*
+Wählen Sie die folgende Option, wenn #title nach Abschluss der Installation gestartet werden soll:
+
+*0605*
+#title wurde nicht vollständig installiert, da folgendes Problem auftrat:
+%s
+Das Installationsprogramm muss neu gestartet werden um die Installation abzuschliessen.
+
+*0606*
+Zeige %s
+
+*0607*
+Starten #title
+
+*0608*
+Windows muss neu gestartet werden, damit die Installation von #title abgeschlossen werden kann.
+Wählen Sie 'Reboot' um Windows jetzt neu zu starten...
+
+*0609*
+
+
+*0700*
+#title Installationsprogramm...
+
+*0701*
+Bitte wählen Sie ein Verzeichnis aus...
+
+*0702*
+Verzeichnis-Name:
+
+*0703*
+Laufwerke
+
+*0704*
+Prüfe...
+
+*0705*
+Ungültiges Verzeichnis.
+
+*0706*
+Das Zielverzeichnis ist nicht vorhanden. Soll es jetzt erstellt werden?
+
+*0707*
+Eine oder mehrere Dateien sind schreibgeschützt. Wollen Sie diese Datei/en dennoch überschreiben?
+
+*0708*
+#title kann nicht installiert werden, aufgrund folgenden Fehlers:
+
+*0709*
+Der Zugriff auf die folgende Datei wurde verweigert:
+%s
+
+*0710*
+Die folgende Datei ist geöffnet:
+%s
+Bitte schliessen sie diese und starten die Installation erneut.
+
+*0711*
+Auf dem Ziellaufwerk ist nicht genügend freier Speicherplatz vorhanden. Wollen Sie dennoch mit der Installation fortfahren?
+
+*0712*
+Zuwenig freier Arbeitsspeicher!
+
+*0713*
+Die Bestandteile von #title werden gerade installiert. Falls Sie nun abbrechen werden diese Bestandteile nicht ordnungsgemäss installiert!
+Sind Sie sicher, dass Sie die Installation abbrechen wollen?
+
+*0714*
+Die Installation von #title ist noch nicht nicht abgeschlossen. Wollen Sie die Installation wirklich beenden?
+
+*0715*
+Das Installation von #title konnte nicht erfolgreich abgeschlossen werden.
+
+*0716*
+Die folgende Datei kann nicht geöffnet werden:
+%s
+
+*0717*
+Die folgende Datei kann nicht erstellt werden:
+%s
+
+*0718*
+Folgende Datei ist beschädigt oder nicht lesbar:
+%s
+
+*0719*
+Die folgende Datei kann nicht geschrieben werden:
+%s
+
+*0720*
+Zuwenig freier Speicher auf dem Laufwerk!
+
+*0721*
+CRC Fehler - Die folgende Datei kann nicht installiert werden:
+%s
+
+*0722*
+Der Zugriff auf die folgende Datei wurde verweigert:
+%s
+
+*0723*
+Erfolgreich ersetzt...
+
+*0724*
+Erfolgreich entfernt...
+
+*0725*
+Erfolgreich installiert...
+
+*0726*
+kann nicht entfernt werden, Vorgang verweigert!
+
+*0727*
+Fehler - kann nicht ersetzt werden, Vorgang verweigert!
+
+*0728*
+Bitte legen Sie die Diskette mit der Nummer: %d ein.
+
+*0729*
+Die Datei: %s
+ist bereits in einer aktuelleren Version vorhanden als die zu installierende Datei.
+Möchten Sie die vorhandene Datei ersetzen?
+
+*0730*
+Die Datei: %s
+ist bereits in einer anderen Sprachversion vorhanden als die zu installierende Datei.
+Möchten Sie die vorhandene Datei ersetzen?
+
+*0731*
+Dieses Installationspaket enthält fehlerhafte Informationen. Sie sollten es erneut aus dem Internet herunterladen.
+
+*0732*
+Datenfehler in der folgenden Datei:
+%s
+Wollen Sie dennoch mit der Installation fortfahren?
+
+*0800*
+< &Zurück
+
+*0801*
+&Weiter >
+
+*0802*
+E&nde
+
+*0803*
+&Start
+
+*0804*
+OK
+
+*0805*
+&Abbrechen
+
+*0806*
+&Reboot
+
+*0900*
+Deinstallation...
+
+*0901*
+Soll #title nun von Ihrer Festplatte entfernt werden? Wählen Sie 'Ja' um fortzufahren oder 'Nein' um abzubrechen.
+
+*0902*
+#title wurde erfolgreich von Ihrer Festplatte entfernt...
+
+*0903*
+&Ja
+
+*0904*
+Ja für &alle
+
+*0905*
+&Nein
+
+*0906*
+N&ein für alle
+
+*0907*
+Zuwenig freier Arbeitsspeicher!
+
+*0908*
+Fehlerhafte Deinstallationsinformationen. #title kann nicht entfernt werden.
+
+*0909*
+Die folgende Datei ist Schreibgeschützt:
+%s
+Soll diese Datei dennoch entfernt werden?
+
+*0910*
+Die folgende Systemdatei wird offenbar nicht benötigt:
+%s
+Soll diese Datei entfernt werden?
+
+*0911*
+Entferne Dateien...
+
+*0912*
+Entferne Icons...
+
+*0913*
+Entferne Verzeichniss(e)...
+
+*0914*
+Entferne Informationen aus der Registry...
+

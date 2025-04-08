@@ -1,0 +1,407 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>The Blowfish Encryption Object</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p align="center"><font color="#0000FF" size="6">The Blowfish
+Encryption Object</font></p>
+
+<p><font color="#0000FF" size="4"><strong>Index</strong></font></p>
+
+<ul>
+    <li><a href="#legal">Disclaimer</a></li>
+    <li><a href="#basics">The Basics</a></li>
+    <li><a href="#files">Files</a></li>
+    <li><a href="#conditions">Conditions</a><br>
+        - <em>Settings</em><br>
+        -&gt; Is Filtering of Characters with Codes 0 to 31
+        Enabled?<br>
+        -&gt; Is Set to Pad End of Files with Zeros?<br>
+        - <em>Encryption Keys</em><br>
+        -&gt; Does a Specific Key Exist?<br>
+        - <em>Files</em><br>
+        -&gt; Is File Being Encrypted/Decrypted?<br>
+        -&gt; Has File Finished Being Encrypted/Decrypted?<br>
+        - <em>Character Filter</em><br>
+        -&gt; Is a Specific Character Being Filtered?<br>
+        -&gt; Is a Specific Character (by Code) Being Filtered?<br>
+        - <em>Errors</em><br>
+        -&gt; Has an Error Occured?</li>
+    <li><a href="#actions">Actions</a><br>
+        - <em>Settings</em><br>
+        -&gt; Enable Filtering of Characters with Codes 0 to 31<br>
+        -&gt; Disable Filtering of Characters with Codes 0 to 31<br>
+        -&gt; Pad End of Files with Zeros<br>
+        -&gt; Do not Pad End of Files with Zeros<br>
+        - <em>Encryption Keys</em><br>
+        -&gt; Add an Encryption Key<br>
+        -&gt; Remove an Encryption Key<br>
+        - <em>Files</em><br>
+        -&gt; Encrypt a File<br>
+        -&gt; Decrypt a File<br>
+        -&gt; Set File Work Time Interval<br>
+        -&gt; Set File Work Percentage Interval<br>
+        - <em>Character Filter</em><br>
+        -&gt; Add Characters to Filter<br>
+        -&gt; Add a Character to Filter by Code<br>
+        -&gt; Remove Characters from Filter<br>
+        -&gt; Remove a Character from Filter by Code<br>
+        - <em>Errors</em><br>
+        -&gt; Clear Expression Error Code</li>
+    <li><a href="#expressions">Expressions</a><br>
+        - <em>Encryption Keys</em><br>
+        -&gt; Create a Random Key<br>
+        - <em>Floats</em><br>
+        -&gt; Convert a Float to an Integer<br>
+        -&gt; Convert an Integer Back to a Float<br>
+        - <em>Encrypting</em><br>
+        -&gt; Encrypt an Integer<br>
+        -&gt; Encrypt a String<br>
+        - <em>Decrypting</em><br>
+        -&gt; Decrypt an Integer<br>
+        -&gt; Decrypt a String<br>
+        - <em>Files</em><br>
+        -&gt; Get File Work Time Interval<br>
+        -&gt; Get File Work Progress<br>
+        - <em>Filtering</em><br>
+        -&gt; Filter a String<br>
+        -&gt; Defilter a String<br>
+        - <em>Errors</em><br>
+        -&gt; Get Current Error Code<br>
+        -&gt; Get Current Expression Error Code</li>
+</ul>
+
+<p><a name="legal"></a><font color="#0000FF" size="4"><strong>Disclaimer</strong></font></p>
+
+<p>This object uses the Blowfish encryption algorithm. Please
+check with your local laws concerning encryption and exportation
+before offering, or selling, any encryption tools for public or
+for private use. The laws concerning the strength and type of
+encryption used vary, and you may be subject to restrictions and
+even criminal penatlies for failure to comply. </p>
+
+<p>The author of this extension makes no claims concerning the
+fitness of this extension for any purpose whatsoever, and makes
+no gurantees, written or implied, of its level of security and
+safety to authors or to end users in any respect. You agree to
+use this extension at your own risk and to hold the author
+harmless in any event. </p>
+
+<p><a name="basics"></a><font color="#0000FF" size="4"><strong>The
+Basics</strong></font></p>
+
+<p>The Blowfish Encryption Object serves basically one purpose:
+data encryption. Given this object's nature, all of its data is
+global. That means that any encryption keys you add on one frame
+will be available on all subsequent frames and sub-applications.
+To use this object, simply add a key (you must add a key before
+using it!). Then use that key to encrypt a string, an integer, or
+a floating point number<sup>*</sup>. You can then send this data
+to a web server or to another application and decrypt it there.<br>
+<sup>*</sup><em>You cannot directly encrypt floats. You must
+first convert them to integers. Then encrypt them, decrypt them,
+then convert them back to floats. You must do this because MMF
+will sometimes round floats, causing huge problems when
+encrypting and decrypting floats directly.</em></p>
+
+<p>Because Blowfish is a binary encryption algorithm, if you
+encrypt a string using it, often times the algorithm will create
+characters that cannot be displayed. To handle this, the object
+converts these characters to %xx, where xx is the code of the
+character in hexadecimal (obviously, % will need to be converted
+as well). You can also add your own characters to filter into %xx.
+After encryption, you can safely display or send this string to
+another application that can safely decrypt the string. NOTE: In
+order to decrypt a string, you DO NOT need to have the same
+filter characters as the application that encrypted the string.</p>
+
+<p>There are some characters that are filtered by this object
+whether you specify them or not because if they're not filtered,
+you will have problems. These characters are the NULL character (code
+0) and the % character (code 37). You can remove them from the
+filter list, but I would not recommend that.</p>
+
+<p><a name="files"></a><font color="#0000FF" size="4"><strong>Files</strong></font></p>
+
+<p>When you use an Encypt or Decrypt a file action, this is what
+happens:<br>
+1) The object makes sure the specified key exists. If not, an
+error is generated. The action is finished.<br>
+2) The object makes sure no files are currently being worked with
+(being encrypted or decrypted). If there is, an error is
+generated. The action is finished.<br>
+3) If there was no error, the object loads the file into memory.
+If the object is unable to open the file, an error is generated.
+The action is finished.<br>
+4) If there is a File Work Time and/or File Work Percentage
+Interval that is enabled, the action is finished. The file will
+start being encrypted or decrypted at the end of current program
+loop. If the there is only a File Work Time interval enabled, the
+file will be worked with for the specified amount of time each
+program loop. If there is only a File Work Percentage Interval
+enabled, the file will be worked with until the specified
+percentage of its total size is completed per loop. For example,
+if the File Work Percentage Interval is 25, 25% of the file is
+loaded per loop. If both are enabled, the file is worked with
+until the first one occurs. If the file is worked with for either
+the specified amount of time or for the specified percentage,
+whichever happens first.<br>
+5) If there is no File Work Time nor File Work Percentage
+Interval that is enabled, the entire file is completed.<br>
+6) When the file is finished, a &quot;File is Done&quot; event is
+generated (this occurs whether or not the file is completed
+during the action).<br>
+7) The action is finished.</p>
+
+<p><a name="conditions"></a><font color="#0000FF" size="4"><strong>Conditions</strong></font></p>
+
+<p><strong>Is Filtering of Characters with Codes 0 to 31 Enabled?</strong><br>
+This condition returns true if &quot;Filtering of Characters with
+Codes 0 to 31&quot; is enabled.</p>
+
+<p><strong>Is Set to Pad End of Files with Zeros?<br>
+</strong>This condition returns true if the object is &quot;Set
+to Pad End of Files with Zeros&quot;.</p>
+
+<p><strong>Does a Specific Key Exist?</strong><br>
+This condition returns true if the specified key exists.</p>
+
+<p><strong>Is File Being Encrypted/Decrypted?</strong><br>
+This condition returns true if a file is currently being
+encrypted or decrypted.</p>
+
+<p><strong>Has File Finished Being Encrypted/Decrypted?<br>
+</strong>This condition is a true event condition. That means
+that events having this condition will be executed as soon as a
+file is done being encrypted or decrypted.</p>
+
+<p><strong>Is a Specific Character Being Filtered?</strong><br>
+This condition returns true if the specified character is set to
+be filtered.</p>
+
+<p><strong>Is a Specific Character (by Code) Being Filtered?<br>
+</strong>This condition returns true if the specified character (specified
+by its ASCII code) is set to be filtered.</p>
+
+<p><strong>Has an Error Occured?</strong><br>
+This condition is a true event condition. That means that events
+having this condition will be executed as soon as an error is
+encountered in an ACTION or CONDITION by the Blowfish Object (and
+only when an error is encountered). It will return true when the
+Error Number is greater than 0, which will always be the case
+when an error is encountered.</p>
+
+<p><a name="actions"></a><font color="#0000FF" size="4"><strong>Actions</strong></font></p>
+
+<p><strong>Enable Filtering of Characters with Codes 0 to 31</strong><br>
+This action enables &quot;Filtering of Characters with Codes 0 to
+31&quot;. When enabled, you will not be able to add or remove
+characters in this range.</p>
+
+<p><strong>Disable Filtering of Characters with Codes 0 to 31</strong><br>
+This action disables &quot;Filtering of Characters with Codes 0
+to 31&quot;. This action automatically adds the NULL character (code
+0) to your filter list.</p>
+
+<p><strong>Pad End of Files with Zeros</strong><br>
+This action sets the object to pad the ends of files with zeros
+if the file size is not a multiple of 8. This is harmless to text
+files, but <em>might</em> cause problems for binary files.</p>
+
+<p><strong>Do not Pad End of Files with Zeros<br>
+</strong>This action sets the object to not pad the ends of files
+with zeros if the file size is not a multiple of 8. Instead, the
+tail end of the file (no more than 7 bytes) is left alone. That
+is, it is not encrypted or decrypted.</p>
+
+<p><strong>Add an Encryption Key</strong><br>
+This action adds the specified encryption key to the list of keys.
+It prepares the key for use in encryption. If this key is longer
+than 56 characters, it is truncated and an error is generated.
+You can access this key by name (case-sensitive) when you wish to
+encrypt something. You must add a key before attempting to use it!</p>
+
+<p><strong>Remove an Encryption Key</strong><br>
+This action removes the specified encryption key from the list of
+keys.</p>
+
+<p><strong>Encrypt a File<br>
+</strong>This action encrypts the specified file using the
+specified key (the key must be added before it can be used here).
+If the file size is not a multiple of 8, zeros are appended to
+make it that way if the object is set to pad with zeros (if this
+will cause problems with your file, take measures to ensure its
+size is a multiple of 8). Otherwise, the tail end of the file (no
+more than 7 bytes) are left unencrypted. NOTE: Files are not
+filtered.</p>
+
+<p><strong>Decrypt a File<br>
+</strong>This action decrypts the specified file using the
+specified key (the key must be added before it can be used here).
+If the file size is not a multiple of 8, zeros are appended to
+make it that way if the object is set to pad with zeros.
+Otherwise, the tail end of the file (no more than 7 bytes) are
+left undecrypted. NOTE: Files are not filtered.</p>
+
+<p><strong>Set File Work Time Interval<br>
+</strong>This action sets the file work time interval to the
+specified time in milliseconds. If this value is less than or
+equal to 0, this option is disabled.</p>
+
+<p><strong>Set File Work Percentage Interval<br>
+</strong>This action sets the file work percentage interval to
+the specified percentage (0-100). If this value is less than or
+equal to 0 or if it is greater than or equal to 100, this option
+is disabled.</p>
+
+<p><strong>Add Characters to Filter</strong><br>
+This action adds all specified characters to the list of
+characters to be filtered. Filtered characters are converted to %xx,
+where xx is the code of the character in hexadecimal, when a
+string is encrypted. They are converted back when decrypted.</p>
+
+<p><strong>Add a Character to Filter by Code</strong><br>
+This action adds a character specified by its ASCII code to the
+list of characters to be filtered. Filtered characters are
+converted to %xx, where xx is the code of the character in
+hexadecimal, when a string is encrypted. They are converted back
+when decrypted.</p>
+
+<p><strong>Remove Characters from Filter</strong><br>
+This action removes all specified characters from the list of
+characters to be filtered.</p>
+
+<p><strong>Remove a Character from Filter by Code</strong><br>
+This action removes a character specified by its ASCII code from
+the list of characters to be filtered.</p>
+
+<p><strong>Clear Expression Error Code<br>
+</strong>This action sets the expression error code to 0.</p>
+
+<p><a name="expressions"></a><font color="#0000FF" size="4"><strong>Expressions</strong></font></p>
+
+<p><strong>Create a Random Key<br>
+</strong><em>RandomKey$(ObjectName, Length)<br>
+</em>This expression creates a random key of the specified length.
+If the length is greater than 56, it is truncated and an error is
+generated. This key is NOT filtered and may contain line breaks
+and unreadable characters. Do not store it in an editbox. Store
+it in a string object so that it can be used later to decrypt. If
+you need to send it to another application, make sure you filter
+it before sending.</p>
+
+<p><strong>Convert a Float to an Integer</strong><br>
+<em>ConvertToInteger(ObjectName, Float)<br>
+</em>This expression converts the specified float into an integer
+so that it can be encrypted in the &quot;Encrypt an Integer&quot;
+expression.</p>
+
+<p><strong>Convert an Integer Back to a Float<br>
+</strong><em>ConvertToFloat(ObjectName, Integer)<br>
+</em>This expression converts the specified integer back into a
+float. You should use this if you used &quot;Convert a Float to
+an Integer&quot; to encrypt a float.</p>
+
+<p><strong>Encrypt an Integer</strong><br>
+<em>EncryptInteger(ObjectName, Key, Integer1, Integer2, Select)<br>
+</em>This expression returns the encrypted integer based on <em>Select</em>.
+It encryptes using <em>Key </em>(the key must be added before it
+can be used here). If <em>Key</em> does not exist an error is
+generated and the un-encrypted version is returned. If <em>Select</em>
+is 2, the encrypted form of <em>Integer2</em> is returned.
+Otherwise, the encrypted form of <em>Integer1</em> is returned.
+You need both encrypted integers to decrypt either of these. The
+reason you need two integers at all is because Blowfish encrypts
+in chunks of 8 bytes. Two integers are exactly 8 bytes.</p>
+
+<p><strong>Encrypt a String</strong><br>
+<em>EncryptString$(ObjectName, Key, String)<br>
+</em>This expression returns the encrypted string. It encryptes
+using <em>Key </em>(the key must be added before it can be used
+here). If <em>Key</em> does not exist an error is generated and
+the un-encrypted version is returned. The string is harmlessly
+padded with NULL characters to ensure that it is a multiple of 8
+characters long. If any filter characters appear in the encrypted
+string, they are replaced by %xx, where xx is the ASCII code of
+the character in hexadecimal.</p>
+
+<p><strong>Decrypt an Integer</strong><br>
+<em>DecryptInteger(ObjectName, Key, Integer1, Integer2, Select)<br>
+</em>This expression returns the decrypted integer based on <em>Select</em>.
+It decryptes using <em>Key </em>(the key must be added before it
+can be used here). If <em>Key</em> does not exist an error is
+generated and the un-decrypted version is returned. If <em>Select</em>
+is 2, the decrypted form of <em>Integer2</em> is returned.
+Otherwise, the decrypted form of <em>Integer1</em> is returned.
+The integers need to be in the same order as when they were
+encrypted. The reason you need two integers at all is because
+Blowfish decrypts in chunks of 8 bytes. Two integers are exactly
+8 bytes.</p>
+
+<p><strong>Decrypt a String</strong><br>
+<em>DecryptString$(ObjectName, Key, String)<br>
+</em>This expression returns the decrypted string. It decryptes
+using <em>Key </em>(the key must be added before it can be used
+here). If <em>Key</em> does not exist an error is generated and
+the un-decrypted version is returned. If any %xx appear in the
+encrypted string, they are replaced by the proper characters
+before the string is decrypted.</p>
+
+<p><strong>Get File Work Time Interval</strong><br>
+<em>FileTimeInterval(ObjectName)</em><br>
+This expression returns the current file work time interval.</p>
+
+<p><strong>Get File Work Percentage Interval</strong><br>
+<em>FilePercentageInterval(ObjectName)</em><br>
+This expression returns the current file work percentage interval.</p>
+
+<p><strong>Get File Size<br>
+</strong><em>FileSize(ObjectName)</em><br>
+This expression returns the file size of the last file
+sucessfully loaded.</p>
+
+<p><strong>Get File Work Progress<br>
+</strong><em>FileProgress(ObjectName)</em><br>
+This expression returns the current progress of encrypting or
+decrypting a file. It returns this as a percentage.</p>
+
+<p><strong>Filter a String</strong><br>
+<em>FilterString$(ObjectName, String)<br>
+</em>This expression returns the string with any filter
+characters replaced by %xx, where xx is the ASCII code of the
+character in hexadecimal.</p>
+
+<p><strong>Defilter a String</strong><br>
+<em>DefilterString$(ObjectName, String)<br>
+</em>This expression returns the string with any %xx replaced by
+the proper characters.</p>
+
+<p><strong>Get Current Error Code<br>
+</strong><em>ErrorCode(ObjectName)<br>
+</em>This expression returns the current error code. This is only
+useful when used with an &quot;Has an Error Occured?&quot;
+condition.<br>
+Error Codes:<br>
+1) Key excedes 56 characters and has been truncated.<br>
+2) Key not found<br>
+3) Key already exists<br>
+4) Character not found in filter list<br>
+5) Invalid character code<br>
+6) Error opening file<br>
+7) Error saving file<br>
+8) Cannot encrypt/decrypt file while already working with a file<br>
+9) Cannot remove key while working with a file<br>
+10) Cannot work with files in Vitalize</p>
+
+<p><strong>Get Current Expression Error Code<br>
+</strong><em>ExpressionErrorCode(ObjectName)<br>
+</em>This expression returns the current expression error code.
+See &quot;Get Current Error Code&quot; for list of error codes.</p>
+</body>
+</html>

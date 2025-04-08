@@ -1,0 +1,1 @@
+Info about Crash can be found in its main example, in the Examples/Crasher folder (Relative to MMF2).

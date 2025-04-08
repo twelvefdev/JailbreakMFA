@@ -1,0 +1,62 @@
+<html>
+
+<head>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<title>Text Blitter Documentation</title>
+<style type="text/css">
+@import url(default.css);
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h2>How The Text Blitter Works</h2>
+
+<p>The text blitter is very complicated extension, and I felt the need to include a section covering its inner workings and hopefully make using it a lot easier.</p>
+
+<h4>The Image</h4>
+<p>You will most likely want to create your own image maps, so below I will discuss how you can go about creating one and the problems you should take into consideration</p>
+
+<p>The image map is basically a bitmap containing pictures of all the characters you wish to use for your text. The characters must all be of the same size and unless you play with the character map, no gaps must appear it in (all the characters must be consecutive)</p>
+
+<p>If you would like to create a base to know where all your characters should appear, then you will be very grateful for the map generation utility which can be accessed from the setup dialog. From here you can enter the order of the characters you wish to appear and the size of the characters. Export the image and work on it by yourself adding your own personal touches</p>
+
+<p>One of the biggest problems with the map generator is that many windows fonts have varied widths and when placed on a grid look strange. Text Blitter currently only supports fixed-width character maps, but hopes to adopt varied-width at a later time. However, the best fonts to use when generating a base are the old system fonts such as 'Fixedsys' and 'Terminal' because they were used as fixed-width fonts. Another font which is also quite useful is 'Courier' which is used throughout many text editors and programming interfaces, because of its fixed-width nature. You will also find smaller fonts work better such as 'Small Fonts', 'Lucida Console' is also a very good choice when used small. However, the choice is up to you.</p>
+
+<p>You may be feeling adventurous and would like to create the image manually using another paint program or already have an image map that you wish to use. Once the image is complete, open the setup dialog, select 'Image' from the right-hand panel and paste the new image accordingly. Then go back to the setup dialog and enter all the new image sizes to the correct values. Finally, from the setup dialog, open the character map editor and enter the new character sizes and character map.</p>
+
+<p>If you feel that making such an image is a very complicated task, there are many places around the Internet that provide bitmap dumps of the old console games. You will find many of these throughout the example files. Things to remember are that the bitmaps were not specifically designed for text Blitter and you may come across a couple of problems: Many have cropped the edge of the image cutting out some of the character's space. The text blitter is unable to fit a full character in its place and wraps around to the next line, all you have to do is increase the canvas size and fill in the gap with the appropriate colour. Sometimes, many will arrange the characters in a strange order, however, if the characters are aligned to a grid simply alter the character map to suit its needs. Check out the examples for a preview of this. Finally, some people choose not to align their characters to a grid. There is no way in the current version that you can assign custom positions for each character, so you will have to arrange the characters in a more appropriate order and position.</p>
+
+<h4>The Map</h4>
+<p>The Map is simply a string of characters instructing the engine on how to find the correct area on the image. The layout of your image depends on how you set the map </p>
+
+<p>The text blitter is designed to be adaptable to any order of characters. </p>
+
+<h4>The Buffer</h4>
+
+<p>The Buffer is an allocated piece of memory used for storing the text within the extension. You have complete control over the size of the buffer (from the setup dialog box). However, if you are working from MMF1.2 the text blitter will not be able to be set strings above 1024 characters in length as MMF1.2 doesn't support it. However, if you use the 'Append Text' action, you will be able to add characters and strings to the text over the 1024 character limit.</p>
+
+<p>If you're lucky enough to have a copy of MMF1.5 - which has no 1024 character limit - you don't need to worry about it.</p>
+
+
+
+
+<h4>The 'Database'</h4>
+<p>Throughout the documentation you will find that i mention little bits of information about the database that is built up around your piece of text.</p>
+
+<p>Every time a property of your text is changed, the extension rebuilds information about where each line may appear, the relative position etc. Then, when everything needs to be drawn it simply picks up the relative values, the current position of the object, scrolling position etc and then draws the text. This as before, is much faster than working out where everything goes every loop and makes the extension much speedier and have no loss of speed in movement.</p>
+
+<p></p>
+
+<h4>Things to Remember</h4>
+<p>The Image offsets don't affect the actual text, only the drawing of it. Therefor altering the offset is much faster than changing other internal settings or changing the text within the extension. As you can see from the advanced animation examples changing the offset of the image is also much easier to handle than trying to cycle through different characters etc.</p>
+
+
+<p>
+<br>
+<br>
+Content and Design are Copyright (c) 2001-2002 Christopher Lightfoot. All rights reserved.
+</p>
+
+</body>
+
+</html>

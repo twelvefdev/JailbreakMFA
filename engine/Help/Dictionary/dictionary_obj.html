@@ -1,0 +1,2151 @@
+
+<HTML>
+<HEAD>
+
+<TITLE>3EE.com On-line Extension Documentation</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LEFTMARGIN="0" TOPMARGIN="0">
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+      
+      
+
+<TABLE CELLPADDING=5 WIDTH="100%"><TR><TD>
+
+
+<TABLE WIDTH="100%">
+<TR>
+<TD VALIGN="top">
+  <B><A NAME="obj_26"><FONT SIZE=4>Dictionary</FONT></A></B><BR><BR>
+
+  
+  
+    <FONT SIZE=2><A HREF="#type_1">Condition</A></FONT><BR>
+  
+    <FONT SIZE=2><A HREF="#type_2">Action</A></FONT><BR>
+  
+    <FONT SIZE=2><A HREF="#type_3">Expression</A></FONT><BR>
+  
+  </TD>
+
+
+  <TD VALIGN="top" ALIGN="right">
+    <IMG SRC="./dictionary_logo.gif" ALT="Dictionary" BORDER=0>
+  </TD>
+
+</TR>
+</TABLE>
+<BR><BR>
+<CENTER>
+<TABLE>
+<TR>
+<TD ALIGN="center">
+  <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=10>
+    <TR>
+      <TD><B><FONT SIZE=2>Author:</FONT></B></TD>
+      <TD><FONT SIZE=2>Third Eye Entertainment</FONT></TD>
+    </TR>
+    <TR>
+      <TD><B><FONT SIZE=2>Version:</FONT></B></TD>
+      <TD><FONT SIZE=2>1.0</FONT></TD>
+    </TR>
+  </TABLE></TD>
+</TR>
+</TABLE>
+<BR><BR>
+</CENTER>
+<FONT SIZE=3>Dictionary Object<BR>
+<BR>
+The Dictionary Object is a specialized object that allows you to do very fast lookups to see if a word exists in a very large collection. For example, if you have 100,000 words stored in a dictionary, you wouldn't want to use a normal array to have to search through an average of 150,000 words just to find one. Even doing a logarithmic search would be time consuming, so the Dictionary object uses a large hash table.<BR>
+<BR>
+Using the object is fairly simple. You can add words individually using Add word and remove them using Remove word, or you can load them from multiple sources (MMF Array, CSV, INI, DA2, etc.). Once you have a word list you can use the condition Word exists to test to see if the word exists or not. If your hash table is large enough you should get an immediate response, without having to wait for the object to parse through large amounts of data. You will get your answer quickly and effeciently.<BR>
+<BR>
+The most notable applicable use would be a spell-checker. You can download a CSV with a list of common English words here:<BR>
+English.zip (0.5MB): <A HREF="http://www.3ee.com/docs/examples/english.zip">http://www.3ee.com/docs/examples/english.zip</A><BR>
+<BR>
+Features<BR>
+<UL><LI>Store an unlimited number of words</LI><BR>
+<LI>Import and export to MMF Array format</LI><BR>
+<LI>Import and export to CSV (comma-delimited text) file format</LI><BR>
+<LI>Import and export to INI file format</LI><BR>
+<LI>Import and export to Dynamic Array 2 format</LI><BR>
+<LI>Re-sizable hash table to tweak performance (speed vs. memory)</LI><BR>
+<LI>Case sensitive and case insensitive string comparison modes</LI><BR>
+<LI>Easy enable/disable switch of wildcard or literal search modes, wildcard supports:<UL><LI>? will match a single character</LI><LI>* will match zero or more characters</LI></UL></LI></UL></FONT>
+<BR><BR>
+
+
+
+
+</TD></TR></TABLE>
+
+    
+
+
+
+  <HR>
+
+  
+  
+  
+
+
+
+
+
+  
+      
+      
+
+      
+
+      <TABLE>
+        <TR>
+          
+            <TD><IMG SRC="./icon_dict.gif" WIDTH="16" HEIGHT="16" BORDER=0></TD><TD><B><A HREF="#obj_26"><FONT SIZE=2>Dictionary</FONT></A></B></TD>
+          
+        </TR>
+      </TABLE>
+      <BR>
+
+      
+
+      
+      <TABLE>
+        <TR><TD COLSPAN=2><B><A NAME="type_1">Condition</A></B></TD></TR>
+        
+        
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_944"><A HREF="#func_944">Word exists</A></A></FONT></TD></TR>
+    
+  
+
+
+      </TABLE>
+      <BR>
+      
+      <TABLE>
+        <TR><TD COLSPAN=2><B><A NAME="type_2">Action</A></B></TD></TR>
+        
+        
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_947"><A HREF="#func_947">Add word</A></A></FONT></TD></TR>
+    
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>File</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_953"><A HREF="#func_953">Load from CSV</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_959"><A HREF="#func_959">Load from Dynamic Array</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_955"><A HREF="#func_955">Load from INI</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_957"><A HREF="#func_957">Load from MMF Array</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_952"><A HREF="#func_952">Save as CSV</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_958"><A HREF="#func_958">Save as Dynamic Array</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_954"><A HREF="#func_954">Save as INI</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_956"><A HREF="#func_956">Save as MMF Array</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_949"><A HREF="#func_949">Remove all words</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_948"><A HREF="#func_948">Remove word</A></A></FONT></TD></TR>
+    
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Settings</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Duplicate Words</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_970"><A HREF="#func_970">Allow duplicates</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_969"><A HREF="#func_969">Disallow duplicates</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Hash Table</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_964"><A HREF="#func_964">Set table size</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>Search Mode</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_967"><A HREF="#func_967">Literal</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_968"><A HREF="#func_968">Wildcards</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+  
+    
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2>String Comparisons</FONT></TD></TR>
+    <TR><TD>&nbsp;&nbsp;</TD><TD>
+      <TABLE CELLSPACING=0 CELLPADDING=1>
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_965"><A HREF="#func_965">Case Insensitive (A == a)</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_966"><A HREF="#func_966">Case Sensitive (A < a)</A></A></FONT></TD></TR>
+    
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+
+        
+        
+      </TABLE>
+    </TD></TR>
+  
+
+
+      </TABLE>
+      <BR>
+      
+      <TABLE>
+        <TR><TD COLSPAN=2><B><A NAME="type_3">Expression</A></B></TD></TR>
+        
+        
+        
+        
+        
+
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_972"><A HREF="#func_972">Get hash table size</A></A></FONT></TD></TR>
+    
+  
+
+  
+    <TR><TD>&nbsp;&nbsp;</TD><TD><FONT SIZE=2><A NAME="f_971"><A HREF="#func_971">Get number of words</A></A></FONT></TD></TR>
+    
+  
+
+
+      </TABLE>
+      <BR>
+      
+
+      
+
+    
+
+
+
+  <HR>
+
+  
+
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_947"><FONT SIZE=4>Add word</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Add word <A HREF=#947_szWord>szWord</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Adds the specified word to the dictionary.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Add word "hello"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="947_szWord">szWord</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A word or phrase.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_947"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_970"><FONT SIZE=4>Allow duplicates</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Allow duplicates</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Allows duplicates of words to be stored in the dictionary. With case insensitive mode on, words such as Hello and hello will be match as the same words, so this may be useful if you'd still like to store both words in the dictionary.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Allow duplicates</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_970"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_965"><FONT SIZE=4>Case Insensitive (A == a)</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Comparisons are case insensitive</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Word searches and matches in the dictionary will be case insensitive, meaning that Hello will match with hello.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Comparisons are case insensitive</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_965"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_966"><FONT SIZE=4>Case Sensitive (A < a)</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Comparisons are case sensitive</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Word searches and matches are case sensitive, meaning that Hello will not match hello. They will be considered different and separate words.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Comparisons are case sensitive</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_966"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_969"><FONT SIZE=4>Disallow duplicates</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disallow duplicates</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Prevents duplicates from being stored in the dictionary.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disallow duplicates</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_969"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_972"><FONT SIZE=4>Get hash table size</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>tableSize(<A HREF=#972_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the size of the hash table for the dictionary.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>tableSize("Dictionary Object")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="972_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_972"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Expression</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_971"><FONT SIZE=4>Get number of words</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>countWords(<A HREF=#971_szObject>szObject</A>)</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns the number of words stored in the dictionary.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>countWords("Dictionary Object")</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="971_szObject">szObject</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Name of object.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_971"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_967"><FONT SIZE=4>Literal</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable wildcards</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>When wildcards are disabled * and ? will match literally against themselves, instead of as wildcards that match any type of character.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Disable wildcards</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_967"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_953"><FONT SIZE=4>Load from CSV</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from CSV <A HREF=#953_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads a set of words from a comma-delimited text file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from CSV "myfile.csv"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="953_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_953"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_959"><FONT SIZE=4>Load from Dynamic Array</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from Dynamic Array <A HREF=#959_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads a set of words from a Dynamic Array 2 file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from Dynamic Array "myfile.dar"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="959_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_959"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_955"><FONT SIZE=4>Load from INI</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from INI <A HREF=#955_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads a set of words from an INI file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from INI "myfile.ini"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="955_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_955"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_957"><FONT SIZE=4>Load from MMF Array</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from MMF Array <A HREF=#957_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Loads a set of words from an MMF 1.5 Array file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Load from MMF Array "myfile.arr"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="957_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_957"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_949"><FONT SIZE=4>Remove all words</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Remove all words</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Removes all words from the dictionary, effectively emptying it.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Remove all words</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_949"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_948"><FONT SIZE=4>Remove word</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Remove word <A HREF=#948_szWord>szWord</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Removes the specified word from the dictionary if it exists.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Remove word "hello"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="948_szWord">szWord</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A word or phrase.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_948"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_952"><FONT SIZE=4>Save as CSV</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as CSV <A HREF=#952_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the dictionary to a comma-delimited file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as CSV "myfile.csv"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="952_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_952"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_958"><FONT SIZE=4>Save as Dynamic Array</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as Dynamic Array <A HREF=#958_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the dictionary to a Dynamic Array 2 file. These words can then be loaded into the Dynamic Array 2 object to perform light database operations.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as Dynamic Array "myfile.dar"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="958_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_958"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_954"><FONT SIZE=4>Save as INI</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as INI <A HREF=#954_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the dictionary to an INI file.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as INI "myfile.ini"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="954_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_954"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_956"><FONT SIZE=4>Save as MMF Array</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as MMF Array <A HREF=#956_szFilename>szFilename</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Saves the dictionary to an MMF 1.5 Array file. This means that these words can then be loaded into an MMF 1.5 Array.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Save as MMF Array "myfile.arr"</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="956_szFilename">szFilename</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>Path to a file.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_956"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_964"><FONT SIZE=4>Set table size</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set table size to <A HREF=#964_nTableSize>nTableSize</A></FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Sets the dictionary hash table size. Because of how the dictionary stores elements, you will generally get better performance by having a large table size (although there isn't a lot of reason to increase it beyond approximately 220000). A smaller table size will use less memory, but may affect performance. A table size of 1 will use the minimum amount of memory but will also result in the poorest performance, especially for the Word exists condition. If you are using case insensitive mode you will probably want to limit to this no more then 110000 to avoid wasting memory.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Set table size to 50000</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="964_nTableSize">nTableSize</A></FONT></TD>
+        <TD><FONT SIZE=2>integer</FONT></TD>
+        <TD><FONT SIZE=2>The size of the table.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_964"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Action</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_968"><FONT SIZE=4>Wildcards</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable wildcards</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enables the use of wildcard characters, specifically * and ?. * will match zero or more characters and ? will match a single character.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Enable wildcards</FONT></TD>
+  </TR>
+
+  
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_968"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+    
+    
+    
+    
+
+
+
+
+
+
+  
+
+      
+      
+
+
+<TABLE CELLPADDING="8" WIDTH="100%">
+<TR>
+<TD BGCOLOR="#DDDDDD" WIDTH="100%"><B><FONT SIZE=2>Condition</FONT></B><BR></TD>
+</TR><TR>
+<TD><B><A NAME="func_944"><FONT SIZE=4>Word exists</FONT></A></B><BR></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE CELLPADDING=5><TR><TD>
+<TABLE>
+
+  <TR>
+
+    
+    
+    
+    
+      
+      
+    
+      
+      
+        
+        
+          
+        
+      
+    
+      
+      
+    
+    
+
+    <TD VALIGN="top"><FONT SIZE=2><B>Syntax:</B></FONT></TD>
+    <TD><FONT SIZE=2>Word <A HREF=#944_szWord>szWord</A> exists</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Comments:</B></FONT></TD>
+    <TD><FONT SIZE=2>Returns TRUE if the specified word exists in the dictionary, FALSE if it doesn't.</FONT></TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Example:</B></FONT></TD>
+    <TD><FONT SIZE=2>Word "hello" exists</FONT></TD>
+  </TR>
+
+  <TR>
+    <TD VALIGN="top"><FONT SIZE=2><B>Arguments:</B></FONT></TD>
+    <TD><TABLE BORDER=1>
+    <TR>
+      <TD><B><FONT SIZE=2>Argument</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Type</FONT></B></TD>
+      <TD><B><FONT SIZE=2>Description</FONT></B></TD>
+    </TR>
+    
+      
+      <TR>
+        <TD><FONT SIZE=2><A NAME="944_szWord">szWord</A></FONT></TD>
+        <TD><FONT SIZE=2>string</FONT></TD>
+        <TD><FONT SIZE=2>A word or phrase.</FONT></TD>
+      </TR>
+    
+    </TABLE></TD>
+  </TR>
+</TABLE>
+</TD></TR></TABLE>
+<BR>
+
+  &nbsp;
+  <A HREF="#f_944"><FONT SIZE="2">Function</FONT></A>
+  <A HREF="#obj_26"><FONT SIZE="2">Object</FONT></A>
+
+
+
+    
+
+
+
+    <HR>
+  
+
+</BODY>
+
+</HTML>
