@@ -89,12 +89,14 @@ tilemode01=Current: Details
 tilemode02=Current: Objects
 
 // Objects & Details
+0=Erase tool.
 1=Detail without collision.
 2=Detail without collision.
 3=Detail without collision.
 4=Detail without collision.
 5=Detail without collision.
 6=Detail without collision.
+100=Erase tool.
 101=Obstacle.
 102=Obstacle.
 103=Obstacle.
