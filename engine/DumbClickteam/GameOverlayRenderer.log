@@ -1,79 +1,37 @@
-Wed Apr 16 19:49:32 2025 UTC - Current process: cs2.exe
-Wed Apr 16 19:49:32 2025 UTC - Module file name: C:\Program Files (x86)\Steam\gameoverlayrenderer64.dll
-Wed Apr 16 19:49:32 2025 UTC - Process ID: 8840
-Wed Apr 16 19:49:32 2025 UTC - GameID = 730, OverlayGameID = 730
-Wed Apr 16 19:49:32 2025 UTC - Failed creating CEF paint event: 2
-Wed Apr 16 19:49:32 2025 UTC - System page size: 4096
-Wed Apr 16 19:49:32 2025 UTC - Failed loading shell32.dll, not hooking ShellExecute calls
-Wed Apr 16 19:49:32 2025 UTC - Hooking SetCursorPos, GetCursorPos, ShowCursor, SetCursor, and GetCursor
-Wed Apr 16 19:49:32 2025 UTC - Modules at GameOverlayRenderer.dll attach
-Wed Apr 16 19:49:32 2025 UTC - 01: cs2.exe - (00007FF72A5E0000 to 00007FF72AA12000)
-Wed Apr 16 19:49:32 2025 UTC - 02: ntdll.dll - (00007FF90B120000 to 00007FF90B380000)
-Wed Apr 16 19:49:32 2025 UTC - 03: KERNEL32.DLL - (00007FF909E90000 to 00007FF909F57000)
-Wed Apr 16 19:49:32 2025 UTC - 04: KERNELBASE.dll - (00007FF908910000 to 00007FF908CDA000)
-Wed Apr 16 19:49:32 2025 UTC - 05: USER32.dll - (00007FF909430000 to 00007FF9095FC000)
-Wed Apr 16 19:49:32 2025 UTC - 06: win32u.dll - (00007FF908D80000 to 00007FF908DA7000)
-Wed Apr 16 19:49:32 2025 UTC - 07: GDI32.dll - (00007FF909300000 to 00007FF90932A000)
-Wed Apr 16 19:49:32 2025 UTC - 08: gdi32full.dll - (00007FF9085C0000 to 00007FF9086F1000)
-Wed Apr 16 19:49:32 2025 UTC - 09: msvcp_win.dll - (00007FF908E70000 to 00007FF908F13000)
-Wed Apr 16 19:49:32 2025 UTC - 10: ucrtbase.dll - (00007FF908470000 to 00007FF9085BB000)
-Wed Apr 16 19:49:32 2025 UTC - 11: IMM32.DLL - (00007FF909200000 to 00007FF90922F000)
-Wed Apr 16 19:49:32 2025 UTC - 12: gameoverlayrenderer64.dll - (00007FF8D9470000 to 00007FF8D9609000)
-Wed Apr 16 19:49:32 2025 UTC - 13: ADVAPI32.dll - (00007FF909240000 to 00007FF9092F2000)
-Wed Apr 16 19:49:32 2025 UTC - 14: msvcrt.dll - (00007FF909150000 to 00007FF9091F9000)
-Wed Apr 16 19:49:32 2025 UTC - 15: sechost.dll - (00007FF9099B0000 to 00007FF909A56000)
-Wed Apr 16 19:49:32 2025 UTC - 16: RPCRT4.dll - (00007FF909A60000 to 00007FF909B76000)
-Wed Apr 16 19:49:32 2025 UTC - 17: ole32.dll - (00007FF909720000 to 00007FF9098B6000)
-Wed Apr 16 19:49:32 2025 UTC - 18: combase.dll - (00007FF90A550000 to 00007FF90A8D2000)
-Wed Apr 16 19:49:32 2025 UTC - 19: OLEAUT32.dll - (00007FF909070000 to 00007FF909146000)
-Wed Apr 16 19:49:32 2025 UTC - 20: PSAPI.DLL - (00007FF908F20000 to 00007FF908F28000)
-Wed Apr 16 19:49:32 2025 UTC - 21: CFGMGR32.dll - (00007FF907EA0000 to 00007FF907EFF000)
-Wed Apr 16 19:49:32 2025 UTC - 22: WINMM.dll - (00007FF8FC300000 to 00007FF8FC336000)
-Wed Apr 16 19:49:32 2025 UTC - ----------------------------
-Wed Apr 16 19:49:36 2025 UTC - Game is using dxgi (dx10/dx11), preparing to hook.
-Wed Apr 16 19:49:36 2025 UTC - hookCreateDXGIFactory called
-Wed Apr 16 19:49:36 2025 UTC - Hooking vtable for factory
-Wed Apr 16 19:49:36 2025 UTC - DXGIFactory2_CreateSwapChain already hooked via IDXGIFactory or IDXGIFactory1
-Wed Apr 16 19:49:36 2025 UTC - hookCreateDXGIFactory1 called
-Wed Apr 16 19:49:36 2025 UTC - Hooking vtable for factory
-Wed Apr 16 19:49:36 2025 UTC - DXGIFactory1_CreateSwapChain already hooked via IDXGIFactory or IDXGIFactory2
-Wed Apr 16 19:49:36 2025 UTC - DXGIFactory2_CreateSwapChain already hooked via IDXGIFactory or IDXGIFactory1
-Wed Apr 16 19:49:36 2025 UTC - Game is using D3D9 or D3D9Ex, preparing to hook.
-Wed Apr 16 19:49:37 2025 UTC - hookCreateDXGIFactory1 called
-Wed Apr 16 19:49:37 2025 UTC - Hooking vtable for factory
-Wed Apr 16 19:49:37 2025 UTC - DXGIFactory1_CreateSwapChain already hooked via IDXGIFactory or IDXGIFactory2
-Wed Apr 16 19:49:37 2025 UTC - DXGIFactory2_CreateSwapChain already hooked via IDXGIFactory or IDXGIFactory1
-Wed Apr 16 19:49:37 2025 UTC - hookDirect3DCreate9 called
-Wed Apr 16 19:49:41 2025 UTC - hookCreateDXGIFactory2 called
-Wed Apr 16 19:49:41 2025 UTC - Hooking vtable for factory
-Wed Apr 16 19:49:41 2025 UTC - DXGIFactory2_CreateSwapChain already hooked via IDXGIFactory or IDXGIFactory1
-Wed Apr 16 19:49:42 2025 UTC - hookCreateDXGIFactory1 called
-Wed Apr 16 19:49:42 2025 UTC - Hooking vtable for factory
-Wed Apr 16 19:49:42 2025 UTC - DXGIFactory1_CreateSwapChain already hooked via IDXGIFactory or IDXGIFactory2
-Wed Apr 16 19:49:42 2025 UTC - DXGIFactory2_CreateSwapChain already hooked via IDXGIFactory or IDXGIFactory1
-Wed Apr 16 19:49:42 2025 UTC - IWrapDXGIFactory::CreateSwapChain called
-Wed Apr 16 19:49:42 2025 UTC - Hooking vtable for swap chain
-Wed Apr 16 19:49:42 2025 UTC - Hooking vtable for swap chain1
-Wed Apr 16 19:49:42 2025 UTC - Hooking vtable for swap chain3
-Wed Apr 16 19:49:42 2025 UTC - Trying to detour d3d11 device
-Wed Apr 16 19:49:42 2025 UTC - Hooking vtable for device
-Wed Apr 16 19:49:42 2025 UTC - Tracking new device: c7052720
-Wed Apr 16 19:49:42 2025 UTC - Tracking new swap chain: cd42e950 (with device: c7052720)
-Wed Apr 16 19:49:42 2025 UTC - Creating D3D11 renderer
-Wed Apr 16 19:49:42 2025 UTC - Initializing Audio...
-Wed Apr 16 19:49:42 2025 UTC - Trying to setup input hook...
-Wed Apr 16 19:49:42 2025 UTC - Set input hook...
-Wed Apr 16 19:49:44 2025 UTC - g_IAudioClient3_InitializeSharedAudioStream - SUCCEEDED
-Wed Apr 16 19:49:44 2025 UTC - Audio client initialized: 0x000001F3F10F7398
-Wed Apr 16 19:49:44 2025 UTC - Device:
-Wed Apr 16 19:49:44 2025 UTC - Audio client mix format:
-Wed Apr 16 19:49:44 2025 UTC - 	format: 65534
-Wed Apr 16 19:49:44 2025 UTC - 	channels: 2
-Wed Apr 16 19:49:44 2025 UTC - 	samples/sec: 48000
-Wed Apr 16 19:49:44 2025 UTC - 	bytes/sec: 384000
-Wed Apr 16 19:49:44 2025 UTC - 	alignment: 8
-Wed Apr 16 19:49:44 2025 UTC - 	bits/sample: 32
-Wed Apr 16 19:49:44 2025 UTC - 	channel mask: 0x3
-Wed Apr 16 19:49:44 2025 UTC - 	data format: {00000003-0000-0010-8000-00AA00389B71}
-Wed Apr 16 19:49:44 2025 UTC - Audio hooked
-Wed Apr 16 19:49:44 2025 UTC - Audio client started: 0x000001F3F10F7398, 1
+Fri Apr 25 18:05:46 2025 UTC - Current process: UnityCrashHandler64.exe
+Fri Apr 25 18:05:46 2025 UTC - Module file name: C:\Program Files (x86)\Steam\gameoverlayrenderer64.dll
+Fri Apr 25 18:05:46 2025 UTC - Process ID: 10392
+Fri Apr 25 18:05:46 2025 UTC - GameID = 3241660, OverlayGameID = 3241660
+Fri Apr 25 18:05:46 2025 UTC - Failed creating CEF paint event: 2
+Fri Apr 25 18:05:46 2025 UTC - System page size: 4096
+Fri Apr 25 18:05:46 2025 UTC - Hooking SetCursorPos, GetCursorPos, ShowCursor, SetCursor, and GetCursor
+Fri Apr 25 18:05:46 2025 UTC - Modules at GameOverlayRenderer.dll attach
+Fri Apr 25 18:05:46 2025 UTC - 01: UnityCrashHandler64.exe - (00007FF67FEA0000 to 00007FF67FFB5000)
+Fri Apr 25 18:05:46 2025 UTC - 02: ntdll.dll - (00007FF8030A0000 to 00007FF803300000)
+Fri Apr 25 18:05:46 2025 UTC - 03: KERNEL32.DLL - (00007FF802980000 to 00007FF802A47000)
+Fri Apr 25 18:05:46 2025 UTC - 04: KERNELBASE.dll - (00007FF800280000 to 00007FF80064A000)
+Fri Apr 25 18:05:46 2025 UTC - 05: USER32.dll - (00007FF801E40000 to 00007FF80200C000)
+Fri Apr 25 18:05:46 2025 UTC - 06: win32u.dll - (00007FF800E70000 to 00007FF800E97000)
+Fri Apr 25 18:05:46 2025 UTC - 07: GDI32.dll - (00007FF8013F0000 to 00007FF80141A000)
+Fri Apr 25 18:05:46 2025 UTC - 08: gdi32full.dll - (00007FF800650000 to 00007FF800781000)
+Fri Apr 25 18:05:46 2025 UTC - 09: msvcp_win.dll - (00007FF800790000 to 00007FF800833000)
+Fri Apr 25 18:05:46 2025 UTC - 10: ucrtbase.dll - (00007FF800900000 to 00007FF800A4B000)
+Fri Apr 25 18:05:46 2025 UTC - 11: SHELL32.dll - (00007FF801710000 to 00007FF801E39000)
+Fri Apr 25 18:05:46 2025 UTC - 12: wintypes.dll - (00007FF800B80000 to 00007FF800CE8000)
+Fri Apr 25 18:05:46 2025 UTC - 13: dbghelp.dll - (00007FFFFD920000 to 00007FFFFDB61000)
+Fri Apr 25 18:05:46 2025 UTC - 14: combase.dll - (00007FF802CA0000 to 00007FF803022000)
+Fri Apr 25 18:05:46 2025 UTC - 15: OLEAUT32.dll - (00007FF801630000 to 00007FF801706000)
+Fri Apr 25 18:05:46 2025 UTC - 16: RPCRT4.dll - (00007FF802010000 to 00007FF802126000)
+Fri Apr 25 18:05:46 2025 UTC - 17: ole32.dll - (00007FF8026B0000 to 00007FF802846000)
+Fri Apr 25 18:05:46 2025 UTC - 18: PSAPI.DLL - (00007FF802B20000 to 00007FF802B28000)
+Fri Apr 25 18:05:46 2025 UTC - 19: ADVAPI32.dll - (00007FF802A50000 to 00007FF802B02000)
+Fri Apr 25 18:05:46 2025 UTC - 20: msvcrt.dll - (00007FF8025B0000 to 00007FF802659000)
+Fri Apr 25 18:05:46 2025 UTC - 21: sechost.dll - (00007FF802320000 to 00007FF8023C6000)
+Fri Apr 25 18:05:46 2025 UTC - 22: VERSION.dll - (00007FFFF1FA0000 to 00007FFFF1FAB000)
+Fri Apr 25 18:05:46 2025 UTC - 23: WININET.dll - (00007FFFED290000 to 00007FFFED513000)
+Fri Apr 25 18:05:46 2025 UTC - 24: IMM32.DLL - (00007FF800F20000 to 00007FF800F4F000)
+Fri Apr 25 18:05:46 2025 UTC - 25: gameoverlayrenderer64.dll - (00007FFF889B0000 to 00007FFF88B49000)
+Fri Apr 25 18:05:46 2025 UTC - 26: CFGMGR32.dll - (00007FFFFFE20000 to 00007FFFFFE7F000)
+Fri Apr 25 18:05:46 2025 UTC - 27: WINMM.dll - (00007FFFF4990000 to 00007FFFF49C6000)
+Fri Apr 25 18:05:46 2025 UTC - ----------------------------
+Fri Apr 25 18:05:46 2025 UTC - GameOverlayRenderer.dll detaching

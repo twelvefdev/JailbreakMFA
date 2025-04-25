@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Masked Edit Documentation</title>
+<style>
+pre {font-size:12px;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p><font face="Tahoma" size="4">Edit Mask Actions:<br></font><font size="2" face="Tahoma"><br>
+
+<b>Set Mask</b><br>
+Sets the <a href='main.htm#mask'>rules</a> for the edit window and erases any current data.<br><br>
+
+<b>Set Data</b><br>
+Sets the data for the edit window. The data is received in one long string. For the mask <pre>[a-z][a-z][a-z] [0-9] {0-99}</pre> you should input data in the following format: abc509<br>
+For number cells, you should always use the number of digits that the highest possible number has, otherwise your data won't be parsed properly.<br>
+For a non-restrictive edit, this action just sets the text of the edit.<br><br>
+
+<b>Set Prompt Character</b><br>
+Sets the character displayed when a cell has no data. By default this is the underscore (_).<br><br>
+
+<b>Set Cell (Character)</b><br>
+Sets the character currently in the specified cell.<br>
+First expression: 0-based cell<br>
+Second expression: character to use<br>
+This action does nothing for a non-restrictive edit.<br><br>
+
+<b>Set Cell (Number)</b><br>
+Sets the number currently in the specified cell.<br>
+First expression: 0-based cell<br>
+Second expression: number to use<br>
+This action does nothing for a non-restrictive edit.<br><br>
+
+</font></p>
+</body>
+</html>

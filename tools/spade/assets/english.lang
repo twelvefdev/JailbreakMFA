@@ -87,6 +87,7 @@ mode_6=Wheel of Fortune
 selecttile=Select a tile:
 tilemode01=Current: Details
 tilemode02=Current: Objects
+goback=Go Back
 
 // Objects & Details
 0=Erase tool.
