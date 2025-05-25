@@ -1,4 +1,5 @@
 // Deokario's dynamic light widget configuration.
+
 [LightShapes]
 Wall1=31,0;0,0;0,31;31,31;
 Wall2=31,0;0,0;0,31;31,31;
