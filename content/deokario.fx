@@ -55,7 +55,7 @@ Blackhole=120
 ControlPoint=120
 
 [LightRGBs]
-Fire=
+Fire=255,215,0
 DoorLeft=
 DoorRight=
 DoorTop=
