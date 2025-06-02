@@ -56,10 +56,10 @@ ControlPoint=120
 
 [LightRGBs]
 Fire=255,215,0
-DoorLeft=
-DoorRight=
-DoorTop=
-DoorBottom=
-CampfireDoor=
-Blackhole=
-ControlPoint=
+DoorLeft=255,0,0
+DoorRight=0,0,255
+DoorTop=0,255,0
+DoorBottom=255,255,0
+CampfireDoor=255,255,255
+Blackhole=255,255,255
+ControlPoint=0,255,255
