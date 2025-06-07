@@ -1,4 +1,4 @@
-// Deokario's dynamic light widget configuration.
+// Deokario's dynamic light widget configuration. Do NOT change this file, unless you know what are you doing.
 
 [LightShapes]
 Wall1=
@@ -64,7 +64,7 @@ CampfireDoor=255,255,255
 Blackhole=255,255,255
 ControlPoint=0,255,255
 
-[AutoShapeDirectories]
+[LightAutoShape]
 sprites\world\wall_1.png
 sprites\world\wall_2.png
 sprites\world\wall_3.png
