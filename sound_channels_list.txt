@@ -1,4 +1,4 @@
-ex. contentdirectory + "audio\ambience1.wav"
+ex. contentdirectory + "audio\flashlight_shake.wav"
 
 #1 - Player footsteps
 #2 - Main Ambience
@@ -12,3 +12,5 @@ ex. contentdirectory + "audio\ambience1.wav"
 #10 - Score Counter
 #11 - Blackhole
 #12 - Hunter
+#13 - Buzzing SFX
+#14 - Stalker Steps
