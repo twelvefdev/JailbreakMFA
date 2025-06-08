@@ -1,0 +1,10 @@
+ex. contentdirectory + "audio\ambience1.wav"
+
+#1 - Player footsteps
+#2 - Main Ambience
+#3 - Inside Rain
+#4 - Thunder & Water drops
+#5 - Flashlight Error
+#6 - Flashlight Overall
+#7 - Camera Flash/Screenshot
+#8 - Campfire Cracks
