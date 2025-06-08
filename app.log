@@ -1,3 +1,12 @@
-[0:0:0:1] App launched.
-[0:0:0:1] Failed to retrieve information from the launcher.
-[0:0:0:1] Closing app.
+[0:0:0:0] App launched.
+[0:0:0:0] Successfully retrieved information from the launcher.
+[0:0:0:7] Internet connection succeed.
+[0:0:0:57] Build is up to date.
+[0:0:0:57] Checking directories: fusion.png
+[0:0:0:57] Checking directories: game.png
+[0:0:0:57] Checking directories: audio\ambience1.wav
+[0:0:0:57] Checking directories: audio\ambience2.wav
+[0:0:0:57] Checking directories: audio\title.wav
+[0:0:0:58] ERROR: Missing files.
+[0:0:0:58] ERROR: audio\title.wav
+[0:0:0:58] Closing app.

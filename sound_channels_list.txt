@@ -8,3 +8,7 @@ ex. contentdirectory + "audio\ambience1.wav"
 #6 - Flashlight Overall
 #7 - Camera Flash/Screenshot
 #8 - Campfire Cracks
+#9 - Grab Item
+#10 - Score Counter
+#11 - Blackhole
+#12 - Hunter
