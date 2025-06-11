@@ -14,3 +14,5 @@ ex. contentdirectory + "audio\flashlight_shake.wav"
 #12 - Hunter
 #13 - Buzzing SFX
 #14 - Stalker Steps
+#15 - Stalker Suspicious of Movement Loop
+#16 - Stalker Overall
