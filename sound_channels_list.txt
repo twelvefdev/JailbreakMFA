@@ -1,4 +1,5 @@
-ex. contentdirectory + "audio\flashlight_shake.wav"
+contentdirectory + "audio\flashlight_shake.wav"
+all of these sounds are placeholders, not final in release
 
 #1 - Player footsteps
 #2 - Main Ambience
@@ -16,3 +17,6 @@ ex. contentdirectory + "audio\flashlight_shake.wav"
 #14 - Stalker Steps
 #15 - Stalker Suspicious of Movement Loop
 #16 - Stalker Overall
+#17 - Lunatic Breathing/Screaming
+#18 - Stalker Mimic Sounds 
+#19 - Alert Making Noise Loop
