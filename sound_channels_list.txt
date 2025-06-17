@@ -20,3 +20,7 @@ all of these sounds are placeholders, not final in release
 #17 - Lunatic Breathing/Screaming
 #18 - Stalker Mimic Sounds 
 #19 - Alert Making Noise Loop
+#20 - Creep Overall - No 3D Audio!
+#21 - Creep Detect Movement Loop - 3D Audio
+#22 - Sees You Creep - 3D
+#23 - Mud
