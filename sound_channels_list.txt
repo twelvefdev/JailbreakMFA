@@ -24,3 +24,27 @@ all of these sounds are placeholders, not final in release
 #21 - Creep Detect Movement Loop - 3D Audio
 #22 - Sees You Creep - 3D
 #23 - Mud
+#24 - Music Generally
+#25 - Strange Random Noises
+#26 - Doors Light Buzzing
+#27 - Follower's Counter - Loop
+#29 - Jumpscares & Bully Scream
+#30 - Generator Loop SFX (Group of Objects)
+#31 - Generator SFX Common
+#32 - HUD Overall SFX, Pause
+#33 - Agent Sounds & SMPTE
+#34 - Map Events, for example Items Resupply
+#35 - Physician Steps
+#36 - Physician Paranoid & Knows (Looking for & chase mode)
+#37 - Jester making a fool out of you
+#38 - Terminator Control Point
+#39 - Terminator Heavy Steps
+#40 - Terminator Common Sounds
+#41 - HUD Notifications, Time Limit
+#42 - Items Used & etc. with items related
+#43 - Guardian Sounds
+#44 - Big Door (Campfire) Sounds
+#45 - Camera Zoom & Snap
+#46 - Game Distortion Effects, for example. Burning.
+#47 - TV Noises
+#48 - Decoy On Screen - Loop
