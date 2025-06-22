@@ -26,7 +26,7 @@ all of these sounds are placeholders, not final in release
 #23 - Mud
 #24 - Music Generally/Chase Music
 #25 - Strange Random Noises
-#26 - Doors Light Buzzing
+#26 - Object Interact
 #27 - Follower's Counter - Loop
 #29 - Jumpscares & Bully Scream
 #30 - Generator Loop SFX (Group of Objects)
@@ -48,3 +48,7 @@ all of these sounds are placeholders, not final in release
 #46 - Game Distortion Effects, for example. Burning.
 #47 - TV Noises
 #48 - Decoy On Screen - Loop
+
+
+Might add a turret object in-game. We will see if i can add physician and terminator with only one pathfinding object.
+you surely cannot run this game everywhere xd i have more stable frames in cs2 than this old clusterfuck engine. i dont know why but my frames from 500 drops of out the blue to 200 when i kill somebody sometimes. maps are also not good, THESE DID NOT AGE WELL. they were remade for a reason, nostalgia is a hell of a drug.
