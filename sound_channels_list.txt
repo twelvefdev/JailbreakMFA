@@ -27,11 +27,12 @@ all of these sounds are placeholders, not final in release
 #24 - Music Generally/Chase Music
 #25 - Strange Random Noises
 #26 - Object Interact
-#27 - Follower's Counter - Loop
-#29 - Jumpscares & Bully Scream
-#30 - Generator Loop SFX (Group of Objects)
-#31 - Generator SFX Common
-#32 - HUD Overall SFX, Pause
+#27 - Follower's Country - Loop
+#28 - Bully Scream
+#29 - Pause Ambience
+#30 - HUD Overall SFX, Pause
+#31 - Zoom
+#32 - Empty
 #33 - Agent Sounds & SMPTE
 #34 - Map Events, for example Items Resupply
 #35 - Physician Steps
