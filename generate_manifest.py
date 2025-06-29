@@ -39,7 +39,12 @@ def generuj_manifest(folder_bazowy):
             relatywna_sciezka = relatywna_sciezka.replace("\\", "/")  # dla Windows
 
             hash_pliku = oblicz_hash_pliku(pelna_sciezka)
-            manifest["files"][relatywna_sciezka] = hash_pliku
+            rozmiar_pliku = os.path.getsize(pelna_sciezka)
+
+            manifest["files"][relatywna_sciezka] = {
+                "hash": hash_pliku,
+                "size": rozmiar_pliku
+            }
 
     return manifest
 
