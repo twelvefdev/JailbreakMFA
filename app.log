@@ -1,5 +1,9 @@
 [0:0:0:0] App launched.
 [0:0:0:0] Successfully retrieved information from the launcher.
 [0:0:0:4] Internet connection succeed.
-[0:0:0:5] ERROR: Build is out-of-date.
-[0:0:0:5] Closing app.
+[0:0:0:32] Build is up to date.
+[0:0:0:32] Checking directories: fusion.png
+[0:0:0:32] Checking directories: game.png
+[0:0:0:32] Checking directories: audio\title.wav
+[0:0:0:33] Directiores succeed.
+[0:0:0:33] Done!  (336ms)

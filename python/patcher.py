@@ -8,7 +8,6 @@ import tkinter as tk
 from tkinter import scrolledtext, ttk, messagebox
 from threading import Thread
 import time
-import winsound
 
 def resource_path(relative_path):
     try:
@@ -121,7 +120,7 @@ class PatcherGUI:
         self.root = root
         self.root.title("Jailbreak Updater")
         self.root.geometry("700x500")
-        self.root.iconbitmap(resource_path("ikona.ico"))
+        self.root.iconbitmap(resource_path("./content/up32.ico"))
 
         self.setup_styles()
 
@@ -238,7 +237,6 @@ class PatcherGUI:
             save_version_to_app_inf(manifest.get("version", "0.0.0"))
             self.log("\n✅ Update complete!")
             remove_backups()
-            winsound.MessageBeep(winsound.MB_ICONINFORMATION)
 
         except Exception as e:
             self.log(f"❌ Error: {str(e)}")

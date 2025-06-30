@@ -3,7 +3,7 @@ REM Ścieżka do twojego głównego pliku Pythona
 set MAIN_SCRIPT=patcher.py
 
 REM Ikona i wersja
-set ICON=ikona.ico
+set ICON=./content/up32.ico
 set VERSION=version.txt
 
 REM Opcje PyInstaller:
@@ -16,10 +16,10 @@ REM --add-data - dodaj pliki danych (w formacie "źródło;cel" - separator ; na
 REM Dodajemy pliki danych (bez _internal, bo to osobno)
 REM Tutaj oddzielnie dodajemy wszystkie te trzy pliki do katalogu głównego (.)
 
-pyinstaller --onefile --noconsole --icon=%ICON% --version-file=%VERSION% ^
+pyinstaller --noconsole --icon=%ICON% --version-file=%VERSION% ^
 --add-data "Alagard.ttf;." ^
 --add-data "KiwiSoda.ttf;." ^
---add-data "ikona.ico;." ^
+--add-data "./content/up32.ico;." ^
 %MAIN_SCRIPT%
 
 pause
