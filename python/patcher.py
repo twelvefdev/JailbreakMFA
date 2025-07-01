@@ -7,7 +7,12 @@ import requests
 import tkinter as tk
 from tkinter import scrolledtext, ttk, messagebox
 from threading import Thread
+import tkinter.font as tkFont
+from tkinter import font as tkfont
+import ctypes
+from pathlib import Path
 import time
+from PyInstaller.utils.hooks import collect_data_files
 
 def resource_path(relative_path):
     try:
@@ -30,6 +35,23 @@ APP_INF = os.path.abspath("app.inf")
 
 progress_callback = None
 status_callback = None
+
+def load_custom_fonts():
+    fonts_dir = resource_path("fonts")
+    for font_file in ["Alagard.ttf", "KiwiSoda.ttf"]:
+        path = os.path.join(fonts_dir, font_file)
+        if os.path.exists(path):
+            # Load font permanently for process
+            try:
+                added = ctypes.windll.gdi32.AddFontResourceExW(path, 0x10, 0)
+                if added == 0:
+                    print(f"⚠️ Czcionka nie została załadowana: {font_file}")
+                else:
+                    print(f"✅ Załadowano czcionkę: {font_file}")
+            except Exception as e:
+                print(f"❌ Błąd ładowania {font_file}: {e}")
+        else:
+            print(f"❌ Nie znaleziono czcionki: {path}")
 
 def set_progress_callback(callback):
     global progress_callback
@@ -120,21 +142,23 @@ class PatcherGUI:
         self.root = root
         self.root.title("Jailbreak Updater")
         self.root.geometry("700x500")
-        self.root.iconbitmap(resource_path("./content/up32.ico"))
+        self.root.resizable(False, False)  # Prevent resizing in both directionss
+        self.root.iconbitmap(resource_path("icon.ico"))
 
+        load_custom_fonts()
         self.setup_styles()
 
-        title_font = ("Alagard", 22)
-        log_font = ("Alagard", 11)
-        button_font = ("KiwiSoda", 11)
+        self.title_font = tkFont.Font(family="Alagard", size=22)
+        self.log_font = tkFont.Font(family="Alagard", size=11)
+        self.button_font = tkFont.Font(family="KiwiSoda", size=11)
 
-        self.label = tk.Label(root, text="Jailbreak Updater", font=title_font)
+        self.label = tk.Label(root, text="Jailbreak Updater", font=self.title_font)
         self.label.pack(pady=10)
 
-        self.log_area = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=80, height=20, font=log_font)
+        self.log_area = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=80, height=20, font=self.log_font)
         self.log_area.pack(pady=5)
 
-        self.status_label = tk.Label(root, text="", font=log_font)
+        self.status_label = tk.Label(root, text="", font=self.log_font)
         self.status_label.pack(pady=2)
 
         self.progress = ttk.Progressbar(root, orient=tk.HORIZONTAL, length=600, mode="determinate", style="Custom.Horizontal.TProgressbar")
@@ -143,13 +167,13 @@ class PatcherGUI:
         frame = tk.Frame(root)
         frame.pack(pady=5)
 
-        self.check_button = tk.Button(frame, text="Check for updates", font=button_font, command=self.check_update)
+        self.check_button = tk.Button(frame, text="Check for updates", font=self.button_font, command=self.check_update)
         self.check_button.grid(row=0, column=0, padx=5)
 
-        self.update_button = tk.Button(frame, text="Update", font=button_font, command=self.run_update)
+        self.update_button = tk.Button(frame, text="Update", font=self.button_font, command=self.run_update)
         self.update_button.grid(row=0, column=1, padx=5)
 
-        self.exit_button = tk.Button(frame, text="Exit", font=button_font, command=self.safe_quit)
+        self.exit_button = tk.Button(frame, text="Exit", font=self.button_font, command=self.safe_quit)
         self.exit_button.grid(row=0, column=2, padx=5)
 
         self.running = False

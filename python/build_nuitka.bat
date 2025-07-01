@@ -7,7 +7,7 @@ REM Ścieżka do Twojego głównego pliku Pythona
 set MAIN_SCRIPT=patcher.py
 
 REM Ikona aplikacji
-set ICON=./content/up32.ico
+set ICON=icon.ico
 
 REM ----------------------------------------
 echo [1/2] Kompiluję %MAIN_SCRIPT% ...
@@ -19,7 +19,7 @@ python -m nuitka ^
     --output-filename=JailbreakUpdater.exe ^
     --include-data-files="Alagard.ttf=Alagard.ttf" ^
     --include-data-files="KiwiSoda.ttf=KiwiSoda.ttf" ^
-	--include-data-files=./content/up32.ico=./content/up32.ico ^
+	--include-data-files=icon.ico=./icon.ico ^
     %MAIN_SCRIPT%
 
 echo [2/2] Gotowe!  Wynik: patcher.exe
