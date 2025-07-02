@@ -4,6 +4,7 @@ import hashlib
 import json
 import base64
 import requests
+import bsdiff4
 import tkinter as tk
 from tkinter import scrolledtext, ttk, messagebox
 from threading import Thread
@@ -11,14 +12,9 @@ import tkinter.font as tkFont
 import ctypes
 from pathlib import Path
 import time
+import markdown
 from PyInstaller.utils.hooks import collect_data_files
-
-def resource_path(relative_path):
-    try:
-        base_path = sys._MEIPASS
-    except AttributeError:
-        base_path = os.path.abspath('.')
-    return os.path.join(base_path, relative_path)
+from win10toast import ToastNotifier
 
 _ENCODED_TOKEN = "Z2l0aHViX3BhdF8xMUJNRlg0S1kwVVdLdGs1eGpqSk1aX3FvT1p6MlJ1OFdKZzB5aTU0RlFjcmxUTlE0Mm5IZEluVFdyQjB0a2hzNDVKRlVYV1Q2RHVya3E1OVpE"
 GITHUB_TOKEN = base64.b64decode(_ENCODED_TOKEN).decode()
@@ -49,6 +45,13 @@ def load_custom_fonts():
                 print(f"❌ Błąd ładowania {font_file}: {e}")
         else:
             print(f"❌ Nie znaleziono czcionki: {path}")
+            
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath('.')
+    return os.path.join(base_path, relative_path)
 
 def set_progress_callback(callback):
     global progress_callback
@@ -84,13 +87,23 @@ def download_and_save_file(relative_path):
     url = BASE_URL + relative_path
     local_path = os.path.join(FOLDER_LOKALNY, relative_path)
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
-    r = requests.get(url, headers=headers)
-    if r.status_code == 200:
+    temp_path = local_path + ".part"
+
+    resume_pos = os.path.getsize(temp_path) if os.path.exists(temp_path) else 0
+    if resume_pos > 0:
+        headers["Range"] = f"bytes={resume_pos}-"
+
+    r = requests.get(url, headers=headers, stream=True)
+    if r.status_code in (200, 206):
         os.makedirs(os.path.dirname(local_path), exist_ok=True)
-        with open(local_path, "wb") as f:
-            f.write(r.content)
+        mode = "ab" if "Range" in headers else "wb"
+        with open(temp_path, mode) as f:
+            for chunk in r.iter_content(8192):
+                if chunk:
+                    f.write(chunk)
+        os.replace(temp_path, local_path)
     else:
-        raise RuntimeError(f"Failed to download {relative_path}")
+        raise RuntimeError(f"Failed to download {relative_path} — HTTP {r.status_code}")
 
 def create_backup(path):
     if os.path.exists(path):
@@ -117,10 +130,30 @@ def remove_backups():
 def update_file(file, expected_hash):
     local_path = os.path.join(FOLDER_LOKALNY, file)
     current_hash = calculate_file_hash(local_path)
-    if current_hash != expected_hash:
-        if os.path.exists(local_path):
+    if current_hash == expected_hash:
+        return
+
+    # Delta-patch attempt
+    patch_url = BASE_URL + file + ".patch"
+    try:
+        r = requests.get(patch_url, headers={"Authorization": f"token {GITHUB_TOKEN}"})
+        if r.status_code == 200 and os.path.exists(local_path):
+            patch_bytes = r.content
+            with open(local_path, "rb") as f:
+                original = f.read()
+            new = bsdiff4.patch(original, patch_bytes)
             create_backup(local_path)
-        download_and_save_file(file)
+            with open(local_path, "wb") as f:
+                f.write(new)
+            if calculate_file_hash(local_path) == expected_hash:
+                return  # Success via delta
+    except Exception as e:
+        print(f"⚠️ Patch failed for {file}: {e}")
+
+    # Fallback to full download
+    if os.path.exists(local_path):
+        create_backup(local_path)
+    download_and_save_file(file)
 
 def read_local_version():
     if not os.path.exists(APP_INF):
@@ -140,51 +173,57 @@ class PatcherGUI:
         self.root.title("Jailbreak Updater")
         self.root.geometry("700x500")
         self.root.resizable(False, False)
-        self.root.iconbitmap(resource_path("icon.ico"))
+        self.root.iconbitmap(resource_path("./icon.ico"))
+        self.root.update()  # żeby okno faktycznie istniało i miało swój HWND
+        hwnd = self.root.winfo_id()
 
+        IMAGE_ICON    = 1
+        LR_LOADFROMFILE = 0x00000010
+        WM_SETICON    = 0x0080
+
+        ico_path = resource_path("icon.ico")
+        hicon = ctypes.windll.user32.LoadImageW(0, ico_path,IMAGE_ICON,0, 0,LR_LOADFROMFILE)
+
+        ctypes.windll.user32.SendMessageW(hwnd, WM_SETICON, 1, hicon)  # ICON_BIG
+        ctypes.windll.user32.SendMessageW(hwnd, WM_SETICON, 0, hicon)  # ICON_SMALL
+    
         load_custom_fonts()
         self.setup_styles()
 
-        # Gradient background canvas
-        self.canvas = tk.Canvas(self.root, width=700, height=500)
-        self.canvas.place(x=0, y=0, relwidth=1, relheight=1)
-        self.draw_gradient(self.canvas, "#333333", "#ffffff")
-
-        # Container for widgets
-        self.container = tk.Frame(self.root, bg="", highlightthickness=0)
-        self.container.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
-
-        # Fonts
         self.title_font = tkFont.Font(family="Alagard", size=22)
         self.log_font = tkFont.Font(family="Alagard", size=11)
         self.button_font = tkFont.Font(family="KiwiSoda", size=11)
 
-        # Widgets
-        self.label = tk.Label(self.container, text="Jailbreak Updater", font=self.title_font)
+        self.label = tk.Label(root, text="Jailbreak Updater", font=self.title_font)
         self.label.pack(pady=10)
 
-        self.log_area = scrolledtext.ScrolledText(self.container, wrap=tk.WORD, width=80, height=20, font=self.log_font)
-        self.log_area.pack(pady=5)
+        self.log_area = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=80, height=20, font=self.log_font)
+        self.log_area.pack(pady=10)
 
-        self.status_label = tk.Label(self.container, text="", font=self.log_font)
-        self.status_label.pack(pady=5)
+        self.status_label = tk.Label(root, text="", font=self.log_font)
+        self.status_label.pack(pady=10)
 
-        self.progress = ttk.Progressbar(self.container, orient=tk.HORIZONTAL, length=600, mode="determinate", style="Custom.Horizontal.TProgressbar")
-        self.progress.pack(pady=5)
+        self.progress = ttk.Progressbar(root, orient=tk.HORIZONTAL, length=600, mode="determinate", style="Custom.Horizontal.TProgressbar")
+        self.progress.pack(pady=10)
 
-        btn_frame = tk.Frame(self.container)
-        btn_frame.pack(pady=10)
+        frame = tk.Frame(root)
+        frame.pack(pady=10)
 
-        self.check_button = tk.Button(btn_frame, text="Check for updates", font=self.button_font, command=self.check_update)
+        self.check_button = tk.Button(frame, text="Check for updates", font=self.button_font, command=self.check_update)
         self.check_button.grid(row=0, column=0, padx=5)
-        self.update_button = tk.Button(btn_frame, text="Update", font=self.button_font, command=self.run_update)
+
+        self.update_button = tk.Button(frame, text="Update", font=self.button_font, command=self.run_update)
         self.update_button.grid(row=0, column=1, padx=5)
-        self.exit_button = tk.Button(btn_frame, text="Exit", font=self.button_font, command=self.safe_quit)
-        self.exit_button.grid(row=0, column=2, padx=5)
+
+        self.exit_button = tk.Button(frame, text="Exit", font=self.button_font, command=self.safe_quit)
+        self.exit_button.grid(row=0, column=3, padx=5)
+        
+        self.changelog_button = tk.Button(frame, text="Changelogs", font=self.button_font, command=self.show_changelog)
+        self.changelog_button.grid(row=0, column=2, padx=5)
 
         # Welcome message
         self.log_area.config(state=tk.NORMAL)
-        self.log_area.insert(tk.END, "👋 Welcome to Jailbreak Updater!\n")
+        self.log("👋 Welcome to Jailbreak Updater!\n📣 This tool checks your local files and replaces outdated or modified ones.\n⚠️ Make sure to back up any custom changes before updating.\n")
         self.log_area.config(state=tk.DISABLED)
 
         self.running = False
@@ -192,20 +231,6 @@ class PatcherGUI:
         if not has_internet():
             messagebox.showerror("No internet", "Internet connection is required to start.")
             self.root.destroy()
-
-    def draw_gradient(self, canvas, start_color, end_color):
-        # Vertical gradient
-        r1, g1, b1 = self.root.winfo_rgb(start_color)
-        r2, g2, b2 = self.root.winfo_rgb(end_color)
-        r_ratio = (r2 - r1) / 500
-        g_ratio = (g2 - g1) / 500
-        b_ratio = (b2 - b1) / 500
-        for i in range(500):
-            nr = int(r1 + (r_ratio * i)) >> 8
-            ng = int(g1 + (g_ratio * i)) >> 8
-            nb = int(b1 + (b_ratio * i)) >> 8
-            color = f"#{nr:02x}{ng:02x}{nb:02x}"
-            canvas.create_line(0, i, 700, i, fill=color)
 
     def setup_styles(self):
         self.style = ttk.Style()
@@ -228,6 +253,24 @@ class PatcherGUI:
     def update_status_text(self, text):
         self.status_label.config(text=text)
         self.root.update_idletasks()
+        
+    def show_changelog(self):
+        headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+        try:
+            r = requests.get(BASE_URL + 'CHANGELOG.md', headers=headers, timeout=10)
+            r.raise_for_status()
+            text = r.text
+        except Exception as e:
+            text = f"❌ Nie udało się pobrać changeloga:\n{e}"
+
+        win = tk.Toplevel(self.root)
+        win.title("Changelogs")
+        win.resizable(False, False)
+        win.iconbitmap(resource_path("./icon.ico"))
+        txt = scrolledtext.ScrolledText(win, wrap=tk.WORD, width=80, height=25)
+        txt.insert(tk.END, text)
+        txt.configure(state=tk.DISABLED)
+        txt.pack(padx=10, pady=10)
 
     def run_update(self):
         self.log_area.config(state=tk.NORMAL)
@@ -283,6 +326,8 @@ class PatcherGUI:
 
             save_version_to_app_inf(manifest.get('version', '0.0.0'))
             self.log("\n✅ Update complete!")
+            toaster = ToastNotifier()
+            toaster.show_toast("Jailbreak Updater", "✅ Update complete!", icon_path=resource_path("./icon.ico"), duration=5, threaded=True)
             remove_backups()
 
         except Exception as e:
@@ -321,6 +366,7 @@ class PatcherGUI:
         self.root.quit()
 
 if __name__ == '__main__':
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("com.jailbreak.twelvef")
     root = tk.Tk()
     app = PatcherGUI(root)
     root.mainloop()

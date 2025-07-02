@@ -5,7 +5,7 @@ a = Analysis(
     ['patcher.py'],
     pathex=[],
     binaries=[],
-    datas=[('fonts/Alagard.ttf', 'fonts'), ('fonts/KiwiSoda.ttf', 'fonts'), ('icon.ico', '.')],
+    datas=[('fonts/Alagard.ttf', 'fonts'), ('fonts/KiwiSoda.ttf', 'fonts'), ('./icon.ico', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
