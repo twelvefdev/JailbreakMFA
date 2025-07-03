@@ -2,18 +2,18 @@
 color a0
 for /f "delims=" %%i in (gameversion.md) do set current_version=%%i
 echo Witaj w systemie aktualizacji wersji gry Jailbreak!
-
-REM Potwierdzenie zmiany wersji
-:InputLoop
-echo Jezeli nie chcesz aktualizowac wersji gry dla uzytkownikow, kontynnuj z "N". Jezeli chcesz, kontynnuj z "T".
+echo Narzedzie napisane przez twelvef.
+echo.
+echo Jezeli nie chcesz aktualizowac wersji gry dla uzytkownikow, wpisz "N". Jezeli chcesz, wpisz "T".
 set /p confirm="Decyzja? (T/N): "
 echo.
 
 REM Usuwanie białych znaków z początku i końca (Trimowanie) wprowadzonego tekstu
 for /f "tokens=* delims= " %%a in ("%confirm%") do set confirm=%%a
 
-REM Sprawdzanie inputu
+REM Sprawdzanie, czy wprowadzone dane są poprawne
 if /i "%confirm%"=="T" (
+    REM Przetwarzanie, jeśli odpowiedź to 'T'
     color e0
     echo Prosze o zmiane wersji w kodzie gry przed rozpoczeciem.
     echo Aktualna wersja gry: %current_version%
@@ -39,9 +39,8 @@ if /i "%confirm%"=="T" (
 
     color a0
     echo Proces zakonczony sukcesem. (Zmiana wersji dla wszystkich)
-    pause
-    
 ) else if /i "%confirm%"=="N" (
+    REM Przetwarzanie, jeśli odpowiedź to 'N'
     color 60
     echo Wybrano, aby nie aktualizowac gry dla wszystkich uzytkownikow.
     set /p commit_message="Prosze podac opis zmianki: "
@@ -60,11 +59,11 @@ if /i "%confirm%"=="T" (
 
     color a0
     echo Proces zakonczony sukcesem. (Zmiana wersji dla dewelopera)
-    pause
-
 ) else (
+    REM Jeśli użytkownik poda coś, co nie jest 'T' ani 'N'
     color c0
-    echo Nierozpoznany input: "%confirm%". Prosze podac "T" lub "N".
-    pause
-    goto InputLoop
+    echo Nierozpoznany input: "%confirm%". Proszę podać "T" lub "N".
 )
+
+pause
+exit
