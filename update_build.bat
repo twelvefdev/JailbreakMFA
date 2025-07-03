@@ -40,7 +40,7 @@ if /i "%confirm%"=="T" (
 
     color a0
 	echo.
-    echo Proces zakonczony sukcesem. (Zmiana wersji dla wszystkich)
+    echo Proces zakonczony sukcesem. (dla wszystkich)
 	echo.
 ) 
 if /i "%confirm%"=="N" (
@@ -56,12 +56,12 @@ if /i "%confirm%"=="N" (
     :: Uruchamianie Git CMD
     echo Uruchamiam Git CMD...
     git add .
-    git commit -m "%commit_message%"
+    git commit -m "!commit_message!"
     git push origin main
 
     color a0
 	echo.	
-    echo Proces zakonczony sukcesem. (Zmiana wersji dla dewelopera)
+    echo Proces zakonczony sukcesem. (dla dewelopera)
 	echo.
 )
 
