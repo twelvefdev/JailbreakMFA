@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 color a0
 for /f "delims=" %%i in (gameversion.md) do set current_version=%%i
 echo Witaj w systemie aktualizacji wersji gry Jailbreak!
@@ -17,11 +18,11 @@ if /i "%confirm%"=="T" (
     color e0
     echo Prosze o zmiane wersji w kodzie gry przed rozpoczeciem.
     echo Aktualna wersja gry: %current_version%
-    set /p new_version="Prosze podac nowa wersje gry do wprowadzenia: "
+    set /p nowa_wersja="Prosze podac nowa wersje gry do wprowadzenia: "
 
     REM Skopiuj nową wersję do pliku gameversion.md
-    echo %new_version% > gameversion.md
-    echo Nowa wersja gry zostala wprowadzona: %new_version%
+    echo !nowa_wersja! > gameversion.md
+    echo Nowa wersja gry zostala wprowadzona: %nowa_wersja%
     color 60
     set /p commit_message="Prosze podac opis zmianki: "
     
@@ -34,13 +35,15 @@ if /i "%confirm%"=="T" (
     :: Uruchamianie Git CMD
     echo Uruchamiam Git CMD...
     git add .
-    git commit -m "%commit_message%"
+    git commit -m "!commit_message!"
     git push origin main
 
     color a0
 	echo.
     echo Proces zakonczony sukcesem. (Zmiana wersji dla wszystkich)
 	echo.
+	pause
+	exit
 ) else if /i "%confirm%"=="N" (
     REM Przetwarzanie, jeśli odpowiedź to 'N'
     color 60
