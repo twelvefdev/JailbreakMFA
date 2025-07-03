@@ -1,7 +1,7 @@
 [MapInfo]
 MapName=items_agent
-MapWidth=3000
-MapHeight=3000
+MapWidth=800
+MapHeight=800
 MapGamemodeSupport=Single
 [MapEntity]
 StalkerEnabled=0
