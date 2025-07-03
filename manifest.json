@@ -1,5 +1,5 @@
 {
-    "version": "beta-1.0.0.0",
+    "version": "beta-1.0.0.1",
     "files": {
         "Jailbreak.exe": {
             "hash": "9288c8b42024fb04ac5c43739afbad4fa4fb2ac0709ed81bc9c399be7d1f8965",
@@ -8,6 +8,10 @@
         "JailbreakLauncher.exe": {
             "hash": "5ed69c53fe8be38e79756802971c5769406d5c717ac842ad472432f7df782aa5",
             "size": 3327117
+        },
+        "spade.inf": {
+            "hash": "742db1b2a1609ffd57befa402d6252078773fb7b6677a34839f9c43df7e11bfc",
+            "size": 30
         },
         "content/deokario.fx": {
             "hash": "b7407a84630cf670d61d9989aa9a3e6470efa2ded924cc6d093401b70dc0152a",
@@ -786,12 +790,20 @@
             "size": 583
         },
         "maps/items_agent/items_agent.arr": {
-            "hash": "28604663cf980dc2c2120496f58e1cb0735c77080cd25b4a21d62bd389538729",
+            "hash": "e67023647246e1cab249c04ffd76903ad8ca7720431058508efb152a447c73e5",
             "size": 78430
         },
         "maps/items_agent/items_agent.arrcfg": {
-            "hash": "f535d228f04c282c8d5b25ec83879bd48c1c20842c05355441112c2f7bf60468",
-            "size": 992
+            "hash": "f69f83423563ee5af542b4d3f7222f239e7d65dcf20ebb7ff9f0206d34b0e1d6",
+            "size": 990
+        },
+        "maps/pathfind/pathfind.arr": {
+            "hash": "3742dd205d016ff906b7ea533c1bc4bf51771e857c3065801741db52e965d240",
+            "size": 78430
+        },
+        "maps/pathfind/pathfind.arrcfg": {
+            "hash": "57927f7813be7c2fb7fe33895fb2b902f78144bb1e6da28d2eaf7030fd287c77",
+            "size": 989
         },
         "tools/deokario/guide.exe": {
             "hash": "4640a2ca3da40b1b04a2a8939aa7bfa61251b2f48f44c1b2af0ccfbc6f3e8f9d",
@@ -814,8 +826,8 @@
             "size": 148
         },
         "tools/spade/spade.exe": {
-            "hash": "827a4a0ee9abe54d417e9719562d002af43a77bf72b94eea76ff5e1f556c745b",
-            "size": 4338956
+            "hash": "7328cc210b2f3d41ac250673fbd47d427e4582601faff3cac92cbf7029a79a7b",
+            "size": 4338993
         },
         "tools/spade/spade.inf": {
             "hash": "742db1b2a1609ffd57befa402d6252078773fb7b6677a34839f9c43df7e11bfc",
