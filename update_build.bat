@@ -40,7 +40,7 @@ if /i "%confirm%"=="T" (
 
     color a0
 	echo.
-    echo Proces zakonczony sukcesem. (dla wszystkich)
+    echo Proces zakonczony sukcesem. [dla wszystkich]
 	echo.
 ) 
 if /i "%confirm%"=="N" (
@@ -61,7 +61,7 @@ if /i "%confirm%"=="N" (
 
     color a0
 	echo.	
-    echo Proces zakonczony sukcesem. (dla dewelopera)
+    echo Proces zakonczony sukcesem. [dla dewelopera]
 	echo.
 )
 
