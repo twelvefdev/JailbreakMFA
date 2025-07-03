@@ -47,11 +47,9 @@ if /i "%confirm%"=="T" (
     echo Wybrano, aby nie aktualizowac gry dla wszystkich uzytkownikow.
     set /p commit_message="Prosze podac opis zmianki: "
     
-    :: Uruchamianie skryptu Pythona
+    :: Zmiana lokalizacji
     color f0
-    echo Uruchamiam skrypt Pythona manifest.py...
     cd /d E:/Jailbreak
-    python manifest.py
 
     :: Uruchamianie Git CMD
     echo Uruchamiam Git CMD...
