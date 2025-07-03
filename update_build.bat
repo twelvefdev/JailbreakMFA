@@ -2,6 +2,7 @@
 setlocal enabledelayedexpansion
 color a0
 for /f "delims=" %%i in (gameversion.md) do set current_version=%%i
+for /f "tokens=* delims= " %%a in ("!nowa_wersja!") do set nowa_wersja=%%a
 echo Witaj w systemie aktualizacji wersji gry Jailbreak!
 echo Narzedzie napisane przez twelvef.
 echo.
@@ -21,7 +22,7 @@ if /i "%confirm%"=="T" (
     set /p nowa_wersja="Prosze podac nowa wersje gry do wprowadzenia: "
 
     REM Skopiuj nową wersję do pliku gameversion.md
-    echo !nowa_wersja! > gameversion.md
+    > gameversion.md echo(!nowa_wersja!
     echo Nowa wersja gry zostala wprowadzona: %nowa_wersja%
     color 60
     set /p commit_message="Prosze podac opis zmianki: "
