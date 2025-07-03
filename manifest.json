@@ -1,17 +1,17 @@
 {
-    "version": "beta-1.0.0.0",
+    "version": "beta-1.0.0.1",
     "files": {
         "Jailbreak.exe": {
-            "hash": "669fec61f8794677738fb828bc8a57a7c27254b0e223f9622d8a54a937e59135",
-            "size": 11894567
+            "hash": "de4fadd5d68dc36810ddc937332ef94485d499873e525854c6c535d206112160",
+            "size": 11894503
         },
         "JailbreakLauncher.exe": {
             "hash": "5ed69c53fe8be38e79756802971c5769406d5c717ac842ad472432f7df782aa5",
             "size": 3327117
         },
         "spade.inf": {
-            "hash": "742db1b2a1609ffd57befa402d6252078773fb7b6677a34839f9c43df7e11bfc",
-            "size": 30
+            "hash": "bee66e99f36548affa6254c69b68d348a2f3360b5b6ebb36fe66647fe5f61000",
+            "size": 29
         },
         "content/deokario.fx": {
             "hash": "b7407a84630cf670d61d9989aa9a3e6470efa2ded924cc6d093401b70dc0152a",
