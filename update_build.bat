@@ -38,6 +38,7 @@ if /i "%confirm%"=="T" (
     git push origin main
 
     color a0
+	echo.
     echo Proces zakonczony sukcesem. (Zmiana wersji dla wszystkich)
 	echo.
 ) else if /i "%confirm%"=="N" (
@@ -59,6 +60,7 @@ if /i "%confirm%"=="T" (
     git push origin main
 
     color a0
+	echo.	
     echo Proces zakonczony sukcesem. (Zmiana wersji dla dewelopera)
 	echo.
 )
