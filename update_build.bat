@@ -42,9 +42,8 @@ if /i "%confirm%"=="T" (
 	echo.
     echo Proces zakonczony sukcesem. (Zmiana wersji dla wszystkich)
 	echo.
-	pause
-	exit
-) else if /i "%confirm%"=="N" (
+) 
+if /i "%confirm%"=="N" (
     REM Przetwarzanie, jeśli odpowiedź to 'N'
     color 60
     echo Wybrano, aby nie aktualizowac gry dla wszystkich uzytkownikow.
