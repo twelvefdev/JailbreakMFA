@@ -8,7 +8,7 @@ SCIEZKA_WYNIKOWA = "manifest.json"
 
 # Ignorowane foldery i pliki
 IGNOROWANE_FOLDER = {".git", "_redist", "api", "engine", "__pycache__", "capture", "python"}
-IGNOROWANE_PLIKI = {"generate_manifest.py", "CHANGELOG.md", "manifest.json", ".DS_Store", "app.inf", "app.log", "JailbreakController.pdn", "README.md", "sound_channels_list.txt", "launcher.inf", "Jailbreak Launcher.001", "Jailbreak Launcher.mfa", "Jailbreak Map Editor.001", "Jailbreak Map Editor.mfa", "Jailbreak Motif Generator.001", "Jailbreak Motif Generator.mfa", "Jailbreak Tools.001", "Jailbreak Tools.mfa", "Jailbreak Source Code.001", "Jailbreak Source Code.mfa", "JailbreakUpdater.exe"}
+IGNOROWANE_PLIKI = {"generate_manifest.py", "CHANGELOG.md", "manifest.json", ".DS_Store", "app.inf", "app.log", "JailbreakController.pdn", "README.md", "sound_channels_list.txt", "launcher.inf", "Jailbreak Launcher.001", "Jailbreak Launcher.mfa", "Jailbreak Map Editor.001", "Jailbreak Map Editor.mfa", "Jailbreak Motif Generator.001", "Jailbreak Motif Generator.mfa", "Jailbreak Tools.001", "Jailbreak Tools.mfa", "Jailbreak Source Code.001", "Jailbreak Source Code.mfa", "JBUpdate.exe"}
 IGNOROWANE_ROZSZERZENIA = {".pyc", ".log", ".tmp"}
 
 def oblicz_hash_pliku(sciezka):

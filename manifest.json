@@ -1,9 +1,9 @@
 {
-    "version": "beta-1.0.0",
+    "version": "beta-1.0.0.0",
     "files": {
         "Jailbreak.exe": {
-            "hash": "a195df239027ad9a83e61b29fbd07f47785bf18ee78de5ab6700fafd8f09bf5b",
-            "size": 11956435
+            "hash": "2d4e8883f98b658d4789cfd0f878d030d8e42e3fce814e349759fb58b1f4f382",
+            "size": 11895928
         },
         "JailbreakLauncher.exe": {
             "hash": "5ed69c53fe8be38e79756802971c5769406d5c717ac842ad472432f7df782aa5",
@@ -785,13 +785,13 @@
             "hash": "ed47279856c0ec83326565c239adb7fc968a27506668b13be98fd31b6c83da93",
             "size": 583
         },
-        "maps/ItemsAgent/ItemsAgent.arr": {
-            "hash": "93604bd2960c88854677218d714548409dab455d64024b15d1492d3bbfb28c02",
+        "maps/items_agent/items_agent.arr": {
+            "hash": "28604663cf980dc2c2120496f58e1cb0735c77080cd25b4a21d62bd389538729",
             "size": 78430
         },
-        "maps/ItemsAgent/ItemsAgent.arrcfg": {
-            "hash": "21f10b99eb14b534cdf60749fa3217be4e289e6f29c8604b079567a3af819200",
-            "size": 989
+        "maps/items_agent/items_agent.arrcfg": {
+            "hash": "f535d228f04c282c8d5b25ec83879bd48c1c20842c05355441112c2f7bf60468",
+            "size": 992
         },
         "tools/deokario/guide.exe": {
             "hash": "4640a2ca3da40b1b04a2a8939aa7bfa61251b2f48f44c1b2af0ccfbc6f3e8f9d",
