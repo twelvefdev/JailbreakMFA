@@ -39,6 +39,7 @@ if /i "%confirm%"=="T" (
 
     color a0
     echo Proces zakonczony sukcesem. (Zmiana wersji dla wszystkich)
+	echo.
 ) else if /i "%confirm%"=="N" (
     REM Przetwarzanie, jeśli odpowiedź to 'N'
     color 60
@@ -59,10 +60,7 @@ if /i "%confirm%"=="T" (
 
     color a0
     echo Proces zakonczony sukcesem. (Zmiana wersji dla dewelopera)
-) else (
-    REM Jeśli użytkownik poda coś, co nie jest 'T' ani 'N'
-    color c0
-    echo Nierozpoznany input: "%confirm%". Proszę podać "T" lub "N".
+	echo.
 )
 
 pause
