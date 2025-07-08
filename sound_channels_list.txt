@@ -1,5 +1,4 @@
 contentdirectory + "audio\flashlight_shake.wav"
-all of these sounds are placeholders, not final in release
 
 #1 - Player footsteps
 #2 - Main Ambience
