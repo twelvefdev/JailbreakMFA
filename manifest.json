@@ -1,11 +1,11 @@
 {
-    "version": "beta-1.0.0.0",
+    "version": "beta-1.0.0.1",
     "files": {
         "Jailbreak.exe": {
-            "hash": "d06812e6eafa71aa279d9bc8f1caba1085c5ea8bf19885c58fe396d371a32056",
-            "size": 11894224
+            "hash": "bc6fb3f14c6702ff186e0869695d79b15513cd3c887d5f9ecd259dd2352a90bf",
+            "size": 14150480
         },
-        "JailbreakLauncher.exe": {
+        "JBLauncher.exe": {
             "hash": "5ed69c53fe8be38e79756802971c5769406d5c717ac842ad472432f7df782aa5",
             "size": 3327117
         },
@@ -52,6 +52,10 @@
         "content/audio/chase2.wav": {
             "hash": "b659aebe39257bb47ab6c77dfecd114816c9978c8a73f655b340950f3dcd8221",
             "size": 2808884
+        },
+        "content/audio/correct.wav": {
+            "hash": "fa89c29dc6fa446fde75dded91b25608b8a2b2f2c25224fe41790f7636dc2801",
+            "size": 176444
         },
         "content/audio/creep_detect.wav": {
             "hash": "6c44b2111a4c461c42095d94bbb18b606c60784c768a44a4d92dd19091eef919",
@@ -184,6 +188,10 @@
         "content/audio/hunter_shriek.wav": {
             "hash": "6c7514a55e15b1dbc3330d107649d7aaf1d4c309ec41deafd141ae9cf99b2b8c",
             "size": 195372
+        },
+        "content/audio/incorrect.wav": {
+            "hash": "79eaa758029e708a3bfd4d2cdb44b57d50a29654d04a37bbbec55d5ba0da40cb",
+            "size": 110920
         },
         "content/audio/inside_rain.wav": {
             "hash": "e3cce1af08dbc69f74f712c64b17cb87cbf82abf75cb43aca100cd98171cc3af",
@@ -368,6 +376,10 @@
         "content/audio/strangenoise9.wav": {
             "hash": "7767975c93efa93395ab6a5de1b0c652a9dc22a520b29a9329a4f55f7e817425",
             "size": 309548
+        },
+        "content/audio/test.wav": {
+            "hash": "7dd5600a26de9e8fc56f1fb3aa431fd88f5760760a352a837f1fc99c9eea93f5",
+            "size": 1073812
         },
         "content/audio/throwing_wood.wav": {
             "hash": "fe06862e26eaf45b692340eff352258f082712a1461a82948b171b11f82c69fc",
@@ -557,6 +569,14 @@
             "hash": "6c8942a57421cb304c50746de3229f5856b51d092fa779eaed03bc4b8786998c",
             "size": 108
         },
+        "content/effects/tunnels/effect_01.png": {
+            "hash": "a55d4bbfd1bfe1d718ed29678ce2ac50421f6cc5536ac3aeb3645587a5fa2554",
+            "size": 507
+        },
+        "content/effects/tunnels/effect_02.png": {
+            "hash": "3ff940350025c4b164aaf288b8913b645bb8c03eee4a48facd73e1077253f22c",
+            "size": 166
+        },
         "content/fonts/alagard.ttf": {
             "hash": "12f1e58f79d18d2ef49d923d801baade892769289bfcb9444769b6a4f7847007",
             "size": 13544
@@ -576,6 +596,10 @@
         "content/interface/cursor_xbox.png": {
             "hash": "584603b428f69101cc39713919516bc484a8857dd0eb41530a440facc398620a",
             "size": 516
+        },
+        "content/interface/menus.gif": {
+            "hash": "13d5d5e17cbcee388ab9076fbc93cdd9b3439edac356acf179c9b542e1c61f5c",
+            "size": 29907953
         },
         "content/interface/offset.cfg": {
             "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",

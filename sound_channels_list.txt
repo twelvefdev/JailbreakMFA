@@ -38,7 +38,7 @@ all of these sounds are placeholders, not final in release
 #35 - Physician Steps
 #36 - Physician Paranoid & Knows (Looking for & chase mode)
 #37 - Jester making a fool out of you
-#38 - 
+#38 - Jumpscares
 #39 - Earthquaker..?? smth like that
 #40 - Settings Test Sounds and other stuff settings related
 #41 - HUD Notifications, Time Limit
