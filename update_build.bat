@@ -21,8 +21,9 @@ if /i "%confirm%"=="T" (
     echo Aktualna wersja gry: %current_version%
     set /p nowa_wersja="Prosze podac nowa wersje gry do wprowadzenia: "
 
+	setlocal enabledelayedexpansion
     REM Skopiuj nową wersję do pliku gameversion.md
-    > gameversion.md echo(!nowa_wersja!
+    <nul set /p="!nowa_wersja!" > gameversion.md
     echo Nowa wersja gry zostala wprowadzona: %nowa_wersja%
     color 60
     set /p commit_message="Prosze podac opis zmianki: "
