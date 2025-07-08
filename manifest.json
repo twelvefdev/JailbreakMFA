@@ -1,9 +1,9 @@
 {
-    "version": "beta-1.0.0.2",
+    "version": "b1.0.0.0",
     "files": {
         "Jailbreak.exe": {
-            "hash": "a7df3b1073f92694c7b3f4634d40bdef5dc6aa6a3e841bb9f36c9a1e75be7f0c",
-            "size": 14150438
+            "hash": "1c9646262398517e49d4d7f61e01fc1e85aad785f36ddad68237763d0fc865eb",
+            "size": 14150411
         },
         "JBLauncher.exe": {
             "hash": "5ed69c53fe8be38e79756802971c5769406d5c717ac842ad472432f7df782aa5",
