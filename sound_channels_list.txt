@@ -34,11 +34,11 @@ contentdirectory + "audio\flashlight_shake.wav"
 #32 - Empty
 #33 - Agent Sounds & SMPTE
 #34 - Map Events, for example Items Resupply
-#35 - Physician Steps
-#36 - Physician Paranoid & Knows (Looking for & chase mode)
+#35 - Empty
+#36 - Empty
 #37 - Jester making a fool out of you
 #38 - Jumpscares
-#39 - Earthquaker..?? smth like that
+#39 - Earthquaker
 #40 - Settings Test Sounds and other stuff settings related
 #41 - HUD Notifications, Time Limit
 #42 - Items Used & etc. with items related
@@ -50,4 +50,4 @@ contentdirectory + "audio\flashlight_shake.wav"
 #48 - Decoy On Screen - Loop
 
 
-Might add a turret object in-game. We will see if i can add physician and terminator with only one pathfinding object.
+Might add a turret object in-game.
