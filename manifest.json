@@ -1,13 +1,25 @@
 {
-    "version": "b1.0.0.0",
+    "version": "beta-1.0.0.1",
     "files": {
+        "Jailbreak Splash Image.001": {
+            "hash": "c4680f9dc587cc466c8784bec98d537b289f9009ca6acd282005f25ba6b3555f",
+            "size": 189426
+        },
+        "Jailbreak Splash Image.mfa": {
+            "hash": "dea2fa9cb14618d8335a580f3809c77ba84d8adefac656e6be2f2be5d83e718b",
+            "size": 189470
+        },
         "Jailbreak.exe": {
-            "hash": "b00dff75fe646d066114fcb0d8b8e3d30bbedca87de31c25f08ba4f825d09aa5",
-            "size": 14150575
+            "hash": "c74aef9abb5b18cd7a426d483ff3b0e48e1d9ff7903f78cc8d1e3cffa048e3e2",
+            "size": 15641949
         },
         "JBLauncher.exe": {
             "hash": "5ed69c53fe8be38e79756802971c5769406d5c717ac842ad472432f7df782aa5",
             "size": 3327117
+        },
+        "JBSplash.exe": {
+            "hash": "de0d8e17899e6303a86bb87bbef206940ac2de76ef63b3e6ddd319dd5ddaf4f1",
+            "size": 3333160
         },
         "spade.inf": {
             "hash": "bee66e99f36548affa6254c69b68d348a2f3360b5b6ebb36fe66647fe5f61000",
@@ -18,12 +30,12 @@
             "size": 1407
         },
         "content/fusion.png": {
-            "hash": "081aa139c8d377cbe4ba3af999fbf082bd4833beeb38390464c7eba1596a9433",
-            "size": 16350
+            "hash": "5883e1773bb04b3c5b3d985e603700cb73a22f33a3ddb3e86ec0a493856f3287",
+            "size": 1936
         },
         "content/game.png": {
-            "hash": "c2583fe6805453c7785fcc360e9841ee233fe3b9e9619e2cf723aede4f543443",
-            "size": 5643
+            "hash": "40ebda43f4daf645aa78f492118830648bf037c5a5f4807474ee9d294f424963",
+            "size": 34132
         },
         "content/audio/ambience1.wav": {
             "hash": "ad602b47c1fb0dde21f2a34f7253725239b14ae25367fe02180b354358239b90",
@@ -397,9 +409,9 @@
             "hash": "70edd2f63f3a2785b6c8f5039b50e35db9e508cf832d166341f9b1467cd5f659",
             "size": 612652
         },
-        "content/audio/title.wav": {
-            "hash": "c7e3ccf785e47ae457703232b603e8c33384173ec1b29d8eea77cf54341c16c3",
-            "size": 30588056
+        "content/audio/title.ogg": {
+            "hash": "20d1dbbb5909f26c6c57c46cd70ff052259a2404e772a246a802c2db40ce6a04",
+            "size": 5409911
         },
         "content/audio/use_blackhole.wav": {
             "hash": "9b2a477d445a9548edc720a3a360a589590bd2c60e8a12281099a40b743f08fd",
@@ -434,7 +446,7 @@
             "size": 0
         },
         "content/config/preload.cfg": {
-            "hash": "c206212fa7fa78d678b182c483ba5c0dd8de7f615bada8e67abb46f5dc5c3ff7",
+            "hash": "d7106866efa2dcf720ae6a5b15c20fd52106a30ee12d659290122646485fed1b",
             "size": 37
         },
         "content/config/settings.cfg": {
@@ -456,6 +468,10 @@
         "content/effects/camera_ring.png": {
             "hash": "8eea9cd84d1d7e207c35b0b92d24e33e2de3e2efcabba70792cfdda6ede5de3d",
             "size": 638
+        },
+        "content/effects/death_overlay.png": {
+            "hash": "5cdfc046a6897454b1089a1083d2087b0d7d4bc875fa3ece8b7cffc03b3b00fc",
+            "size": 362429
         },
         "content/effects/distortion_map.png": {
             "hash": "df67bfc27a238aa32250ae882b2e6041713d0691614dd3e2e26c606969ad4dde",
@@ -485,10 +501,6 @@
             "hash": "26f7739bf63446b630bb17143b2782b60f0a35901254f95dedc218ffcc3b101f",
             "size": 14441
         },
-        "content/effects/poison_overlay.png": {
-            "hash": "47f8a5e2db87e588613ac52785699ff899e37fbdb669a4f4bc294637e9c9b2da",
-            "size": 12325
-        },
         "content/effects/smallest_light_sprite.png": {
             "hash": "5145849d928a9df07478260163224da4f9f1e4eb774da0af0f4aea7e01d38f17",
             "size": 1138
@@ -512,38 +524,6 @@
         "content/effects/crt/crt_scanlines.png": {
             "hash": "65d0f7a4e7976b4d15e765c5877073a7e5ac39b76779ee5ce5482be57a7154e5",
             "size": 1965
-        },
-        "content/effects/noise/01.png": {
-            "hash": "89b58dd2edcbf4590d991375f78614a55f44ac8c9f60e48ffb463b6d9bd69781",
-            "size": 224365
-        },
-        "content/effects/noise/02.png": {
-            "hash": "dd9766e259f3ee3e04f03d0379ca3c135f6fba898518a2acfc3f2d791323de9d",
-            "size": 224687
-        },
-        "content/effects/noise/03.png": {
-            "hash": "e961ac9d32b81607a5fa04ea3581f36e2b5a2fe2f802796eb5f418064a4a111a",
-            "size": 224565
-        },
-        "content/effects/noise/04.png": {
-            "hash": "af2b35f3bd7955375580c6b752689119868a84c20326504828d5a61d26ab4b18",
-            "size": 224547
-        },
-        "content/effects/noise/05.png": {
-            "hash": "a8e0460b2bf22a2a92af436e64cc4b6259435be200a1dec7058022dbe3fdc4b3",
-            "size": 224322
-        },
-        "content/effects/noise/06.png": {
-            "hash": "00de2f8ac59e582930b8793f8f8d5a4f4c264a995658bdba9e04e51b395004a9",
-            "size": 224463
-        },
-        "content/effects/noise/07.png": {
-            "hash": "976cfc845644fbcbe020a8e90fe157e2abf1fd46d011ead66769d4e1d0706000",
-            "size": 224637
-        },
-        "content/effects/noise/08.png": {
-            "hash": "fe6fbf5d05a96b32516d6e40aea18e0b958e81435e09abb99cb3cd60a86a2106",
-            "size": 224692
         },
         "content/effects/radar/background.png": {
             "hash": "2246b2d6aaf10a1c38d1f5431a445891b2641a47b9b99e8ab537e90593d61ce3",
@@ -569,13 +549,37 @@
             "hash": "6c8942a57421cb304c50746de3229f5856b51d092fa779eaed03bc4b8786998c",
             "size": 108
         },
-        "content/effects/tunnels/effect_01.png": {
-            "hash": "a55d4bbfd1bfe1d718ed29678ce2ac50421f6cc5536ac3aeb3645587a5fa2554",
-            "size": 507
+        "content/effects/static/frame_01.png": {
+            "hash": "8f387580bae0089b45c4a02be4e71539dd2df260d5ca33ffee42d800a7ee5709",
+            "size": 46799
         },
-        "content/effects/tunnels/effect_02.png": {
-            "hash": "3ff940350025c4b164aaf288b8913b645bb8c03eee4a48facd73e1077253f22c",
-            "size": 166
+        "content/effects/static/frame_02.png": {
+            "hash": "67d266cbfb539ced05419894f84deb3903b015351f757de943bc1c09c16c8ef0",
+            "size": 46444
+        },
+        "content/effects/static/frame_03.png": {
+            "hash": "4ed86ede3b9b4240fd7c2b57a83d138998d4088f9c4e7580f82845dc6ee9e6f8",
+            "size": 46168
+        },
+        "content/effects/static/frame_04.png": {
+            "hash": "0d9204cdda558e8a5d557d1950d08280353ecf36d265fad9404aab4493058c5f",
+            "size": 46774
+        },
+        "content/effects/static/frame_05.png": {
+            "hash": "8b57c0696075ab1c53a2d461fa1c1a708011ff15a7ee179f850c0ed2af040400",
+            "size": 46344
+        },
+        "content/effects/static/frame_06.png": {
+            "hash": "33574036488ed7732c50fb17f1e93a33567dfab2be2546dbd37c316ef71f719d",
+            "size": 46573
+        },
+        "content/effects/static/frame_07.png": {
+            "hash": "c6bc0788ea3c0259ed97b22149ea98887b5eb625c2bd486af790dc84146d9984",
+            "size": 46753
+        },
+        "content/effects/static/frame_08.png": {
+            "hash": "443b30c477cca73c22779ad4cabe61ea42d249d81e6a2aedfd18deaf8f45605e",
+            "size": 46712
         },
         "content/fonts/alagard.ttf": {
             "hash": "12f1e58f79d18d2ef49d923d801baade892769289bfcb9444769b6a4f7847007",
@@ -590,16 +594,12 @@
             "size": 31848
         },
         "content/interface/cursor.png": {
-            "hash": "7adfa6e8fc05af2318366ae2587dc0ac61987a89b3faf44651d7eb487ccc20ba",
-            "size": 492
+            "hash": "53a38ce329eb800f54c3e0bdd18090fed3814b01edd27b2cf363e8f6b362e154",
+            "size": 514
         },
         "content/interface/cursor_xbox.png": {
-            "hash": "584603b428f69101cc39713919516bc484a8857dd0eb41530a440facc398620a",
-            "size": 516
-        },
-        "content/interface/menus.gif": {
-            "hash": "13d5d5e17cbcee388ab9076fbc93cdd9b3439edac356acf179c9b542e1c61f5c",
-            "size": 29907953
+            "hash": "991dd24566d85b5c9db8b72870d69186fba9e9936547758952c93c7c0efa09f8",
+            "size": 568
         },
         "content/interface/offset.cfg": {
             "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -616,6 +616,42 @@
         "content/interface/rgb_default.cfg": {
             "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
             "size": 0
+        },
+        "content/interface/buttons/achievements_button.png": {
+            "hash": "623dd775d49d7d6da2b406e9345a71493764c988cedf5f8716d4e824a7e35f78",
+            "size": 16060
+        },
+        "content/interface/buttons/credits_button.png": {
+            "hash": "ad6fc50c7c432e1a2ba8bc0a86028f3afd6d509e350de42aaeb4e03b9695c4a3",
+            "size": 16093
+        },
+        "content/interface/buttons/dlc_button.png": {
+            "hash": "eef6994e73c1dfeb45d13529cf076e5472798f044dfb63908fa05177f6673cc8",
+            "size": 15765
+        },
+        "content/interface/buttons/play_button.png": {
+            "hash": "dcdf25d50b03b74c0e456fd9b5133bf9007d8e2d15695320aa3d5415b97d5642",
+            "size": 16069
+        },
+        "content/interface/buttons/quit_button.png": {
+            "hash": "a3f14669123e6c51bef2a6d097bef521148a13c9ba40682c7f3167d624f25aa6",
+            "size": 15955
+        },
+        "content/interface/buttons/settings_button.png": {
+            "hash": "5c3eea69fa9ee10641ddb25f60406aef04138f0a6e845abc723ce481b6d85fb5",
+            "size": 15780
+        },
+        "content/interface/buttons/tutorial_button.png": {
+            "hash": "130216aa53bc4e2f77ef215017d428355c7cbad0a1b042f84c9d4d6f380c2496",
+            "size": 14631
+        },
+        "content/interface/menus/loading.png": {
+            "hash": "efbf8600ae92491255b55bc73a3d15062db1274a8fc28b1d24902c67a96959fe",
+            "size": 11551
+        },
+        "content/interface/menus/menus.gif": {
+            "hash": "13d5d5e17cbcee388ab9076fbc93cdd9b3439edac356acf179c9b542e1c61f5c",
+            "size": 29907953
         },
         "content/language/english.lang": {
             "hash": "e159b06187d369a0615f66ce577582b5c983d4ea59b3a62b702049f61753f0bf",
@@ -828,6 +864,14 @@
         "maps/pathfind/pathfind.arrcfg": {
             "hash": "57927f7813be7c2fb7fe33895fb2b902f78144bb1e6da28d2eaf7030fd287c77",
             "size": 989
+        },
+        "maps/settingstest/settingstest.arr": {
+            "hash": "d8d59bb41fd546499a291bfeebfde21d2ed4b81f9feef00719c5cdf4aa623e60",
+            "size": 78430
+        },
+        "maps/settingstest/settingstest.arrcfg": {
+            "hash": "b6157283bc977bdff13882b40316733bbcd428b3a70d883d3937d5030e373ea3",
+            "size": 992
         },
         "tools/deokario/guide.exe": {
             "hash": "4640a2ca3da40b1b04a2a8939aa7bfa61251b2f48f44c1b2af0ccfbc6f3e8f9d",
