@@ -1,14 +1,6 @@
 {
-    "version": "beta-1.0.0.1",
+    "version": "beta-1.0.0.2",
     "files": {
-        "Jailbreak Splash Image.001": {
-            "hash": "c4680f9dc587cc466c8784bec98d537b289f9009ca6acd282005f25ba6b3555f",
-            "size": 189426
-        },
-        "Jailbreak Splash Image.mfa": {
-            "hash": "dea2fa9cb14618d8335a580f3809c77ba84d8adefac656e6be2f2be5d83e718b",
-            "size": 189470
-        },
         "Jailbreak.exe": {
             "hash": "c74aef9abb5b18cd7a426d483ff3b0e48e1d9ff7903f78cc8d1e3cffa048e3e2",
             "size": 15641949
@@ -16,10 +8,6 @@
         "JBLauncher.exe": {
             "hash": "5ed69c53fe8be38e79756802971c5769406d5c717ac842ad472432f7df782aa5",
             "size": 3327117
-        },
-        "JBSplash.exe": {
-            "hash": "de0d8e17899e6303a86bb87bbef206940ac2de76ef63b3e6ddd319dd5ddaf4f1",
-            "size": 3333160
         },
         "spade.inf": {
             "hash": "bee66e99f36548affa6254c69b68d348a2f3360b5b6ebb36fe66647fe5f61000",
