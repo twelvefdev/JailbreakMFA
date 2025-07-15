@@ -1,9 +1,9 @@
 [0:0:0:1] App launched.
 [0:0:0:1] Successfully retrieved information from the launcher.
-[0:0:0:9] Internet connection succeed.
-[0:0:0:82] Build is up to date.
-[0:0:0:82] Checking directories: fusion.png
-[0:0:0:82] Checking directories: game.png
-[0:0:0:82] Checking directories: audio\title.ogg
-[0:0:0:84] Directiores succeed.
-[0:0:0:84] Done!  (841ms)
+[0:0:0:13] Internet connection succeed.
+[0:0:1:14] Build is up to date.
+[0:0:1:14] Checking directories: fusion.png
+[0:0:1:14] Checking directories: game.png
+[0:0:1:14] Checking directories: audio\title.ogg
+[0:0:1:15] Directiores succeed.
+[0:0:1:15] Done!  (1156ms)
