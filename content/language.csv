@@ -1,4 +1,7 @@
 id,en,pl,-
 lang_en,English,Angielski,
 lang_pl,Polish,Polski,
-title,Jailbreak,Jailbreak pl,
+title,Jailbreak,Jailbreak,
+playgame,Play,Graj,
+setup,Settings,Ustawienia,
+quit,Quit,Wyjdz z gry,
