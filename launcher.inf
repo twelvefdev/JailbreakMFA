@@ -3,5 +3,6 @@ directx_level=11
 force_preload=0
 use_custom_pack=0
 custom_pack_name=
+csutom_pack_desc=
 custom_pack_directory=
 low_performance_mode=0
