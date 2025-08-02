@@ -6,3 +6,5 @@ custom_pack_name=
 csutom_pack_desc=
 custom_pack_directory=
 low_performance_mode=0
+[Game State]
+Live=true
