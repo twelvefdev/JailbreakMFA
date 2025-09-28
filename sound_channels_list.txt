@@ -34,11 +34,11 @@ contentdirectory + "audio\flashlight_shake.wav"
 #32 - Empty
 #33 - Agent Sounds & SMPTE
 #34 - Map Events, for example Items Resupply
-#35 - Empty
-#36 - Empty
+#35 - Sand Worm Rumble
+#36 - Sand Worm Roars
 #37 - Jester making a fool out of you
 #38 - Jumpscares
-#39 - Earthquaker
+#39 - Sand Worm Sequences
 #40 - Settings Test Sounds and other stuff settings related
 #41 - HUD Notifications, Time Limit
 #42 - Items Used & etc. with items related

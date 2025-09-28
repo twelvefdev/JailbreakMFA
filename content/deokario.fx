@@ -16,7 +16,6 @@ DoorTop=
 DoorBottom=
 CampfireDoor=
 Blackhole=
-ControlPoint=
 
 [LightTypes]
 Wall1=IN
@@ -34,7 +33,6 @@ DoorTop=IN
 DoorBottom=IN
 CampfireDoor=IN
 Blackhole=OUT
-ControlPoint=OUT
 
 [LightWeights]
 Wall1=120
@@ -52,7 +50,6 @@ DoorTop=120
 DoorBottom=120
 CampfireDoor=120
 Blackhole=120
-ControlPoint=120
 
 [LightRGBs]
 Fire=255,215,0
@@ -62,7 +59,6 @@ DoorTop=0,255,0
 DoorBottom=255,255,0
 CampfireDoor=255,255,255
 Blackhole=255,255,255
-ControlPoint=0,255,255
 
 [LightAutoShape]
 sprites\world\wall_1.png
@@ -79,5 +75,5 @@ sprites\world\top_door.png
 sprites\world\bottom_door.png
 sprites\world\campfire_door.png
 sprites\entities\blackhole.png
-sprites\world\cp\idle.png
+#sprites\world\cp\idle.png
 sprites\world\furnace.png
