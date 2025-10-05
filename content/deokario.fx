@@ -1,21 +1,21 @@
 // Deokario's dynamic light widget configuration. Do NOT change this file, unless you know what are you doing.
 
 [LightShapes]
-Wall1=
-Wall2=
-Wall3=
-Wall4=
-FakeWall=
-Wood=
-Fire=
-Generator=
-Furnace=
-DoorLeft=
-DoorRight=
-DoorTop=
-DoorBottom=
-CampfireDoor=
-Blackhole=
+Wall1=0
+Wall2=0
+Wall3=0
+Wall4=0
+FakeWall=0
+Wood=0
+Fire=0
+Generator=0
+Furnace=0
+DoorLeft=0
+DoorRight=0
+DoorTop=0
+DoorBottom=0
+CampfireDoor=0
+Blackhole=0
 
 [LightTypes]
 Wall1=IN
@@ -75,5 +75,5 @@ sprites\world\top_door.png
 sprites\world\bottom_door.png
 sprites\world\campfire_door.png
 sprites\entities\blackhole.png
-#sprites\world\cp\idle.png
+sprites\world\cp\idle.png
 sprites\world\furnace.png
