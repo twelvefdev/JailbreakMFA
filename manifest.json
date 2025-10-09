@@ -1,21 +1,13 @@
 {
-    "version": "beta-1.0.0.1",
+    "version": "beta-1.0.1.0",
     "files": {
         "Jailbreak.exe": {
-            "hash": "c74aef9abb5b18cd7a426d483ff3b0e48e1d9ff7903f78cc8d1e3cffa048e3e2",
-            "size": 15641949
+            "hash": "00c5a26746fee6ce8262bc4bf5821b2f5dbca9442fd51727cdef0ac79a26ba73",
+            "size": 16408058
         },
         "JBLauncher.exe": {
             "hash": "5ed69c53fe8be38e79756802971c5769406d5c717ac842ad472432f7df782aa5",
             "size": 3327117
-        },
-        "spade.inf": {
-            "hash": "bee66e99f36548affa6254c69b68d348a2f3360b5b6ebb36fe66647fe5f61000",
-            "size": 29
-        },
-        "content/deokario.fx": {
-            "hash": "b7407a84630cf670d61d9989aa9a3e6470efa2ded924cc6d093401b70dc0152a",
-            "size": 1407
         },
         "content/fusion.png": {
             "hash": "5883e1773bb04b3c5b3d985e603700cb73a22f33a3ddb3e86ec0a493856f3287",
@@ -25,425 +17,457 @@
             "hash": "40ebda43f4daf645aa78f492118830648bf037c5a5f4807474ee9d294f424963",
             "size": 34132
         },
-        "content/audio/ambience1.wav": {
-            "hash": "ad602b47c1fb0dde21f2a34f7253725239b14ae25367fe02180b354358239b90",
-            "size": 6326664
-        },
-        "content/audio/ambience2.wav": {
-            "hash": "3d5e3608e17842e51e83758701fdf62532345dea2312f0633bcef1e3bff0ad43",
-            "size": 2646168
-        },
-        "content/audio/ambience3.wav": {
-            "hash": "b28acd1e4b3684313750e7a24a169547b609b93d9776a063a2fc4b8485c0a291",
-            "size": 2823332
-        },
-        "content/audio/bully.wav": {
-            "hash": "b608d9dfab7b94416e618d17c5eca42350f8e05c9065df56b88f8b616cf42c52",
-            "size": 1058636
-        },
-        "content/audio/campfire.wav": {
-            "hash": "e9454c080e165f273c6c95458dd6ce3918d59676d8afbc0c0b8ecbb932d75d6e",
-            "size": 576300
-        },
-        "content/audio/chase1.wav": {
-            "hash": "2be4771f602c8614049de359690be7fcff180c1a0a59ff9f207bba60afc60a42",
-            "size": 2119724
-        },
-        "content/audio/chase2.wav": {
-            "hash": "b659aebe39257bb47ab6c77dfecd114816c9978c8a73f655b340950f3dcd8221",
-            "size": 2808884
-        },
-        "content/audio/correct.wav": {
-            "hash": "fa89c29dc6fa446fde75dded91b25608b8a2b2f2c25224fe41790f7636dc2801",
-            "size": 176444
-        },
-        "content/audio/creep_detect.wav": {
-            "hash": "6c44b2111a4c461c42095d94bbb18b606c60784c768a44a4d92dd19091eef919",
-            "size": 806700
-        },
-        "content/audio/creep_gone.wav": {
-            "hash": "386d39619c5e44a007cb64e717247b97069fce41731934508312fe5318624a83",
-            "size": 491000
-        },
-        "content/audio/creep_move.wav": {
-            "hash": "0bd5dcb4ac1a60967610188786cc96413d86f36630230975fe3acc650e95fbd1",
-            "size": 572172
-        },
-        "content/audio/creep_seen.wav": {
-            "hash": "cd94c8d7f8c99eb7994c5a8d5d84afe62ce4e12a833277ae525ae787ba6f74cc",
-            "size": 209708
-        },
-        "content/audio/flashlight_buzz.wav": {
-            "hash": "679850925978ae9c007e9af163760d9ab2de3ba634b08d069b82545e579adfe0",
-            "size": 81181
-        },
-        "content/audio/flashlight_error.wav": {
-            "hash": "36d8032efc806efa70789b442ebe8165ade41883a0afd53f79e604fd0e4f0bd5",
-            "size": 439414
-        },
-        "content/audio/flashlight_shake.wav": {
-            "hash": "3561b48f232ad8c5688c61c4802f6db037b7ef1f98ad2fa6950261e8695fb05c",
-            "size": 91436
-        },
-        "content/audio/flashlight_switch.wav": {
-            "hash": "3101f151a54031ae5d8886540f0af7b511156050d0c087cf2a79dcefe5369531",
-            "size": 53548
-        },
-        "content/audio/flash_camera.wav": {
-            "hash": "314f92ff11b96227c0e6a6661fd6ea5d2d1beef036ef2f70fff43cfbd203c2e2",
-            "size": 73772
-        },
-        "content/audio/follower.wav": {
-            "hash": "9dbeebf161d2c57b8472dd75808239200cde8b72796d1b3f8dad565b4701dc8f",
-            "size": 6438796
-        },
-        "content/audio/generator_jammed.wav": {
-            "hash": "96512aaab44e213951731e57a08631a7a604ca22ae692f3c23b1815d7c9cc9d6",
-            "size": 649184
-        },
-        "content/audio/generator_stopped.wav": {
-            "hash": "a238076954f867b76bd35e0e0efe22c13d382562320865cdf3e15e6008e697c9",
-            "size": 222364
-        },
-        "content/audio/generator_warmup.wav": {
-            "hash": "9ecb2723e5965b5572fc2429bded3ae06ccd5d6fde13e533c570698356c17399",
-            "size": 5766264
-        },
-        "content/audio/generator_working.wav": {
-            "hash": "63f5f9824b9ee95b5f8edadd05a552b408420dffe3576f0135d5b88fbe38df6a",
-            "size": 167320
-        },
-        "content/audio/grabbattery.wav": {
-            "hash": "a34c3cbd5a095c1e10da1cc06871306bb70e986de178e6a7faf36463bcedd915",
-            "size": 235066
-        },
-        "content/audio/grabclips.wav": {
-            "hash": "ac8ed2f647721cce981a214d68e8aa38dd5d86518a6c994b45dd583f6cccefa8",
-            "size": 224826
-        },
-        "content/audio/grabkey.wav": {
-            "hash": "692851f54e1427403e8b0212b38706dd94beabc1af15e870e779bb85eae8a482",
-            "size": 163386
-        },
-        "content/audio/grabpills.wav": {
-            "hash": "f0ca3524b6030e669c65e27e19e1cd42a5fa3a61d04315bf45f96aeb5b1e28d1",
-            "size": 207418
-        },
-        "content/audio/grabradar.wav": {
-            "hash": "5b366b75642dbc1858ae6fe9a802f6381e50d56302a6898866472d90c9429470",
-            "size": 161338
-        },
-        "content/audio/grabscore.wav": {
-            "hash": "e7cb23769dee8bcd2f3ed1785b267df025eb5c7a20941d9fa704ecbb8fceb1ea",
-            "size": 26820
-        },
-        "content/audio/grabstick.wav": {
-            "hash": "7c1b15526ced2f8fe3197096cb699a95f8f17a6ce2ec5e98deed5a58857a0157",
-            "size": 53548
-        },
-        "content/audio/grabtotem.wav": {
-            "hash": "2be376aac062ae66ac0733934125368092a67244f1e285c3a518c456c066e54d",
-            "size": 163386
-        },
-        "content/audio/heartbeat1.wav": {
-            "hash": "d500f233b2422b7266eb4ec8246654fde8bfac2278239930453d2ec785ee8d70",
-            "size": 88364
-        },
-        "content/audio/heartbeat2.wav": {
-            "hash": "ea59bfc20da47120d178142abfb5d5ad82e806078e31073f4e10a69c4cc3fdf1",
-            "size": 100652
-        },
-        "content/audio/heartbeat3.wav": {
-            "hash": "1ee0e43a8d32cff107b38a2f0b618a5e5daaa77755afb796a2ab476c5bf581b6",
-            "size": 89388
-        },
-        "content/audio/heavy_step1.wav": {
-            "hash": "07711768c7f4d2b3b25919b008181fd5dbc5709b464b7a74632638ff1108c0c3",
-            "size": 79660
-        },
-        "content/audio/heavy_step2.wav": {
-            "hash": "91a752b3ce1c531da12ba5378fdcafcec98a123978ede3255deefbaa1fe693a2",
-            "size": 68908
-        },
-        "content/audio/heavy_step3.wav": {
-            "hash": "71a7324e46548daa49b9582960bd0d730923fa52a2559a6c1a533bcdb2b169a8",
-            "size": 60204
-        },
-        "content/audio/heavy_step4.wav": {
-            "hash": "f26bef9a198003701988eb7bdc2fbf186543d17ee8904bf98aaf90cceb828ef9",
-            "size": 49964
-        },
-        "content/audio/heavy_step5.wav": {
-            "hash": "238ea6e5ad3b5379cbb975e242802a951a2df43755ea7a101ab64bce8736102f",
-            "size": 57132
-        },
-        "content/audio/hunter_effect.wav": {
-            "hash": "fa9e3d455aacf5c1a3e8e7aae63338a95fbbc794dc35ad8d7fcc82635c9d4af6",
-            "size": 178988
-        },
-        "content/audio/hunter_gone.wav": {
-            "hash": "57ce0841397e406ae41151c2d001e03224f44d75a61842ae139963de9035450c",
-            "size": 198160
-        },
-        "content/audio/hunter_shriek.wav": {
-            "hash": "6c7514a55e15b1dbc3330d107649d7aaf1d4c309ec41deafd141ae9cf99b2b8c",
-            "size": 195372
-        },
-        "content/audio/incorrect.wav": {
-            "hash": "79eaa758029e708a3bfd4d2cdb44b57d50a29654d04a37bbbec55d5ba0da40cb",
-            "size": 110920
-        },
-        "content/audio/inside_rain.wav": {
-            "hash": "e3cce1af08dbc69f74f712c64b17cb87cbf82abf75cb43aca100cd98171cc3af",
-            "size": 5548076
-        },
-        "content/audio/lunatic_breathing.wav": {
-            "hash": "3d0cb17d282778a8c8ff067ce026d6f377d379f723f45d63dc3da429c98a29ef",
-            "size": 1511212
-        },
-        "content/audio/lunatic_scream.wav": {
-            "hash": "4817750b3e5925b457bf31a033aee37067c221c2cf77201e54f534d157ef9eee",
-            "size": 1933100
-        },
-        "content/audio/machine_enabled.wav": {
-            "hash": "e60e9e308541fac03c9efbc5928e0f92499f0a3a10b51584472e181bc600a62c",
-            "size": 112820
-        },
-        "content/audio/machine_stopped.wav": {
-            "hash": "469589221e2f9d6eb009277185976b548536e5a8a5ec3d9d9c0cfef5cd555c26",
-            "size": 95936
-        },
-        "content/audio/machine_working.wav": {
-            "hash": "3740f39acb1d22628f8489c6a95cdff528e27f3a08574cb20cdc5e0300ca065c",
-            "size": 4250072
-        },
-        "content/audio/mimic1.wav": {
-            "hash": "0dc38c0963a188e09d0d101a1985fe05c9c8cf52e57af5432f6cd97ef0fc555f",
-            "size": 630060
-        },
-        "content/audio/mimic2.wav": {
-            "hash": "f322c1365f270e40b98158677cd5147856f649c0a2fc4a4dad71beacb9f87007",
-            "size": 567596
-        },
-        "content/audio/mimic3.wav": {
-            "hash": "47843a8eaa074ee35b0bd3ffdd69cf4d041041f37ef7ed066e85d5b9c191ffe1",
-            "size": 117036
-        },
-        "content/audio/mud.wav": {
-            "hash": "0eb26c14ac0aaced98b59dee3ed1e0eb42f3f198063e0dced14613e3a2741e50",
-            "size": 840492
-        },
-        "content/audio/mud_walk.wav": {
-            "hash": "67eadbe2cf896c14af754314fae7a28eb1dd6409530ed5b9e9b29555feb01baa",
-            "size": 145760
-        },
-        "content/audio/music1.wav": {
-            "hash": "c52753072e58f3fd7c7bd896fb4d3f84cbc71cd747e8367cb6e195e550feec93",
-            "size": 12529196
-        },
-        "content/audio/music2.wav": {
-            "hash": "3f63fdf1b6b53064b9dbc6dc6e8483577dcadcecdac7e08d2b3f070a32706818",
-            "size": 16939052
-        },
-        "content/audio/music3.wav": {
-            "hash": "41c7cc7ce8c667f1f1da656842f44fec9155629dedfd370332a7deb86dcf04d1",
-            "size": 16206380
-        },
-        "content/audio/music4.wav": {
-            "hash": "a307e2839fc56f74182b3d48e0e05672e59f3b5cdf6d0c69989d7a7cbc461c93",
-            "size": 26353196
-        },
-        "content/audio/mysteryman_cooldown.wav": {
-            "hash": "a023ea0e6b2df88717bc1a396db020a25385299f525c22f583cc8c22636b28d6",
-            "size": 880628
-        },
-        "content/audio/mysteryman_spawn.wav": {
-            "hash": "de62292211f49951fc7af5523d6469111a036f9478df3881ae1bbfd725bb66e1",
-            "size": 867924
-        },
-        "content/audio/noise_alert.wav": {
-            "hash": "8443b9a0a3ddcfeff96e1c9983205b19f26588e3f5e3a415cca833e8cba409eb",
-            "size": 654124
-        },
-        "content/audio/nosignal.wav": {
-            "hash": "588cf34927d810f826723d3b5ec435cb5fd3bc33e915b62c705f83d04bd70791",
-            "size": 3175524
-        },
-        "content/audio/pauseambience.wav": {
-            "hash": "9fde9c7d316e6c7c2ac3241d828a1daf2ef76b7b82af16c67e3efd505cded937",
-            "size": 12844784
-        },
-        "content/audio/pauseoff.wav": {
-            "hash": "b476c6a90d0d91cc8b146ff287bf8a3fed3b49ab566c3edf79a74fec811eb57c",
-            "size": 176444
-        },
-        "content/audio/pauseon.wav": {
-            "hash": "646dde297d8b6f9988917d5a0640dbf3a84805c7164d3fce69fdb56a65e4efdc",
-            "size": 176444
-        },
-        "content/audio/resupply.wav": {
-            "hash": "3e9cf1f782da62947285cf9a6be1cf84e7345b5c5ee870d5108b8cfc2fefa54b",
-            "size": 958504
-        },
-        "content/audio/score_add.wav": {
-            "hash": "1c022527c90a78b5ec5a761fdc09b4407d6be1dba94a57a058415ec053c4945d",
-            "size": 18220
-        },
-        "content/audio/score_add_finish.wav": {
-            "hash": "628c321f13feea57e31899ec5724a7b1290404f0e13f51463ded915b9f882552",
-            "size": 52524
-        },
-        "content/audio/scream1.wav": {
-            "hash": "678de6d62d1442f80a85e08c6e3730fea9f9a29c14386cf2791b1a5165c3c445",
-            "size": 715520
-        },
-        "content/audio/scream2.wav": {
-            "hash": "527b3bd135fb307b63c7cbe6ada5e9b4d75ec0a903131d0206a5e0cd51b73d5d",
-            "size": 558876
-        },
-        "content/audio/scream3.wav": {
-            "hash": "3e0ce64d9b761cea9d2544fff9d166b3413fe174921ea70588105ef63ece29ce",
-            "size": 1724812
-        },
-        "content/audio/screenshot.wav": {
-            "hash": "725e2d1fae78e7235e261742243365ac7da0488a2b6a1ee1b2b281b9b1dbf455",
-            "size": 146732
-        },
-        "content/audio/stalker_angry.wav": {
-            "hash": "f60ad0c964f5a690cac330d209608cfc072c968a3f8251ee835b7c95d7b5fca3",
-            "size": 1123256
-        },
-        "content/audio/stalker_lost.wav": {
-            "hash": "f1d7ec757b8821365bfbe526d7287d39527a565c5f8c8e0078eb72ffa9b771b9",
-            "size": 155948
-        },
-        "content/audio/stalker_spawn.wav": {
-            "hash": "3143e3638c7d7ec4d41ff01e1005a7f71059269e5e450e80879ae1368643cfd1",
-            "size": 418604
-        },
-        "content/audio/stalker_suspicious.wav": {
-            "hash": "c57862e400c6aed84fcaa066443ed30260b4d376679b34abc474945188ea6fa1",
-            "size": 4101196
-        },
-        "content/audio/step1.wav": {
-            "hash": "2acb39d7261ed0b5bf7268eeff53f0f5b10ae1c43ef6b76bfd7764a1d0a1f802",
-            "size": 74222
-        },
-        "content/audio/step2.wav": {
-            "hash": "a9da7b5067aaa508db01c3d88d5f141ce51e7de0980894a03dc5aa785bbca796",
-            "size": 117678
-        },
-        "content/audio/step3.wav": {
-            "hash": "a6ee83d96dd72c774a93290c26420d4a5b6d3712b14270b05cf6f401d3a51d2c",
-            "size": 101006
-        },
-        "content/audio/step4.wav": {
-            "hash": "c74854b27138f96a50647b0b9ffac34165cbaf90d295ee1ba3f9931a461adf47",
-            "size": 114094
-        },
-        "content/audio/strangenoise1.wav": {
-            "hash": "6f62fa0c41ace18f81762f68c5b2ac12f750d839f064acd366f0900c963d8ab8",
-            "size": 149804
-        },
-        "content/audio/strangenoise2.wav": {
-            "hash": "7fb59085848f0e048b1cd9314d1e4c8a94ee9bb3d822b9fed815e61222f2caf3",
-            "size": 643884
-        },
-        "content/audio/strangenoise3.wav": {
-            "hash": "dfafebe39427b02ea24dd7a1ac1425f82d5e8019a4475fe273f53847b45817b4",
-            "size": 279852
-        },
-        "content/audio/strangenoise4.wav": {
-            "hash": "dd2bb2354382b21e62ec15307bfe16357a96e9ebdf57c3af97bdbe6ce5cf0100",
-            "size": 210220
-        },
-        "content/audio/strangenoise5.wav": {
-            "hash": "ab8c2023b89d66578d156b5b5060f9ed8b6f19b07dec730f89d03c6e5c19ea74",
-            "size": 149804
-        },
-        "content/audio/strangenoise6.wav": {
-            "hash": "9d480620d73821937f2964945407e1efe8e7899fad71bee400605cf8ad91fcca",
-            "size": 186668
-        },
-        "content/audio/strangenoise7.wav": {
-            "hash": "60c8d6dc7af97a143ab47e65f3e90b20f691aa51c823af1bd5d15d0f886b482b",
-            "size": 171816
-        },
-        "content/audio/strangenoise8.wav": {
-            "hash": "462274f1d0075c7e366e9c68cb2970fa77799c289fcfb0760fe2c7049a1bf43e",
-            "size": 391468
-        },
-        "content/audio/strangenoise9.wav": {
-            "hash": "7767975c93efa93395ab6a5de1b0c652a9dc22a520b29a9329a4f55f7e817425",
-            "size": 309548
-        },
-        "content/audio/test.wav": {
-            "hash": "7dd5600a26de9e8fc56f1fb3aa431fd88f5760760a352a837f1fc99c9eea93f5",
-            "size": 1073812
-        },
-        "content/audio/throwing_wood.wav": {
-            "hash": "fe06862e26eaf45b692340eff352258f082712a1461a82948b171b11f82c69fc",
-            "size": 300628
-        },
-        "content/audio/thunder1.wav": {
-            "hash": "bcfae6d19a5283dd563b66753794a26e8236bc0e5b27f71633bd6403255177c0",
-            "size": 604972
-        },
-        "content/audio/thunder2.wav": {
-            "hash": "55b22732ae04a5ce6f5b72fde30187c97b349405453affea01109fa534d785af",
-            "size": 860460
-        },
-        "content/audio/thunder3.wav": {
-            "hash": "70edd2f63f3a2785b6c8f5039b50e35db9e508cf832d166341f9b1467cd5f659",
-            "size": 612652
+        "content/language.csv": {
+            "hash": "666323debe8384920640eea01b127339136e20ab4c09170a7c5bfe0cedfa61a6",
+            "size": 4272
+        },
+        "content/audio/ambience1.ogg": {
+            "hash": "ae7b4f2eafaeec318acb8c95cc898c3b58330c35f6a70a0bd4ec00d321856fd7",
+            "size": 547742
+        },
+        "content/audio/ambience2.ogg": {
+            "hash": "c4a69ae6805710c5748d75573f4c1b7fd289c2ab2c1213584d0d718e4dd94e27",
+            "size": 301599
+        },
+        "content/audio/ambience3.ogg": {
+            "hash": "bd4180be6d0fe12508e40c61c5ba5df0a9c9ebccdaaa4558ccaa646f23115a26",
+            "size": 264130
+        },
+        "content/audio/bully.ogg": {
+            "hash": "f356a0d255580ba07cd450d6f5bcf0e6c78793507ae977e337e6e233bd318ac3",
+            "size": 121309
+        },
+        "content/audio/campfire.ogg": {
+            "hash": "67ac863ec0bab67739f2cd506a864a457471ed5447670fa978c3194afdccedc1",
+            "size": 41968
+        },
+        "content/audio/chase1.ogg": {
+            "hash": "627b72607880ae5f7c24bf8da1b0ed15a7700efdabf4b41de0142bc32d8a8879",
+            "size": 177330
+        },
+        "content/audio/chase2.ogg": {
+            "hash": "23fcb8d385c07085215ea08c389f552de690adbeb96cf071206354a12e73c7c8",
+            "size": 284693
+        },
+        "content/audio/correct.ogg": {
+            "hash": "6a9557ad73517b4b646ba799aef0063adc75cb0517fd54936ee27f7fac8322da",
+            "size": 8650
+        },
+        "content/audio/creep_detect.ogg": {
+            "hash": "063c1093a03142530f62ce54bfaeffe6d7f7906b4469003ce8e15614d7e600b7",
+            "size": 59577
+        },
+        "content/audio/creep_gone.ogg": {
+            "hash": "728f1300e9e8deddfe4b21db44ccb217af042b0faafd47519e62b891d0354d6c",
+            "size": 35886
+        },
+        "content/audio/creep_move.ogg": {
+            "hash": "932d079936ffbaf335b86e97ddf46bf64ca42fd38beed9a310897a7bee86cb02",
+            "size": 30193
+        },
+        "content/audio/creep_seen.ogg": {
+            "hash": "6cb5010cb4cabed6636a77f96fc8e6cd9ebbd26a433ccaed40e328ce836c5126",
+            "size": 17664
+        },
+        "content/audio/flashlight_buzz.ogg": {
+            "hash": "865c5aad37fdd2b2966237b35ca8c5cdfe58a04c09e30ff88e3db4d579711816",
+            "size": 35111
+        },
+        "content/audio/flashlight_error.ogg": {
+            "hash": "fadec462ec1e079a21ac3db1ef6b85dacf00444ab0aec479c9a5200957daa163",
+            "size": 84371
+        },
+        "content/audio/flashlight_shake.ogg": {
+            "hash": "4a2d88820154328a2372e5d34d4c9c29def1b26f4e25ea59c80fe1c047c2addd",
+            "size": 9989
+        },
+        "content/audio/flashlight_switch.ogg": {
+            "hash": "7c0ac89ba4a14c933f5bf091f036edefc610e710aedab573c1ae105745918165",
+            "size": 7962
+        },
+        "content/audio/flash_camera.ogg": {
+            "hash": "8888fa27dba5c3d1c1db580e7e8eac1cee01852e7511a59efabfb552786d0fd6",
+            "size": 12789
+        },
+        "content/audio/follower.ogg": {
+            "hash": "42da6bd796d76878a56636dd2a48a4cb0c1cdf2b1bab50b3901e7ff70ae772af",
+            "size": 532588
+        },
+        "content/audio/generator_jammed.ogg": {
+            "hash": "9bc6a50b162239f17b0da77ba0232507632802defb79891b5f41d06cf80511f5",
+            "size": 64961
+        },
+        "content/audio/generator_stopped.ogg": {
+            "hash": "f06b33ddd2a1ccef55a13283793e98e348819516a00077ece1fdb748d2b026db",
+            "size": 21977
+        },
+        "content/audio/generator_warmup.ogg": {
+            "hash": "dead4e3c183b22c09aba14d2cddf67b44525753c4210d820ce38c395d052a7fd",
+            "size": 405041
+        },
+        "content/audio/generator_working.ogg": {
+            "hash": "2cca885a514d2c47e04913fab908c8c48a528c321bbc5c75664b19cc2e845e6c",
+            "size": 18193
+        },
+        "content/audio/grabbattery.ogg": {
+            "hash": "8ee22407fbed34fee980cac9d2f3a7c7ef76b286638dfed82abb217a86d77dfe",
+            "size": 11006
+        },
+        "content/audio/grabclips.ogg": {
+            "hash": "b993d7e36e69a747b2ee0de61607910a8360f89f7715c78b8f48aaedfb0b7572",
+            "size": 10467
+        },
+        "content/audio/grabkey.ogg": {
+            "hash": "228a4b4532a162cbe6066deed6f14f76e763e944e5e7b90f27efdb72600549e3",
+            "size": 9276
+        },
+        "content/audio/grabpills.ogg": {
+            "hash": "eef8c0564d27ca1c4e5024c96de60d83180d35ff6973f1228ab565ddb94db71b",
+            "size": 10948
+        },
+        "content/audio/grabradar.ogg": {
+            "hash": "cc229c59f364d4de0ac8735c3884d6cf7085e35936f9b5921084b95b33459ed9",
+            "size": 8556
+        },
+        "content/audio/grabscore.ogg": {
+            "hash": "558ae7da6245154183b24a87e397888ebb3af7d361d6ae7465236ecc73b8eb33",
+            "size": 6888
+        },
+        "content/audio/grabstick.ogg": {
+            "hash": "195f87c886527717e52336cb22b70e5f9e593d94cc992ff7d93079a3ef3daad8",
+            "size": 8060
+        },
+        "content/audio/grabtotem.ogg": {
+            "hash": "00703c99111f974e975dfca9e9ae8878732b813b372c5e491b0a7e166714c1b0",
+            "size": 7983
+        },
+        "content/audio/heartbeat1.ogg": {
+            "hash": "db162b8c0d15e69dd2dccdba5fd1a038c7755472ba73a0a535ba6f34da53ed9b",
+            "size": 9566
+        },
+        "content/audio/heartbeat2.ogg": {
+            "hash": "2725983fdc2238d54b4fd6ebf22031448a6b33b0034edfcf5340e81751da1c20",
+            "size": 10453
+        },
+        "content/audio/heartbeat3.ogg": {
+            "hash": "89b148f789d2b6504f65e9a07d35f0702f4756acf5140c42d166cd9fc22a3eb6",
+            "size": 10079
+        },
+        "content/audio/heavy_step1.ogg": {
+            "hash": "66b64318e05adace2e27fe3055369c91128082507de5fdf9ebac3a30f7d1600d",
+            "size": 8769
+        },
+        "content/audio/heavy_step2.ogg": {
+            "hash": "69b68ae2d643d2fba849742c70519a8485a9148c01af181bca8e6a07ff08b249",
+            "size": 8144
+        },
+        "content/audio/heavy_step3.ogg": {
+            "hash": "090d260f85b242201e7a456e7311bed393bcfc7056ea8555418fd1300d91fe76",
+            "size": 7997
+        },
+        "content/audio/heavy_step4.ogg": {
+            "hash": "91568b87b25a13d78589d76ff9b5a00ae92df8bfdef9d496f35d614db46fe405",
+            "size": 7627
+        },
+        "content/audio/heavy_step5.ogg": {
+            "hash": "5090d4c4b3c3f6fe55acfdd33d4d322bf688fa463fe273478d33ca0df0813332",
+            "size": 7835
+        },
+        "content/audio/hunter_effect.ogg": {
+            "hash": "823ee6b4308b409cd82bedc0879492ab1b71a1aa043bd1dc9cb821b14e410734",
+            "size": 17002
+        },
+        "content/audio/hunter_gone.ogg": {
+            "hash": "ef4de4a059b04da33285ecd6539cd783285e930d67683730b9cb531829b6b01e",
+            "size": 19013
+        },
+        "content/audio/hunter_shriek.ogg": {
+            "hash": "401830d3aa3a8a44be577ae44cf0db32d6d6b650e4f8795349245582bc52d7d7",
+            "size": 17516
+        },
+        "content/audio/incorrect.ogg": {
+            "hash": "fb79d0103f1fd0a2b1f8904d097b4cd349c7e7aa11775570aa4ee75021fc024d",
+            "size": 10202
+        },
+        "content/audio/inside_rain.ogg": {
+            "hash": "b6e0ca588f6ce330779d524a3e1a2a276f8d6863d349b15504f68d3ef6e9c12f",
+            "size": 395310
+        },
+        "content/audio/lunatic_breathing.ogg": {
+            "hash": "1b17e7d83f53a0e63ce02799c2b6c84dba9d0ff1d4dcb9bea9433c72bf29ec13",
+            "size": 78396
+        },
+        "content/audio/lunatic_scream.ogg": {
+            "hash": "eeed7e7daf8635b8afe60322ddeb3552658025be1801a21a3a3f5d243535ee42",
+            "size": 72576
+        },
+        "content/audio/machine_enabled.ogg": {
+            "hash": "fd744848f0fedb9db781b23d7723502f8ac058e0a4b04e9e7b60c746ef055978",
+            "size": 15351
+        },
+        "content/audio/machine_stopped.ogg": {
+            "hash": "b9660d6940f50e93adf0ed3e40fe54cfb5110029ea26c13716c362953bfc791e",
+            "size": 13220
+        },
+        "content/audio/machine_working.ogg": {
+            "hash": "d73c6501fb3a421adab85f295e3ce2fe6de02b1a0de2b4827955a7ccb08cabf2",
+            "size": 360732
+        },
+        "content/audio/mimic1.ogg": {
+            "hash": "d8bf3f1413395331170ffc84ff3ba68d14c3f2ca9db37ace14965d923c1fce76",
+            "size": 35414
+        },
+        "content/audio/mimic2.ogg": {
+            "hash": "acd6fb2df4c7425047af2fd87a70b80766bd235866b53e39a77cb3b767031c17",
+            "size": 37512
+        },
+        "content/audio/mimic3.ogg": {
+            "hash": "b4b8cd64e25eec31a743a0926c2f8707549f547d33fd53b8117555bf643a5dd6",
+            "size": 11878
+        },
+        "content/audio/mud.ogg": {
+            "hash": "5d6c4f7d3863e2bfba5ec960dd63216a36ce64da75f011a6470b6242c10259e5",
+            "size": 61688
+        },
+        "content/audio/mud_walk.ogg": {
+            "hash": "94cd52d4f956067de107fb00c265e643dd592b619a6844f884c858cdeea63ab9",
+            "size": 21470
+        },
+        "content/audio/music1.ogg": {
+            "hash": "bcaa997f4c9a4175ced3ce7a018a6a46e72dd07389d96cc047fe8a223795a2d3",
+            "size": 934763
+        },
+        "content/audio/music2.ogg": {
+            "hash": "a99dd2315cc3457ff2667cf2d074d20df4197657b2cd7ce92504f31e31fd038e",
+            "size": 1322935
+        },
+        "content/audio/music3.ogg": {
+            "hash": "bdf2d67e7607683d3465aab4b9389f8ec0a012caff906616f2a839826a19ee6e",
+            "size": 1308578
+        },
+        "content/audio/music4.ogg": {
+            "hash": "be61e5df5f2370858c99f51196c875f8f6bf8c2350d44353c9be8f5b435b9192",
+            "size": 1988685
+        },
+        "content/audio/mysteryman_cooldown.ogg": {
+            "hash": "2edbdb4eca7190b58347ee5c59459a5816093d21f8bc5c10f7827429da83e376",
+            "size": 103958
+        },
+        "content/audio/mysteryman_spawn.ogg": {
+            "hash": "8642151b53e717ef372ee03a548974d3adfc7ad8044cc6370e1a9884cdb58caf",
+            "size": 84919
+        },
+        "content/audio/noise_alert.ogg": {
+            "hash": "a4c69367be506e7d7c2f88458a09fff529826ac96b08d73e80602e1f4bc14695",
+            "size": 54507
+        },
+        "content/audio/nosignal.ogg": {
+            "hash": "0b7b4595b88fa8c20f69c80cd059d0cbf38b2a15d6933b0d4cda685c7104ed50",
+            "size": 294235
+        },
+        "content/audio/pauseambience.ogg": {
+            "hash": "c5acc6b216e98e80113a897911cef97a1253d1028712b202774b6d4d24dd57d4",
+            "size": 814344
+        },
+        "content/audio/pauseoff.ogg": {
+            "hash": "c4dbf92723b584bf6db7df4e5c02a556fb28294742d7ee450fcba76a9d8a4b8a",
+            "size": 6447
+        },
+        "content/audio/pauseon.ogg": {
+            "hash": "c04a94fc7caa4e6a4ac9dbbea37dfdee616c6845ab8ef2bd5fa97646c29a0a05",
+            "size": 6295
+        },
+        "content/audio/resupply.ogg": {
+            "hash": "9715c509735cc270d6c23b69f94c0b5713f5848be6f4ba3e8e1a7f51605036bb",
+            "size": 82738
+        },
+        "content/audio/score_add.ogg": {
+            "hash": "1bfd0a9e615862ae7ce58523cdfecde0940cc797fc89209480986f77d73df192",
+            "size": 5794
+        },
+        "content/audio/score_add_finish.ogg": {
+            "hash": "5d0c6846742a22d959ea1a13b0a1abfa497cb542c59e089d67d3236159b02ca2",
+            "size": 8013
+        },
+        "content/audio/scream1.ogg": {
+            "hash": "5a13178c7d4727014ea59690428bff5083d3f3b117126b4805c22fe5c098427e",
+            "size": 59999
+        },
+        "content/audio/scream2.ogg": {
+            "hash": "24a7c97e90ae0dfd070018636d95a31923cc209bef55c85f1d2b779468819187",
+            "size": 48370
+        },
+        "content/audio/scream3.ogg": {
+            "hash": "757ca3a5f85b6a5fd06d19279e1e087ea212943d6a935855f3865b8c04c1ad42",
+            "size": 150374
+        },
+        "content/audio/screenshot.ogg": {
+            "hash": "8fac281b249a382037c6d62076a6ef4b758c8f4a073374cffc1cc8083874e174",
+            "size": 12705
+        },
+        "content/audio/stalker_angry.ogg": {
+            "hash": "e074376590fff1996811ccbdce1e068a0d0908a346a587979700839e744bcadc",
+            "size": 64428
+        },
+        "content/audio/stalker_lost.ogg": {
+            "hash": "de21ef6e6f6fb0ae087a4637b3773b8a9ff27fa8a88c59a2dccce02bbb908512",
+            "size": 15793
+        },
+        "content/audio/stalker_spawn.ogg": {
+            "hash": "ee780fafcd13574196e98a448a6381b100495261c80dca7f61838b5d37d2cd5b",
+            "size": 36005
+        },
+        "content/audio/stalker_suspicious.ogg": {
+            "hash": "924109a28555f494c9f94be7d1c6d2e6e7b5b6af74b7a27a228caeb6aac5984d",
+            "size": 244101
+        },
+        "content/audio/step1.ogg": {
+            "hash": "ec5da51d87e193af0f681df3c7b19bc11281bce22a861af7ebba941d9f1338bc",
+            "size": 9374
+        },
+        "content/audio/step2.ogg": {
+            "hash": "b914f9181055658a28b900f758867260c5da96e3b68a4f56f127b9d02b40bffb",
+            "size": 11786
+        },
+        "content/audio/step3.ogg": {
+            "hash": "e8af4ed010876744f9a0ebb4bcd4f4643ab7e16fa3627391774868e47a7098f9",
+            "size": 10272
+        },
+        "content/audio/step4.ogg": {
+            "hash": "4272075ba43a8b3a36a7bf5e07eb6f1267f55b0e8911e4bf744fe8c7c2d98cc4",
+            "size": 11551
+        },
+        "content/audio/strangenoise1.ogg": {
+            "hash": "af05ebb70812c5ddd157dd51464dff41b031f9947abae1a6501ccd2a56a4afab",
+            "size": 12103
+        },
+        "content/audio/strangenoise2.ogg": {
+            "hash": "80b6a36c238c6ae02e547752ac13b8e0954981c02e21eda1538e208892779053",
+            "size": 36540
+        },
+        "content/audio/strangenoise3.ogg": {
+            "hash": "6b0883a31a444bd132f4fd4aa6241ffac945f7739c3827d2ca917878be7ebc89",
+            "size": 21539
+        },
+        "content/audio/strangenoise4.ogg": {
+            "hash": "6870a16e384801936d951f5ff4f85d5f8f52cf293a7efd105dde69a036e40936",
+            "size": 15251
+        },
+        "content/audio/strangenoise5.ogg": {
+            "hash": "223e24f3634189dbd3f9c67503c40d16b208ceb4115813c041f1bdb88f3678d2",
+            "size": 13530
+        },
+        "content/audio/strangenoise6.ogg": {
+            "hash": "8ab64fa2c9bbaa44ab0d52f54afbb45ad0f7c0f58b0609adbb29208045f92dcb",
+            "size": 15944
+        },
+        "content/audio/strangenoise7.ogg": {
+            "hash": "c64a4d2545b34f9a466f1259a1f9ea3ded53e782a6c8c8bbe477b9226814e1e8",
+            "size": 14708
+        },
+        "content/audio/strangenoise8.ogg": {
+            "hash": "06c7781b9c2de84259e575d51cab6d991a2a35cb4c159b6aacda69754fbeb903",
+            "size": 22696
+        },
+        "content/audio/strangenoise9.ogg": {
+            "hash": "79a4a2e138ae601e93e8041d67ab5200632eecfb78d072559278f194668d3bce",
+            "size": 18610
+        },
+        "content/audio/test.ogg": {
+            "hash": "b3658c786cb7d1579d7f638c179a40255ed9831a0768ac756fa525635e82b7d1",
+            "size": 77951
+        },
+        "content/audio/throwing_wood.ogg": {
+            "hash": "cbf3b59316b8fbe488bdfb0c3022f144a8951f0df8f9e05d6f7c279611738ccc",
+            "size": 23920
+        },
+        "content/audio/thunder1.ogg": {
+            "hash": "7637ea8a623b61bc72f7e1647234f71407852da9843da7d726b59f07614a73f4",
+            "size": 42674
+        },
+        "content/audio/thunder2.ogg": {
+            "hash": "edb1b676310e081d830b3f6e79b4b3cfb2ede11831596fbc928e7194b1d9417f",
+            "size": 48464
+        },
+        "content/audio/thunder3.ogg": {
+            "hash": "9fa285a2e8f8f59d4f13ca9676ddae6ba85bb4dbd0126aae1580dd89ed26bd82",
+            "size": 35914
         },
         "content/audio/title.ogg": {
             "hash": "20d1dbbb5909f26c6c57c46cd70ff052259a2404e772a246a802c2db40ce6a04",
             "size": 5409911
         },
-        "content/audio/use_blackhole.wav": {
-            "hash": "9b2a477d445a9548edc720a3a360a589590bd2c60e8a12281099a40b743f08fd",
-            "size": 974128
+        "content/audio/tv_static.ogg": {
+            "hash": "1e567ed747a3e865b5d837c7e8f7df8cfc9592c7dc227644afb194e301e0fb80",
+            "size": 103096
         },
-        "content/audio/water_drops1.wav": {
-            "hash": "6c9cb693bf6aa3bf3753ab24ce5909118e286a3beac8ab8c52057689b2ef07f2",
-            "size": 320108
+        "content/audio/use_blackhole.ogg": {
+            "hash": "27f5f97bebcc251b9d3da1d6156063e6357c824b1d1fb24fb269fd31e77fd089",
+            "size": 64569
         },
-        "content/audio/water_drops2.wav": {
-            "hash": "cc1546cb343aa793939b0d1ad54ef597bd1a07fd73d086ee1dfcf66ccdc22069",
-            "size": 292844
+        "content/audio/water_drops1.ogg": {
+            "hash": "4e7a3d21fb34271946ea11f4d915684e219ae0ee6f7fdc851864b6cacaee0443",
+            "size": 31104
         },
-        "content/audio/zoomin.wav": {
-            "hash": "9eebfcbe54f16f3243104db61ecf3116a938ccdbe8a73c0b39e55b13ab57f8c4",
-            "size": 176444
+        "content/audio/water_drops2.ogg": {
+            "hash": "f30e16de9585e9c5b5ae480d339b87e54ea4439edb61eb9707eb9b0c42047b1d",
+            "size": 29076
         },
-        "content/audio/zoomout.wav": {
-            "hash": "17da475207d17b1e1ecfaf2b572549b374f603c34488f45dce5255ade6f04054",
-            "size": 176444
+        "content/audio/worm_attack.ogg": {
+            "hash": "e284373e9c12c088d6d165d8f2857d4d097a780f29ef0db40ac3a4381df460df",
+            "size": 39248
         },
-        "content/config/difficulty_classic.cfg": {
-            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "size": 0
+        "content/audio/worm_hide.ogg": {
+            "hash": "4b61958a537f1b05b7c5b8f7fffa7fa4e77a6e017db034302da3122d4c2e9394",
+            "size": 27387
         },
-        "content/config/difficulty_expert.cfg": {
-            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "size": 0
+        "content/audio/worm_roar1.ogg": {
+            "hash": "6d6e2dd1983e2aa8622257f26515873fca3a39168cd59ee5f68293c303c42b3c",
+            "size": 42687
         },
-        "content/config/difficulty_nightmare.cfg": {
-            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "size": 0
+        "content/audio/worm_roar2.ogg": {
+            "hash": "b196f0e8ff3e4e3e141a4c5f42cbe18817a14666c8d61daadf0f69fca210926a",
+            "size": 19946
+        },
+        "content/audio/worm_roar3.ogg": {
+            "hash": "e9820d60ab7bef1da74ae36d5c256dcab08507b62f734f32cac907ed505493fe",
+            "size": 29751
+        },
+        "content/audio/worm_roar4.ogg": {
+            "hash": "879a659deded1f25300f961d6a0766d957a22baff847f874e06865c69135df81",
+            "size": 13868
+        },
+        "content/audio/worm_show.ogg": {
+            "hash": "aa52ee2d30522bac30cce5c579a14a9726f5e570c7b3355e69de1fb6f388d2e0",
+            "size": 36796
+        },
+        "content/audio/zoomin.ogg": {
+            "hash": "ce71c62d7ff10a783205e3d6f47b1cfff2b3b6e063964979f6d6dec74d6410fa",
+            "size": 9630
+        },
+        "content/audio/zoomout.ogg": {
+            "hash": "e36104e0d684a9410183934bd5ec9b1b81b7cad3f6ce68685f105f1d46c8ad27",
+            "size": 10279
         },
         "content/config/preload.cfg": {
             "hash": "d7106866efa2dcf720ae6a5b15c20fd52106a30ee12d659290122646485fed1b",
             "size": 37
         },
-        "content/config/settings.cfg": {
+        "content/config/rgb.cfg": {
             "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
             "size": 0
         },
-        "content/config/settings_default.cfg": {
+        "content/config/rgb_default.cfg": {
             "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
             "size": 0
+        },
+        "content/config/settings.cfg": {
+            "hash": "7ca3419fbe31a0c638a63332835fb3e314bbf461b33537c48a7eef30ea044d55",
+            "size": 1048
+        },
+        "content/config/settings_default.cfg": {
+            "hash": "4c97fdd54554456431ad6288d588e74e9f87d701496ba64fb071fc64fa338575",
+            "size": 1021
         },
         "content/effects/blackhole.png": {
             "hash": "9d46482003fbecb9f6f1a65bcabbe4d8fd872578d342cf87df2fc77d3c6bfb26",
@@ -452,10 +476,6 @@
         "content/effects/blood.png": {
             "hash": "1525b1cb7ba4880b6e0aff1e4c64949dbe50167f2e4f67910d03e6da4bb01b75",
             "size": 8241
-        },
-        "content/effects/camera_ring.png": {
-            "hash": "8eea9cd84d1d7e207c35b0b92d24e33e2de3e2efcabba70792cfdda6ede5de3d",
-            "size": 638
         },
         "content/effects/death_overlay.png": {
             "hash": "5cdfc046a6897454b1089a1083d2087b0d7d4bc875fa3ece8b7cffc03b3b00fc",
@@ -488,6 +508,10 @@
         "content/effects/light_sprite.png": {
             "hash": "26f7739bf63446b630bb17143b2782b60f0a35901254f95dedc218ffcc3b101f",
             "size": 14441
+        },
+        "content/effects/light_sprite_eco.png": {
+            "hash": "cf25a0cfa9d87a64a6a2736b2bcf2317ab537ed044c3e383f1d318fd11e61fbf",
+            "size": 10757
         },
         "content/effects/smallest_light_sprite.png": {
             "hash": "5145849d928a9df07478260163224da4f9f1e4eb774da0af0f4aea7e01d38f17",
@@ -569,45 +593,29 @@
             "hash": "443b30c477cca73c22779ad4cabe61ea42d249d81e6a2aedfd18deaf8f45605e",
             "size": 46712
         },
-        "content/fonts/alagard.ttf": {
-            "hash": "12f1e58f79d18d2ef49d923d801baade892769289bfcb9444769b6a4f7847007",
-            "size": 13544
-        },
-        "content/fonts/kiwisoda.ttf": {
-            "hash": "cdd68272c443104d8f34abc7520a541cab5428431a7eaf553ff75b652498a252",
-            "size": 49292
-        },
-        "content/fonts/moderndos.ttf": {
-            "hash": "a0101fce103ce916ec95d80536215b6c974e66d2756615fc68dac1dba97e3af5",
-            "size": 31848
-        },
         "content/interface/cursor.png": {
             "hash": "53a38ce329eb800f54c3e0bdd18090fed3814b01edd27b2cf363e8f6b362e154",
             "size": 514
         },
-        "content/interface/cursor_xbox.png": {
-            "hash": "991dd24566d85b5c9db8b72870d69186fba9e9936547758952c93c7c0efa09f8",
-            "size": 568
-        },
-        "content/interface/offset.cfg": {
-            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "size": 0
-        },
-        "content/interface/offset_default.cfg": {
-            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "size": 0
-        },
-        "content/interface/rgb.cfg": {
-            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "size": 0
-        },
-        "content/interface/rgb_default.cfg": {
-            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "size": 0
+        "content/interface/level_icon.png": {
+            "hash": "9f3bd6fa7c8a9fed09ab081de80bf960b859a908452a085f1959d5871605e4c8",
+            "size": 2334
         },
         "content/interface/buttons/achievements_button.png": {
             "hash": "623dd775d49d7d6da2b406e9345a71493764c988cedf5f8716d4e824a7e35f78",
             "size": 16060
+        },
+        "content/interface/buttons/big_off.png": {
+            "hash": "7dab9ba0c94df3a66bdef8922b45075c782c9eb0944ba00ef373fb1770fb49ae",
+            "size": 220
+        },
+        "content/interface/buttons/big_on.png": {
+            "hash": "4cf0a1ab2dcc82713fcbcd0cd7a7f29a5f3ce8b5a17a2e42d3055aea6b7b1c40",
+            "size": 239
+        },
+        "content/interface/buttons/calibration.png": {
+            "hash": "7f47c4c22a4725d9f814a0655dd1c1e428c3a77944fc665b281d2eb482d43907",
+            "size": 292
         },
         "content/interface/buttons/credits_button.png": {
             "hash": "ad6fc50c7c432e1a2ba8bc0a86028f3afd6d509e350de42aaeb4e03b9695c4a3",
@@ -617,6 +625,42 @@
             "hash": "eef6994e73c1dfeb45d13529cf076e5472798f044dfb63908fa05177f6673cc8",
             "size": 15765
         },
+        "content/interface/buttons/fullscreen.png": {
+            "hash": "515d139fa7ad2331f1b769a84504e2cf926af9fdb3aa03b40fd1ccacfc044e53",
+            "size": 249
+        },
+        "content/interface/buttons/knob.png": {
+            "hash": "d20b902738878bcdf288a468109f7075c9fcd44a69c8addc50e8b68b26692a7f",
+            "size": 120
+        },
+        "content/interface/buttons/lang_en.png": {
+            "hash": "8510556be1384b5f02a8b0e13d54356e7240e4b2ef348919a289170d116b4ef9",
+            "size": 569
+        },
+        "content/interface/buttons/lang_pl.png": {
+            "hash": "133caf018583bc5681ae36956a6e47a35fab3f913c0156e283acf37131f32033",
+            "size": 320
+        },
+        "content/interface/buttons/level_exit.png": {
+            "hash": "30cc1df1033b1be18db4ad3678544de89a23599abd5f700800eeef312f3aadf5",
+            "size": 4388
+        },
+        "content/interface/buttons/level_play.png": {
+            "hash": "d43ea7d8b8c209cc6003c61dd87d60d100485fa4528b0ad92e2c74f38f7c9d51",
+            "size": 11674
+        },
+        "content/interface/buttons/level_refresh.png": {
+            "hash": "455791ae9c46a7a71ff2e8bf350d1f7595c2e3171910899a93292d45c3fe60f1",
+            "size": 4835
+        },
+        "content/interface/buttons/medium_off.png": {
+            "hash": "d010a9b3bed4b4ced80ddf1002be775dfbd2394810b8e82c218c95e43ca87ba1",
+            "size": 193
+        },
+        "content/interface/buttons/medium_on.png": {
+            "hash": "2d0c90f9aeef37f2a91ecc2d6cf54e8a5546de8467ac8d8aa1df0ac564162b66",
+            "size": 213
+        },
         "content/interface/buttons/play_button.png": {
             "hash": "dcdf25d50b03b74c0e456fd9b5133bf9007d8e2d15695320aa3d5415b97d5642",
             "size": 16069
@@ -625,13 +669,65 @@
             "hash": "a3f14669123e6c51bef2a6d097bef521148a13c9ba40682c7f3167d624f25aa6",
             "size": 15955
         },
+        "content/interface/buttons/sensitivity_bar.png": {
+            "hash": "a76b403bf49f61ef0d7e7f99f4576f1958a41168fc77a114fab8c79588cb0be5",
+            "size": 198
+        },
+        "content/interface/buttons/sensitivity_slider.png": {
+            "hash": "6e24a9dc8495100083f3408f4ff360f69f29a029c3ccf85e2ebb436d5fd8646e",
+            "size": 110
+        },
         "content/interface/buttons/settings_button.png": {
             "hash": "5c3eea69fa9ee10641ddb25f60406aef04138f0a6e845abc723ce481b6d85fb5",
             "size": 15780
         },
+        "content/interface/buttons/slider.png": {
+            "hash": "b51a56f95f06b1f07cbc0ef8882b8b0ef08664475d991835f6f2ae0b5869f4a0",
+            "size": 195
+        },
+        "content/interface/buttons/small_off.png": {
+            "hash": "cee5d14c62c9f6e9d1f6a0bcb5f3314d42d65d23b1c3abf3af0b9a8f8df4b9a7",
+            "size": 151
+        },
+        "content/interface/buttons/small_on.png": {
+            "hash": "5fc3d29837dd8b41132d1e225c41c52dbd83eeeb410f6db2df7fe09e52fc07df",
+            "size": 156
+        },
+        "content/interface/buttons/subtitles.png": {
+            "hash": "82d37d19e2724aa1ff69b7f00dd9bfdc2aad5ff924c27f9d98e69cfe37883135",
+            "size": 195
+        },
         "content/interface/buttons/tutorial_button.png": {
             "hash": "130216aa53bc4e2f77ef215017d428355c7cbad0a1b042f84c9d4d6f380c2496",
             "size": 14631
+        },
+        "content/interface/buttons/volume_high.png": {
+            "hash": "56b20167fcab58a12cc67b1aca25c4d136e0c0df74745f35ee5fbb93ad064522",
+            "size": 259
+        },
+        "content/interface/buttons/volume_low.png": {
+            "hash": "f5c7fb02371c453038da8da7f0fe5c435ce310910e9b96276c48290a1c2e919b",
+            "size": 252
+        },
+        "content/interface/buttons/volume_medium.png": {
+            "hash": "8327b11a3802d3c53dd1f3b8cabaf20d351397866773e6129cdf4f0d53ddaa25",
+            "size": 258
+        },
+        "content/interface/buttons/volume_none.png": {
+            "hash": "2a82bb34edec7f058dd7e76ececaeefc58d4fa7b6d0e48c20c916010604e5589",
+            "size": 243
+        },
+        "content/interface/buttons/windowed.png": {
+            "hash": "d7d3e1b5a4b705a251556d5bbadb65328d398cc39d01386d7f8674126c6b2f8b",
+            "size": 242
+        },
+        "content/interface/menus/button_info.png": {
+            "hash": "db16b8957b360041628800e76b73f8312a1407b452eaa988d494dd82fb1cd62b",
+            "size": 604
+        },
+        "content/interface/menus/info_background.png": {
+            "hash": "d0599f3c43bdcde5cbb6f3b91b26b81a038a179d6d3b08bf5251a9743292c126",
+            "size": 44020
         },
         "content/interface/menus/loading.png": {
             "hash": "efbf8600ae92491255b55bc73a3d15062db1274a8fc28b1d24902c67a96959fe",
@@ -641,13 +737,9 @@
             "hash": "13d5d5e17cbcee388ab9076fbc93cdd9b3439edac356acf179c9b542e1c61f5c",
             "size": 29907953
         },
-        "content/language/english.lang": {
-            "hash": "e159b06187d369a0615f66ce577582b5c983d4ea59b3a62b702049f61753f0bf",
-            "size": 6
-        },
-        "content/language/polish.lang": {
-            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-            "size": 0
+        "content/sprites/missing.png": {
+            "hash": "875cffdec444b0ada229ecfadd51ee39cf8aac3f47a3c6b73e88a251d5ff194b",
+            "size": 139
         },
         "content/sprites/entities/agent.png": {
             "hash": "82f6ec26b01a4f0d8f73c3e78dd5dd886a809d0e3342ab6ee218d83693612642",
@@ -669,10 +761,6 @@
             "hash": "63386bc78bcef3494ebc1f63170590eaae6382033e3379c65b1bac1d3db95ba6",
             "size": 5721
         },
-        "content/sprites/entities/doctor.png": {
-            "hash": "3c36cf5387d373144f176df764d5d24bbacecf2b0a9f7fa1c027c678a482e4fe",
-            "size": 431
-        },
         "content/sprites/entities/follower.png": {
             "hash": "c7932c3a60a43d2662ddb76a9d3cb062d31c0133cf0b910c754d928205f6d0a0",
             "size": 455
@@ -692,6 +780,14 @@
         "content/sprites/entities/stalker.png": {
             "hash": "82d7d4e567d688ff21a8e1a532f93910f5089d3c68b29bc856307825e017e38c",
             "size": 334
+        },
+        "content/sprites/entities/worm_body.png": {
+            "hash": "33cf285f23889e32c09c20566cdecf90e0ae57560dac3cac438cb0c46ce625f1",
+            "size": 957
+        },
+        "content/sprites/entities/worm_head.png": {
+            "hash": "3a8457751148f544e479ac2794367390e68ab2b56d88ed2ef6858aa0130466b8",
+            "size": 957
         },
         "content/sprites/items/battery.png": {
             "hash": "d78eeef679bb35eb5ca4530a32160fcf0206149a306d8d58cbcd5169c436d658",
@@ -797,10 +893,6 @@
             "hash": "c90db770d33808845d8e25038b477bee4cbec759bcb04eb73dab26150a539151",
             "size": 172
         },
-        "content/sprites/world/safe_zone.png": {
-            "hash": "cd71708d59ee40029f5225e937c472f6a937827d8225299b627889f6069421da",
-            "size": 1001
-        },
         "content/sprites/world/score.png": {
             "hash": "376e538b7c7b706a61969df89077c406a453b0e55f88438a61520897a10b3ebf",
             "size": 163
@@ -825,41 +917,49 @@
             "hash": "fb3cec9d88f05efcf9b9457a018f89b50d6fd69f368b2df1b328189c86cb3ab4",
             "size": 165
         },
-        "content/sprites/world/cp/active.png": {
-            "hash": "2099e8d3a5745d8330dc002e030a0b26baec757f95ed41834ed6bc29bc7da647",
-            "size": 161
+        "content/sprites/world/worm_hole_0.png": {
+            "hash": "2a248cb483bf214fcfa166f6f1947804086dd48c3cfccc9c5269d637a17d2a8a",
+            "size": 4428
+        },
+        "content/sprites/world/worm_hole_1.png": {
+            "hash": "53bfcc6f7206d15f1e617e50c607583f7fb73713bfddd085bd35ca7d4aa23579",
+            "size": 2889
+        },
+        "content/sprites/world/worm_spot.png": {
+            "hash": "08b2b8c1398fa866521fb4a4ce881463b0977313b8f0e280e7238531cc27ec85",
+            "size": 7431
         },
         "content/sprites/world/cp/idle.png": {
-            "hash": "55d364a396beed3f8354c2fc4722ae5e95fd8a418b116092c50afae86496e494",
-            "size": 161
+            "hash": "a23c64e063b3f6eced89f56f1693a2460cb0d4db7db8efa76a168cc55afb6004",
+            "size": 415
         },
         "content/sprites/world/generator/idle.png": {
             "hash": "ed47279856c0ec83326565c239adb7fc968a27506668b13be98fd31b6c83da93",
             "size": 583
         },
-        "maps/items_agent/items_agent.arr": {
-            "hash": "e67023647246e1cab249c04ffd76903ad8ca7720431058508efb152a447c73e5",
+        "maps/blackhole/blackhole.arr": {
+            "hash": "1f31ebd0f29dc6ce4aec7f28e6bd58312bfee76e42b6243aee09364f8b4cb757",
             "size": 78430
         },
-        "maps/items_agent/items_agent.arrcfg": {
-            "hash": "f69f83423563ee5af542b4d3f7222f239e7d65dcf20ebb7ff9f0206d34b0e1d6",
-            "size": 990
+        "maps/blackhole/blackhole.arrcfg": {
+            "hash": "5306737fd905a31dbcc0a9ad1e501dd9b3a282e938218c7cd062fded73ca1cc2",
+            "size": 988
         },
-        "maps/pathfind/pathfind.arr": {
-            "hash": "3742dd205d016ff906b7ea533c1bc4bf51771e857c3065801741db52e965d240",
+        "maps/camp/camp.arr": {
+            "hash": "3bb0b261c609766939da7ada97cd77ac0c2a74e136206e5932cdef8200211f42",
             "size": 78430
         },
-        "maps/pathfind/pathfind.arrcfg": {
-            "hash": "57927f7813be7c2fb7fe33895fb2b902f78144bb1e6da28d2eaf7030fd287c77",
-            "size": 989
+        "maps/camp/camp.arrcfg": {
+            "hash": "86f50c64f53e4e0f57042a0786c3ee0dc91830b2d479caba4e5566196a4c92ef",
+            "size": 984
         },
-        "maps/settingstest/settingstest.arr": {
-            "hash": "d8d59bb41fd546499a291bfeebfde21d2ed4b81f9feef00719c5cdf4aa623e60",
+        "maps/doors/doors.arr": {
+            "hash": "1fc2214e57eb8d9146582438ff392428738fabe11fdfbe8b019ba61901b8a2cd",
             "size": 78430
         },
-        "maps/settingstest/settingstest.arrcfg": {
-            "hash": "b6157283bc977bdff13882b40316733bbcd428b3a70d883d3937d5030e373ea3",
-            "size": 992
+        "maps/doors/doors.arrcfg": {
+            "hash": "9bf01738baa932c3d65db55119f41ddf1b5fb34ea11dfacc4c78d3cc0bea3a27",
+            "size": 984
         },
         "tools/deokario/guide.exe": {
             "hash": "4640a2ca3da40b1b04a2a8939aa7bfa61251b2f48f44c1b2af0ccfbc6f3e8f9d",
