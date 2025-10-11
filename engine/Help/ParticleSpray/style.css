@@ -1,9 +1,0 @@
-body { background-color: #CCCEC0; color: #000000; font-family: Verdana; font-size: 10pt; margin: 0.1em }
-.menu { background-color: #CCCCCC; border-style: solid; border-width: 0.06em; border-color: #FFFFFF #808080 #808080 #FFFFFF; display: none; position: absolute; font-size: 10pt; border-collapse: collapse; cursor: default }
-.menu td { padding: 0.1em 0.3em 0.1em 0.45em; }
-.itemselected { background-color: #000080; color: #FFFFFF }
-.pmenu { display:none }
-.param { background-color: #DDE2DB; border-style: solid; border-width: 0.06em; border-color: #333333; width: 90%; margin-left: 5%;}
-.param td { background-color: #FFFFFF; padding: 0.06em 0.24em 0.06em 0.24em }
-.param th { font-weight: bold; padding: 0em 0.24em 0.24em 0.24em }
-#paramtype { font-weight: bold }

@@ -1,13 +1,13 @@
 {
-    "version": "beta-1.0.1.0",
+    "version": "beta-1.0.1.1",
     "files": {
-        "Jailbreak.exe": {
-            "hash": "00c5a26746fee6ce8262bc4bf5821b2f5dbca9442fd51727cdef0ac79a26ba73",
-            "size": 16408058
+        "Jailbreak.dat": {
+            "hash": "204fc4b2f48d4b4a35aa7be92e2fc8f386e281a3096702a7b5736a53357793ea",
+            "size": 9597378
         },
-        "JBLauncher.exe": {
-            "hash": "5ed69c53fe8be38e79756802971c5769406d5c717ac842ad472432f7df782aa5",
-            "size": 3327117
+        "Jailbreak.exe": {
+            "hash": "cf9af8f669b72525e7cc8bf5860636683932e5bb26e3fa40259b5b7cf7542282",
+            "size": 962048
         },
         "content/fusion.png": {
             "hash": "5883e1773bb04b3c5b3d985e603700cb73a22f33a3ddb3e86ec0a493856f3287",
@@ -462,12 +462,12 @@
             "size": 0
         },
         "content/config/settings.cfg": {
-            "hash": "7ca3419fbe31a0c638a63332835fb3e314bbf461b33537c48a7eef30ea044d55",
-            "size": 1048
+            "hash": "6f23b80a8f3f0e9596a78625f61a8c8e4f4ee3913124f7ae1db2396cee819457",
+            "size": 894
         },
         "content/config/settings_default.cfg": {
-            "hash": "4c97fdd54554456431ad6288d588e74e9f87d701496ba64fb071fc64fa338575",
-            "size": 1021
+            "hash": "ac6161061646caee057d3241ce7d4a408f19d8eda1e89477221f9416ba1b2c1b",
+            "size": 895
         },
         "content/effects/blackhole.png": {
             "hash": "9d46482003fbecb9f6f1a65bcabbe4d8fd872578d342cf87df2fc77d3c6bfb26",
@@ -693,10 +693,6 @@
             "hash": "5fc3d29837dd8b41132d1e225c41c52dbd83eeeb410f6db2df7fe09e52fc07df",
             "size": 156
         },
-        "content/interface/buttons/subtitles.png": {
-            "hash": "82d37d19e2724aa1ff69b7f00dd9bfdc2aad5ff924c27f9d98e69cfe37883135",
-            "size": 195
-        },
         "content/interface/buttons/tutorial_button.png": {
             "hash": "130216aa53bc4e2f77ef215017d428355c7cbad0a1b042f84c9d4d6f380c2496",
             "size": 14631
@@ -737,9 +733,221 @@
             "hash": "13d5d5e17cbcee388ab9076fbc93cdd9b3439edac356acf179c9b542e1c61f5c",
             "size": 29907953
         },
-        "content/sprites/missing.png": {
-            "hash": "875cffdec444b0ada229ecfadd51ee39cf8aac3f47a3c6b73e88a251d5ff194b",
-            "size": 139
+        "content/modules/AdvDir.mfx": {
+            "hash": "00c1bca2512b0d6278afd9bde4693348497238a233950621502962fd4b5df8ea",
+            "size": 12288
+        },
+        "content/modules/AppPriority.mfx": {
+            "hash": "2e302d5c8560e54b2972c6d4fdce5967081b9f4fee0376b06f8466a338ee0125",
+            "size": 14848
+        },
+        "content/modules/aviflt.ift": {
+            "hash": "cb5f43c24df39973b983b7fda4abcef60f425061d880c7dd9514b501b84790f8",
+            "size": 24576
+        },
+        "content/modules/bmpflt.ift": {
+            "hash": "02d03c4847e34c9029cca452e37ada5ef40167406d4474a9393e11aace024c3d",
+            "size": 24576
+        },
+        "content/modules/Box2D8Directions.mvx": {
+            "hash": "c17f5e654d12a2d73eff5bc3198a48bb4474bba23a5db5d197c6ea7ede610318",
+            "size": 136176
+        },
+        "content/modules/Box2DBase.mfx": {
+            "hash": "c4507e348be20dacff1caf80047009924a7dafde2f6d4fcd3a119e36c3b0a259",
+            "size": 294384
+        },
+        "content/modules/Box2DBouncingBall.mvx": {
+            "hash": "396d6fa2cb83373ea69bb30c39bc5f3000168168ac0c455c0504357aed4201fa",
+            "size": 136688
+        },
+        "content/modules/clickteam-circular.mvx": {
+            "hash": "671a01a39fa56a32fc0a43b16038d3077202734a7beacd50d73439011a74a4cb",
+            "size": 28672
+        },
+        "content/modules/clickteam-movement-controller.mfx": {
+            "hash": "90c756676b9ce8b6f99695ffa79664d50fe5b264d767959fecd88b52909b4615",
+            "size": 34816
+        },
+        "content/modules/ctrlx.mfx": {
+            "hash": "3407eb12f6bacec5ebd4df96ff3fd34741a3919fd46c2ec527364c5f1e753a65",
+            "size": 45056
+        },
+        "content/modules/DRPC.mfx": {
+            "hash": "5e7c4bcc7b722179ca5de3933d0e807d0d1630d8e5a0a51b98cce85199051ea5",
+            "size": 881664
+        },
+        "content/modules/fcMsgBox.mfx": {
+            "hash": "a7078267ff7d905b45ed5496a03a14ca6b7f50f17f7a23c5e6e12dd2e7920bf2",
+            "size": 64512
+        },
+        "content/modules/FileReadWrite.mfx": {
+            "hash": "22dad1a35a73468156565c97f05658f1342ec85c0b6faacbbb85ae706788c939",
+            "size": 302080
+        },
+        "content/modules/Get.mfx": {
+            "hash": "791e717345991c4bf183c6450667498a89b59c4e8a5abb52e2751fde63d3ad43",
+            "size": 348160
+        },
+        "content/modules/GetKillProcess.mfx": {
+            "hash": "4ef8833efd0447806acf51f6609b30bbf4f946b47c300992408fa9a06ec24b10",
+            "size": 368640
+        },
+        "content/modules/GetNSetMouseSpeed.mfx": {
+            "hash": "bfa435ea7fa61d3bdf081c426a81645911326883fd407fe1db7a5e7facf3dc6c",
+            "size": 119296
+        },
+        "content/modules/gifflt.ift": {
+            "hash": "8fadc250c2afc00b0430c5df576cfd2d444367ad928027334c5d03829241cf92",
+            "size": 28672
+        },
+        "content/modules/INI++15.mfx": {
+            "hash": "4f7e3cc575de56d815589db22a1d96760e2f309e58b9bde1a57e108bda069393",
+            "size": 449536
+        },
+        "content/modules/jpgflt.ift": {
+            "hash": "5bcaaff4c698581603d4165308260412b38ac6cf708486b53bda3bc76241098d",
+            "size": 98304
+        },
+        "content/modules/kcanim.mfx": {
+            "hash": "98fccdcd1bfe5f3b621d7472904df2e43f0f933ad13133ac0158702b2d98f079",
+            "size": 28672
+        },
+        "content/modules/KcArray.mfx": {
+            "hash": "4acc16898136313b0ba79b458c33f8d2194edb7f398124800bac70796086e5f6",
+            "size": 32768
+        },
+        "content/modules/KcButton.mfx": {
+            "hash": "94cea0df9febe19fc2e1a905bd7df0bdab63797a42a7006f14bc8838003e5a45",
+            "size": 40960
+        },
+        "content/modules/KcCursor.mfx": {
+            "hash": "947a3320e1d7d5d48dd4e86c76238c37f9e67388ceb24732023c47802733f873",
+            "size": 36864
+        },
+        "content/modules/kcedit.mfx": {
+            "hash": "1fb56c1a5fb313c8c51fead10472566328c9260aacc72aa8dde8d345acf53203",
+            "size": 32768
+        },
+        "content/modules/kcfile.mfx": {
+            "hash": "7daa995fbf72b941859177b08b2785dc107f1a3deb99f6ab4c675d2b0f03a06b",
+            "size": 118784
+        },
+        "content/modules/kcini.mfx": {
+            "hash": "d1471b2685d45956c323baa2cab11dfe479eb1021f04e2949f03557527c5fc84",
+            "size": 117248
+        },
+        "content/modules/kclist.mfx": {
+            "hash": "c83bcec56f1666d6871e077cc54d0ee7f6462773c03afbb301b9180a4ad0a31a",
+            "size": 32768
+        },
+        "content/modules/kcmixer.mfx": {
+            "hash": "9fae025b8587267ed70b12b756557a5d5cbced09cfe8dbe584676e56497a74a2",
+            "size": 24576
+        },
+        "content/modules/kcpica.mfx": {
+            "hash": "2208c9a3f3d5b78bb1f630dec0670aab89d9edb3026c93fa9020a1a12efbb515",
+            "size": 32768
+        },
+        "content/modules/kcwctrl.mfx": {
+            "hash": "a0ada42e3a4760097c1c2f98905f12b19de47159543aa21e1c604dbcac7337f2",
+            "size": 81408
+        },
+        "content/modules/Key.mfx": {
+            "hash": "fa63dd24850b7d06661c3fb1732b82ff77e61d176fa9d358eae0f6039dd5296d",
+            "size": 86016
+        },
+        "content/modules/Layer.mfx": {
+            "hash": "b8612eb76d8967e49e9ba74a2cbd557096bacfbdb2c6e84d69d381b76d42052e",
+            "size": 143424
+        },
+        "content/modules/mmf2d3d11.dll": {
+            "hash": "2aeca2207c6dabb6fc70f164f3d6188ed76f7786344654592ecef1752528ed13",
+            "size": 561720
+        },
+        "content/modules/mmf2d3d8.dll": {
+            "hash": "9cba4d670209c69039d0d92598aab6d916d9fbd215b634012ff9cef55bfaf559",
+            "size": 457704
+        },
+        "content/modules/mmf2d3d9.dll": {
+            "hash": "3cde7a9181ab63a42cd3535d279d0ab1397b7b78fa3ddddef832757ab2024101",
+            "size": 1151912
+        },
+        "content/modules/mmfs2.dll": {
+            "hash": "6c9ff6036404e71b0bc2c12bc739eeef0d9200925f5796487af2aa4ef5c5ef97",
+            "size": 522808
+        },
+        "content/modules/mp3flt.sft": {
+            "hash": "ddeafda7b28bf7545e3ba164aa4a74219eb961c36bb974e0f5085a07daf18f44",
+            "size": 24576
+        },
+        "content/modules/oggflt.sft": {
+            "hash": "9e589f86317d840df9bb74f6ee20c24ca65afe58f4009740382f63a0f5531941",
+            "size": 133632
+        },
+        "content/modules/parser.mfx": {
+            "hash": "9813631f63f79fbaa741094786d4b13c34515ec4a33c0d4e88b75a20973c887c",
+            "size": 31232
+        },
+        "content/modules/pathfind.mfx": {
+            "hash": "0d017201a44510ad135a5e69606eee471f863158445aaa122fe29c719dbe0fa8",
+            "size": 143360
+        },
+        "content/modules/Perspective.mfx": {
+            "hash": "090925a4cd961f22b1ecd2fba4ce04ab063e26507a1dc09b1d6a40c4860a8777",
+            "size": 15360
+        },
+        "content/modules/pngflt.ift": {
+            "hash": "df948630fdb53ddad68d66994f5d2b18a67df32478b6b8b3720c28f40bde7b1f",
+            "size": 295424
+        },
+        "content/modules/PO Localizer.mfx": {
+            "hash": "772aa82b12b0fe4baf91f2b27f5722e5a9dfc39d3a9a925c304c0d3814137182",
+            "size": 482816
+        },
+        "content/modules/spaceship.mvx": {
+            "hash": "963a07720e6b5e51438eef814526cfa6157b4d6f28c792a4a9bc9722a9642b87",
+            "size": 69632
+        },
+        "content/modules/Steamworks.mfx": {
+            "hash": "dee8dcb69af665c97e1a6b652bf900313e4697d455163f5b31be440ebf853613",
+            "size": 575488
+        },
+        "content/modules/SteamworksAPI.dll": {
+            "hash": "c24262d150d2f4f4b3aee70c66115254e77a9af5ae3152a4c7897e75714cebac",
+            "size": 266336
+        },
+        "content/modules/SteamworksAPI.mfx": {
+            "hash": "d26a133d401c939c4e8f3aca1d14fb28f5bc0671bc50ae5f6005a2cdf4d5b3a0",
+            "size": 638976
+        },
+        "content/modules/steam_api.dll": {
+            "hash": "0bdba265a140a963464b4fad889d7a8dede05aba8c914ab2e83026255b6a2f41",
+            "size": 186560
+        },
+        "content/modules/StringTokenizer.mfx": {
+            "hash": "d1a0edb43969a1c4621527dfaaf6bbe97e63e9cbb495e615c3292aeb2a5e9ce8",
+            "size": 77824
+        },
+        "content/modules/Surface.mfx": {
+            "hash": "e6bd038aaf37b486d326d9e1dd1a1c2ebf8eff51809a564245006bf3b25ba976",
+            "size": 308736
+        },
+        "content/modules/Textfile.mfx": {
+            "hash": "5f0227e898ccaba747465189b768a269432b2ba5ae2b7498aef41f3bece393a8",
+            "size": 84480
+        },
+        "content/modules/TreeControl.mfx": {
+            "hash": "b4a4c2a98c6df42a88ce794f072246eac9acf128ba31d8685b220fb06f210df2",
+            "size": 53248
+        },
+        "content/modules/ultimatefullscreen.mfx": {
+            "hash": "fd179783ff6e6eb0959185087f33ed4a1b256e58762d9817bcb16888e20f7058",
+            "size": 75264
+        },
+        "content/modules/waveflt.sft": {
+            "hash": "92a5053cf5973a6aa228c738d55387f12f1dfa8a837d7b938c60f05b6b56b3ad",
+            "size": 8192
         },
         "content/sprites/entities/agent.png": {
             "hash": "82f6ec26b01a4f0d8f73c3e78dd5dd886a809d0e3342ab6ee218d83693612642",
