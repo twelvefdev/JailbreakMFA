@@ -1,6 +1,6 @@
 [0:0:0:1] App launched.
-[0:0:0:3] Checking directories: fusion.png
-[0:0:0:3] Checking directories: game.png
-[0:0:0:3] Checking directories: audio\title.ogg
+[0:0:0:4] Checking directories: fusion.png
+[0:0:0:4] Checking directories: game.png
+[0:0:0:4] Checking directories: audio\title.ogg
 [0:0:0:6] Directiores succeed.
 [0:0:0:6] Done!  (62ms)
