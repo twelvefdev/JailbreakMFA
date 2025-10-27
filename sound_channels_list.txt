@@ -31,7 +31,7 @@ contentdirectory + "audio\flashlight_shake.wav"
 #29 - Pause Ambience
 #30 - HUD Overall SFX, Pause
 #31 - Zoom
-#32 - Empty
+#32 - Refresh Score/
 #33 - Agent Sounds & SMPTE
 #34 - Map Events, for example Items Resupply
 #35 - Sand Worm Rumble
