@@ -31,7 +31,7 @@ contentdirectory + "audio\flashlight_shake.wav"
 #29 - Pause Ambience
 #30 - HUD Overall SFX, Pause
 #31 - Zoom
-#32 - Refresh Score/
+#32 - Refresh Score
 #33 - Agent Sounds & SMPTE
 #34 - Map Events, for example Items Resupply
 #35 - Sand Worm Rumble
@@ -42,8 +42,8 @@ contentdirectory + "audio\flashlight_shake.wav"
 #40 - Settings Test Sounds and other stuff settings related
 #41 - HUD Notifications, Time Limit
 #42 - Items Used & etc. with items related
-#43 - Guardian Sounds
-#44 - Big Door (Campfire) Sounds
+#43 - Guardian Sounds 3D
+#44 - Big Door (Campfire) Sounds/ Guardian Scream
 #45 - Camera Zoom & Snap
 #46 - Game Distortion Effects, for example. Burning.
 #47 - TV Noises
